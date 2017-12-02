@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DA131F9-8FDF-4FD5-960F-79771450FB9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JsRct_Client</RootNamespace>
+    <AssemblyName>JsRct-Client</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;<CodePage>1250</CodePage></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <WarningLevel>2</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Connecting Service Provider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Connecting Service Provider\bin\Debug\Connecting Service Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="JsCompressionLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsCompressionLib\bin\Release\JsCompressionLib.dll</HintPath>
+    </Reference>
+    <Reference Include="JsProxyProvider, Version=1.1.2358.35202, Culture=neutral, PublicKeyToken=933f0330019bf75f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsProxyProvider\bin\Release\JsProxyProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="JsRct Xml Config Importer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsRct Xml Config Importer\bin\Debug\JsRct Xml Config Importer.dll</HintPath>
+    </Reference>
+    <Reference Include="JsRctClientLngPack, Version=1.0.2375.6975, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsRctClientLngPack\bin\Release\JsRctClientLngPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonEnvironment.cs" />
+    <Compile Include="DataTransfers.cs" />
+    <Compile Include="Forms classes\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\AddNewItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\BinaryValueViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\BinaryValueViewerForm.Designer.cs">
+      <DependentUpon>BinaryValueViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms classes\ConfirmFileReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\ConnectingServiceProviderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\ConnectingServiceProviderForm.designer.cs">
+      <DependentUpon>ConnectingServiceProviderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms classes\CreateDWORDValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\CreateMultilineTextValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\CreateNewFolderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\CreateTextValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\EventPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\FileManagerObjectPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\FilesDownloadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\FilesUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\JurikSoftServersDBManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\MainClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\MiniRTDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\ProxyDBManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\RegisterNewUINForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\RegisterNewUINForm.Designer.cs">
+      <DependentUpon>RegisterNewUINForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms classes\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\RenameFolderOrFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\RenameItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\RTDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms classes\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalAction.cs" />
+    <Compile Include="NetworkAction.cs" />
+    <Compile Include="ObjCopy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms classes\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\AddNewItemForm.resx">
+      <DependentUpon>AddNewItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\BinaryValueViewerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BinaryValueViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\ConfirmFileReplaceForm.resx">
+      <DependentUpon>ConfirmFileReplaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\ConnectingServiceProviderForm.resx">
+      <DependentUpon>ConnectingServiceProviderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\CreateDWORDValueForm.resx">
+      <DependentUpon>CreateDWORDValueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\CreateMultilineTextValueForm.resx">
+      <DependentUpon>CreateMultilineTextValueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\CreateNewFolderForm.resx">
+      <DependentUpon>CreateNewFolderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\CreateTextValueForm.resx">
+      <DependentUpon>CreateTextValueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\EventPropertiesForm.resx">
+      <DependentUpon>EventPropertiesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\FileManagerObjectPropertiesForm.resx">
+      <DependentUpon>FileManagerObjectPropertiesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\FilesDownloadForm.resx">
+      <DependentUpon>FilesDownloadForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\FilesUploadForm.resx">
+      <DependentUpon>FilesUploadForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\JurikSoftServersDBManagerForm.resx">
+      <DependentUpon>JurikSoftServersDBManagerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\MainClientForm.resx">
+      <DependentUpon>MainClientForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\MiniRTDVForm.resx">
+      <DependentUpon>MiniRTDVForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\ProxyDBManagerForm.resx">
+      <DependentUpon>ProxyDBManagerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\RegisterNewUINForm.resx">
+      <DependentUpon>RegisterNewUINForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\RenameFolderOrFileForm.resx">
+      <DependentUpon>RenameFolderOrFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\RenameItemForm.resx">
+      <DependentUpon>RenameItemForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\RTDVForm.resx">
+      <DependentUpon>RTDVForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms classes\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RemoteCallAction.cs" />
+    <Compile Include="SlimDXSoundCapture.cs" />
+    <Compile Include="SortedListView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JsRctServerLib.dll" />
+    <None Include="Resources\zniislogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

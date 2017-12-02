@@ -118,8 +118,8 @@ public class AboutForm : System.Windows.Forms.Form
             this.richTextBox_About.ReadOnly = true;
             this.richTextBox_About.Size = new System.Drawing.Size(240, 144);
             this.richTextBox_About.TabIndex = 1;
-            this.richTextBox_About.Text = "Интернет сайт: \n\nАвтор: yak@zniis.ru\n           \nТехническая поддержка: \n        " +
-    "   \nИнформация: \n\nПо вопросам продаж: \n\nICQ: ";
+            this.richTextBox_About.Text = "Интернет сайт: \n\nАвтор: chief.yaksys@yandex.ru\n           \nТехническая поддержка:" +
+    " \n           \nИнформация: \n\nПо вопросам продаж: \n\nICQ: ";
             this.richTextBox_About.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox_About_LinkClicked);
             // 
             // label_Title
@@ -129,7 +129,7 @@ public class AboutForm : System.Windows.Forms.Form
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(280, 16);
             this.label_Title.TabIndex = 2;
-            this.label_Title.Text = "ZNIIS RCT Server 1.0 для Windows 2000/XP/2003/7/8/10";
+            this.label_Title.Text = "YakSys RCT Server 1.0 для Windows 2000/XP/2003/7/8/10";
             // 
             // groupBox_RegistrationInformation
             // 
@@ -243,7 +243,7 @@ public class AboutForm : System.Windows.Forms.Form
             // AboutForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(504, 282);
+            this.ClientSize = new System.Drawing.Size(504, 281);
             this.Controls.Add(this.pictureBox_ZNIISLogo);
             this.Controls.Add(this.groupBox_Contacts);
             this.Controls.Add(this.button_OK);

@@ -12,11 +12,11 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Client";
+                            return "YakSys RCT Client";
 
 
                         case 1:
-                            return "ZNIIS RCT Client";
+                            return "YakSys RCT Client";
 
                     }
                 }
@@ -270,11 +270,11 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "You are not connected to ZNIIS RCT Server. Please connect first.";
+                            return "You are not connected to YakSys RCT Server. Please connect first.";
 
 
                         case 1:
-                            return "Вы не соединены с ZNIIS RCT Server. Пожалуйста, сначала подсоединитесь.";
+                            return "Вы не соединены с YakSys RCT Server. Пожалуйста, сначала подсоединитесь.";
 
                     }
                 }
@@ -5212,11 +5212,11 @@ public class ClientStringFactory
                     {
 
                         case 0:
-                            return "Registration is successfully complete! Thank you for purchase ZNIIS RCT";
+                            return "Registration is successfully complete! Thank you for purchase YakSys RCT";
 
 
                         case 1:
-                            return "Регистрация успешно завершена! Благодарим вас за покупку ZNIIS RCT";
+                            return "Регистрация успешно завершена! Благодарим вас за покупку YakSys RCT";
                     }
                 }
                 break;
@@ -7524,10 +7524,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Server settings";
+                            return "YakSys RCT Server settings";
 
                         case 1:
-                            return "Параметры ZNIIS RCT сервера";
+                            return "Параметры YakSys RCT сервера";
                     }
                 }
                 break;
@@ -7810,10 +7810,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Client 1.1.0 for Windows 2000/XP/2003";
+                            return "YakSys RCT Client 1.1.0 for Windows 2000/XP/2003";
 
                         case 1:
-                            return "ZNIIS RCT Client 1.1.0 для Windows 2000/XP/2003";
+                            return "YakSys RCT Client 1.1.0 для Windows 2000/XP/2003";
                     }
                 }
                 break;
@@ -8232,10 +8232,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Note: You can login without password but ZNIIS RCT Client DataBase will be erased. All data will be deleted, including ZNIIS RCT Servers list, Proxy Servers list, Auth data and Settings.";
+                            return "Note: You can login without password but YakSys RCT Client DataBase will be erased. All data will be deleted, including YakSys RCT Servers list, Proxy Servers list, Auth data and Settings.";
 
                         case 1:
-                            return "Примечание: Вы можете войти в программу и без пароля, но база данных программы будет уничтожена. Удалены будут все данные, включая список серверов ZNIIS RCT, список Proxy серверов, настройки и логины\\пароли.";
+                            return "Примечание: Вы можете войти в программу и без пароля, но база данных программы будет уничтожена. Удалены будут все данные, включая список серверов YakSys RCT, список Proxy серверов, настройки и логины\\пароли.";
                     }
                 }
                 break;
@@ -8277,10 +8277,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "This is not ZNIIS RCT Client DataBase ver. 1.1.0 file or DataBase was corrupted.";
+                            return "This is not YakSys RCT Client DataBase ver. 1.1.0 file or DataBase was corrupted.";
 
                         case 1:
-                            return "Выбранный файл не является базой данных прогрыммы ZNIIS RCT Client версии 1.1.0 или база данных была повреждена.";
+                            return "Выбранный файл не является базой данных прогрыммы YakSys RCT Client версии 1.1.0 или база данных была повреждена.";
                     }
                 }
                 break;
@@ -8292,10 +8292,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Client DataBase was corrupted";
+                            return "YakSys RCT Client DataBase was corrupted";
 
                         case 1:
-                            return "База данных ZNIIS RCT Client была повреждена";
+                            return "База данных YakSys RCT Client была повреждена";
                     }
                 }
                 break;
@@ -10806,10 +10806,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Service";
+                            return "YakSys RCT Service";
 
                         case 1:
-                            return "Сервис ZNIIS RCT";
+                            return "Сервис YakSys RCT";
                     }
                 }
                 break;
@@ -10836,10 +10836,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "CS ZNIIS RCT Server's UIN:";
+                            return "CS YakSys RCT Server's UIN:";
 
                         case 1:
-                            return "CS UIN ZNIIS RCT Сервера:";
+                            return "CS UIN YakSys RCT Сервера:";
                     }
                 }
                 break;
@@ -10866,10 +10866,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Server Auth Login:";
+                            return "YakSys RCT Server Auth Login:";
 
                         case 1:
-                            return "ZNIIS RCT Server логин:";
+                            return "YakSys RCT Server логин:";
                     }
                 }
                 break;
@@ -10881,10 +10881,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Server Auth Password:";
+                            return "YakSys RCT Server Auth Password:";
 
                         case 1:
-                            return "Пароль к ZNIIS RCT Server:";
+                            return "Пароль к YakSys RCT Server:";
                     }
                 }
                 break;
@@ -11166,10 +11166,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Server CS UIN value must be a decimal number";
+                            return "YakSys RCT Server CS UIN value must be a decimal number";
 
                         case 1:
-                            return "Значение ZNIIS RCT Server CS UIN должно быть десятичным числом";
+                            return "Значение YakSys RCT Server CS UIN должно быть десятичным числом";
                     }
                 }
                 break;
@@ -11288,10 +11288,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Unable to obtain Common ZNIIS RCT Connecting Service Address";
+                            return "Unable to obtain Common YakSys RCT Connecting Service Address";
 
                         case 1:
-                            return "Не удалось установить адрес общего Сервиса Соединений ZNIIS RCT";
+                            return "Не удалось установить адрес общего Сервиса Соединений YakSys RCT";
                     }
                 }
                 break;

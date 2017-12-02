@@ -12,11 +12,11 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS RCT Server";
+                            return "YakSys RCT Server";
 
 
                         case 1:
-                            return "ZNIIS RCT Сервер";
+                            return "YakSys RCT Сервер";
 
                     }
                 }
@@ -191,11 +191,11 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "List of users accounts(ZNIIS):";
+                            return "List of users accounts(YakSys):";
 
 
                         case 1:
-                            return "Список учётных записей(ZNIIS):";
+                            return "Список учётных записей(YakSys):";
                     }
                 }
                 break;
@@ -608,10 +608,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS Server version 1.1.0 Log\n\nType:          Date:         Time:       Source:             Description:\n\n";
+                            return "YakSys Server version 1.1.0 Log\n\nType:          Date:         Time:       Source:             Description:\n\n";
 
                         case 1:
-                            return "ZNIIS Server версия  1.1.0 Журнал\n\nТип:          Дата:         Время:       Источник:             Описание:\n\n";
+                            return "YakSys Server версия  1.1.0 Журнал\n\nТип:          Дата:         Время:       Источник:             Описание:\n\n";
                     }
                 }
                 break;
@@ -1292,11 +1292,11 @@ public class ServerStringFactory
                     {
 
                         case 0:
-                            return "Registration is successfully complete! Thank you for purchase ZNIIS RCT.";
+                            return "Registration is successfully complete! Thank you for purchase YakSys RCT.";
 
 
                         case 1:
-                            return "Регистрация успешно завершена! Благодарим вас за покупку ZNIIS RCT.";
+                            return "Регистрация успешно завершена! Благодарим вас за покупку YakSys RCT.";
                     }
                 }
                 break;
@@ -1399,10 +1399,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS Server 1.1.0 for Windows XP-10";
+                            return "YakSys Server 1.1.0 for Windows XP-10";
 
                         case 1:
-                            return "ZNIIS Server 1.1.0 для Windows XP-10";
+                            return "YakSys Server 1.1.0 для Windows XP-10";
                     }
                 }
                 break;
@@ -1491,10 +1491,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS Server DataBase was corrupted";
+                            return "YakSys Server DataBase was corrupted";
 
                         case 1:
-                            return "База данных ZNIIS Server была повреждена";
+                            return "База данных YakSys Server была повреждена";
                     }
                 }
                 break;
@@ -1859,10 +1859,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Note: You can login without password but ZNIIS Server DataBase will be erased. All data will be deleted, including ZNIIS Users list, Events Log, Auth data and Settings.";
+                            return "Note: You can login without password but YakSys Server DataBase will be erased. All data will be deleted, including YakSys Users list, Events Log, Auth data and Settings.";
 
                         case 1:
-                            return "Примечание: Вы можете войти в программу и без пароля, но база данных программы будет уничтожена. Удалены будут все данные, включая список пользователей ZNIIS Server, журнал событий и настройки программы.";
+                            return "Примечание: Вы можете войти в программу и без пароля, но база данных программы будет уничтожена. Удалены будут все данные, включая список пользователей YakSys Server, журнал событий и настройки программы.";
                     }
                 }
                 break;
@@ -1920,10 +1920,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "This is not ZNIIS Server DataBase ver. 1.1.0 file or DataBase was corrupted.";
+                            return "This is not YakSys Server DataBase ver. 1.1.0 file or DataBase was corrupted.";
 
                         case 1:
-                            return "Выбранный файл не является базой данных программы ZNIIS Server версии 1.1.0 или база данных была повреждена.";
+                            return "Выбранный файл не является базой данных программы YakSys Server версии 1.1.0 или база данных была повреждена.";
                     }
                 }
                 break;
@@ -11932,10 +11932,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS";
+                            return "YakSys";
 
                         case 1:
-                            return "ZNIIS";
+                            return "YakSys";
                     }
                 }
                 break;
@@ -11990,10 +11990,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS Server Service is not responidng.\nPlease Start ZNIIS Server Service and try again.";
+                            return "YakSys Server Service is not responidng.\nPlease Start YakSys Server Service and try again.";
 
                         case 1:
-                            return "ZNIIS Server Service не отвечает.\nПожалуйста запустите ZNIIS Server Service и попробуйте снова.";
+                            return "YakSys Server Service не отвечает.\nПожалуйста запустите YakSys Server Service и попробуйте снова.";
                     }
                 }
                 break;
@@ -12053,10 +12053,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS Service";
+                            return "YakSys Service";
 
                         case 1:
-                            return "Сервис ZNIIS";
+                            return "Сервис YakSys";
                     }
                 }
                 break;
@@ -12085,7 +12085,7 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS Service";
+                            return "YakSys Service";
 
                         case 1:
                             return "Сервис JurikSoft";
@@ -12461,10 +12461,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "ZNIIS Server CS UIN value must be a decimal number";
+                            return "YakSys Server CS UIN value must be a decimal number";
 
                         case 1:
-                            return "Значение ZNIIS Server CS UIN должно быть десятичным числом";
+                            return "Значение YakSys Server CS UIN должно быть десятичным числом";
                     }
                 }
                 break;
@@ -12794,10 +12794,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Unable to obtain Common ZNIIS Connecting Service Address";
+                            return "Unable to obtain Common YakSys Connecting Service Address";
 
                         case 1:
-                            return "Не удалось установить адрес общего Сервиса Соединений ZNIIS";
+                            return "Не удалось установить адрес общего Сервиса Соединений YakSys";
                     }
                 }
                 break;
