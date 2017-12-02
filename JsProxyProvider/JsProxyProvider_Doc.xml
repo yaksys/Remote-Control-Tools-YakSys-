@@ -1,0 +1,962 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JsProxyProvider</name>
+    </assembly>
+    <members>
+        <member name="T:JurikSoft.Proxy.Exceptions.ProxyProviderException">
+            <summary> 
+            Base JurikSoft Proxy Provider exception.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.ProxyProviderException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.Socks5ServiceNotFoundException">
+            <summary> 
+            It is not socks version 5 server.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.Socks5ServiceNotFoundException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.TimeOutException">
+            <summary> 
+            Proxy Server did not response at the time out period.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.TimeOutException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.AuthenticationRequiredException">
+            <summary> 
+            Selected Proxy Server requred user authentication.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.AuthenticationRequiredException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.NoAcceptableMethodsException">
+            <summary> 
+            No acceptable connection methods available from methods listed by client.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.NoAcceptableMethodsException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.GeneralSocksServerFailureException">
+            <summary> 
+            Reply from Socks server version 5: General SOCKS server failure.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.GeneralSocksServerFailureException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.ConnectionNotAllowedException">
+            <summary> 
+            Reply from Socks server version 5: Connection not allowed by rule set.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.ConnectionNotAllowedException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.NetworkUnreachableException">
+            <summary> 
+            Reply from Socks server version 5: Destination network is unreachable.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.NetworkUnreachableException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.HostUnreachableException">
+            <summary> 
+            Socks server version 5 reply: Destination host is unreachable.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.HostUnreachableException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.ConnectionRefusedException">
+            <summary> 
+            Socks server version 5 reply: Connection refused.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.ConnectionRefusedException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.TTLExpiredException">
+            <summary> 
+            Socks server version 5 reply: Time To Live was expired.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.TTLExpiredException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.UnsupportedSocksCommandException">
+            <summary> 
+            Socks server version 5 reply: Command not supported.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.UnsupportedSocksCommandException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.UnsupportedAddressTypeException">
+            <summary> 
+            Socks server version 5 reply: Address type not supported.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.UnsupportedAddressTypeException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.ProxyConnectionException">
+            <summary> 
+            Unable to connect to Proxy Server.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.ProxyConnectionException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.Socks4ServiceNotFoundException">
+            <summary> 
+            This is not socks version 4 server.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.Socks4ServiceNotFoundException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.RequestRejectedOrFailed">
+            <summary> 
+            Connection to socks server version 4 was rejected or failed.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.RequestRejectedOrFailed.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.IdentdOnClientNotResponse">
+            <summary> 
+            Request rejected becasue Socks server cannot connect to identd on the client.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.IdentdOnClientNotResponse.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.DifferentUserIDs">
+            <summary> 
+            Request rejected because the client program and identd report different user-ids.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.DifferentUserIDs.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.UnableToResolveHostName">
+            <summary> 			
+            Local computer unable to resolve destination HostName to IP Address.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.UnableToResolveHostName.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.AuthenticationNotAllowedException">
+            <summary> 			
+            Authentication is not allowed by this server.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.AuthenticationNotAllowedException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.Exceptions.AuthenticationFailureException">
+            <summary> 			
+            Authentication failure.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Proxy.Exceptions.AuthenticationFailureException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.ProxyProvider">
+            <summary>
+            Represents the class that contains implementation of the TCP Tunneling technique for connection through Socks 4, 4a, 5, and HTTPS Proxy Servers.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler">
+            <summary>
+            
+            Represents the method that will handle the Proxy events.
+            
+            </summary>		
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.SendingSocks5ConnectionRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider send a connection request to Socks Server version 5.
+            
+            </summary>		
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.SendingSocks5AuthenticationRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider send a Authentication request to Socks Server version 5.
+            
+            </summary>			
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.SendingSocks5RequestDetails">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider send a request details to Socks Server version 5.
+            
+            </summary>	
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.SendingSocks4ConnectionRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider send a connection request to Socks Server version 4.
+            
+            </summary>		
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.SendingHTTPSConnectionRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider send a connection request to HTTPS Proxy Server.
+            
+            </summary>		
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.SendingHTTPSAuthenticationRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider send a Authentication request to HTTPS Proxy Server.
+            
+            </summary>		
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.WaitingForReplyToSocks5ConnectionRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider wait reply to connection request from Socks Server verion 5.
+            
+            </summary>								
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.WaitingForReplyToSocks5AuthenticationRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider wait reply to Authentication request from Socks Server verion 5.
+            
+            </summary>	
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.WaitingForReplyToSocks5RequestDetails">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider wait reply from Socks Server verion 5 to sent request details .
+            
+            </summary>	
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.WaitingForReplyToSocks4ConnectionRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider wait reply from Socks Server verion 5 to sent connection request.
+            
+            </summary>	
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.WaitingForReplyToHTTPSConnectionRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider wait reply from HTTPS Proxy Server to sent connection request.
+            
+            </summary>	
+        </member>
+        <member name="E:JurikSoft.Proxy.ProxyProvider.WaitingForReplyToHTTPSAuthenticationRequest">
+            <summary>
+            
+            Occurs when the JurikSoft Proxy Provider wait reply from HTTPS Proxy Server to sent Authentication request.
+            
+            </summary>	
+        </member>
+        <member name="P:JurikSoft.Proxy.ProxyProvider.SerialNumber">
+             <summary>
+            
+             Serial Number of your product copy sent to your Registration Name 
+            
+             </summary>
+            		
+             <remarks>
+            
+             If you are not registered you will see the following message every time when you  
+             Connect to necessary Host through Proxy Server using JurikSoft Proxy Provider: 
+             
+             <para>			
+             "You are using the FREE COPY of JurikSoft Proxy Provider.			
+             Please register a copy of JurikSoft Proxy Provider at 
+             http://www.juriksoft.net to disable this appear message."
+             </para>
+            
+             You can purchase a copy of this software product at http://www.juriksoft.net.
+              
+             <para>	
+             One copy (serial number) entitles to use this 
+             software product to one software developers team.
+             </para>
+             </remarks>
+             
+             <example> This sample shows how to use Registration Information.
+             <code>
+            
+             JurikSoft.Proxy.ProxyProvider.SerialNumber = "1000000000";
+             JurikSoft.Proxy.ProxyProvider.RegistrationName = "Test";
+            
+             </code>
+             </example>
+        </member>
+        <member name="P:JurikSoft.Proxy.ProxyProvider.RegistrationName">
+             <summary>
+            
+             Registration Name that you use when you buy JurikSoft Proxy Provider 
+            
+             </summary>
+            		
+             <remarks>
+            
+             If you are not registered you will see the following message every time when you  
+             Connect to necessary Host through Proxy Server using JurikSoft Proxy Provider: 
+             
+             <para>			
+             "You are using the FREE COPY of JurikSoft Proxy Provider.			
+             Please register a copy of JurikSoft Proxy Provider at 
+             http://www.juriksoft.net to disable this appear message."
+             </para>
+            
+             You can purchase a copy of this software product at http://www.juriksoft.net.
+              
+             <para>	
+             One copy (serial number) entitles to use this 
+             software product to one software developers team.
+             </para>
+             </remarks>
+             
+             <example> This sample shows how to use Registration Information.
+             <code>
+             
+             JurikSoft.Proxy.ProxyProvider.SerialNumber = "1000000000";
+             JurikSoft.Proxy.ProxyProvider.RegistrationName = "Test";
+            
+             </code>
+             </example>		
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughSocks4Proxy(System.Net.Sockets.Socket@,System.String,System.Int32,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input Socket object to selected Server through Socks Proxy Server version 4. 
+            </summary>
+            
+            <overloads>
+            Connect to selected Server through Socks Proxy Server version 4. 
+            </overloads>
+            
+            <param name="socket_Link">  
+            Reference to Socket object, which will be connected to the selected Host through necessary Socks Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through Socks Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through Socks Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of Socks Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of Socks Proxy Server Host to which one should connect.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            
+            <example> This sample shows how to connect Socket to neccessary Server through Socks Proxy Server version 4 
+            <code>
+            
+            Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughSocks4Proxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughSocks4Proxy(System.Net.Sockets.TcpClient@,System.String,System.Int32,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input TcpClient object to selected Server through Socks Proxy Server version 4.
+            </summary>
+            
+            <param name="tcpClient_Link">  
+            Reference to TcpClient object, which will be connected to the selected Host through necessary Socks Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through Socks Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through Socks Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of Socks Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of Socks Proxy Server Host to which one should connect.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through Socks Proxy Server version 4 
+            <code>
+            
+            TcpClient tcpClient_Link = new TcpClient();
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughSocks4Proxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughSocks5Proxy(System.Net.Sockets.Socket@,System.String,System.Int32,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input Socket object to selected Server through Socks Proxy Server version 5. 
+            </summary>
+            
+            <overloads>
+            Connect to selected Server through Socks Proxy Server version 5. 
+            </overloads>
+            
+            <param name="socket_Link">  
+            Reference to Socket object, which will be connected to the selected Host through necessary Socks Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through Socks Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through Socks Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of Socks Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of Socks Proxy Server Host to which one should connect.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through Socks Proxy Server version 4 
+            <code>
+            
+            Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughSocks5Proxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughSocks5Proxy(System.Net.Sockets.TcpClient@,System.String,System.Int32,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input TcpClient object to selected Server through Socks Proxy Server version 5.
+            </summary>
+            
+            <param name="tcpClient_Link">  
+            Reference to TcpClient object, which will be connected to the selected Host through necessary Socks Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through Socks Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through Socks Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of Socks Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of Socks Proxy Server Host to which one should connect.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through Socks Proxy Server version 4 
+            <code>
+            
+            TcpClient tcpClient_Link = new TcpClient();
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughSocks5Proxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughSocks5Proxy(System.Net.Sockets.Socket@,System.String,System.Int32,System.String,System.Int32,System.String,System.String,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input Socket object to selected Server through Socks Proxy Server version 5 with Plain Text authentication. 
+            </summary>
+            
+            <param name="socket_Link">  
+            Reference to Socket object, which will be connected to the selected Host through necessary Socks Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through Socks Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through Socks Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of Socks Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of Socks Proxy Server Host to which one should connect.
+            </param>
+            
+            
+            <param name="string_UserName">
+            Parameter string_UserName are indicate User Name used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="string_Password">
+            Parameter string_Password are indicate Password used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through Socks Proxy Server version 4 
+            <code>
+            
+            Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughSocks5Proxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughSocks5Proxy(System.Net.Sockets.TcpClient@,System.String,System.Int32,System.String,System.Int32,System.String,System.String,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input TcpClient object to selected Server through Socks Proxy Server version 5 with Plain Text authentication. 
+            </summary>
+            
+            <param name="tcpClient_Link">  
+            Reference to TcpClient object, which will be connected to the selected Host through necessary Socks Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through Socks Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through Socks Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of Socks Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of Socks Proxy Server Host to which one should connect.
+            </param>
+            
+            
+            <param name="string_UserName">
+            Parameter string_UserName are indicate User Name used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="string_Password">
+            Parameter string_Password are indicate Password used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through Socks Proxy Server version 4 
+            <code>
+            
+            TcpClient tcpClient_Link = new TcpClient();
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughSocks5Proxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughHTTPSProxy(System.Net.Sockets.Socket@,System.String,System.Int32,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input Socket object to selected Server through HTTPS Proxy Server. 
+            </summary>
+            
+            <overloads>
+            Connect to selected Server through HTTPS Proxy Server. 
+            </overloads>
+            
+            <param name="socket_Link">  
+            Reference to Socket object, which will be connected to the selected Host through necessary HTTPS Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of HTTPS Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of HTTPS Proxy Server Host to which one should connect.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through HTTPS Proxy Server version 4 
+            <code>
+            
+            Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughHTTPSProxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080,  false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughHTTPSProxy(System.Net.Sockets.TcpClient@,System.String,System.Int32,System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input TcpClient object to selected Server through HTTPS Proxy Server. 
+            </summary>
+            
+            <param name="tcpClient_Link">  
+            Reference to TcpClient object, which will be connected to the selected Host through necessary HTTPS Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of HTTPS Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of HTTPS Proxy Server Host to which one should connect.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through HTTPS Proxy Server version 4 
+            <code>
+            
+            TcpClient tcpClient_Link = new TcpClient();
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughHTTPSProxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughHTTPSProxy(System.Net.Sockets.Socket@,System.String,System.Int32,System.String,System.Int32,System.String,System.String,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input Socket object to selected Server through HTTPS Proxy Server with Basic authentication method. 
+            </summary>
+            
+            <param name="socket_Link">  
+            Reference to Socket object, which will be connected to the selected Host through necessary HTTPS Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of HTTPS Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of HTTPS Proxy Server Host to which one should connect.
+            </param>
+            
+            
+            <param name="string_UserName">
+            Parameter string_UserName are indicate User Name used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="string_Password">
+            Parameter string_Password are indicate Password used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through HTTPS Proxy Server version 4 
+            <code>
+            
+            Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughHTTPSProxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+        <member name="M:JurikSoft.Proxy.ProxyProvider.ConnectThroughHTTPSProxy(System.Net.Sockets.TcpClient@,System.String,System.Int32,System.String,System.Int32,System.String,System.String,System.Boolean,System.Int32)">
+            <summary> 
+            Connect input TcpClient object to selected Server through HTTPS Proxy Server with Basic authentication method. 
+            </summary>
+            
+            <param name="tcpClient_Link">  
+            Reference to TcpClient object, which will be connected to the selected Host through necessary HTTPS Proxy Server.
+            </param> 
+            	
+            <param name="string_DstHost">
+            Parameter string_DstHost are used for the indication of Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            		
+            <param name="int_DstPort">
+            Parameter int_DstPort are used for the indication of Port of the Host address to which one should connect through HTTPS Proxy Server.
+            </param>
+            
+            <param name="string_ProxyHost">
+            Parameter string_ProxyHost are used for the indication of HTTPS Proxy Server Host address.
+            </param>
+            
+            <param name="int_ProxyPort">
+            Parameter int_DstPort are used for the indication of Port of HTTPS Proxy Server Host to which one should connect.
+            </param>
+            
+            <param name="string_UserName">
+            Parameter string_UserName are indicate User Name used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="string_Password">
+            Parameter string_Password are indicate Password used for the Basic authorization to connect to necessary Proxy Server.
+            </param>
+            
+            <param name="bool_UseProxyToResolveHostnames">
+            Parameter bool_UseProxyToResolveHostnames are used for the indication of domain name resolve mode: Resolve name to IP address by client or send domain address to Proxy Server to resolve.
+            </param>
+            
+            <param name="int_TimeOutMS">
+            Parameter int_TimeOutMS are used for the indication that how many time the client must wait for response to any sent request.
+            </param>
+            
+            <example> This sample shows how to connect Socket to neccessary Server through HTTPS Proxy Server version 4 
+            <code>
+            
+            TcpClient tcpClient_Link = new TcpClient();
+            
+            JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+            
+            try
+            {
+            	ProxyProvider_obj.ConnectThroughHTTPSProxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
+            }
+            catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+            {
+            	MessageBox.Show(exception.Message);
+            	return;
+            }
+            </code>
+            </example>
+            
+        </member>
+    </members>
+</doc>

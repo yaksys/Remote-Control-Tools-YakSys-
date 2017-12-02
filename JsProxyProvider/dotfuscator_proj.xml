@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE dotfuscator SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscator_v1.2.dtd">
+<dotfuscator version="1.2">
+  <!--This is application generated code. Do not edit manually.-->
+  <global>
+    <option>library</option>
+  </global>
+  <trigger>
+    <filelist>
+      <file dir="C:\dotnet projects 2\JsSocksProxyProvider\bin\Release\" name="JsProxyProvider.dll" />
+    </filelist>
+  </trigger>
+  <output>
+    <file dir="C:\games\" />
+  </output>
+  <tempdir>
+    <file dir="C:\dotfuscator temp" />
+  </tempdir>
+  <controlflow level="high" />
+</dotfuscator>

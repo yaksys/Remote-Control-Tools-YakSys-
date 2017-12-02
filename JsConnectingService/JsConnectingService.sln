@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B627ED0F-AA41-4600-B9AC-08D3B9BB7480}"
+	ProjectSection(SolutionItems) = preProject
+		JsConnectingService1.vsmdi = JsConnectingService1.vsmdi
+		Local.testsettings = Local.testsettings
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsConnectingService", "JsConnectingService.csproj", "{EF7B0246-F516-4F13-BE9D-F4D9E4759B97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test 1 base unit", "test 1 base unit\test 1 base unit.csproj", "{64EDDCB9-3E46-40A2-95AB-2AB73FFDD9C2}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = JsConnectingService1.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF7B0246-F516-4F13-BE9D-F4D9E4759B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7B0246-F516-4F13-BE9D-F4D9E4759B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7B0246-F516-4F13-BE9D-F4D9E4759B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7B0246-F516-4F13-BE9D-F4D9E4759B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EDDCB9-3E46-40A2-95AB-2AB73FFDD9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EDDCB9-3E46-40A2-95AB-2AB73FFDD9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EDDCB9-3E46-40A2-95AB-2AB73FFDD9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EDDCB9-3E46-40A2-95AB-2AB73FFDD9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

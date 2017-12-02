@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JsCompressionLib</name>
+    </assembly>
+    <members>
+        <member name="T:JurikSoft.Compression.PrefixCodes">
+            <summary>
+            Represents the class of the PrefixCodes compression algorithm.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.ICompression">
+            <summary>
+            
+            Provides functionality to compress data using PrefixCodes, LZSS and RLE algorithms.
+            
+            </summary>
+        </member>
+        <member name="M:JurikSoft.Compression.ICompression.Compress(System.Byte[],System.Boolean)">
+            <summary>
+            
+            Compress the data with ability to add MD5 hash check sum.
+            
+            </summary>
+            
+            <returns> 
+            An Compressed array of bytes with length > 0. 
+            </returns>
+            
+            <param name="DataToCompress">
+            The input data to compress using RLE algorithm.
+            </param> 	 
+            	
+            <param name="AddCheckSum">
+            Indicating whether add to compressed data MD5 Hash check sum.
+            </param>
+            
+            <example> This sample shows how to compress byte array.
+            <code>
+            //Declare ICompression interfase and initialize it by a new instance of the 
+            //RLE class with a compression parameter:
+            //PrefixCodesCompression enum value that indicate use PrefixCode 
+            //to compress single uncompressed bytes or store bytes uncompressed
+            JurikSoft.Compression.ICompression compressionObj = 
+            new JurikSoft.Compression.RLE(PrefixCodesCompression.NonAdaptive);
+            
+            FileStream fileStream_DataFile = File.Open("test.dat");
+            
+            byte [] byteArray_DataToCompress = new byte[fileStream_DataFile.Length],
+            byte [] byteArray_CompressedData = null;
+            
+            fileStream_DataFile.Read(byteArray_DataToCompress, 0, byteArray_DataToCompress.Length);
+            
+            //Compress the data with adding MD5 hash check sum
+            byteArray_CompressedData = compressionObj.Compress(byteArray_DataToCompress, true);
+            
+            fileStream_DataFile.Close();
+            
+            </code>
+            </example>
+        </member>
+        <member name="M:JurikSoft.Compression.PrefixCodes.#ctor(System.Boolean)">
+             <summary>
+             
+            Initializes a new instance of the PrefixCodes class with a model mode parameter indicates.
+             
+             </summary>
+        </member>
+        <member name="M:JurikSoft.Compression.PrefixCodes.Compress(System.Byte[],System.Boolean)">
+            <summary> 
+            Compress input byte array using PrefixCodes algorithm.
+            </summary>
+            
+            <returns> 
+            An Compressed array of bytes with length > 0. 
+            </returns>
+            
+            <param name="DataToCompress">
+            The input data to compress using PrefixCodes algorithm.
+            </param>/ 	 
+            	
+            <param name="AddCheckSum">
+            Indicating whether add to compressed data MD5 Hash check sum.
+            </param>
+            
+            <example> This sample shows how to compress byte array.
+            <code>
+            //Initializes a new instance of the PrefixCodes class with a compression parameter
+            //indicate the selected compression model is half adaptive
+            JurikSoft.Compression.ICompression compressionObj = 
+            new JurikSoft.Compression.PrefixCodes(false);
+            
+            FileStream fileStream_DataFile = File.Open("test.dat");
+            
+            byte [] byteArray_DataToCompress = new byte[fileStream_DataFile.Length],
+            byte [] byteArray_CompressedData = null;
+            
+            fileStream_DataFile.Read(byteArray_DataToCompress, 0, byteArray_DataToCompress.Length);
+            
+            //Compress the data with adding MD5 hash check sum
+            byteArray_CompressedData = compressionObj.Compress(byteArray_DataToCompress, true);
+            
+            fileStream_DataFile.Close();
+            
+            </code>
+            </example>
+            
+        </member>
+        <member name="T:JurikSoft.Compression.RLE">
+            <summary>
+            Represents the class of the Run Length Encoding compression algorithm.
+            </summary>
+        </member>
+        <member name="M:JurikSoft.Compression.RLE.#ctor(JurikSoft.Compression.PrefixCodesCompression)">
+             <summary>
+             
+            Initializes a new instance of the RLE class with a affected PrefixCodes algorithm.
+             
+             </summary>
+        </member>
+        <member name="M:JurikSoft.Compression.RLE.Compress(System.Byte[],System.Boolean)">
+            <summary> 
+            Compress input byte array using RLE algorithm.
+            </summary>
+            
+            <returns> 
+            An Compressed array of bytes with length > 0. 
+            </returns>
+            
+            <param name="DataToCompress">
+            The input data to compress using RLE algorithm.
+            </param>/ 	 
+            	
+            <param name="AddCheckSum">
+            Indicating whether add to compressed data MD5 Hash check sum.
+            </param>
+            
+            <example> This sample shows how to compress byte array.
+            <code>
+            //Initializes a new instance of the RLE class with a compression parameter:
+            //PrefixCodesCompression enum value that indicate use PrefixCode to compress 
+            //single uncompressed bytes or store bytes uncompressed
+            JurikSoft.Compression.ICompression compressionObj = 
+            new JurikSoft.Compression.RLE(PrefixCodesCompression.NonAdaptive);
+            
+            FileStream fileStream_DataFile = File.Open("test.dat");
+            
+            byte [] byteArray_DataToCompress = new byte[fileStream_DataFile.Length],
+            byte [] byteArray_CompressedData = null;
+            
+            fileStream_DataFile.Read(byteArray_DataToCompress, 0, byteArray_DataToCompress.Length);
+            
+            //Compress the data with adding MD5 hash check sum
+            byteArray_CompressedData = compressionObj.Compress(byteArray_DataToCompress, true);
+            
+            fileStream_DataFile.Close();
+            
+            </code>
+            </example>
+            
+        </member>
+        <member name="T:JurikSoft.Compression.LZSS">
+            <summary>
+            
+            Represents the class of the LZSS compression algorithm.
+            
+            </summary>
+        </member>
+        <member name="M:JurikSoft.Compression.LZSS.#ctor(System.Byte,System.Boolean,System.Boolean,System.Boolean,System.Int32)">
+             <summary>
+             
+            Initializes a new instance of the LZSS class with a compression parameters like a RLE compression, affected PrefixCodes algorithm, hash chains limit, Lazy matching technique and maximum block size.
+             
+             </summary>
+        </member>
+        <member name="M:JurikSoft.Compression.LZSS.Compress(System.Byte[],System.Boolean)">
+            <summary> 
+            Compress input byte array using LZSS algorithm.
+            </summary>
+            
+            <returns> 
+            An Compressed array of bytes with length > 0. 
+            </returns>
+            
+            <param name="DataToCompress">
+            The input data to compress using LZSS algorithm.
+            </param>/ 	 
+            	
+            <param name="AddCheckSum">
+            Indicating whether add to compressed data MD5 Hash check sum.
+            </param>
+            
+            <example> This sample shows how to compress byte array.
+            <code>
+            //Initializes a new instance of the LZSS class with a compression parameters: 
+            //10 hash chains, use PrefixCodes, not use RLE and maximum data block up to 131072 bytes
+            JurikSoft.Compression.ICompression compressionObj = 
+            new JurikSoft.Compression.LZSS(10, true, true, false, 131072);
+            
+            FileStream fileStream_DataFile = File.Open("test.dat");
+            
+            byte [] byteArray_DataToCompress = new byte[fileStream_DataFile.Length],
+            byte [] byteArray_CompressedData = null;
+            
+            fileStream_DataFile.Read(byteArray_DataToCompress, 0, byteArray_DataToCompress.Length);
+            
+            //Compress the data with adding MD5 hash check sum
+            byteArray_CompressedData = compressionObj.Compress(byteArray_DataToCompress, true);
+            
+            fileStream_DataFile.Close();
+            
+            </code>
+            </example>
+            
+        </member>
+        <member name="T:JurikSoft.Compression.PrefixCodesCompression">
+            <summary>
+            
+            Provides the fields that represent settings for Prefix Codes compression algorithm.
+            
+            </summary>		
+        </member>
+        <member name="F:JurikSoft.Compression.PrefixCodesCompression.DoNotUse">
+            <summary>
+            
+            Indecate that PrefixCodes compression algorithm is not used.
+            
+            </summary>	
+            
+        </member>
+        <member name="F:JurikSoft.Compression.PrefixCodesCompression.Adaptive">
+            <summary>
+            
+            To use PrefixCodes compression algorithm with Adaptive model.
+            
+            </summary>	
+            
+        </member>
+        <member name="F:JurikSoft.Compression.PrefixCodesCompression.NonAdaptive">
+            <summary>
+            
+            To use PrefixCodes compression algorithm with Non-Adaptive model.
+            
+            </summary>	
+            
+        </member>
+        <member name="M:JurikSoft.Compression.CommonEnvironment.Decompress(System.Byte[],System.Boolean)">
+            <returns> 
+            An Decompressed array of bytes with length > 0. 
+            </returns>
+            
+            <summary>
+            
+            Decompress input byte array that was been previously compressed by any of compression algorithm using JurikSoft Compression Library (version 1.1.0).
+            
+            </summary>
+            <example> This sample shows how to decompress byte array.
+            <code>
+            //Initializes a new instance of the CommonEnvironment class 
+            JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = 
+            new JurikSoft.Compression.CommonEnvironment();
+             
+            FileStream fileStream_DataFile = File.Open("compressed.dat");
+            
+            byte [] byteArray_DataToCompress = new byte[fileStream_DataFile.Length],
+            byte [] byteArray_DecompressedData = null;
+            
+            fileStream_DataFile.Read(byteArray_DataToCompress, 0, byteArray_DataToCompress.Length);
+            
+            //Decompress the data with verifing MD5 hash check sum
+            byteArray_DecompressedData = commonEnvironment_obj.Decompress(byteArray_DataToCompress, true);
+            
+            fileStream_DataFile.Close();
+            
+            </code>
+            </example>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.SerialNumber">
+             <summary>
+            
+             Serial Number of your product copy sended to your Registration Name
+            
+             </summary>
+            		
+             <remarks>
+            
+             If you are not registered you will see the following message every time when you call 
+             CommonEnvironment.Decompress(byte [] DataToDecompress, bool VerifyCheckSum) method: 
+             
+             <para>			
+             "You are using the FREE COPY of JurikSoft Compression Library.			
+             Please register a copy of JurikSoft Compression Library at 
+             http://www.juriksoft.net to disable this appear message."
+             </para>
+            
+             You can purchase a copy of this software product at http://www.juriksoft.net.
+              
+             <para>	
+             One copy (serial number) entitles to use this 
+             software product to one software developers team.
+             </para>
+             </remarks>
+             
+             <example> This sample shows how to use Registration Information.
+             <code>
+            
+             JurikSoft.Compression.CommonEnvironment.RegistrationName = "Test";
+             JurikSoft.Compression.CommonEnvironment.SerialNumber = "1000000000";
+            
+             </code>
+             </example>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.RegistrationName">
+             <summary>
+            
+             Registration Name that you use when you buy JurikSoft Compression Library
+            
+             </summary>
+            		
+             <remarks>
+            
+             If you are not registered you will see the following message every time when you call 
+             CommonEnvironment.Decompress(byte [] DataToDecompress, bool VerifyCheckSum) method: 
+             
+             <para>			
+             "You are using the FREE COPY of JurikSoft Compression Library.			
+             Please register a copy of JurikSoft Compression Library at 
+             http://www.juriksoft.net to disable this appear message."
+             </para>
+            
+             You can purchase a copy of this software product at http://www.juriksoft.net.
+              
+             <para>	
+             One copy (serial number) entitles to use this 
+             software product to one software developers team.
+             </para>
+             </remarks>
+             
+             <example> This sample shows how to use Registration Information.
+             <code>
+            
+             JurikSoft.Compression.CommonEnvironment.RegistrationName = "Test";
+             JurikSoft.Compression.CommonEnvironment.SerialNumber = "1000000000";
+            
+             </code>
+             </example>			
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.CompressionException">
+            <summary> 
+            The base JurikSoft Conpression exception.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.CompressionException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.InvalidDataException">
+            <summary> 
+            The exception that is thrown when compression data is invalid.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.InvalidDataException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.InvalidDataHeaderException">
+            <summary> 
+            The exception that is thrown when header of compressed data is invalid.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.InvalidDataHeaderException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.WrongCompressedSizeException">
+            <summary> 
+            The exception that is thrown when stored length of compressed data is not corresponding with actual data length.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.WrongCompressedSizeException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.WrongDecompressedSizeException">
+            <summary> 
+            The exception that is thrown when stored length of decompressed data is not corresponding with actual decompressed data length.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.WrongDecompressedSizeException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.WrongDecompressedDataHashException">
+            <summary> 
+            The exception that is thrown when stored check sum of decompressed data is not corresponding with actual check sum of decompressed data.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.WrongDecompressedDataHashException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.CompressedHashesAreNotEqualException">
+            <summary> 
+            The exception that is thrown when stored check sum of compressed data is not corresponding with actual check sum of compressed data.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.CompressedHashesAreNotEqualException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.VersionLessThanNeededException">
+            <summary> 
+            The exception that is thrown when JurikSoft Compression Library version less than needed to decompress data.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.VersionLessThanNeededException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.CompressedDataHasZeroLengthException">
+            <summary> 
+            The exception that is thrown when compressed data has zero length.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.CompressedDataHasZeroLengthException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+        <member name="T:JurikSoft.Compression.CommonEnvironment.CompressedDataArrayIsNullReferenceException">
+            <summary> 
+            The exception that is thrown when there is an attempt to decompress byte array that is a null object reference.
+            </summary>
+        </member>
+        <member name="P:JurikSoft.Compression.CommonEnvironment.CompressedDataArrayIsNullReferenceException.Message">
+            <summary> 
+            Gets a message that describes the current exception.
+            </summary>
+        </member>
+    </members>
+</doc>
