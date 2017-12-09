@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Threading;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
-using JurikSoft.Proxy;
-using JurikSoft.Proxy.Exceptions;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
+using YakSys.Proxy;
+using YakSys.Proxy.Exceptions;
 using System.IO;
 
 public partial class ConnectingServiceProviderForm : Form
@@ -27,9 +27,9 @@ public partial class ConnectingServiceProviderForm : Form
         this.checkBox_CSPForm_ProxySettings_Authentication_CheckedChanged(null, null);
         this.checkBox_CSPForm_ProxySettings_UseProxy_CheckedChanged(null, null);
 
-        this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer_CheckedChanged(null, null);
-        this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer_CheckedChanged(null, null);
-        this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer_CheckedChanged(null, null);
+        this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer_CheckedChanged(null, null);
+        this.checkBox_ChangeUINAccountState_UseYakSysCSPServer_CheckedChanged(null, null);
+        this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer_CheckedChanged(null, null);
 
         SetLanguageSettings();
 
@@ -44,16 +44,16 @@ public partial class ConnectingServiceProviderForm : Form
         this.textBox_CSPForm_CSPServersList_UIN.Text = ClientSettingsEnvironment.CSP_CSPServersList_UIN;
         this.textBox_CSPForm_CSPServersList_CustomCSPServiceIPAddress.Text = ClientSettingsEnvironment.CSP_CSPServersList_CustomCSPServiceIPAddress;
         this.textBox_CSPForm_CSPServersList_CustomCSPServicePort.Text = ClientSettingsEnvironment.CSP_CSPServersList_CustomCSPServicePort.ToString();
-        this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Checked = ClientSettingsEnvironment.CSP_CSPServersList_UseJurikSoftCSPServer;
+        this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Checked = ClientSettingsEnvironment.CSP_CSPServersList_UseYakSysCSPServer;
 
         this.textBox_CSPForm_ServerAuth_CustomCSPServiceIPAddress.Text = ClientSettingsEnvironment.CSP_ServerAuth_CustomCSPServiceIPAddress;
         this.textBox_CSPForm_ServerAuth_CustomCSPServicePort.Text = ClientSettingsEnvironment.CSP_ServerAuth_CustomCSPServicePort.ToString();
         this.textBox_CSPForm_ServerAuth_CSPLoginPassword.Text = ClientSettingsEnvironment.CSP_ServerAuth_CSPLoginPassword;
         this.textBox_CSPForm_ServerAuth_CSPLoginUIN.Text = ClientSettingsEnvironment.CSP_ServerAuth_CSPLoginUIN;
-        this.textBox_CSPForm_ServerAuth_JSRCTLogin.Text = ClientSettingsEnvironment.CSP_ServerAuth_JSRCTLogin;
-        this.textBox_CSPForm_ServerAuth_JSRCTPassword.Text = ClientSettingsEnvironment.CSP_ServerAuth_JSRCTPassword;
+        this.textBox_CSPForm_ServerAuth_YakSysRctLogin.Text = ClientSettingsEnvironment.CSP_ServerAuth_YakSysRctLogin;
+        this.textBox_CSPForm_ServerAuth_YakSysRctPassword.Text = ClientSettingsEnvironment.CSP_ServerAuth_YakSysRctPassword;
         this.textBox_CSPForm_ServerAuth_CSPServerUIN.Text = ClientSettingsEnvironment.CSP_ServerAuth_CSPServerUIN;
-        this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Checked = ClientSettingsEnvironment.CSP_ServerAuth_UseJurikSoftCSPServer;
+        this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Checked = ClientSettingsEnvironment.CSP_ServerAuth_UseYakSysCSPServer;
         this.checkBox_CSPForm_ServerAuth_WaitForServer.Checked = ClientSettingsEnvironment.CSP_ServerAuth_WaitForServer;
 
         this.checkBox_CSPForm_ProxySettings_Authentication.Checked = ClientSettingsEnvironment.CSP_ProxySettings_Authentication;
@@ -67,7 +67,7 @@ public partial class ConnectingServiceProviderForm : Form
         this.listBox_CSPForm_ProxySettings_ProxyType.SelectedIndex = ClientSettingsEnvironment.CSP_ProxySettings_ProxyTypeIndex;
 
         this.checkBox_ChangeUINAccountState_GetActivationCode.Checked = ClientSettingsEnvironment.CSP_ChangeUINAccountState_GetActivationCode;
-        this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Checked = ClientSettingsEnvironment.CSP_ChangeUINAccountState_UseJurikSoftCSPServer;
+        this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Checked = ClientSettingsEnvironment.CSP_ChangeUINAccountState_UseYakSysCSPServer;
         this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress.Text = ClientSettingsEnvironment.CSP_ChangeUINAccountState_CustomCSPServiceIPAddress;
         this.textBox_ChangeUINAccountState_CustomCSPServicePort.Text = ClientSettingsEnvironment.CSP_ChangeUINAccountState_CustomCSPServicePort.ToString();
         this.textBox_ChangeUINAccountState_UIN.Text = ClientSettingsEnvironment.CSP_ChangeUINAccountState_UIN;
@@ -81,16 +81,16 @@ public partial class ConnectingServiceProviderForm : Form
         ClientSettingsEnvironment.CSP_CSPServersList_UIN = this.textBox_CSPForm_CSPServersList_UIN.Text;
         ClientSettingsEnvironment.CSP_CSPServersList_CustomCSPServiceIPAddress = this.textBox_CSPForm_CSPServersList_CustomCSPServiceIPAddress.Text;
         ClientSettingsEnvironment.CSP_CSPServersList_CustomCSPServicePort = CSP_CSPServersLis_CSPPort;
-        ClientSettingsEnvironment.CSP_CSPServersList_UseJurikSoftCSPServer = this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Checked;
+        ClientSettingsEnvironment.CSP_CSPServersList_UseYakSysCSPServer = this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Checked;
 
         ClientSettingsEnvironment.CSP_ServerAuth_CustomCSPServiceIPAddress = this.textBox_CSPForm_ServerAuth_CustomCSPServiceIPAddress.Text;
         ClientSettingsEnvironment.CSP_ServerAuth_CustomCSPServicePort = CSP_ServerAuth_CSPPort;
         ClientSettingsEnvironment.CSP_ServerAuth_CSPLoginPassword = this.textBox_CSPForm_ServerAuth_CSPLoginPassword.Text;
         ClientSettingsEnvironment.CSP_ServerAuth_CSPLoginUIN = this.textBox_CSPForm_ServerAuth_CSPLoginUIN.Text;
-        ClientSettingsEnvironment.CSP_ServerAuth_JSRCTLogin = this.textBox_CSPForm_ServerAuth_JSRCTLogin.Text;
-        ClientSettingsEnvironment.CSP_ServerAuth_JSRCTPassword = this.textBox_CSPForm_ServerAuth_JSRCTPassword.Text;
+        ClientSettingsEnvironment.CSP_ServerAuth_YakSysRctLogin = this.textBox_CSPForm_ServerAuth_YakSysRctLogin.Text;
+        ClientSettingsEnvironment.CSP_ServerAuth_YakSysRctPassword = this.textBox_CSPForm_ServerAuth_YakSysRctPassword.Text;
         ClientSettingsEnvironment.CSP_ServerAuth_CSPServerUIN = this.textBox_CSPForm_ServerAuth_CSPServerUIN.Text;
-        ClientSettingsEnvironment.CSP_ServerAuth_UseJurikSoftCSPServer = this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Checked;
+        ClientSettingsEnvironment.CSP_ServerAuth_UseYakSysCSPServer = this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Checked;
         ClientSettingsEnvironment.CSP_ServerAuth_WaitForServer = this.checkBox_CSPForm_ServerAuth_WaitForServer.Checked;
 
         ClientSettingsEnvironment.CSP_ProxySettings_Authentication = this.checkBox_CSPForm_ProxySettings_Authentication.Checked;
@@ -104,7 +104,7 @@ public partial class ConnectingServiceProviderForm : Form
         ClientSettingsEnvironment.CSP_ProxySettings_ProxyTypeIndex = this.listBox_CSPForm_ProxySettings_ProxyType.SelectedIndex;
 
         ClientSettingsEnvironment.CSP_ChangeUINAccountState_GetActivationCode = this.checkBox_ChangeUINAccountState_GetActivationCode.Checked;
-        ClientSettingsEnvironment.CSP_ChangeUINAccountState_UseJurikSoftCSPServer = this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Checked;
+        ClientSettingsEnvironment.CSP_ChangeUINAccountState_UseYakSysCSPServer = this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Checked;
         ClientSettingsEnvironment.CSP_ChangeUINAccountState_CustomCSPServiceIPAddress = this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress.Text;
         ClientSettingsEnvironment.CSP_ChangeUINAccountState_CustomCSPServicePort = CSP_ChangeUINAccountState_CSPPort;
         ClientSettingsEnvironment.CSP_ChangeUINAccountState_UIN = this.textBox_ChangeUINAccountState_UIN.Text;
@@ -112,7 +112,7 @@ public partial class ConnectingServiceProviderForm : Form
         ClientSettingsEnvironment.CSP_ChangeUINAccountState_UINActivationCode = this.textBox_ChangeUINAccountState_UINActivationCode.Text;
         ClientSettingsEnvironment.CSP_ChangeUINAccountState_NewAccountStateIndex = this.comboBox_ChangeUINAccountState_NewAccountState.SelectedIndex;
 
-        new JsRctClientV110XMLConfigImporter().SaveCSPSettingsXmlDB();
+        new YakSysRctClientV110XMLConfigImporter().SaveCSPSettingsXmlDB();
     }
 
     void SetLanguageSettings()
@@ -180,7 +180,7 @@ public partial class ConnectingServiceProviderForm : Form
         this.label_CSPForm_CSPServersList_Password.Text = ClientStringFactory.GetString(719, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_CSPServersList_UIN.Text = ClientStringFactory.GetString(706, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_CSPServersList_ConnectionStatus.Text = ClientStringFactory.GetString(76, ClientSettingsEnvironment.CurrentLanguage);
-        this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Text = ClientStringFactory.GetString(703, ClientSettingsEnvironment.CurrentLanguage);
+        this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Text = ClientStringFactory.GetString(703, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_CSPServersList_CustomCSPServicePort.Text = ClientStringFactory.GetString(72, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_CSPServersList_CustomCSPServiceIPAddress.Text = ClientStringFactory.GetString(711, ClientSettingsEnvironment.CurrentLanguage);
 
@@ -188,15 +188,15 @@ public partial class ConnectingServiceProviderForm : Form
 
         this.groupBox_CSPForm_ServerAuthSettings.Text = ClientStringFactory.GetString(717, ClientSettingsEnvironment.CurrentLanguage);
         this.button_CSPForm_ServerAuth_RegisterNewUIN.Text = ClientStringFactory.GetString(709, ClientSettingsEnvironment.CurrentLanguage);
-        this.label_CSPForm_ServerAuth_JSRCTPassword.Text = ClientStringFactory.GetString(708, ClientSettingsEnvironment.CurrentLanguage);
-        this.label_CSPForm_ServerAuth_JSRCTLogin.Text = ClientStringFactory.GetString(707, ClientSettingsEnvironment.CurrentLanguage);
+        this.label_CSPForm_ServerAuth_YakSysRctPassword.Text = ClientStringFactory.GetString(708, ClientSettingsEnvironment.CurrentLanguage);
+        this.label_CSPForm_ServerAuth_YakSysRctLogin.Text = ClientStringFactory.GetString(707, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_ServerAuth_ConnectionStatus.Text = ClientStringFactory.GetString(76, ClientSettingsEnvironment.CurrentLanguage);
         this.button_CSPForm_ServerAuth_Connect.Text = ClientStringFactory.GetString(79, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_ServerAuth_CSPServerUIN.Text = ClientStringFactory.GetString(705, ClientSettingsEnvironment.CurrentLanguage);
         this.checkBox_CSPForm_ServerAuth_WaitForServer.Text = ClientStringFactory.GetString(704, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_ServerAuth_CustomCSPServicePort.Text = ClientStringFactory.GetString(72, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_ServerAuth_CustomCSPServiceIPAddress.Text = ClientStringFactory.GetString(711, ClientSettingsEnvironment.CurrentLanguage);
-        this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Text = ClientStringFactory.GetString(703, ClientSettingsEnvironment.CurrentLanguage);
+        this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Text = ClientStringFactory.GetString(703, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_ServerAuth_CSPLoginPassword.Text = ClientStringFactory.GetString(719, ClientSettingsEnvironment.CurrentLanguage);
         this.label_CSPForm_ServerAuth_CSPLoginUIN.Text = ClientStringFactory.GetString(706, ClientSettingsEnvironment.CurrentLanguage);
         this.textBox_CSPForm_ServerAuth_ConnectionStatus.Text = ClientStringFactory.GetString(354, ClientSettingsEnvironment.CurrentLanguage);
@@ -211,7 +211,7 @@ public partial class ConnectingServiceProviderForm : Form
         this.label_ChangeUINAccountState_CustomCSPServicePort.Text = ClientStringFactory.GetString(72, ClientSettingsEnvironment.CurrentLanguage);
         this.label_ChangeUINAccountState_CustomCSPServiceIPAddress.Text = ClientStringFactory.GetString(711, ClientSettingsEnvironment.CurrentLanguage);
         this.label_ChangeUINAccountState_Password.Text = ClientStringFactory.GetString(719, ClientSettingsEnvironment.CurrentLanguage);
-        this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Text = ClientStringFactory.GetString(703, ClientSettingsEnvironment.CurrentLanguage);
+        this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Text = ClientStringFactory.GetString(703, ClientSettingsEnvironment.CurrentLanguage);
         this.checkBox_ChangeUINAccountState_GetActivationCode.Text = ClientStringFactory.GetString(710, ClientSettingsEnvironment.CurrentLanguage);
 
         int_SelectedItemIndex = this.comboBox_ChangeUINAccountState_NewAccountState.SelectedIndex;
@@ -551,13 +551,13 @@ public partial class ConnectingServiceProviderForm : Form
 
         int int_SelectedProxyServerRowIndex = (int)this.listView_CSPForm_ProxyServersList_ProxyServersList.SelectedItems[0].Tag;
 
-        if (JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < 2 ||
-            JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
+        if (YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < 2 ||
+            YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
         {
             return;
         }
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         this.UseProxyServer = true;
 
@@ -606,7 +606,7 @@ public partial class ConnectingServiceProviderForm : Form
             return;
         }
 
-        new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().RemoveProxyServerRecord((int)this.listView_CSPForm_ProxyServersList_ProxyServersList.SelectedItems[0].Tag + 1);
+        new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().RemoveProxyServerRecord((int)this.listView_CSPForm_ProxyServersList_ProxyServersList.SelectedItems[0].Tag + 1);
 
         int int_SelectedProxyServerRowIndex = this.listView_CSPForm_ProxyServersList_ProxyServersList.SelectedItems[0].Index;
 
@@ -622,9 +622,9 @@ public partial class ConnectingServiceProviderForm : Form
             return;
         }
 
-        for (int int_CycleCount = 1; int_CycleCount != JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count; )
+        for (int int_CycleCount = 1; int_CycleCount != YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count; )
         {
-            new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().RemoveProxyServerRecord(int_CycleCount);
+            new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().RemoveProxyServerRecord(int_CycleCount);
         }
 
         this.listView_CSPForm_ProxyServersList_ProxyServersList.Items.Clear();
@@ -650,7 +650,7 @@ public partial class ConnectingServiceProviderForm : Form
 
     public void FillProxyServersList()
     {
-        ListViewItem[] listViewItemArray_ProxyServer = new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().GetProxyServersList();
+        ListViewItem[] listViewItemArray_ProxyServer = new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().GetProxyServersList();
 
         if (listViewItemArray_ProxyServer != null)
         {
@@ -1058,8 +1058,8 @@ public partial class ConnectingServiceProviderForm : Form
               string_ConnectingServicePort = this.textBox_CSPForm_ServerAuth_CustomCSPServicePort.Text,
               string_CSPLoginUIN = this.textBox_CSPForm_ServerAuth_CSPLoginUIN.Text,
               string_CSPLoginPassword = this.textBox_CSPForm_ServerAuth_CSPLoginPassword.Text,
-              string_JSRCTLogin = this.textBox_CSPForm_ServerAuth_JSRCTLogin.Text,
-              string_JSRCTPassword = this.textBox_CSPForm_ServerAuth_JSRCTPassword.Text,
+              string_YakSysRctLogin = this.textBox_CSPForm_ServerAuth_YakSysRctLogin.Text,
+              string_YakSysRctPassword = this.textBox_CSPForm_ServerAuth_YakSysRctPassword.Text,
               string_InterConnectedUIN = this.textBox_CSPForm_ServerAuth_CSPServerUIN.Text;
 
         ulong ulong_ServerUIN = CSP_ServerAuth_CSPServerUIN, ulong_CSPLoginUIN = CSP_ServerAuth_CSPLoginUIN;
@@ -1074,7 +1074,7 @@ public partial class ConnectingServiceProviderForm : Form
         bool bool_WaitForServer = this.checkBox_CSPForm_ServerAuth_WaitForServer.Checked;
         bool bool_KeepConnectionAlive = this.checkBox_CSPForm_ServerAuth_KeepConnectionAlive.Checked;
 
-        ObjCopy.obj_NetworkAction.ConnectClientToJSServerUsingCSP(this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Checked, string_ConnectingServiceHost, int_ConnectingServicePort, ulong_CSPLoginUIN, string_CSPLoginPassword, ulong_ServerUIN, string_JSRCTLogin, string_JSRCTPassword, bool_WaitForServer, bool_KeepConnectionAlive);
+        ObjCopy.obj_NetworkAction.ConnectClientToYakSysServerUsingCSP(this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Checked, string_ConnectingServiceHost, int_ConnectingServicePort, ulong_CSPLoginUIN, string_CSPLoginPassword, ulong_ServerUIN, string_YakSysRctLogin, string_YakSysRctPassword, bool_WaitForServer, bool_KeepConnectionAlive);
     }
 
 
@@ -1084,20 +1084,20 @@ public partial class ConnectingServiceProviderForm : Form
         {
             this.listView_CSPForm_CSPServersList_PublicServersList.Items.Clear();
 
-            ListViewItem listViewItem_JurikSoftServerItem;
+            ListViewItem listViewItem_YakSysServerItem;
 
             for (int int_CycleCount = 0; int_CycleCount != publicServerInfo_obj.Length; int_CycleCount++)
             {
-                listViewItem_JurikSoftServerItem = new ListViewItem(publicServerInfo_obj[int_CycleCount].UIN.ToString());
+                listViewItem_YakSysServerItem = new ListViewItem(publicServerInfo_obj[int_CycleCount].UIN.ToString());
 
-                listViewItem_JurikSoftServerItem.ImageIndex = 0;
+                listViewItem_YakSysServerItem.ImageIndex = 0;
 
-                listViewItem_JurikSoftServerItem.SubItems.Add(publicServerInfo_obj[int_CycleCount].IPAddress);
-                listViewItem_JurikSoftServerItem.SubItems.Add(publicServerInfo_obj[int_CycleCount].ConnectedTime);
+                listViewItem_YakSysServerItem.SubItems.Add(publicServerInfo_obj[int_CycleCount].IPAddress);
+                listViewItem_YakSysServerItem.SubItems.Add(publicServerInfo_obj[int_CycleCount].ConnectedTime);
 
                 ObjCopy.obj_NetworkAction.DisconnectFromCSP(ref NetworkAction.connectedClient_ServersListRetriever);
 
-                this.listView_CSPForm_CSPServersList_PublicServersList.Items.Add(listViewItem_JurikSoftServerItem);
+                this.listView_CSPForm_CSPServersList_PublicServersList.Items.Add(listViewItem_YakSysServerItem);
             }
 
             this.textBox_CSPForm_CSPServersList_ConnectionStatus.Text = ClientStringFactory.GetString(723, ClientSettingsEnvironment.CurrentLanguage);
@@ -1336,7 +1336,7 @@ public partial class ConnectingServiceProviderForm : Form
             }
             #endregion
 
-            if (this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Checked == true)
+            if (this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Checked == true)
             {
                 string_ConnectingServiceHost = CSP.ConnectingServiceProvider.GetCommonCSPIPString();
             }
@@ -1409,8 +1409,8 @@ public partial class ConnectingServiceProviderForm : Form
             string_LoginUIN = this.textBox_CSPForm_CSPServersList_UIN.Text,
             string_Password = this.textBox_CSPForm_CSPServersList_Password.Text,
             string_InterConnectedUIN = this.textBox_CSPForm_ServerAuth_CSPServerUIN.Text,
-            string_JSServerLogin = this.textBox_CSPForm_ServerAuth_JSRCTLogin.Text,
-            string_JSServerPassword = this.textBox_CSPForm_ServerAuth_JSRCTPassword.Text;
+            string_YakSysServerLogin = this.textBox_CSPForm_ServerAuth_YakSysRctLogin.Text,
+            string_YakSysServerPassword = this.textBox_CSPForm_ServerAuth_YakSysRctPassword.Text;
 
             #region CSP TCP\IP Port Parsing
 
@@ -1457,7 +1457,7 @@ public partial class ConnectingServiceProviderForm : Form
 
             SetUpCSPProxyParameters();
 
-            if (this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Checked == true)
+            if (this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Checked == true)
             {
                 string_ConnectingServiceHost = CSP.ConnectingServiceProvider.GetCommonCSPIPString();
             }
@@ -1500,19 +1500,19 @@ public partial class ConnectingServiceProviderForm : Form
         }
     }
 
-    private void checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer_CheckedChanged(object sender, EventArgs e)
+    private void checkBox_CSPForm_ServerAuth_UseYakSysCSPServer_CheckedChanged(object sender, EventArgs e)
     {
-        this.textBox_CSPForm_ServerAuth_CustomCSPServiceIPAddress.Enabled = this.textBox_CSPForm_ServerAuth_CustomCSPServicePort.Enabled = !this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Checked;
+        this.textBox_CSPForm_ServerAuth_CustomCSPServiceIPAddress.Enabled = this.textBox_CSPForm_ServerAuth_CustomCSPServicePort.Enabled = !this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Checked;
     }
 
-    private void checkBox_ChangeUINAccountState_UseJurikSoftCSPServer_CheckedChanged(object sender, EventArgs e)
+    private void checkBox_ChangeUINAccountState_UseYakSysCSPServer_CheckedChanged(object sender, EventArgs e)
     {
-        this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress.Enabled = this.textBox_ChangeUINAccountState_CustomCSPServicePort.Enabled = !this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Checked;
+        this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress.Enabled = this.textBox_ChangeUINAccountState_CustomCSPServicePort.Enabled = !this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Checked;
     }
 
-    private void checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer_CheckedChanged(object sender, EventArgs e)
+    private void checkBox_CSPForm_CSPServersList_UseYakSysCSPServer_CheckedChanged(object sender, EventArgs e)
     {
-        this.textBox_CSPForm_CSPServersList_CustomCSPServiceIPAddress.Enabled = this.textBox_CSPForm_CSPServersList_CustomCSPServicePort.Enabled = !this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Checked;
+        this.textBox_CSPForm_CSPServersList_CustomCSPServiceIPAddress.Enabled = this.textBox_CSPForm_CSPServersList_CustomCSPServicePort.Enabled = !this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Checked;
     }
 
     private void listBox_CSPForm_ProxySettings_ProxyType_SelectedIndexChanged(object sender, EventArgs e)

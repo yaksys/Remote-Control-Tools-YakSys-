@@ -15,9 +15,9 @@ namespace DataSet_Server_Ver110
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.ComponentModel.ToolboxItem(true)]
     [System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [System.Xml.Serialization.XmlRootAttribute("DataSet_JurikSoftServerDB")]
+    [System.Xml.Serialization.XmlRootAttribute("DataSet_YakSysServerDB")]
     [System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet_JurikSoftServerDB : System.Data.DataSet
+    public partial class DataSet_YakSysServerDB : System.Data.DataSet
     {
 
         private MainSettingsDataTable tableMainSettings;
@@ -33,7 +33,7 @@ namespace DataSet_Server_Ver110
         private System.Data.SchemaSerializationMode _schemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public DataSet_JurikSoftServerDB()
+        public DataSet_YakSysServerDB()
         {
             this.BeginInit();
             this.InitClass();
@@ -44,7 +44,7 @@ namespace DataSet_Server_Ver110
         }
 
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected DataSet_JurikSoftServerDB(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected DataSet_YakSysServerDB(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             :
                 base(info, context, false)
         {
@@ -201,7 +201,7 @@ namespace DataSet_Server_Ver110
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public override System.Data.DataSet Clone()
         {
-            DataSet_JurikSoftServerDB cln = ((DataSet_JurikSoftServerDB)(base.Clone()));
+            DataSet_YakSysServerDB cln = ((DataSet_YakSysServerDB)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -326,9 +326,9 @@ namespace DataSet_Server_Ver110
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitClass()
         {
-            this.DataSetName = "DataSet_JurikSoftServerDB";
+            this.DataSetName = "DataSet_YakSysServerDB";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet_JurikSoftServerDB.xsd";
+            this.Namespace = "http://tempuri.org/DataSet_YakSysServerDB.xsd";
             this.Locale = new System.Globalization.CultureInfo("en-US");
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -386,7 +386,7 @@ namespace DataSet_Server_Ver110
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(System.Xml.Schema.XmlSchemaSet xs)
         {
-            DataSet_JurikSoftServerDB ds = new DataSet_JurikSoftServerDB();
+            DataSet_YakSysServerDB ds = new DataSet_YakSysServerDB();
             System.Xml.Schema.XmlSchemaComplexType type = new System.Xml.Schema.XmlSchemaComplexType();
             System.Xml.Schema.XmlSchemaSequence sequence = new System.Xml.Schema.XmlSchemaSequence();
             xs.Add(ds.GetSchemaSerializable());
@@ -782,7 +782,7 @@ namespace DataSet_Server_Ver110
             {
                 System.Xml.Schema.XmlSchemaComplexType type = new System.Xml.Schema.XmlSchemaComplexType();
                 System.Xml.Schema.XmlSchemaSequence sequence = new System.Xml.Schema.XmlSchemaSequence();
-                DataSet_JurikSoftServerDB ds = new DataSet_JurikSoftServerDB();
+                DataSet_YakSysServerDB ds = new DataSet_YakSysServerDB();
                 xs.Add(ds.GetSchemaSerializable());
                 System.Xml.Schema.XmlSchemaAny any1 = new System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
@@ -1108,7 +1108,7 @@ namespace DataSet_Server_Ver110
             {
                 System.Xml.Schema.XmlSchemaComplexType type = new System.Xml.Schema.XmlSchemaComplexType();
                 System.Xml.Schema.XmlSchemaSequence sequence = new System.Xml.Schema.XmlSchemaSequence();
-                DataSet_JurikSoftServerDB ds = new DataSet_JurikSoftServerDB();
+                DataSet_YakSysServerDB ds = new DataSet_YakSysServerDB();
                 xs.Add(ds.GetSchemaSerializable());
                 System.Xml.Schema.XmlSchemaAny any1 = new System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
@@ -1601,7 +1601,7 @@ namespace DataSet_Server_Ver110
             {
                 System.Xml.Schema.XmlSchemaComplexType type = new System.Xml.Schema.XmlSchemaComplexType();
                 System.Xml.Schema.XmlSchemaSequence sequence = new System.Xml.Schema.XmlSchemaSequence();
-                DataSet_JurikSoftServerDB ds = new DataSet_JurikSoftServerDB();
+                DataSet_YakSysServerDB ds = new DataSet_YakSysServerDB();
                 xs.Add(ds.GetSchemaSerializable());
                 System.Xml.Schema.XmlSchemaAny any1 = new System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
@@ -1957,7 +1957,7 @@ namespace DataSet_Server_Ver110
             {
                 System.Xml.Schema.XmlSchemaComplexType type = new System.Xml.Schema.XmlSchemaComplexType();
                 System.Xml.Schema.XmlSchemaSequence sequence = new System.Xml.Schema.XmlSchemaSequence();
-                DataSet_JurikSoftServerDB ds = new DataSet_JurikSoftServerDB();
+                DataSet_YakSysServerDB ds = new DataSet_YakSysServerDB();
                 xs.Add(ds.GetSchemaSerializable());
                 System.Xml.Schema.XmlSchemaAny any1 = new System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
@@ -2257,7 +2257,7 @@ namespace DataSet_Server_Ver110
             {
                 System.Xml.Schema.XmlSchemaComplexType type = new System.Xml.Schema.XmlSchemaComplexType();
                 System.Xml.Schema.XmlSchemaSequence sequence = new System.Xml.Schema.XmlSchemaSequence();
-                DataSet_JurikSoftServerDB ds = new DataSet_JurikSoftServerDB();
+                DataSet_YakSysServerDB ds = new DataSet_YakSysServerDB();
                 xs.Add(ds.GetSchemaSerializable());
                 System.Xml.Schema.XmlSchemaAny any1 = new System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";

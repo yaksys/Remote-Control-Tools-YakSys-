@@ -547,7 +547,7 @@ public class SettingsForm : System.Windows.Forms.Form
 	
 			if(this.checkBox_SettingsForm_AutoRun.Checked) 
 			{
-				Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).SetValue("JurikSoft Server", Application.ExecutablePath + ".lnk");
+				Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).SetValue("YakSys Server", Application.ExecutablePath + ".lnk");
 			}
 			else 
 			{	
@@ -555,9 +555,9 @@ public class SettingsForm : System.Windows.Forms.Form
 
 				for(int int_CycleCount = 0; stringArray_ValueKeys.Length != int_CycleCount; int_CycleCount++)
 				{					
-					if(stringArray_ValueKeys[int_CycleCount].Equals("JurikSoft Server"))
+					if(stringArray_ValueKeys[int_CycleCount].Equals("YakSys Server"))
 					{
-						Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).DeleteValue("JurikSoft Server");
+						Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).DeleteValue("YakSys Server");
 						
 						break;
 					}

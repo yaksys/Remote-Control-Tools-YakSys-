@@ -8,29 +8,29 @@ using System.Net;
 using System.Data;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using JurikSoft.WMIClassesInfoRetriever.Win32_InstalledApplications;
-using JurikSoft.WMIClassesInfoRetriever.Win32_Hardware;
-using JurikSoft.WMIClassesInfoRetriever.Win32_OS;
-using JurikSoft.WMIClassesInfoRetriever.CIM_Common;
-using JurikSoft.WMIClassesInfoRetriever;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
-using JurikSoft.XMLConfigImporer;
+using YakSys.WMIClassesInfoRetriever.Win32_InstalledApplications;
+using YakSys.WMIClassesInfoRetriever.Win32_Hardware;
+using YakSys.WMIClassesInfoRetriever.Win32_OS;
+using YakSys.WMIClassesInfoRetriever.CIM_Common;
+using YakSys.WMIClassesInfoRetriever;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
+using YakSys.XMLConfigImporter;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Server_Core
     {
         [Serializable]
         public class NetworkSecurity : MarshalByRefObject
         {
-            public static void LoadSecurityDB(JurikSoft.XMLConfigImporer.JSServerDBEnvironment.SecurityDataBase[] securityDataBaseArray_UsersList)
+            public static void LoadSecurityDB(YakSys.XMLConfigImporter.YakSysServerDBEnvironment.SecurityDataBase[] securityDataBaseArray_UsersList)
             {
                 for (int int_CycleCount = 0; int_CycleCount != securityDataBaseArray_UsersList.Length; int_CycleCount++)
                 {
                     AddNewUser(securityDataBaseArray_UsersList[int_CycleCount].UserName, securityDataBaseArray_UsersList[int_CycleCount].Login, securityDataBaseArray_UsersList[int_CycleCount].Password, securityDataBaseArray_UsersList[int_CycleCount].CreationTime, securityDataBaseArray_UsersList[int_CycleCount].IsAccountEnabled);
                 }
             }
-            public static void LoadAccessRestrictionRulesDB(JurikSoft.XMLConfigImporer.JSServerDBEnvironment.AccessRestrictionRule[] accessRestrictionRuleArray_RulesList)
+            public static void LoadAccessRestrictionRulesDB(YakSys.XMLConfigImporter.YakSysServerDBEnvironment.AccessRestrictionRule[] accessRestrictionRuleArray_RulesList)
             {
                 for (int int_CycleCount = 0; int_CycleCount != accessRestrictionRuleArray_RulesList.Length; int_CycleCount++)
                 {
@@ -41,7 +41,7 @@ namespace JurikSoft
 
             public static void RemoveAccessRestrictionRule(int int_AccessRestrinctionRuleIndex)
             {
-                new JurikSoft.XMLConfigImporer.JSServerDBEnvironment().RemoveAccessRestrictionRulesDataBaseRow(int_AccessRestrinctionRuleIndex);
+                new YakSys.XMLConfigImporter.YakSysServerDBEnvironment().RemoveAccessRestrictionRulesDataBaseRow(int_AccessRestrinctionRuleIndex);
 
                 AccessRestrictionRuleObject.AccessRestrictionRules.RemoveAt(int_AccessRestrinctionRuleIndex);
             }
@@ -64,7 +64,7 @@ namespace JurikSoft
 
                 userAccount_NewUser.IsEnabled = bool_IsAccountEnabled;
 
-                userAccount_NewUser.AccountType = UserAccount.AccountTypesEnum.JurikSoftAccount;
+                userAccount_NewUser.AccountType = UserAccount.AccountTypesEnum.YakSysAccount;
 
                 NetworkSecurity.UserAccount.UsersAccounts.Add(userAccount_NewUser);
 
@@ -77,13 +77,13 @@ namespace JurikSoft
             
             public void RemotingWrapper_StoreUserAccountToDB(string string_UserName, string string_Login, string string_Password, string string_FirstName, string string_LastName, string string_MiddleName, string string_EMailAddress, string string_ICQ, string string_Company, string string_WorkPhone, string string_HomePhome, string string_PrivateCellular, DateTime dateTime_CreationTime, bool bool_IsAccountEnabled)
             {
-                DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.SecurityDataBase;
+                YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.SecurityDataBase;
 
                 ////////////////////////////////////////////////////////////////////////////////
 
                 DataRow dataRow_NewRecord = null;
 
-                dataRow_NewRecord = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.SecurityDataBase.NewRow();
+                dataRow_NewRecord = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.SecurityDataBase.NewRow();
 
                 int int_SecurityDataBaseID = 0;
 
@@ -119,16 +119,16 @@ namespace JurikSoft
                 dataRow_NewRecord[securityDataBaseDataTable_obj.PrivateCellularColumn] = string_PrivateCellular;
                 dataRow_NewRecord[securityDataBaseDataTable_obj.CreationTimeColumn] = dateTime_CreationTime;
 
-                JsRctServerV110XMLConfigImporter.JurikSoftServerDB.SecurityDataBase.Rows.Add(dataRow_NewRecord);
+                YakSysRctServerV110XMLConfigImporter.YakSysServerDB.SecurityDataBase.Rows.Add(dataRow_NewRecord);
 
                 ////////////////////////////////////////////////////////////////////////////////////////
             }
             
-            public static int GetJurikSoftAccountRealRowIndex(int int_AccountIndex)
+            public static int GetYakSysAccountRealRowIndex(int int_AccountIndex)
             {
                 int int_RealDBRowAccountIndex = 0;
 
-                //Calculate real DB Row account index (Windows Accounts not stored in JsDB)
+                //Calculate real DB Row account index (Windows Accounts not stored in YakSysDB)
                 for (int int_CycleCount = 0; int_CycleCount != UserAccount.UsersAccounts.Count; int_CycleCount++)
                 {
                     if (UserAccount.UsersAccounts[int_AccountIndex] == UserAccount.UsersAccounts[int_CycleCount])
@@ -144,29 +144,29 @@ namespace JurikSoft
 
                 return int_RealDBRowAccountIndex;
             }
-            public int RemotingWrapper_GetJurikSoftAccountRealRowIndex(int int_AccountIndex)
+            public int RemotingWrapper_GetYakSysAccountRealRowIndex(int int_AccountIndex)
             {
-                return NetworkSecurity.GetJurikSoftAccountRealRowIndex(int_AccountIndex);
+                return NetworkSecurity.GetYakSysAccountRealRowIndex(int_AccountIndex);
             }
 
             public static void RemoveAccount(int int_AccountIndex)
             {
-                JurikSoftTcpClient jurikSoftTcpClient_CurrentObj = null;
+                YakSysTcpClient YakSysTcpClient_CurrentObj = null;
             
                 UserAccount.UsersAccounts[int_AccountIndex].IsEnabled = false;
 
                 for (; 0 != UserAccount.UsersAccounts[int_AccountIndex].ClientsUsingAccount.Count; )
                 {
-                    jurikSoftTcpClient_CurrentObj = UserAccount.UsersAccounts[int_AccountIndex].ClientsUsingAccount[0];
+                    YakSysTcpClient_CurrentObj = UserAccount.UsersAccounts[int_AccountIndex].ClientsUsingAccount[0];
 
-                    if (jurikSoftTcpClient_CurrentObj.RequestToDisconnect == true) continue;
+                    if (YakSysTcpClient_CurrentObj.RequestToDisconnect == true) continue;
 
-                    ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(jurikSoftTcpClient_CurrentObj, 3);
+                    ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(YakSysTcpClient_CurrentObj, 3);
                 }
 
                 UserAccount.UsersAccounts[int_AccountIndex].DisconnectAllClients();
 
-                new JurikSoft.XMLConfigImporer.JSServerDBEnvironment().RemoveSecurityDataBaseRow(GetJurikSoftAccountRealRowIndex(int_AccountIndex));
+                new YakSys.XMLConfigImporter.YakSysServerDBEnvironment().RemoveSecurityDataBaseRow(GetYakSysAccountRealRowIndex(int_AccountIndex));
 
                 UserAccount.UsersAccounts.RemoveAt(int_AccountIndex);
             }
@@ -177,7 +177,7 @@ namespace JurikSoft
 
             public static void ClearAccounts()
             {
-                JurikSoftTcpClient jurikSoftTcpClient_CurrentObj = null;
+                YakSysTcpClient YakSysTcpClient_CurrentObj = null;
 
                 foreach (UserAccount obj_UserAccount in UserAccount.UsersAccounts)
                 {
@@ -185,11 +185,11 @@ namespace JurikSoft
                     {
                         for (; 0 != obj_UserAccount.ClientsUsingAccount.Count; )
                         {
-                            jurikSoftTcpClient_CurrentObj = obj_UserAccount.ClientsUsingAccount[0];
+                            YakSysTcpClient_CurrentObj = obj_UserAccount.ClientsUsingAccount[0];
 
-                            if (jurikSoftTcpClient_CurrentObj.RequestToDisconnect == true) continue;
+                            if (YakSysTcpClient_CurrentObj.RequestToDisconnect == true) continue;
 
-                            ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(jurikSoftTcpClient_CurrentObj, 3);
+                            ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(YakSysTcpClient_CurrentObj, 3);
                         }
 
                         obj_UserAccount.IsEnabled = false;
@@ -198,7 +198,7 @@ namespace JurikSoft
 
                 UserAccount.UsersAccounts.Clear();
 
-                new JurikSoft.XMLConfigImporer.JSServerDBEnvironment().ClearSecurityDataBase();
+                new YakSys.XMLConfigImporter.YakSysServerDBEnvironment().ClearSecurityDataBase();
             }
             public void RemotingWrapper_ClearAccounts()
             {
@@ -209,7 +209,7 @@ namespace JurikSoft
             {
                 AccessRestrictionRuleObject.AccessRestrictionRules.Clear();
 
-                new JurikSoft.XMLConfigImporer.JSServerDBEnvironment().ClearAccessRestrictionRulesDataBase();
+                new YakSys.XMLConfigImporter.YakSysServerDBEnvironment().ClearAccessRestrictionRulesDataBase();
             }
             public void RemotingWrapper_ClearAccessRestrictionRules()
             {
@@ -218,11 +218,11 @@ namespace JurikSoft
 
             static void EditUserAccountInDB(string string_FirstName, string string_LastName, string string_MiddleName, string string_EMailAddress, string string_ICQ, string string_Company, string string_WorkPhone, string string_HomePhome, string string_PrivateCellular, int int_EditedRecordIndex)
             {
-                DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.SecurityDataBase;
+                YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.SecurityDataBase;
 
-                int_EditedRecordIndex = GetJurikSoftAccountRealRowIndex(int_EditedRecordIndex);
+                int_EditedRecordIndex = GetYakSysAccountRealRowIndex(int_EditedRecordIndex);
 
-                DataRow dataRow_EditedRecord = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.SecurityDataBase[int_EditedRecordIndex];
+                DataRow dataRow_EditedRecord = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.SecurityDataBase[int_EditedRecordIndex];
                 
                 dataRow_EditedRecord[securityDataBaseDataTable_obj.UserFirstNameColumn] = string_FirstName;
                 dataRow_EditedRecord[securityDataBaseDataTable_obj.UserLastNameColumn] = string_LastName;
@@ -241,7 +241,7 @@ namespace JurikSoft
                        
             public static void RefreshWindowsAccountsDB()
             {
-                JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever obj_WMIClassesInfoRetriever = new JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever(JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever.NullReferencesHandlerMechanism.SetToDefaults);
+                YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever obj_WMIClassesInfoRetriever = new YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever(YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever.NullReferencesHandlerMechanism.SetToDefaults);
 
                 Win32_UserAccount[] arrayWin32_UserAccount_obj = obj_WMIClassesInfoRetriever.GetWin32_UserAccountInfo();
 
@@ -300,7 +300,7 @@ namespace JurikSoft
             }
 
 
-            public static void RSADecryptAndSetPrimaryAESKeyInfo(MemoryStream memoryStream_EncryptedData, string string_XMLStringWithPrivateRSAKeys, JurikSoftTcpClient jurikSoftTcpClient_obj)
+            public static void RSADecryptAndSetPrimaryAESKeyInfo(MemoryStream memoryStream_EncryptedData, string string_XMLStringWithPrivateRSAKeys, YakSysTcpClient YakSysTcpClient_obj)
             {
                 int int_PrimaryAESKeySize = CommonMethods.ReadIntFromStream(memoryStream_EncryptedData);
 
@@ -318,12 +318,12 @@ namespace JurikSoft
                        byteArray_DecryptedPrimaryAESIV = rSACryptoServiceProvider_obj.Decrypt(byteArray_EncryptedPrimaryAESIV, false);
                 
 
-                jurikSoftTcpClient_obj.AES256bit_PrimaryObj = new RijndaelManaged();
+                YakSysTcpClient_obj.AES256bit_PrimaryObj = new RijndaelManaged();
 
-                jurikSoftTcpClient_obj.AES256bit_PrimaryObj.KeySize = int_PrimaryAESKeySize;
+                YakSysTcpClient_obj.AES256bit_PrimaryObj.KeySize = int_PrimaryAESKeySize;
 
-                jurikSoftTcpClient_obj.AES256bit_PrimaryObj.Key = byteArray_DecryptedPrimaryAESKey;
-                jurikSoftTcpClient_obj.AES256bit_PrimaryObj.IV = byteArray_DecryptedPrimaryAESIV;
+                YakSysTcpClient_obj.AES256bit_PrimaryObj.Key = byteArray_DecryptedPrimaryAESKey;
+                YakSysTcpClient_obj.AES256bit_PrimaryObj.IV = byteArray_DecryptedPrimaryAESIV;
 
                 rSACryptoServiceProvider_obj.Clear();
 
@@ -394,13 +394,13 @@ namespace JurikSoft
             }
             public void RemotingWrapper_StoreAccessRestrictionRuleToDB(string string_IPRangeStartValue, string string_IPRangeEndValue, string string_IPAddressValue, string string_MACAddress, bool bool_ComplementaryUseMACAddress, DateTime dateTime_CreationTime, int int_RuleType, bool bool_IsRuleEnabled)
             {
-                DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.AccessRestrictionRules;
+                YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.AccessRestrictionRules;
 
                 ////////////////////////////////////////////////////////////////////////////////
 
                 DataRow dataRow_NewRecord = null;
 
-                dataRow_NewRecord = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.AccessRestrictionRules.NewRow();
+                dataRow_NewRecord = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.AccessRestrictionRules.NewRow();
 
                 int int_AccessRestrictionRulesID = 0;
 
@@ -430,7 +430,7 @@ namespace JurikSoft
                 dataRow_NewRecord[accessRestrictionRulesDataTable_obj.CreationTimeColumn] = dateTime_CreationTime;
                 dataRow_NewRecord[accessRestrictionRulesDataTable_obj.IsRestrictionEnabledColumn] = bool_IsRuleEnabled;
 
-                JsRctServerV110XMLConfigImporter.JurikSoftServerDB.AccessRestrictionRules.Rows.Add(dataRow_NewRecord);
+                YakSysRctServerV110XMLConfigImporter.YakSysServerDB.AccessRestrictionRules.Rows.Add(dataRow_NewRecord);
             }
             public void RemotingWrapper_AddNewAccessRestrictionRule(IPAddress iPAddress_IPAddressesRangeStartValue, IPAddress iPAddress_IPAddressesRangeEndValue, IPAddress iPAddress_IPAddress, string string_MACAddress, bool bool_ComplementaryUseMACAddress, DateTime dateTime_CreationTime, int int_RuleType, bool bool_IsRuleEnabled)
             {
@@ -459,11 +459,11 @@ namespace JurikSoft
             }
             public void RemotingWrapper_EditExistingAccessRestrictionRuleInDB(string string_IPAddressesRangeStartValue, string string_IPAddressesRangeEndValue, string string_IPAddress, string string_MACAddress, bool bool_ComplementaryUseMACAddress, int int_RuleType, int int_RuleIndex)
             {
-                DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.AccessRestrictionRules;
+                YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.AccessRestrictionRules;
 
                 DataRow dataRow_EditedRecord = null;
 
-                dataRow_EditedRecord = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.AccessRestrictionRules[int_RuleIndex];
+                dataRow_EditedRecord = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.AccessRestrictionRules[int_RuleIndex];
 
                 dataRow_EditedRecord[accessRestrictionRulesDataTable_obj.IPRangeStartValueColumn] = string_IPAddressesRangeStartValue;
                 dataRow_EditedRecord[accessRestrictionRulesDataTable_obj.IPRangeEndValueColumn] = string_IPAddressesRangeEndValue;
@@ -474,7 +474,7 @@ namespace JurikSoft
             }
             
 
-            public static bool AuthorizeConnectedUser(ref JurikSoftTcpClient jurikSoftTcpClient_obj, out NetworkSecurity.UserAccount userAccount_CurrentUser, string string_Login, string string_Password)
+            public static bool AuthorizeConnectedUser(ref YakSysTcpClient YakSysTcpClient_obj, out NetworkSecurity.UserAccount userAccount_CurrentUser, string string_Login, string string_Password)
             {
                 bool bool_IsAuthUser = false;
 
@@ -486,13 +486,13 @@ namespace JurikSoft
                     {
                         userAccount_CurrentUser = NetworkSecurity.UserAccount.UsersAccounts[int_CycleCount];
 
-                        if (userAccount_CurrentUser.AccountType == NetworkSecurity.UserAccount.AccountTypesEnum.JurikSoftAccount)
+                        if (userAccount_CurrentUser.AccountType == NetworkSecurity.UserAccount.AccountTypesEnum.YakSysAccount)
                         {
                             if (string_Password == NetworkSecurity.UserAccount.UsersAccounts[int_CycleCount].Password)
                             {
                                 bool_IsAuthUser = true;
 
-                                jurikSoftTcpClient_obj.SessionStatisticAndInfo_Obj.NetworkInformation_AccountType = ServerStringFactory.GetString(756, ServerSettingsEnvironment.CurrentLanguage);
+                                YakSysTcpClient_obj.SessionStatisticAndInfo_Obj.NetworkInformation_AccountType = ServerStringFactory.GetString(756, ServerSettingsEnvironment.CurrentLanguage);
                             }
                         }
 
@@ -501,12 +501,12 @@ namespace JurikSoft
                         {
                             bool_IsAuthUser = NetworkSecurity.IsWindowsAuthUser(null, new StringBuilder(string_Login), new StringBuilder(string_Password), new HandleRef());
 
-                            jurikSoftTcpClient_obj.SessionStatisticAndInfo_Obj.NetworkInformation_AccountType = ServerStringFactory.GetString(757, ServerSettingsEnvironment.CurrentLanguage);
+                            YakSysTcpClient_obj.SessionStatisticAndInfo_Obj.NetworkInformation_AccountType = ServerStringFactory.GetString(757, ServerSettingsEnvironment.CurrentLanguage);
                         }
 
-                        jurikSoftTcpClient_obj.IsAccountEnabled = ((NetworkSecurity.UserAccount)NetworkSecurity.UserAccount.UsersAccounts[int_CycleCount]).IsEnabled;
+                        YakSysTcpClient_obj.IsAccountEnabled = ((NetworkSecurity.UserAccount)NetworkSecurity.UserAccount.UsersAccounts[int_CycleCount]).IsEnabled;
 
-                        NetworkSecurity.UserAccount.UsersAccounts[int_CycleCount].AddClient(jurikSoftTcpClient_obj);
+                        NetworkSecurity.UserAccount.UsersAccounts[int_CycleCount].AddClient(YakSysTcpClient_obj);
 
                         break;
                     }
@@ -514,9 +514,9 @@ namespace JurikSoft
 
                 return bool_IsAuthUser;
             }
-            public bool RemotingWrapper_AuthorizeConnectedUser(ref JurikSoftTcpClient jurikSoftTcpClient_obj, out NetworkSecurity.UserAccount userAccount_CurrentUser, string string_Login, string string_Password)
+            public bool RemotingWrapper_AuthorizeConnectedUser(ref YakSysTcpClient YakSysTcpClient_obj, out NetworkSecurity.UserAccount userAccount_CurrentUser, string string_Login, string string_Password)
             {
-                return NetworkSecurity.AuthorizeConnectedUser(ref jurikSoftTcpClient_obj, out userAccount_CurrentUser, string_Login, string_Password);
+                return NetworkSecurity.AuthorizeConnectedUser(ref YakSysTcpClient_obj, out userAccount_CurrentUser, string_Login, string_Password);
             }
 
             public static bool CheckAccessPossible(IPAddress iPAddress_IPAddress, string string_MACAddress)
@@ -582,7 +582,7 @@ namespace JurikSoft
                 return NetworkSecurity.CheckAccessPossible(iPAddress_IPAddress, string_MACAddress);
             }
 
-            [DllImport("JsRctServerLib.dll", CharSet = CharSet.Ansi)]
+            [DllImport("YakSysRctServerLib.dll", CharSet = CharSet.Ansi)]
             private static extern unsafe bool CheckPassword_LogonUser(StringBuilder stringBuilder_DomainName, StringBuilder stringBuilder_UserName, StringBuilder stringBuilder_Password, HandleRef phToken);
             private bool RemotingWrapper_CheckPassword_LogonUser(StringBuilder stringBuilder_DomainName, StringBuilder stringBuilder_UserName, StringBuilder stringBuilder_Password, HandleRef phToken)
             {
@@ -714,13 +714,13 @@ namespace JurikSoft
                     }
                 }
 
-                public enum AccountTypesEnum { JurikSoftAccount, WindowsAccount };
+                public enum AccountTypesEnum { YakSysAccount, WindowsAccount };
 
-                public AccountTypesEnum AccountType = AccountTypesEnum.JurikSoftAccount;
+                public AccountTypesEnum AccountType = AccountTypesEnum.YakSysAccount;
 
-                List<JurikSoftTcpClient> list_ClientsUsingAccount = new List<JurikSoftTcpClient>();
+                List<YakSysTcpClient> list_ClientsUsingAccount = new List<YakSysTcpClient>();
 
-                public List<JurikSoftTcpClient> ClientsUsingAccount
+                public List<YakSysTcpClient> ClientsUsingAccount
                 {
                     get
                     {
@@ -728,43 +728,43 @@ namespace JurikSoft
                     }
                 }
 
-                public void AddClient(JurikSoftTcpClient jurikSoftTcpClient_obj)
+                public void AddClient(YakSysTcpClient YakSysTcpClient_obj)
                 {
-                    jurikSoftTcpClient_obj.IsAccountEnabled = IsEnabled;
+                    YakSysTcpClient_obj.IsAccountEnabled = IsEnabled;
 
-                    ClientsUsingAccount.Add(jurikSoftTcpClient_obj);
+                    ClientsUsingAccount.Add(YakSysTcpClient_obj);
                 }
 
                 public void DisconnectAllClients()
                 {
-                    JurikSoftTcpClient jurikSoftTcpClient_CurrentObj = null;
+                    YakSysTcpClient YakSysTcpClient_CurrentObj = null;
 
                     this.IsEnabled = false;
 
                     for (; 0 != this.ClientsUsingAccount.Count; )
                     {
-                        jurikSoftTcpClient_CurrentObj = this.ClientsUsingAccount[0];
+                        YakSysTcpClient_CurrentObj = this.ClientsUsingAccount[0];
 
-                        if (jurikSoftTcpClient_CurrentObj.RequestToDisconnect == true) continue;
+                        if (YakSysTcpClient_CurrentObj.RequestToDisconnect == true) continue;
 
-                        ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(jurikSoftTcpClient_CurrentObj, 3);
+                        ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(YakSysTcpClient_CurrentObj, 3);
                     }
                 }
 
                 public void ChangeAccountState()
                 {
-                    JurikSoftTcpClient jurikSoftTcpClient_CurrentObj = null;
+                    YakSysTcpClient YakSysTcpClient_CurrentObj = null;
 
                     LocalAction localAction_obj = new LocalAction();
 
                     for (int int_intCycleCount = 0; int_intCycleCount != ClientsUsingAccount.Count; int_intCycleCount++)
                     {
-                        jurikSoftTcpClient_CurrentObj = ClientsUsingAccount[int_intCycleCount];
+                        YakSysTcpClient_CurrentObj = ClientsUsingAccount[int_intCycleCount];
 
-                        localAction_obj.CurrentlyUsedTcpClient = jurikSoftTcpClient_CurrentObj;
+                        localAction_obj.CurrentlyUsedTcpClient = YakSysTcpClient_CurrentObj;
 
-                        if (jurikSoftTcpClient_CurrentObj.IsAccountEnabled == IsEnabled ||
-                            jurikSoftTcpClient_CurrentObj.RequestToDisconnect)
+                        if (YakSysTcpClient_CurrentObj.IsAccountEnabled == IsEnabled ||
+                            YakSysTcpClient_CurrentObj.RequestToDisconnect)
                         {
                             continue;
                         }
@@ -788,7 +788,7 @@ namespace JurikSoft
 
                 public void DisableAccount()
                 {
-                    DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.SecurityDataBase;
+                    YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.SecurityDataBase;
 
                     this.IsEnabled = false;
 
@@ -815,7 +815,7 @@ namespace JurikSoft
 
                 public void EnableAccount()
                 {
-                    DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.SecurityDataBase;
+                    YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.SecurityDataBase;
 
                     this.IsEnabled = true;
 
@@ -983,7 +983,7 @@ namespace JurikSoft
 
                 public void DisableRule()
                 {
-                    DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.AccessRestrictionRules;
+                    YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.AccessRestrictionRules;
 
                     this.IsEnabled = false;
 
@@ -994,7 +994,7 @@ namespace JurikSoft
 
                 public void EnableRule()
                 {
-                    DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.AccessRestrictionRules;
+                    YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.AccessRestrictionRules;
 
                     this.IsEnabled = true;
 

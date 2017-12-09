@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using JurikSoft.RCTServiceGUI;
+using YakSys.RCTServiceGUI;
 
 public class AboutForm : System.Windows.Forms.Form
 {
@@ -19,7 +19,7 @@ public class AboutForm : System.Windows.Forms.Form
 	private System.Windows.Forms.TextBox textBox_ProductCopyOwner;
 	private System.Windows.Forms.TextBox textBox_ProductSerialNumber;
 	private System.Windows.Forms.Label label_ProductNotRegistered;
-    private PictureBox pictureBox_ZNIISLogo;
+    private PictureBox pictureBox_YakSysLogo;
     private System.ComponentModel.Container components = null;
 
 	public AboutForm()
@@ -102,10 +102,10 @@ public class AboutForm : System.Windows.Forms.Form
             this.button_BuyNow = new System.Windows.Forms.Button();
             this.button_OK = new System.Windows.Forms.Button();
             this.groupBox_Contacts = new System.Windows.Forms.GroupBox();
-            this.pictureBox_ZNIISLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBox_YakSysLogo = new System.Windows.Forms.PictureBox();
             this.groupBox_RegistrationInformation.SuspendLayout();
             this.groupBox_Contacts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ZNIISLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_YakSysLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox_About
@@ -231,20 +231,20 @@ public class AboutForm : System.Windows.Forms.Form
             this.groupBox_Contacts.TabStop = false;
             this.groupBox_Contacts.Text = "Контактная информация";
             // 
-            // pictureBox_ZNIISLogo
+            // pictureBox_YakSysLogo
             // 
-            this.pictureBox_ZNIISLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_ZNIISLogo.InitialImage")));
-            this.pictureBox_ZNIISLogo.Location = new System.Drawing.Point(8, 228);
-            this.pictureBox_ZNIISLogo.Name = "pictureBox_ZNIISLogo";
-            this.pictureBox_ZNIISLogo.Size = new System.Drawing.Size(368, 49);
-            this.pictureBox_ZNIISLogo.TabIndex = 6;
-            this.pictureBox_ZNIISLogo.TabStop = false;
+            this.pictureBox_YakSysLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_YakSysLogo.InitialImage")));
+            this.pictureBox_YakSysLogo.Location = new System.Drawing.Point(8, 228);
+            this.pictureBox_YakSysLogo.Name = "pictureBox_YakSysLogo";
+            this.pictureBox_YakSysLogo.Size = new System.Drawing.Size(368, 49);
+            this.pictureBox_YakSysLogo.TabIndex = 6;
+            this.pictureBox_YakSysLogo.TabStop = false;
             // 
             // AboutForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(504, 281);
-            this.Controls.Add(this.pictureBox_ZNIISLogo);
+            this.Controls.Add(this.pictureBox_YakSysLogo);
             this.Controls.Add(this.groupBox_Contacts);
             this.Controls.Add(this.button_OK);
             this.Controls.Add(this.groupBox_RegistrationInformation);
@@ -261,7 +261,7 @@ public class AboutForm : System.Windows.Forms.Form
             this.groupBox_RegistrationInformation.ResumeLayout(false);
             this.groupBox_RegistrationInformation.PerformLayout();
             this.groupBox_Contacts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ZNIISLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_YakSysLogo)).EndInit();
             this.ResumeLayout(false);
 
 	}
@@ -273,9 +273,9 @@ public class AboutForm : System.Windows.Forms.Form
 	}
 
 	
-	private void pictureBox_JurikSoftTitle_Click(object sender, System.EventArgs e)
+	private void pictureBox_YakSysTitle_Click(object sender, System.EventArgs e)
 	{
-		System.Diagnostics.Process.Start("http://www.juriksoft.net");
+		System.Diagnostics.Process.Start("http://www.YakSys.net");
 	}
 
 	

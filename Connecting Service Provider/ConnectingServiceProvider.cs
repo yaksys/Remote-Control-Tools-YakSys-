@@ -7,9 +7,9 @@ using System.Text;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using ZNIISRCT.Compression;
+using YakSys.Compression;
 using System.Runtime.InteropServices;
-using ZNIISRCT.XMLConfigImporer.JsRctServer.Version110;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
 
 #region common methods and enumerations
 
@@ -831,7 +831,7 @@ namespace CSP
                 {
                     if (networkStream_ThisClient == null) networkStream_ThisClient = this.GetStream();
 
-                    iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
+                    iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
 
                     memoryStream_DataToSend.SetLength(0);
 
@@ -852,13 +852,13 @@ namespace CSP
                     {
                         if (SentDataType_Current == SentDataType.ApplicationData)
                         {
-                            iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
+                            iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
 
                             byte_IsDataCompressed = (byte)this.CompressSendingSystemDataAlgorithm;
                         }
                         else
                         {
-                            iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingFileObjectsDataAlgorithm];
+                            iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingFileObjectsDataAlgorithm];
 
                             byte_IsDataCompressed = (byte)this.CompressSendingFileObjectsDataAlgorithm;
                         }
@@ -1492,17 +1492,17 @@ namespace CSP
             {
                 try
                 {
-                    ZNIISRCT.Proxy.ProxyProvider proxyProvider_obj = new ZNIISRCT.Proxy.ProxyProvider();
+                    YakSys.Proxy.ProxyProvider proxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 
-                    proxyProvider_obj.SendingSocks4ConnectionRequest += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks4ConnectionRequest);
-                    proxyProvider_obj.SendingSocks5AuthenticationRequest += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks5AuthenticationRequest);
-                    proxyProvider_obj.SendingSocks5ConnectionRequest += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks5ConnectionRequest);
-                    proxyProvider_obj.SendingSocks5RequestDetails += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks5RequestDetails);
+                    proxyProvider_obj.SendingSocks4ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks4ConnectionRequest);
+                    proxyProvider_obj.SendingSocks5AuthenticationRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks5AuthenticationRequest);
+                    proxyProvider_obj.SendingSocks5ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks5ConnectionRequest);
+                    proxyProvider_obj.SendingSocks5RequestDetails += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_SendingSocks5RequestDetails);
 
-                    proxyProvider_obj.WaitingForReplyToSocks4ConnectionRequest += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks4ConnectionRequest);
-                    proxyProvider_obj.WaitingForReplyToSocks5AuthenticationRequest += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks5AuthenticationRequest);
-                    proxyProvider_obj.WaitingForReplyToSocks5ConnectionRequest += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks5ConnectionRequest);
-                    proxyProvider_obj.WaitingForReplyToSocks5RequestDetails += new ZNIISRCT.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks5RequestDetails);
+                    proxyProvider_obj.WaitingForReplyToSocks4ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks4ConnectionRequest);
+                    proxyProvider_obj.WaitingForReplyToSocks5AuthenticationRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks5AuthenticationRequest);
+                    proxyProvider_obj.WaitingForReplyToSocks5ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks5ConnectionRequest);
+                    proxyProvider_obj.WaitingForReplyToSocks5RequestDetails += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(CSPProxySupport.ProxyProvider_WaitingForReplyToSocks5RequestDetails);
 
                     if (CSPProxySupport.ProxyTypeIndex <= 0)
                     {
@@ -1511,8 +1511,8 @@ namespace CSP
                         return;
                     }
 
-                    ZNIISRCT.Proxy.ProxyProvider.SerialNumber = "4688445487";
-                    ZNIISRCT.Proxy.ProxyProvider.RegistrationName = "ZNIISRCT";
+                    YakSys.Proxy.ProxyProvider.SerialNumber = "4688445487";
+                    YakSys.Proxy.ProxyProvider.RegistrationName = "YakSys";
 
                     Socket socket_ConnectedObj = base.Socket;
 
@@ -1564,9 +1564,9 @@ namespace CSP
             {
                 BaseChannelObject baseChannelObject_obj = (BaseChannelObject)baseChannelObject_Client;
 
-                ZNIISRCT.Compression.CommonEnvironment commonEnvironment_obj = new ZNIISRCT.Compression.CommonEnvironment();
+                YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                 byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -1708,9 +1708,9 @@ namespace CSP
             {
                 BaseChannelObject baseChannelObject_obj = (BaseChannelObject)baseChannelObject_Client;
 
-                ZNIISRCT.Compression.CommonEnvironment commonEnvironment_obj = new ZNIISRCT.Compression.CommonEnvironment();
+                YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                 byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -1865,9 +1865,9 @@ namespace CSP
             {
                 BaseChannelObject baseChannelObject_obj = (BaseChannelObject)baseChannelObject_Server;
 
-                ZNIISRCT.Compression.CommonEnvironment commonEnvironment_obj = new ZNIISRCT.Compression.CommonEnvironment();
+                YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                 byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -2008,9 +2008,9 @@ namespace CSP
             {
                 BaseChannelObject baseChannelObject_obj = (BaseChannelObject)baseChannelObject_Server;
 
-                ZNIISRCT.Compression.CommonEnvironment commonEnvironment_obj = new ZNIISRCT.Compression.CommonEnvironment();
+                YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                 byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -3069,9 +3069,9 @@ namespace CSP
             {
                 BaseChannelObject baseChannelObject_obj = (BaseChannelObject)baseChannelObject_Client;
 
-                ZNIISRCT.Compression.CommonEnvironment commonEnvironment_obj = new ZNIISRCT.Compression.CommonEnvironment();
+                YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                 byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -3296,7 +3296,7 @@ namespace CSP
 
         public ConnectedClient ActivateClientUINRequest(string string_Host, int int_Port, ulong ulong_UIN, string string_Password, ulong ulong_ActivationCode)
         {
-            ConnectedClient connectedClient_obj = ConnectSystemClientChannelToJSConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
+            ConnectedClient connectedClient_obj = ConnectSystemClientChannelToYakSysConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
 
             if (connectedClient_obj == null || connectedClient_obj.SystemChannel == null || connectedClient_obj.SystemChannel.IsConnected == false)
             {
@@ -3314,7 +3314,7 @@ namespace CSP
 
         public ConnectedServer ActivateServerUINRequest(string string_Host, int int_Port, ulong ulong_UIN, string string_Password, ulong ulong_ActivationCode)
         {
-            ConnectedServer connectedServer_obj = ConnectServerToJSConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
+            ConnectedServer connectedServer_obj = ConnectServerToYakSysConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
 
             if (connectedServer_obj == null || connectedServer_obj.SystemChannel == null || connectedServer_obj.SystemChannel.IsConnected == false)
             {
@@ -3334,7 +3334,7 @@ namespace CSP
 
         public ConnectedClient DeActivateClientUINRequest(string string_Host, int int_Port, ulong ulong_UIN, string string_Password, bool bool_RequestActivationCode)
         {
-            ConnectedClient connectedClient_obj = ConnectSystemClientChannelToJSConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
+            ConnectedClient connectedClient_obj = ConnectSystemClientChannelToYakSysConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
 
             if (connectedClient_obj.SystemChannel == null || connectedClient_obj.SystemChannel.IsConnected == false)
             {
@@ -3352,7 +3352,7 @@ namespace CSP
 
         public ConnectedServer DeActivateServerUINRequest(string string_Host, int int_Port, ulong ulong_UIN, string string_Password, bool bool_RequestActivationCode)
         {
-            ConnectedServer connectedServer_obj = ConnectServerToJSConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
+            ConnectedServer connectedServer_obj = ConnectServerToYakSysConnectingService(string_Host, int_Port, ulong_UIN, string_Password);
 
             if (connectedServer_obj.SystemChannel == null || connectedServer_obj.SystemChannel.IsConnected == false)
             {
@@ -3370,7 +3370,7 @@ namespace CSP
 
         //---------------------------------------------------------------------------------------------------- Connect Client to CSP methods
 
-        public void ConnectClientToJSConnectingService(string string_Host, int int_Port, ulong ulong_UIN, ulong ulong_InterConnectedUIN, string string_Password, bool bool_WaitForServer, bool bool_KeepConnectionAlive)
+        public void ConnectClientToYakSysConnectingService(string string_Host, int int_Port, ulong ulong_UIN, ulong ulong_InterConnectedUIN, string string_Password, bool bool_WaitForServer, bool bool_KeepConnectionAlive)
         {
             try
             {
@@ -3401,7 +3401,7 @@ namespace CSP
 
                 //--------------------------------------------------------------------------------------------------------------------------------------------
 
-                new ConnectingServiceProvider().ConnectObjectToJSConnectingService(string_Host, int_Port, ulong_UIN, ulong_InterConnectedUIN, string_Password, CSPRemoteCallAction.ConnectingObjectType.Client, CSPRemoteCallAction.ConnectingChannelObjectType.SystemChannel, connectedClient_obj.SystemChannel);
+                new ConnectingServiceProvider().ConnectObjectToYakSysConnectingService(string_Host, int_Port, ulong_UIN, ulong_InterConnectedUIN, string_Password, CSPRemoteCallAction.ConnectingObjectType.Client, CSPRemoteCallAction.ConnectingChannelObjectType.SystemChannel, connectedClient_obj.SystemChannel);
 
                 new CommonMethods().WaitForOperationCompleting(ref connectedClient_obj.AppliedChannel.ulong_ChannelUID, 0, 10000);//увеличено до 10 сек
 
@@ -3416,7 +3416,7 @@ namespace CSP
 
                 //--------------------------------------------------------------------------------------------------------------------------------------------
 
-                new ConnectingServiceProvider().ConnectObjectToJSConnectingService(string_Host, int_Port, ulong_UIN, ulong_InterConnectedUIN, string_Password, CSPRemoteCallAction.ConnectingObjectType.Client, CSPRemoteCallAction.ConnectingChannelObjectType.AppliedChannel, connectedClient_obj.AppliedChannel);
+                new ConnectingServiceProvider().ConnectObjectToYakSysConnectingService(string_Host, int_Port, ulong_UIN, ulong_InterConnectedUIN, string_Password, CSPRemoteCallAction.ConnectingObjectType.Client, CSPRemoteCallAction.ConnectingChannelObjectType.AppliedChannel, connectedClient_obj.AppliedChannel);
 
                 CommonNetworkEvents.CallClientSuccessfullyConnectedEvent(connectedClient_obj);
 
@@ -3427,7 +3427,7 @@ namespace CSP
             }
         }
 
-        public ConnectedClient ConnectSystemClientChannelToJSConnectingService(string string_Host, int int_Port, ulong ulong_UIN, string string_Password)
+        public ConnectedClient ConnectSystemClientChannelToYakSysConnectingService(string string_Host, int int_Port, ulong ulong_UIN, string string_Password)
         {
             ConnectedClient connectedClient_obj = new ConnectedClient(ulong_UIN);
 
@@ -3441,14 +3441,14 @@ namespace CSP
 
             //--------------------------------------------------------------------------------------------------------------------------------------------
 
-            new ConnectingServiceProvider().ConnectObjectToJSConnectingService(string_Host, int_Port, ulong_UIN, 0, string_Password, CSPRemoteCallAction.ConnectingObjectType.Client, CSPRemoteCallAction.ConnectingChannelObjectType.SystemChannel, connectedClient_obj.SystemChannel);
+            new ConnectingServiceProvider().ConnectObjectToYakSysConnectingService(string_Host, int_Port, ulong_UIN, 0, string_Password, CSPRemoteCallAction.ConnectingObjectType.Client, CSPRemoteCallAction.ConnectingChannelObjectType.SystemChannel, connectedClient_obj.SystemChannel);
 
             return connectedClient_obj;
         }
 
         //---------------------------------------------------------------------------------------------------- Connect Server to CSP
 
-        public ConnectedServer ConnectServerToJSConnectingService(string string_Host, int int_Port, ulong ulong_UIN, string string_Password)
+        public ConnectedServer ConnectServerToYakSysConnectingService(string string_Host, int int_Port, ulong ulong_UIN, string string_Password)
         {
             ConnectedServer connectedServer_obj = new ConnectedServer(ulong_UIN);
 
@@ -3458,7 +3458,7 @@ namespace CSP
 
             connectedServer_obj.SystemChannel.ConnectingObjectTypeInfo = ConnectingObjectType.Server;
 
-            new ConnectingServiceProvider().ConnectObjectToJSConnectingService(string_Host, int_Port, ulong_UIN, 0, string_Password, CSPRemoteCallAction.ConnectingObjectType.Server, CSPRemoteCallAction.ConnectingChannelObjectType.SystemChannel, connectedServer_obj.SystemChannel);
+            new ConnectingServiceProvider().ConnectObjectToYakSysConnectingService(string_Host, int_Port, ulong_UIN, 0, string_Password, CSPRemoteCallAction.ConnectingObjectType.Server, CSPRemoteCallAction.ConnectingChannelObjectType.SystemChannel, connectedServer_obj.SystemChannel);
 
             CommonNetworkEvents.CallServerSuccessfullyConnectedEvent(connectedServer_obj);
 
@@ -3508,7 +3508,7 @@ namespace CSP
             }
         }
 
-        public void ConnectObjectToJSConnectingService(string string_Host, int int_Port, ulong ulong_UIN, ulong ulong_InterConnectedUIN, string string_Password,
+        public void ConnectObjectToYakSysConnectingService(string string_Host, int int_Port, ulong ulong_UIN, ulong ulong_InterConnectedUIN, string string_Password,
         CSPRemoteCallAction.ConnectingObjectType ConnectingObjectType_obj, CSPRemoteCallAction.ConnectingChannelObjectType connectingChannelObjectType_obj, BaseChannelObject baseChannelObject_obj)
         {
             baseChannelObject_obj.Connect(string_Host, int_Port);

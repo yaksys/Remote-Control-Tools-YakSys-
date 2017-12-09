@@ -154,7 +154,7 @@
             this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Name = "checkBox_ChangeUINAccountState_UseCommonJSCSPService";
             this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Size = new System.Drawing.Size(114, 19);
             this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.TabIndex = 104;
-            this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Text = "Сервис JurikSoft";
+            this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Text = "Сервис YakSys";
             this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.CheckedChanged += new System.EventHandler(this.checkBox_ChangeUINAccountState_UseCommonJSCSPService_CheckedChanged);
             // 
             // label_ChangeUINAccountState_NewAccountState
@@ -394,7 +394,7 @@
             this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Name = "checkBox_ServerAuthSettings_UseCommonJSCSPService";
             this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Size = new System.Drawing.Size(148, 19);
             this.checkBox_ServerAuthSettings_UseCommonJSCSPService.TabIndex = 103;
-            this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Text = "Сервис JurikSoft";
+            this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Text = "Сервис YakSys";
             this.checkBox_ServerAuthSettings_UseCommonJSCSPService.CheckedChanged += new System.EventHandler(this.checkBox_ServerAuthSettings_UseCommonJSCSPService_CheckedChanged);
             // 
             // checkBox_ServerAuthSettings_HideServerIP

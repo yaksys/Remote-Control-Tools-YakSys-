@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98659AA5-401F-4693-B4B0-84B9DBC685E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YakSysRct_Xml_Config_Importer</RootNamespace>
+    <AssemblyName>YakSysRct Xml Config Importer</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YakSysCompressionLib">
+      <HintPath>..\JsCompressionLib\bin\Release\YakSysCompressionLib.dll</HintPath>
+    </Reference>
+    <Reference Include="YakSysRctClientLngPack">
+      <HintPath>..\JsRctClientLngPack\bin\Release\YakSysRctClientLngPack.dll</HintPath>
+    </Reference>
+    <Reference Include="YakSysRctServerLangPack">
+      <HintPath>..\JsRctServerLangPack\bin\Release\YakSysRctServerLangPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client DataSet ver 090\DataSet_YakSysClientDB.cs">
+      <DependentUpon>DataSet_YakSysClientDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Client DataSet ver 090\DataSet_YakSysClientDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_YakSysClientDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Client DataSet ver 110\DataSet_ClientDB.cs">
+      <DependentUpon>DataSet_ClientDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Client DataSet ver 110\DataSet_ClientDB.Designer.cs">
+      <DependentUpon>DataSet_ClientDB.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CommonMethods.cs" />
+    <Compile Include="ConnectingService DataSet ver 10\DataSet_ConnectingServiceDB.xsd.cs">
+      <DependentUpon>DataSet_ConnectingServiceDB.xsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectingService DataSet ver 10\DataSet_ConnectingServiceDB.xsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ConnectingServiceDB.xsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="YakSysRctXMLConfigImporter.cs" />
+    <Compile Include="Password Prompt Form\PasswordPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password Verification Form\PasswordVerification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server DataSet ver 090\DataSet_YakSysServerDB.cs">
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Server DataSet ver 090\DataSet_YakSysServerDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Server DataSet ver 110\DataSet_YakSysServerDB.cs">
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Server DataSet ver 110\DataSet_YakSysServerDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsEnvironment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Client DataSet ver 090\DataSet_YakSysClientDB.xsc">
+      <DependentUpon>DataSet_YakSysClientDB.xsd</DependentUpon>
+    </None>
+    <None Include="Client DataSet ver 090\DataSet_YakSysClientDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_YakSysClientDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Client DataSet ver 090\DataSet_YakSysClientDB.xss">
+      <DependentUpon>DataSet_YakSysClientDB.xsd</DependentUpon>
+    </None>
+    <None Include="Client DataSet ver 090\DataSet_YakSysClientDB.xsx">
+      <DependentUpon>DataSet_YakSysClientDB.xsd</DependentUpon>
+    </None>
+    <None Include="Client DataSet ver 110\DataSet_ClientDB.xsc">
+      <DependentUpon>DataSet_ClientDB.xsd</DependentUpon>
+    </None>
+    <None Include="Client DataSet ver 110\DataSet_ClientDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ClientDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Client DataSet ver 110\DataSet_ClientDB.xss">
+      <DependentUpon>DataSet_ClientDB.xsd</DependentUpon>
+    </None>
+    <None Include="Client DataSet ver 110\DataSet_ClientDB.xsx">
+      <DependentUpon>DataSet_ClientDB.xsd</DependentUpon>
+    </None>
+    <None Include="ConnectingService DataSet ver 10\DataSet_ConnectingServiceDB.xsd.xsc">
+      <DependentUpon>DataSet_ConnectingServiceDB.xsd.xsd</DependentUpon>
+    </None>
+    <None Include="ConnectingService DataSet ver 10\DataSet_ConnectingServiceDB.xsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ConnectingServiceDB.xsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ConnectingService DataSet ver 10\DataSet_ConnectingServiceDB.xsd.xss">
+      <DependentUpon>DataSet_ConnectingServiceDB.xsd.xsd</DependentUpon>
+    </None>
+    <None Include="Server DataSet ver 090\DataSet_YakSysServerDB.xsc">
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </None>
+    <None Include="Server DataSet ver 090\DataSet_YakSysServerDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_YakSysServerDB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Server DataSet ver 090\DataSet_YakSysServerDB.xss">
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </None>
+    <None Include="Server DataSet ver 090\DataSet_YakSysServerDB.xsx">
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </None>
+    <None Include="Server DataSet ver 110\DataSet_YakSysServerDB.xsc">
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </None>
+    <None Include="Server DataSet ver 110\DataSet_YakSysServerDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_YakSysServerDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Server DataSet ver 110\DataSet_YakSysServerDB.xss">
+      <DependentUpon>DataSet_YakSysServerDB.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Password Prompt Form\PasswordPrompt.resx">
+      <DependentUpon>PasswordPrompt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password Verification Form\PasswordVerification.resx">
+      <DependentUpon>PasswordVerification.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

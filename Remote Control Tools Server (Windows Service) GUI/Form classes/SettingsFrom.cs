@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.Win32;
-using JurikSoft.RCTServiceGUI;
+using YakSys.RCTServiceGUI;
 
 public class SettingsForm : System.Windows.Forms.Form
 {
@@ -389,7 +389,7 @@ public class SettingsForm : System.Windows.Forms.Form
 	
 			if(this.checkBox_SettingsForm_AutoRun.Checked) 
 			{
-				Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).SetValue("ZNIIS RCT Server", Application.ExecutablePath + ".lnk");
+				Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).SetValue("YakSys RCT Server", Application.ExecutablePath + ".lnk");
 			}
 			else 
 			{	
@@ -397,9 +397,9 @@ public class SettingsForm : System.Windows.Forms.Form
 
 				for(int int_CycleCount = 0; stringArray_ValueKeys.Length != int_CycleCount; int_CycleCount++)
 				{					
-					if(stringArray_ValueKeys[int_CycleCount].Equals("ZNIIS RCT Server"))
+					if(stringArray_ValueKeys[int_CycleCount].Equals("YakSys RCT Server"))
 					{
-						Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).DeleteValue("ZNIIS RCT Server");
+						Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true).DeleteValue("YakSys RCT Server");
 						
 						break;
 					}

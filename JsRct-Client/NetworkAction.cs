@@ -9,11 +9,11 @@ using System.IO;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Collections;
-using JurikSoft.Proxy.Exceptions;
-using JurikSoft.Compression;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.Proxy.Exceptions;
+using YakSys.Compression;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public enum SentDataType
 {
@@ -57,7 +57,7 @@ public class MainTcpClient : TcpClient
             {
                 if (networkStream_ThisClient == null) networkStream_ThisClient = this.GetStream();
 
-                iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[ClientSettingsEnvironment.SendingSystemDataCompressAlgorithmIndex];
+                iCompression_obj = CompressionEnvironment.iCompressionArray_obj[ClientSettingsEnvironment.SendingSystemDataCompressAlgorithmIndex];
 
                 memoryStream_DataToSend.SetLength(0);
 
@@ -76,13 +76,13 @@ public class MainTcpClient : TcpClient
                 {
                     if (SentDataType_Current == SentDataType.ApplicationData)
                     {
-                        iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[ClientSettingsEnvironment.SendingSystemDataCompressAlgorithmIndex + 1];
+                        iCompression_obj = CompressionEnvironment.iCompressionArray_obj[ClientSettingsEnvironment.SendingSystemDataCompressAlgorithmIndex + 1];
 
                         byte_IsDataCompressed = (byte)(ClientSettingsEnvironment.SendingSystemDataCompressAlgorithmIndex + 1);
                     }
                     else
                     {
-                        iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[ClientSettingsEnvironment.SentFilesCompressAlgorithmIndex + 1];
+                        iCompression_obj = CompressionEnvironment.iCompressionArray_obj[ClientSettingsEnvironment.SentFilesCompressAlgorithmIndex + 1];
 
                         byte_IsDataCompressed = (byte)(ClientSettingsEnvironment.SentFilesCompressAlgorithmIndex + 1);
                     }
@@ -455,9 +455,9 @@ public class NetworkAction
     {
         try
         {
-            JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = new JurikSoft.Compression.CommonEnvironment();
+            YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-            ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+            CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
             byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -693,7 +693,7 @@ public class NetworkAction
     public static CSP.ConnectedClient connectedCSPClient_obj = null, connectedClient_ServersListRetriever = null;
 
     string string_LastClientConnectionParam_ServiceIPAddress = string.Empty, string_LastClientConnectionParam_CSPPassword = string.Empty,
-          string_LastClientConnectionParam_JSServerLogin = string.Empty, string_LastClientConnectionParam_JSServerPassword = string.Empty;
+          string_LastClientConnectionParam_YakSysServerLogin = string.Empty, string_LastClientConnectionParam_YakSysServerPassword = string.Empty;
 
     int int_LastClientConnectionParam_ServicePort = 5545;
     ulong ulong_LastClientConnectionParam_CSPLoginUIN = 0, ulong_LastClientConnectionParam_InterConnectedUIN = 0;
@@ -702,8 +702,8 @@ public class NetworkAction
     bool bool_LastClientConnectionParam_UseCommonCSPServer = false;
     bool bool_LastClientConnectionParam_KeepConnectionAlive = false;
 
-    public void ConnectClientToJSServerUsingCSP(bool bool_UseCommonCSPServer, string string_ServiceIPAddress, int int_ServicePort, ulong ulong_CSPLoginUIN, string string_CSPPassword, 
-                                                ulong ulong_InterConnectedUIN, string string_JSServerLogin, string string_JSServerPassword, bool bool_WaitForServer, bool bool_KeepConnectionAlive)
+    public void ConnectClientToYakSysServerUsingCSP(bool bool_UseCommonCSPServer, string string_ServiceIPAddress, int int_ServicePort, ulong ulong_CSPLoginUIN, string string_CSPPassword, 
+                                                ulong ulong_InterConnectedUIN, string string_YakSysServerLogin, string string_YakSysServerPassword, bool bool_WaitForServer, bool bool_KeepConnectionAlive)
     {
         if (NetworkAction.CSPCurrentConnectionStatus != CSPConnectionStatus.Disconnected)
         {
@@ -723,13 +723,13 @@ public class NetworkAction
                 ulong_LastClientConnectionParam_CSPLoginUIN = ulong_CSPLoginUIN;
                 ulong_LastClientConnectionParam_InterConnectedUIN = ulong_InterConnectedUIN;
 
-                string_LastClientConnectionParam_JSServerLogin = string_JSServerLogin;
-                string_LastClientConnectionParam_JSServerPassword = string_JSServerPassword;
+                string_LastClientConnectionParam_YakSysServerLogin = string_YakSysServerLogin;
+                string_LastClientConnectionParam_YakSysServerPassword = string_YakSysServerPassword;
 
                 bool_LastClientConnectionParam_WaitForServer = bool_WaitForServer;
                 bool_LastClientConnectionParam_KeepConnectionAlive = bool_KeepConnectionAlive;
 
-                new Thread(new ThreadStart(ConnectClientToJSServerUsingCSP)).Start();
+                new Thread(new ThreadStart(ConnectClientToYakSysServerUsingCSP)).Start();
             }
 
             catch
@@ -741,7 +741,7 @@ public class NetworkAction
 
     //!! щеё куча ошибок ..напр. главное окно говорит что no connected а cspform говорит что коннектед .. 
     //это после эсцепшена на СС вылетало (retuns NULL) ... а на СС межсоединение добавлялось дважды между клиентом и сервером!!!
-    void ConnectClientToJSServerUsingCSP()
+    void ConnectClientToYakSysServerUsingCSP()
     {
         if (CSPCurrentConnectionStatus != CSPConnectionStatus.Disconnected)
         {
@@ -775,12 +775,12 @@ public class NetworkAction
 
             MainTcpClient.ConnectionStatus = ClientStringFactory.GetString(354, ClientSettingsEnvironment.CurrentLanguage); //вниз ставить нельзя. при событии дисконнекта статус соединения главной формы последним обновит TryToConnect
 
-            ObjCopy.obj_MainClientForm.LoginForConnection = string_LastClientConnectionParam_JSServerLogin;
-            ObjCopy.obj_MainClientForm.PasswordForConnection = string_LastClientConnectionParam_JSServerPassword;
+            ObjCopy.obj_MainClientForm.LoginForConnection = string_LastClientConnectionParam_YakSysServerLogin;
+            ObjCopy.obj_MainClientForm.PasswordForConnection = string_LastClientConnectionParam_YakSysServerPassword;
 
             CSP.ConnectingServiceProvider connectingServiceProvider_obj = new CSP.ConnectingServiceProvider();
 
-            connectingServiceProvider_obj.ConnectClientToJSConnectingService(string_LastClientConnectionParam_ServiceIPAddress, int_LastClientConnectionParam_ServicePort, ulong_LastClientConnectionParam_CSPLoginUIN, ulong_LastClientConnectionParam_InterConnectedUIN, string_LastClientConnectionParam_CSPPassword, bool_LastClientConnectionParam_WaitForServer, bool_LastClientConnectionParam_KeepConnectionAlive);
+            connectingServiceProvider_obj.ConnectClientToYakSysConnectingService(string_LastClientConnectionParam_ServiceIPAddress, int_LastClientConnectionParam_ServicePort, ulong_LastClientConnectionParam_CSPLoginUIN, ulong_LastClientConnectionParam_InterConnectedUIN, string_LastClientConnectionParam_CSPPassword, bool_LastClientConnectionParam_WaitForServer, bool_LastClientConnectionParam_KeepConnectionAlive);
 
             return;
         }
@@ -806,7 +806,7 @@ public class NetworkAction
 
         CSP.ConnectedClient connectedClient_InternalObj = null;
 
-        connectedClient_InternalObj = connectingServiceProvider_obj.ConnectSystemClientChannelToJSConnectingService(string_ServiceIPAddress, int_ServicePort, ulong_LoginUIN, string_Password);
+        connectedClient_InternalObj = connectingServiceProvider_obj.ConnectSystemClientChannelToYakSysConnectingService(string_ServiceIPAddress, int_ServicePort, ulong_LoginUIN, string_Password);
 
         if (connectedClient_InternalObj == null)
         {
@@ -1015,17 +1015,17 @@ public class NetworkAction
                     }
                     else
                     {
-                        JurikSoft.Proxy.ProxyProvider proxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+                        YakSys.Proxy.ProxyProvider proxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 
-                        proxyProvider_obj.SendingSocks4ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks4ConnectionRequest);
-                        proxyProvider_obj.SendingSocks5AuthenticationRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5AuthenticationRequest);
-                        proxyProvider_obj.SendingSocks5ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5ConnectionRequest);
-                        proxyProvider_obj.SendingSocks5RequestDetails += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5RequestDetails);
+                        proxyProvider_obj.SendingSocks4ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks4ConnectionRequest);
+                        proxyProvider_obj.SendingSocks5AuthenticationRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5AuthenticationRequest);
+                        proxyProvider_obj.SendingSocks5ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5ConnectionRequest);
+                        proxyProvider_obj.SendingSocks5RequestDetails += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5RequestDetails);
 
-                        proxyProvider_obj.WaitingForReplyToSocks4ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks4ConnectionRequest);
-                        proxyProvider_obj.WaitingForReplyToSocks5AuthenticationRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5AuthenticationRequest);
-                        proxyProvider_obj.WaitingForReplyToSocks5ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5ConnectionRequest);
-                        proxyProvider_obj.WaitingForReplyToSocks5RequestDetails += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5RequestDetails);
+                        proxyProvider_obj.WaitingForReplyToSocks4ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks4ConnectionRequest);
+                        proxyProvider_obj.WaitingForReplyToSocks5AuthenticationRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5AuthenticationRequest);
+                        proxyProvider_obj.WaitingForReplyToSocks5ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5ConnectionRequest);
+                        proxyProvider_obj.WaitingForReplyToSocks5RequestDetails += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5RequestDetails);
 
                         if (ObjCopy.obj_MainClientForm.ProxyTypeIndex < 0)
                         {
@@ -1034,8 +1034,8 @@ public class NetworkAction
                             return;
                         }
 
-                        JurikSoft.Proxy.ProxyProvider.SerialNumber = "4688445487";
-                        JurikSoft.Proxy.ProxyProvider.RegistrationName = "JurikSoft";
+                        YakSys.Proxy.ProxyProvider.SerialNumber = "4688445487";
+                        YakSys.Proxy.ProxyProvider.RegistrationName = "YakSys";
 
                         TcpClient tcpClient_TemporaryObj = tcpClient_MainClient;
 

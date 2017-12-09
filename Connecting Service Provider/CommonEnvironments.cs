@@ -3,27 +3,27 @@ using System.Security.Cryptography;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
-using JurikSoft.Compression;
+using YakSys.Compression;
 using System.Net;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
 
-public class ConmpressionEnvironment
+public class CompressionEnvironment
 {
-    public ConmpressionEnvironment()
+    public CompressionEnvironment()
     {
         if (iCompressionArray_obj[1] != null) return;
 
-        iCompressionArray_obj[1] = new JurikSoft.Compression.PrefixCodes(true);
-        iCompressionArray_obj[2] = new JurikSoft.Compression.PrefixCodes(false);
-        iCompressionArray_obj[3] = new JurikSoft.Compression.LZSS(8, true, true, false, 131072);
+        iCompressionArray_obj[1] = new YakSys.Compression.PrefixCodes(true);
+        iCompressionArray_obj[2] = new YakSys.Compression.PrefixCodes(false);
+        iCompressionArray_obj[3] = new YakSys.Compression.LZSS(8, true, true, false, 131072);
         iCompressionArray_obj[4] = new DeflateCompressionWrapper();
-        iCompressionArray_obj[5] = new JurikSoft.Compression.RLE(JurikSoft.Compression.PrefixCodesCompression.NonAdaptive);
+        iCompressionArray_obj[5] = new YakSys.Compression.RLE(YakSys.Compression.PrefixCodesCompression.NonAdaptive);
 
     }
 
     public static ICompression[] iCompressionArray_obj = new ICompression[6];
 
-    public class DeflateCompressionWrapper : JurikSoft.Compression.ICompression
+    public class DeflateCompressionWrapper : YakSys.Compression.ICompression
     {
         MemoryStream memoryStream_DecompressedData = new MemoryStream();
         MemoryStream memoryStream_DataToCompress = new MemoryStream();

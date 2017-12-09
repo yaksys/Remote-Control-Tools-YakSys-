@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public partial class RegisterNewUINForm : Form
 {

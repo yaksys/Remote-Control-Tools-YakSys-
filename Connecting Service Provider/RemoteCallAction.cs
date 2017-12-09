@@ -126,11 +126,11 @@ namespace CSP
             byteArray_AuthRequest[2] = BitConverter.GetBytes(-37)[2];
             byteArray_AuthRequest[3] = BitConverter.GetBytes(-37)[3];
 
-            if (ConnectingObjectType_obj == ConnectingObjectType.Client)  //Is a JurikSoft Client Auth Request 
+            if (ConnectingObjectType_obj == ConnectingObjectType.Client)  //Is a YakSys Client Auth Request 
             {
                 byteArray_AuthRequest[4] = 0;
             }
-            else //Is a JurikSoft Server Auth Request
+            else //Is a YakSys Server Auth Request
             {
                 byteArray_AuthRequest[4] = 1;
             }
@@ -167,11 +167,11 @@ namespace CSP
             byteArray_AuthRequest[2] = BitConverter.GetBytes(-37)[2];
             byteArray_AuthRequest[3] = BitConverter.GetBytes(-37)[3];
 
-            if (ConnectingObjectType_obj == ConnectingObjectType.Client)  //Is a JurikSoft Client Auth Request 
+            if (ConnectingObjectType_obj == ConnectingObjectType.Client)  //Is a YakSys Client Auth Request 
             {
                 byteArray_AuthRequest[4] = 0;
             }
-            else //Is a JurikSoft Server Auth Request
+            else //Is a YakSys Server Auth Request
             {
                 byteArray_AuthRequest[4] = 1;
             }

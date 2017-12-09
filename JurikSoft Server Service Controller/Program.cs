@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace JurikSoft_Server_Service_Controller
+namespace YakSys_Server_Service_Controller
 {
     static class Program
     {

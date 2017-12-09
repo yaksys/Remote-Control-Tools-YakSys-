@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DataSet_YakSysClientDB" targetNamespace="http://tempuri.org/DataSet_YakSysClientDB.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/DataSet_YakSysClientDB.xsd"
+	xmlns:mstns="http://tempuri.org/DataSet_YakSysClientDB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DataSet_YakSysClientDB" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="MainSettings">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="AppVersion" type="xs:string" minOccurs="0" />
+							<xs:element name="ToEncryptSentFiles" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToEncryptDownloadedFiles" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToEncryptReceivedScreenshots" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToEncryptSentSystemData" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToEncryptReceivedSystemData" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToCompressSentFiles" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToCompressDownloadedFiles" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToCompressReceivedScreenshots" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToCompressSentSystemData" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ToCompressReceivedSystemData" type="xs:boolean" minOccurs="0" />
+							<xs:element name="UseProxyServer" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ShowToolTips" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ShowAdvancedSettings" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ProxyServerID" type="xs:int" minOccurs="0" />
+							<xs:element name="DownloadedScreenShotsPath" type="xs:string" minOccurs="0" />
+							<xs:element name="DownloadedFilesPath" type="xs:string" minOccurs="0" />
+							<xs:element name="CurrentAppLanguage" type="xs:int" minOccurs="0" />
+							<xs:element name="ServerHost" type="xs:string" minOccurs="0" />
+							<xs:element name="ServerPort" type="xs:int" minOccurs="0" />
+							<xs:element name="ServerLogin" type="xs:string" minOccurs="0" />
+							<xs:element name="ServerPassword" type="xs:string" minOccurs="0" />
+							<xs:element name="SentFilesEncryptAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="DownloadedFilesEncryptAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="ReceivedScreenshotsEncryptAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="SendingSystemDataEncryptAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="ReceivedSystemDataEncryptAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="SentFilesCompressAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="DownloadedFilesCompressAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="ReceivedScreenshotsCompressAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="SendingSystemDataCompressAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="ReceivedSystemDataCompressAlgorithmIndex" type="xs:int" minOccurs="0" />
+							<xs:element name="RememberLogins" type="xs:boolean" minOccurs="0" />
+							<xs:element name="RememberPasswords" type="xs:boolean" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ProxyServersSettings">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="ProxyHost" type="xs:string" minOccurs="0" />
+							<xs:element name="ProxyPort" type="xs:int" minOccurs="0" />
+							<xs:element name="ProxyTimeOut" type="xs:int" minOccurs="0" />
+							<xs:element name="ProxyType" type="xs:int" minOccurs="0" />
+							<xs:element name="UseProxyToResolveHostNames" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ProxyServerTitle" type="xs:string" minOccurs="0" />
+							<xs:element name="ProxyServerLocation" minOccurs="0" type="xs:string" />
+							<xs:element name="ProxyServerDescription" type="xs:string" minOccurs="0" />
+							<xs:element name="Login" type="xs:string" minOccurs="0" />
+							<xs:element name="Password" type="xs:string" minOccurs="0" />
+							<xs:element name="UseAuthentication" type="xs:boolean" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="YakSysServers">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="ServerHost" type="xs:string" minOccurs="0" />
+							<xs:element name="ServerPort" type="xs:int" minOccurs="0" />
+							<xs:element name="ServerName" type="xs:string" minOccurs="0" />
+							<xs:element name="ServerLocation" type="xs:string" minOccurs="0" />
+							<xs:element name="ServerDescription" type="xs:string" minOccurs="0" />
+							<xs:element name="Domain" type="xs:string" minOccurs="0" />
+							<xs:element name="WorkGroup" type="xs:string" minOccurs="0" />
+							<xs:element name="ProxyServerID" type="xs:int" minOccurs="0" />
+							<xs:element name="ServerGroupTypeID" type="xs:int" minOccurs="0" />
+							<xs:element name="Login" type="xs:string" minOccurs="0" />
+							<xs:element name="Password" type="xs:string" minOccurs="0" />
+							<xs:element name="UseProxyServer" type="xs:boolean" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="YakSysServerUsers">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="UserFirstName" type="xs:string" minOccurs="0" />
+							<xs:element name="UserMiddleName" type="xs:string" minOccurs="0" />
+							<xs:element name="UserLastName" type="xs:string" minOccurs="0" />
+							<xs:element name="UserBirthDade" type="xs:date" minOccurs="0" />
+							<xs:element name="Address" type="xs:string" minOccurs="0" />
+							<xs:element name="Campany" type="xs:string" minOccurs="0" />
+							<xs:element name="HomePhone" type="xs:string" minOccurs="0" />
+							<xs:element name="WorkPhone" type="xs:string" minOccurs="0" />
+							<xs:element name="Gender" type="xs:string" minOccurs="0" />
+							<xs:element name="WorkFax" type="xs:string" minOccurs="0" />
+							<xs:element name="City" type="xs:string" minOccurs="0" />
+							<xs:element name="Country" type="xs:string" minOccurs="0" />
+							<xs:element name="YakSysServerInfoID" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ICQList">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="UIN" type="xs:string" minOccurs="0" />
+							<xs:element name="YakSysServerUsersID" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="YakSysServerEMails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="EMailAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="YakSysServerInfoID" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="YakSysServerUserEMails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="EMailAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="YakSysServerUsersID" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ServerGroupTypes">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID" type="xs:int" minOccurs="0" />
+							<xs:element name="GroupName" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="DatasetKey_YakSysServersList" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:YakSysServers" />
+			<xs:field xpath="mstns:ID" />
+		</xs:unique>
+		<xs:keyref name="ProxyServersSettings_YakSysServersList" refer="DatasetKey_ProxyServersSettings">
+			<xs:selector xpath=".//mstns:YakSysServers" />
+			<xs:field xpath="mstns:ProxyServerID" />
+		</xs:keyref>
+		<xs:unique name="DatasetKey_YakSysServerUsers" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:YakSysServerUsers" />
+			<xs:field xpath="mstns:ID" />
+		</xs:unique>
+		<xs:unique name="DatasetKey_ICQList" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:ICQList" />
+			<xs:field xpath="mstns:ID" />
+		</xs:unique>
+		<xs:keyref name="YakSysServerInfo_YakSysServerUsers" refer="DatasetKey_YakSysServersList">
+			<xs:selector xpath=".//mstns:YakSysServerUsers" />
+			<xs:field xpath="mstns:YakSysServerInfoID" />
+		</xs:keyref>
+		<xs:unique name="DatasetKey_YakSysServerEMails" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:YakSysServerEMails" />
+			<xs:field xpath="mstns:ID" />
+		</xs:unique>
+		<xs:unique name="DatasetKey_YakSysServerUserEMails" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:YakSysServerUserEMails" />
+			<xs:field xpath="mstns:ID" />
+		</xs:unique>
+		<xs:keyref name="YakSysServerUsersYakSysServerEMails" refer="DatasetKey_YakSysServersList">
+			<xs:selector xpath=".//mstns:YakSysServerEMails" />
+			<xs:field xpath="mstns:YakSysServerInfoID" />
+		</xs:keyref>
+		<xs:keyref name="YakSysServerUsersICQList" refer="DatasetKey_YakSysServerUsers">
+			<xs:selector xpath=".//mstns:ICQList" />
+			<xs:field xpath="mstns:YakSysServerUsersID" />
+		</xs:keyref>
+		<xs:keyref name="YakSysServerUsersYakSysServerUserEMails" refer="DatasetKey_YakSysServerUsers">
+			<xs:selector xpath=".//mstns:YakSysServerUserEMails" />
+			<xs:field xpath="mstns:YakSysServerUsersID" />
+		</xs:keyref>
+		<xs:unique name="DatasetKey_ServerGroupTypes" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:ServerGroupTypes" />
+			<xs:field xpath="mstns:ID" />
+		</xs:unique>
+		<xs:keyref name="ServerGroupTypes_YakSysServerInfo" refer="DatasetKey_ServerGroupTypes">
+			<xs:selector xpath=".//mstns:YakSysServers" />
+			<xs:field xpath="mstns:ServerGroupTypeID" />
+		</xs:keyref>
+		<xs:keyref name="ProxyServersSettingsMainSettings" refer="DatasetKey_ProxyServersSettings">
+			<xs:selector xpath=".//mstns:MainSettings" />
+			<xs:field xpath="mstns:ProxyServerID" />
+		</xs:keyref>
+		<xs:unique name="DatasetKey_MainSettings" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:MainSettings" />
+			<xs:field xpath="mstns:ID" />
+		</xs:unique>
+		<xs:key name="DatasetKey_ProxyServersSettings" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:ProxyServersSettings" />
+			<xs:field xpath="mstns:ID" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

@@ -8,8 +8,8 @@ using System.IO;
 using System.Windows.Forms;
 using System.Collections;
 using System.Collections.Generic;
-using JurikSoft;
-using JurikSoft.Compression;
+using YakSys;
+using YakSys.Compression;
 using System.Runtime.InteropServices;
 
 public enum SentDataType
@@ -53,7 +53,7 @@ public class BaseConnectedObject : TcpClient
             {
                 if (networkStream_ThisClient == null) networkStream_ThisClient = this.GetStream();
 
-                iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
+                iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
 
                 memoryStream_DataToSend.SetLength(0);
 
@@ -74,13 +74,13 @@ public class BaseConnectedObject : TcpClient
                 {
                     if (SentDataType_Current == SentDataType.ApplicationData)
                     {
-                        iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
+                        iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
 
                         byte_IsDataCompressed = (byte)this.CompressSendingSystemDataAlgorithm;
                     }
                     else
                     {
-                        iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingFileObjectsDataAlgorithm];
+                        iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingFileObjectsDataAlgorithm];
 
                         byte_IsDataCompressed = (byte)this.CompressSendingFileObjectsDataAlgorithm;
                     }
@@ -1278,9 +1278,9 @@ public class ConnectedClient
             {
                 bool_IsReceiveThreadWorking = true;
 
-                JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = new JurikSoft.Compression.CommonEnvironment();
+                YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                 byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -1932,9 +1932,9 @@ public class ConnectedServer
             {
                 bool_IsReceiveThreadWorking = true;
 
-                JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = new JurikSoft.Compression.CommonEnvironment();
+                YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                 byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 
@@ -2413,7 +2413,7 @@ public class ConnectedServer
 
 public class NetworkAction
 {
-    [DllImport("JsRctServerLib.dll")]
+    [DllImport("YakSysRctServerLib.dll")]
     private static extern string ResolveMACAddressFromIP(string string_IPAddress);
 
     private static TcpListener tcpListener_MainListener;
@@ -2658,9 +2658,9 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
 
     void RegisterNewUIN(BaseChannelObject baseChannelObject_obj, byte[] byteArray_ReceivedData)
     {
-        JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = new JurikSoft.Compression.CommonEnvironment();
+        YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-        ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+        CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
         int int_ReceivedDataLength = 0, int_TotalReceived = 0,
             int_TotalAvailable = 0, int_DataEncryptionAlgorithm = 0,
@@ -2833,9 +2833,9 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
 
             baseChannelObject_obj.SendCheckInfoToClients();
 
-            JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = new JurikSoft.Compression.CommonEnvironment();
+            YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-            ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+            CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
             byte[] byteArray_SystemData = new byte[6], byteArray_ReceivedData = null;
 

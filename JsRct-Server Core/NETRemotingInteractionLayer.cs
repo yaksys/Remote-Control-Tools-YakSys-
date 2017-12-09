@@ -6,12 +6,12 @@ using System.Data;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels.Ipc;
 using System.Runtime.Remoting.Channels;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
 using System.Collections;
 using System.Security.Principal;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Server_Core
     {
@@ -30,7 +30,7 @@ namespace JurikSoft
                     
                     NTAccount nTAccount_obj = securityIdentifier_obj.Translate(typeof(NTAccount)) as NTAccount;
 
-                    hashTable_IpcServerChannelProperties["portName"] = "ZNIIS Server Service IPC Port";
+                    hashTable_IpcServerChannelProperties["portName"] = "YakSys RCT Server Service IPC Port";
                     hashTable_IpcServerChannelProperties["authorizedGroup"] = nTAccount_obj.Value;                                     
                     hashTable_IpcServerChannelProperties["exclusiveAddressUse"] = false;
                     
@@ -39,7 +39,7 @@ namespace JurikSoft
 
                     ChannelServices.RegisterChannel(ipcServerChannel_ServerChannel, false);
 
-                    RemotingConfiguration.ApplicationName = "ZNIIS Server";
+                    RemotingConfiguration.ApplicationName = "YakSys Server";
 
 
                     // Windows Vista/Windows 7 Service Desktop interact Layer-------------------------------------------------------------
@@ -71,21 +71,21 @@ namespace JurikSoft
 
                     RemotingConfiguration.RegisterWellKnownServiceType(typeof(NetworkSecurity.AccessRestrictionRuleObject), "ClassObj_NetworkSecurity.AccessRestrictionRuleObject_URI", WellKnownObjectMode.Singleton);
 
-                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(JSServerDBEnvironment), "ClassObj_JSServerDBEnvironment_URI", WellKnownObjectMode.Singleton);
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(YakSysServerDBEnvironment), "ClassObj_YakSysServerDBEnvironment_URI", WellKnownObjectMode.Singleton);
 
-                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(JSServerDBEnvironment.SecurityDataBase), "ClassObj_JSServerDBEnvironment.SecurityDataBase_URI", WellKnownObjectMode.Singleton);
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(YakSysServerDBEnvironment.SecurityDataBase), "ClassObj_YakSysServerDBEnvironment.SecurityDataBase_URI", WellKnownObjectMode.Singleton);
 
-                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(JSServerDBEnvironment.AccessRestrictionRule), "ClassObj_JSServerDBEnvironment.AccessRestrictionRule_URI", WellKnownObjectMode.Singleton);
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(YakSysServerDBEnvironment.AccessRestrictionRule), "ClassObj_YakSysServerDBEnvironment.AccessRestrictionRule_URI", WellKnownObjectMode.Singleton);
 
-                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(JsRctServerV110XMLConfigImporter), "ClassObj_JsRctServerV110XMLConfigImporter_URI", WellKnownObjectMode.Singleton);
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(YakSysRctServerV110XMLConfigImporter), "ClassObj_YakSysRctServerV110XMLConfigImporter_URI", WellKnownObjectMode.Singleton);
 
-                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(JurikSoftServerLog), "ClassObj_JurikSoftServerLog_URI", WellKnownObjectMode.Singleton);
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(YakSysServerLog), "ClassObj_YakSysServerLog_URI", WellKnownObjectMode.Singleton);
 
-                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(JurikSoftTcpClient), "ClassObj_JurikSoftTcpClient_URI", WellKnownObjectMode.Singleton);
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(YakSysTcpClient), "ClassObj_YakSysTcpClient_URI", WellKnownObjectMode.Singleton);
 
                     RemotingConfiguration.RegisterWellKnownServiceType(typeof(NetworkStatusAndStatistics), "ClassObj_NetworkStatusAndStatistics_URI", WellKnownObjectMode.Singleton);
 
-                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(JurikSoftTcpClient.SessionStatisticAndInfo), "ClassObj_JurikSoftTcpClient.SessionStatisticAndInfo_URI", WellKnownObjectMode.Singleton);
+                    RemotingConfiguration.RegisterWellKnownServiceType(typeof(YakSysTcpClient.SessionStatisticAndInfo), "ClassObj_YakSysTcpClient.SessionStatisticAndInfo_URI", WellKnownObjectMode.Singleton);
                 }
                 catch
                 {
@@ -210,18 +210,18 @@ namespace JurikSoft
             }
         }
 
-        public class JurikSoftServerLog : MarshalByRefObject
+        public class YakSysServerLog : MarshalByRefObject
         {
             public static void InsertDataToLog(string string_LogType, string string_LogDate, string string_LogTime,
                                                  string string_LogSource, string string_LogDescription)
             {
                 DataRow dataRow_NewRecord = null;
 
-                DataSet_Server_Ver110.DataSet_JurikSoftServerDB.EventsLogDataTable eventsLogDataTable_obj = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.EventsLog;
+                YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.EventsLogDataTable eventsLogDataTable_obj = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.EventsLog;
 
                 ////////////////////////////////////////////////////////////////////////////////
 
-                dataRow_NewRecord = JsRctServerV110XMLConfigImporter.JurikSoftServerDB.EventsLog.NewRow();
+                dataRow_NewRecord = YakSysRctServerV110XMLConfigImporter.YakSysServerDB.EventsLog.NewRow();
 
                 int int_EventLogID = 0;
 
@@ -248,14 +248,14 @@ namespace JurikSoft
                 dataRow_NewRecord[eventsLogDataTable_obj.DateColumn] = string_LogDate;
                 dataRow_NewRecord[eventsLogDataTable_obj.TimeColumn] = string_LogTime;
 
-                JsRctServerV110XMLConfigImporter.JurikSoftServerDB.EventsLog.Rows.Add(dataRow_NewRecord);
+                YakSysRctServerV110XMLConfigImporter.YakSysServerDB.EventsLog.Rows.Add(dataRow_NewRecord);
 
             }
 
             public void RemotingWrapper_InsertDataToLog(string string_LogType, string string_LogDate, string string_LogTime,
                                                         string string_LogSource, string string_LogDescription)
             {
-                JurikSoftServerLog.InsertDataToLog(string_LogType, string_LogDate, string_LogTime, string_LogSource, string_LogDescription);
+                YakSysServerLog.InsertDataToLog(string_LogType, string_LogDate, string_LogTime, string_LogSource, string_LogDescription);
             }
         }
     }

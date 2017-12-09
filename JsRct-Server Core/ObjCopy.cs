@@ -1,10 +1,10 @@
 using System;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
 
 using System.Threading;
 
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Server_Core
     {

@@ -4,9 +4,9 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public class ProxyDBManagerForm : System.Windows.Forms.Form
 {
@@ -405,11 +405,11 @@ public class ProxyDBManagerForm : System.Windows.Forms.Form
 
         DataRow dataRow_NewRecord = null;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         ////////////////////////////////////////////////////////////////////////////////
 
-        dataRow_NewRecord = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.NewRow();
+        dataRow_NewRecord = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.NewRow();
 
         int int_ProxyServersSettingsID = 0;
 
@@ -441,7 +441,7 @@ public class ProxyDBManagerForm : System.Windows.Forms.Form
         dataRow_NewRecord[ProxyServersSettingsDataTable_obj.ProxyServerLocationColumn] = this.textBox_ProxyDBManagerForm_Location.Text;
         dataRow_NewRecord[ProxyServersSettingsDataTable_obj.ProxyServerDescriptionColumn] = this.textBox_ProxyDBManagerForm_Description.Text;
 
-        JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Add(dataRow_NewRecord);
+        YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Add(dataRow_NewRecord);
 
         ObjCopy.obj_MainClientForm.FillProxyServersList();
 
@@ -454,11 +454,11 @@ public class ProxyDBManagerForm : System.Windows.Forms.Form
 
         DataRow dataRow_EditedRecord = null;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         ////////////////////////////////////////////////////////////////////////////////
 
-        dataRow_EditedRecord = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings[int_EditedRecordIndex + 1];
+        dataRow_EditedRecord = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings[int_EditedRecordIndex + 1];
 
         dataRow_EditedRecord[ProxyServersSettingsDataTable_obj.ProxyHostColumn] = this.textBox_ProxyDBManagerForm_ProxyHost.Text;
         dataRow_EditedRecord[ProxyServersSettingsDataTable_obj.ProxyPortColumn] = ProxyPort;

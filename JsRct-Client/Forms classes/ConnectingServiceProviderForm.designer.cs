@@ -61,7 +61,7 @@
             this.columnHeader_PublicServersList_ConnectionTime = new System.Windows.Forms.ColumnHeader();
             this.button_CSPForm_CSPServersList_RefreshPublicServersList = new System.Windows.Forms.Button();
             this.groupBox_CSPForm_CSPServersList = new System.Windows.Forms.GroupBox();
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer = new System.Windows.Forms.CheckBox();
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer = new System.Windows.Forms.CheckBox();
             this.label_CSPForm_CSPServersList_CustomCSPServicePort = new System.Windows.Forms.Label();
             this.label_CSPForm_CSPServersList_CustomCSPServiceIPAddress = new System.Windows.Forms.Label();
             this.label_CSPForm_CSPServersList_Password = new System.Windows.Forms.Label();
@@ -79,24 +79,24 @@
             this.label_CSPForm_ServerAuth_CSPLoginUIN = new System.Windows.Forms.Label();
             this.textBox_CSPForm_ServerAuth_CSPLoginUIN = new System.Windows.Forms.TextBox();
             this.textBox_CSPForm_ServerAuth_CSPLoginPassword = new System.Windows.Forms.TextBox();
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer = new System.Windows.Forms.CheckBox();
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer = new System.Windows.Forms.CheckBox();
             this.label_CSPForm_ServerAuth_CustomCSPServicePort = new System.Windows.Forms.Label();
             this.label_CSPForm_ServerAuth_CustomCSPServiceIPAddress = new System.Windows.Forms.Label();
             this.textBox_CSPForm_ServerAuth_CustomCSPServicePort = new System.Windows.Forms.TextBox();
             this.textBox_CSPForm_ServerAuth_CustomCSPServiceIPAddress = new System.Windows.Forms.TextBox();
             this.checkBox_CSPForm_ServerAuth_WaitForServer = new System.Windows.Forms.CheckBox();
-            this.label_CSPForm_ServerAuth_JSRCTPassword = new System.Windows.Forms.Label();
-            this.label_CSPForm_ServerAuth_JSRCTLogin = new System.Windows.Forms.Label();
+            this.label_CSPForm_ServerAuth_YakSysRctPassword = new System.Windows.Forms.Label();
+            this.label_CSPForm_ServerAuth_YakSysRctLogin = new System.Windows.Forms.Label();
             this.label_CSPForm_ServerAuth_ConnectionStatus = new System.Windows.Forms.Label();
-            this.textBox_CSPForm_ServerAuth_JSRCTPassword = new System.Windows.Forms.TextBox();
+            this.textBox_CSPForm_ServerAuth_YakSysRctPassword = new System.Windows.Forms.TextBox();
             this.button_CSPForm_ServerAuth_Connect = new System.Windows.Forms.Button();
             this.textBox_CSPForm_ServerAuth_ConnectionStatus = new System.Windows.Forms.TextBox();
             this.label_CSPForm_ServerAuth_CSPServerUIN = new System.Windows.Forms.Label();
-            this.textBox_CSPForm_ServerAuth_JSRCTLogin = new System.Windows.Forms.TextBox();
+            this.textBox_CSPForm_ServerAuth_YakSysRctLogin = new System.Windows.Forms.TextBox();
             this.textBox_CSPForm_ServerAuth_CSPServerUIN = new System.Windows.Forms.TextBox();
             this.groupBox_ChangeUINAccountState_AccountControl = new System.Windows.Forms.GroupBox();
             this.checkBox_ChangeUINAccountState_GetActivationCode = new System.Windows.Forms.CheckBox();
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer = new System.Windows.Forms.CheckBox();
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer = new System.Windows.Forms.CheckBox();
             this.label_ChangeUINAccountState_NewAccountState = new System.Windows.Forms.Label();
             this.comboBox_ChangeUINAccountState_NewAccountState = new System.Windows.Forms.ComboBox();
             this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress = new System.Windows.Forms.TextBox();
@@ -448,7 +448,7 @@
             // groupBox_CSPForm_CSPServersList
             // 
             this.groupBox_CSPForm_CSPServersList.AutoSize = true;
-            this.groupBox_CSPForm_CSPServersList.Controls.Add(this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer);
+            this.groupBox_CSPForm_CSPServersList.Controls.Add(this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer);
             this.groupBox_CSPForm_CSPServersList.Controls.Add(this.label_CSPForm_CSPServersList_CustomCSPServicePort);
             this.groupBox_CSPForm_CSPServersList.Controls.Add(this.label_CSPForm_CSPServersList_CustomCSPServiceIPAddress);
             this.groupBox_CSPForm_CSPServersList.Controls.Add(this.label_CSPForm_CSPServersList_Password);
@@ -469,17 +469,17 @@
             this.groupBox_CSPForm_CSPServersList.TabStop = false;
             this.groupBox_CSPForm_CSPServersList.Text = "Connecting Service - Online Servers List";
             // 
-            // checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer
+            // checkBox_CSPForm_CSPServersList_UseYakSysCSPServer
             // 
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Checked = true;
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Location = new System.Drawing.Point(14, 16);
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Name = "checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer";
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Size = new System.Drawing.Size(142, 19);
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.TabIndex = 74;
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.Text = "Сервис JurikSoft";
-            this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer_CheckedChanged);
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Checked = true;
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Location = new System.Drawing.Point(14, 16);
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Name = "checkBox_CSPForm_CSPServersList_UseYakSysCSPServer";
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Size = new System.Drawing.Size(142, 19);
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.TabIndex = 74;
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Text = "Сервис YakSys";
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer_CheckedChanged);
             // 
             // label_CSPForm_CSPServersList_CustomCSPServicePort
             // 
@@ -594,21 +594,21 @@
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_CSPLoginUIN);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_CSPLoginUIN);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_CSPLoginPassword);
-            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer);
+            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_CustomCSPServicePort);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_CustomCSPServiceIPAddress);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_CustomCSPServicePort);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_CustomCSPServiceIPAddress);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.checkBox_CSPForm_ServerAuth_WaitForServer);
-            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_JSRCTPassword);
+            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_YakSysRctPassword);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.button_CSPForm_ServerAuth_RegisterNewUIN);
-            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_JSRCTLogin);
+            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_YakSysRctLogin);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_ConnectionStatus);
-            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_JSRCTPassword);
+            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_YakSysRctPassword);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.button_CSPForm_ServerAuth_Connect);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_ConnectionStatus);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.label_CSPForm_ServerAuth_CSPServerUIN);
-            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_JSRCTLogin);
+            this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_YakSysRctLogin);
             this.groupBox_CSPForm_ServerAuthSettings.Controls.Add(this.textBox_CSPForm_ServerAuth_CSPServerUIN);
             this.groupBox_CSPForm_ServerAuthSettings.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox_CSPForm_ServerAuthSettings.Location = new System.Drawing.Point(12, 12);
@@ -668,17 +668,17 @@
             this.textBox_CSPForm_ServerAuth_CSPLoginPassword.Size = new System.Drawing.Size(148, 20);
             this.textBox_CSPForm_ServerAuth_CSPLoginPassword.TabIndex = 107;
             // 
-            // checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer
+            // checkBox_CSPForm_ServerAuth_UseYakSysCSPServer
             // 
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Checked = true;
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Location = new System.Drawing.Point(14, 24);
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Name = "checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer";
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Size = new System.Drawing.Size(114, 19);
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.TabIndex = 103;
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.Text = "Сервис JurikSoft";
-            this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer_CheckedChanged);
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Checked = true;
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Location = new System.Drawing.Point(14, 24);
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Name = "checkBox_CSPForm_ServerAuth_UseYakSysCSPServer";
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Size = new System.Drawing.Size(114, 19);
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.TabIndex = 103;
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Text = "Сервис YakSys";
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer_CheckedChanged);
             // 
             // label_CSPForm_ServerAuth_CustomCSPServicePort
             // 
@@ -732,25 +732,25 @@
             this.checkBox_CSPForm_ServerAuth_WaitForServer.Text = "Ожидать подключения сервера";
             this.checkBox_CSPForm_ServerAuth_WaitForServer.CheckedChanged += new System.EventHandler(this.checkBox_CSPForm_ServerAuth_WaitForServer_CheckedChanged);
             // 
-            // label_CSPForm_ServerAuth_JSRCTPassword
+            // label_CSPForm_ServerAuth_YakSysRctPassword
             // 
-            this.label_CSPForm_ServerAuth_JSRCTPassword.AutoSize = true;
-            this.label_CSPForm_ServerAuth_JSRCTPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_CSPForm_ServerAuth_JSRCTPassword.Location = new System.Drawing.Point(167, 200);
-            this.label_CSPForm_ServerAuth_JSRCTPassword.Name = "label_CSPForm_ServerAuth_JSRCTPassword";
-            this.label_CSPForm_ServerAuth_JSRCTPassword.Size = new System.Drawing.Size(159, 13);
-            this.label_CSPForm_ServerAuth_JSRCTPassword.TabIndex = 91;
-            this.label_CSPForm_ServerAuth_JSRCTPassword.Text = "JurikSoft Server Auth Password:";
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.AutoSize = true;
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.Location = new System.Drawing.Point(167, 200);
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.Name = "label_CSPForm_ServerAuth_YakSysRctPassword";
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.Size = new System.Drawing.Size(159, 13);
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.TabIndex = 91;
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.Text = "YakSys Server Auth Password:";
             // 
-            // label_CSPForm_ServerAuth_JSRCTLogin
+            // label_CSPForm_ServerAuth_YakSysRctLogin
             // 
-            this.label_CSPForm_ServerAuth_JSRCTLogin.AutoSize = true;
-            this.label_CSPForm_ServerAuth_JSRCTLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_CSPForm_ServerAuth_JSRCTLogin.Location = new System.Drawing.Point(11, 199);
-            this.label_CSPForm_ServerAuth_JSRCTLogin.Name = "label_CSPForm_ServerAuth_JSRCTLogin";
-            this.label_CSPForm_ServerAuth_JSRCTLogin.Size = new System.Drawing.Size(139, 13);
-            this.label_CSPForm_ServerAuth_JSRCTLogin.TabIndex = 89;
-            this.label_CSPForm_ServerAuth_JSRCTLogin.Text = "JurikSoft Server Auth Login:";
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.AutoSize = true;
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.Location = new System.Drawing.Point(11, 199);
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.Name = "label_CSPForm_ServerAuth_YakSysRctLogin";
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.Size = new System.Drawing.Size(139, 13);
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.TabIndex = 89;
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.Text = "YakSys Server Auth Login:";
             // 
             // label_CSPForm_ServerAuth_ConnectionStatus
             // 
@@ -763,14 +763,14 @@
             this.label_CSPForm_ServerAuth_ConnectionStatus.TabIndex = 97;
             this.label_CSPForm_ServerAuth_ConnectionStatus.Text = "Connection Status:";
             // 
-            // textBox_CSPForm_ServerAuth_JSRCTPassword
+            // textBox_CSPForm_ServerAuth_YakSysRctPassword
             // 
-            this.textBox_CSPForm_ServerAuth_JSRCTPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox_CSPForm_ServerAuth_JSRCTPassword.Location = new System.Drawing.Point(169, 217);
-            this.textBox_CSPForm_ServerAuth_JSRCTPassword.Name = "textBox_CSPForm_ServerAuth_JSRCTPassword";
-            this.textBox_CSPForm_ServerAuth_JSRCTPassword.PasswordChar = '*';
-            this.textBox_CSPForm_ServerAuth_JSRCTPassword.Size = new System.Drawing.Size(149, 20);
-            this.textBox_CSPForm_ServerAuth_JSRCTPassword.TabIndex = 96;
+            this.textBox_CSPForm_ServerAuth_YakSysRctPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox_CSPForm_ServerAuth_YakSysRctPassword.Location = new System.Drawing.Point(169, 217);
+            this.textBox_CSPForm_ServerAuth_YakSysRctPassword.Name = "textBox_CSPForm_ServerAuth_YakSysRctPassword";
+            this.textBox_CSPForm_ServerAuth_YakSysRctPassword.PasswordChar = '*';
+            this.textBox_CSPForm_ServerAuth_YakSysRctPassword.Size = new System.Drawing.Size(149, 20);
+            this.textBox_CSPForm_ServerAuth_YakSysRctPassword.TabIndex = 96;
             // 
             // button_CSPForm_ServerAuth_Connect
             // 
@@ -802,12 +802,12 @@
             this.label_CSPForm_ServerAuth_CSPServerUIN.TabIndex = 94;
             this.label_CSPForm_ServerAuth_CSPServerUIN.Text = "CSP-Based Server UIN:";
             // 
-            // textBox_CSPForm_ServerAuth_JSRCTLogin
+            // textBox_CSPForm_ServerAuth_YakSysRctLogin
             // 
-            this.textBox_CSPForm_ServerAuth_JSRCTLogin.Location = new System.Drawing.Point(14, 217);
-            this.textBox_CSPForm_ServerAuth_JSRCTLogin.Name = "textBox_CSPForm_ServerAuth_JSRCTLogin";
-            this.textBox_CSPForm_ServerAuth_JSRCTLogin.Size = new System.Drawing.Size(148, 20);
-            this.textBox_CSPForm_ServerAuth_JSRCTLogin.TabIndex = 95;
+            this.textBox_CSPForm_ServerAuth_YakSysRctLogin.Location = new System.Drawing.Point(14, 217);
+            this.textBox_CSPForm_ServerAuth_YakSysRctLogin.Name = "textBox_CSPForm_ServerAuth_YakSysRctLogin";
+            this.textBox_CSPForm_ServerAuth_YakSysRctLogin.Size = new System.Drawing.Size(148, 20);
+            this.textBox_CSPForm_ServerAuth_YakSysRctLogin.TabIndex = 95;
             // 
             // textBox_CSPForm_ServerAuth_CSPServerUIN
             // 
@@ -819,7 +819,7 @@
             // groupBox_ChangeUINAccountState_AccountControl
             // 
             this.groupBox_ChangeUINAccountState_AccountControl.Controls.Add(this.checkBox_ChangeUINAccountState_GetActivationCode);
-            this.groupBox_ChangeUINAccountState_AccountControl.Controls.Add(this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer);
+            this.groupBox_ChangeUINAccountState_AccountControl.Controls.Add(this.checkBox_ChangeUINAccountState_UseYakSysCSPServer);
             this.groupBox_ChangeUINAccountState_AccountControl.Controls.Add(this.label_ChangeUINAccountState_NewAccountState);
             this.groupBox_ChangeUINAccountState_AccountControl.Controls.Add(this.comboBox_ChangeUINAccountState_NewAccountState);
             this.groupBox_ChangeUINAccountState_AccountControl.Controls.Add(this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress);
@@ -853,17 +853,17 @@
             this.checkBox_ChangeUINAccountState_GetActivationCode.TabIndex = 105;
             this.checkBox_ChangeUINAccountState_GetActivationCode.Text = "Get Activation Code";
             // 
-            // checkBox_ChangeUINAccountState_UseJurikSoftCSPServer
+            // checkBox_ChangeUINAccountState_UseYakSysCSPServer
             // 
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Checked = true;
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Location = new System.Drawing.Point(14, 19);
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Name = "checkBox_ChangeUINAccountState_UseJurikSoftCSPServer";
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Size = new System.Drawing.Size(114, 19);
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.TabIndex = 104;
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.Text = "Сервис JurikSoft";
-            this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_ChangeUINAccountState_UseJurikSoftCSPServer_CheckedChanged);
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Checked = true;
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Location = new System.Drawing.Point(14, 19);
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Name = "checkBox_ChangeUINAccountState_UseYakSysCSPServer";
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Size = new System.Drawing.Size(114, 19);
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.TabIndex = 104;
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Text = "Сервис YakSys";
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_ChangeUINAccountState_UseYakSysCSPServer_CheckedChanged);
             // 
             // label_ChangeUINAccountState_NewAccountState
             // 
@@ -1088,17 +1088,17 @@
         private System.Windows.Forms.TextBox textBox_CSPForm_CSPServersList_UIN;
         private System.Windows.Forms.Label label_CSPForm_CSPServersList_ConnectionStatus;
         private System.Windows.Forms.TextBox textBox_CSPForm_CSPServersList_ConnectionStatus;
-        private System.Windows.Forms.CheckBox checkBox_CSPForm_CSPServersList_UseJurikSoftCSPServer;
+        private System.Windows.Forms.CheckBox checkBox_CSPForm_CSPServersList_UseYakSysCSPServer;
         private System.Windows.Forms.Label label_CSPForm_CSPServersList_CustomCSPServicePort;
         private System.Windows.Forms.Label label_CSPForm_CSPServersList_CustomCSPServiceIPAddress;
         private System.Windows.Forms.TextBox textBox_CSPForm_CSPServersList_CustomCSPServicePort;
         private System.Windows.Forms.TextBox textBox_CSPForm_CSPServersList_CustomCSPServiceIPAddress;
-        private System.Windows.Forms.Label label_CSPForm_ServerAuth_JSRCTPassword;
-        private System.Windows.Forms.Label label_CSPForm_ServerAuth_JSRCTLogin;
+        private System.Windows.Forms.Label label_CSPForm_ServerAuth_YakSysRctPassword;
+        private System.Windows.Forms.Label label_CSPForm_ServerAuth_YakSysRctLogin;
         private System.Windows.Forms.Label label_CSPForm_ServerAuth_ConnectionStatus;
-        private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_JSRCTPassword;
+        private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_YakSysRctPassword;
         private System.Windows.Forms.Button button_CSPForm_ServerAuth_Connect;
-        private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_JSRCTLogin;
+        private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_YakSysRctLogin;
         private System.Windows.Forms.Label label_CSPForm_ServerAuth_CSPServerUIN;
         private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_CSPServerUIN;
         private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_ConnectionStatus;
@@ -1107,7 +1107,7 @@
         private System.Windows.Forms.Label label_CSPForm_ServerAuth_CustomCSPServiceIPAddress;
         private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_CustomCSPServicePort;
         private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_CustomCSPServiceIPAddress;
-        private System.Windows.Forms.CheckBox checkBox_CSPForm_ServerAuth_UseJurikSoftCSPServer;
+        private System.Windows.Forms.CheckBox checkBox_CSPForm_ServerAuth_UseYakSysCSPServer;
         private System.Windows.Forms.Label label_CSPForm_ServerAuth_CSPLoginPassword;
         private System.Windows.Forms.Label label_CSPForm_ServerAuth_CSPLoginUIN;
         private System.Windows.Forms.TextBox textBox_CSPForm_ServerAuth_CSPLoginUIN;
@@ -1128,7 +1128,7 @@
         private System.Windows.Forms.TextBox textBox_ChangeUINAccountState_CustomCSPServicePort;
         private System.Windows.Forms.Label label_ChangeUINAccountState_CustomCSPServiceIPAddress;
         private System.Windows.Forms.Label label_ChangeUINAccountState_Password;
-        private System.Windows.Forms.CheckBox checkBox_ChangeUINAccountState_UseJurikSoftCSPServer;
+        private System.Windows.Forms.CheckBox checkBox_ChangeUINAccountState_UseYakSysCSPServer;
         private System.Windows.Forms.CheckBox checkBox_ChangeUINAccountState_GetActivationCode;
         private System.Windows.Forms.CheckBox checkBox_CSPForm_ServerAuth_KeepConnectionAlive;
     }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Compression
     {
@@ -42,8 +42,8 @@ namespace JurikSoft
             /// //RLE class with a compression parameter:
             /// //PrefixCodesCompression enum value that indicate use PrefixCode 
             /// //to compress single uncompressed bytes or store bytes uncompressed
-            /// JurikSoft.Compression.ICompression compressionObj = 
-            /// new JurikSoft.Compression.RLE(PrefixCodesCompression.NonAdaptive);
+            /// YakSys.Compression.ICompression compressionObj = 
+            /// new YakSys.Compression.RLE(PrefixCodesCompression.NonAdaptive);
             /// 
             /// FileStream fileStream_DataFile = File.Open("test.dat");
             /// 
@@ -110,12 +110,12 @@ namespace JurikSoft
             ///  CommonEnvironment.Decompress(byte [] DataToDecompress, bool VerifyCheckSum) method: 
             ///  
             ///  <para>			
-            ///  "You are using the FREE COPY of JurikSoft Compression Library.			
-            ///  Please register a copy of JurikSoft Compression Library at 
-            ///  http://www.juriksoft.net to disable this appear message."
+            ///  "You are using the FREE COPY of YakSys Compression Library.			
+            ///  Please register a copy of YakSys Compression Library at 
+            ///  http://www.YakSys.net to disable this appear message."
             ///  </para>
             /// 
-            ///  You can purchase a copy of this software product at http://www.juriksoft.net.
+            ///  You can purchase a copy of this software product at http://www.YakSys.net.
             ///   
             ///  <para>	
             ///  One copy (serial number) entitles to use this 
@@ -126,8 +126,8 @@ namespace JurikSoft
             ///  <example> This sample shows how to use Registration Information.
             ///  <code>
             /// 
-            ///  JurikSoft.Compression.CommonEnvironment.RegistrationName = "Test";
-            ///	 JurikSoft.Compression.CommonEnvironment.SerialNumber = "1000000000";
+            ///  YakSys.Compression.CommonEnvironment.RegistrationName = "Test";
+            ///	 YakSys.Compression.CommonEnvironment.SerialNumber = "1000000000";
             /// 
             ///  </code>
             ///  </example>
@@ -148,7 +148,7 @@ namespace JurikSoft
 
             ///  <summary>
             /// 
-            ///  Registration Name that you use when you buy JurikSoft Compression Library
+            ///  Registration Name that you use when you buy YakSys Compression Library
             /// 
             ///  </summary>
             /// 		
@@ -158,12 +158,12 @@ namespace JurikSoft
             ///  CommonEnvironment.Decompress(byte [] DataToDecompress, bool VerifyCheckSum) method: 
             ///  
             ///  <para>			
-            ///  "You are using the FREE COPY of JurikSoft Compression Library.			
-            ///  Please register a copy of JurikSoft Compression Library at 
-            ///  http://www.juriksoft.net to disable this appear message."
+            ///  "You are using the FREE COPY of YakSys Compression Library.			
+            ///  Please register a copy of YakSys Compression Library at 
+            ///  http://www.YakSys.net to disable this appear message."
             ///  </para>
             /// 
-            ///  You can purchase a copy of this software product at http://www.juriksoft.net.
+            ///  You can purchase a copy of this software product at http://www.YakSys.net.
             ///   
             ///  <para>	
             ///  One copy (serial number) entitles to use this 
@@ -174,8 +174,8 @@ namespace JurikSoft
             ///  <example> This sample shows how to use Registration Information.
             ///  <code>
             /// 
-            ///  JurikSoft.Compression.CommonEnvironment.RegistrationName = "Test";
-            ///	 JurikSoft.Compression.CommonEnvironment.SerialNumber = "1000000000";
+            ///  YakSys.Compression.CommonEnvironment.RegistrationName = "Test";
+            ///	 YakSys.Compression.CommonEnvironment.SerialNumber = "1000000000";
             /// 
             ///  </code>
             ///  </example>			
@@ -202,7 +202,7 @@ namespace JurikSoft
 
                 if (SerialNumber == null || SerialNumber.Length < 9)
                 {
-                    MessageBox.Show("The FREE COPY of JurikSoft Compression Library is used.\nPlease register a copy of JurikSoft Compression Library \nat http://www.juriksoft.net to disable this appear message.", "JurikSoft");
+                    MessageBox.Show("The FREE COPY of YakSys Compression Library is used.\nPlease register a copy of YakSys Compression Library \nat http://www.YakSys.net to disable this appear message.", "YakSys");
                     
                     return;
                 }
@@ -224,7 +224,7 @@ namespace JurikSoft
                 }
                 else
                 {
-                    MessageBox.Show("The FREE COPY of JurikSoft Compression Library is used.\nPlease register a copy of JurikSoft Compression Library \nat http://www.juriksoft.net to disable this appear message.", "JurikSoft");
+                    MessageBox.Show("The FREE COPY of YakSys Compression Library is used.\nPlease register a copy of YakSys Compression Library \nat http://www.YakSys.net to disable this appear message.", "YakSys");
                 }
             }
 
@@ -851,14 +851,14 @@ namespace JurikSoft
             /// 
             /// <summary>
             /// 
-            /// Decompress input byte array that was been previously compressed by any of compression algorithm using JurikSoft Compression Library (version 1.1.0).
+            /// Decompress input byte array that was been previously compressed by any of compression algorithm using YakSys Compression Library (version 1.1.0).
             /// 
             /// </summary>
             /// <example> This sample shows how to decompress byte array.
             /// <code>
             /// //Initializes a new instance of the CommonEnvironment class 
-            /// JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = 
-            /// new JurikSoft.Compression.CommonEnvironment();
+            /// YakSys.Compression.CommonEnvironment commonEnvironment_obj = 
+            /// new YakSys.Compression.CommonEnvironment();
             ///  
             /// FileStream fileStream_DataFile = File.Open("compressed.dat");
             /// 
@@ -1013,7 +1013,7 @@ namespace JurikSoft
             #region Exceptions
 
             /// <summary> 
-            /// The base JurikSoft Conpression exception.
+            /// The base YakSys Conpression exception.
             /// </summary>
             public class CompressionException : System.Exception
             {
@@ -1024,7 +1024,7 @@ namespace JurikSoft
                 {
                     get
                     {
-                        return "Base JurikSoft Compression Library exception.";
+                        return "Base YakSys Compression Library exception.";
                     }
                 }
             }
@@ -1132,7 +1132,7 @@ namespace JurikSoft
             }
 
             /// <summary> 
-            /// The exception that is thrown when JurikSoft Compression Library version less than needed to decompress data.
+            /// The exception that is thrown when YakSys Compression Library version less than needed to decompress data.
             /// </summary>
             public class VersionLessThanNeededException : CompressionException
             {
@@ -1143,7 +1143,7 @@ namespace JurikSoft
                 {
                     get
                     {
-                        return "Used version of JurikSoft Compression Library is less than version needed to decompress.";
+                        return "Used version of YakSys Compression Library is less than version needed to decompress.";
                     }
                 }
             }

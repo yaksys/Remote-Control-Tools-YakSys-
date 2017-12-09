@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace JurikSoft_Server_Service_Controller
+namespace YakSys_Server_Service_Controller
 {
     public partial class MainForm : Form
     {

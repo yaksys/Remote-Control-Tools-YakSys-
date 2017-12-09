@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public class SettingsForm : System.Windows.Forms.Form
 {
@@ -1462,8 +1462,8 @@ public class SettingsForm : System.Windows.Forms.Form
         ClientSettingsEnvironment.ReceivedScreenshotsCompressAlgorithmIndex = this.comboBox_SettingsForm_CompressReceivedScreenshotsAlgorithm.SelectedIndex = 3;
         ClientSettingsEnvironment.DownloadedFilesCompressAlgorithmIndex = this.comboBox_SettingsForm_CompressDownloadedFilesAlgorithm.SelectedIndex = 2;
 
-        ClientSettingsEnvironment.DownloadedFilesPath = this.textBox_SettingsForm_DonwloadedFilesPath.Text = "C:\\juriksoft\\downloads\\files\\";
-        ClientSettingsEnvironment.DownloadedScreenShotsPath = this.textBox_SettingsForm_DownloadedScreenShotsPath.Text = "C:\\juriksoft\\downloads\\images\\";
+        ClientSettingsEnvironment.DownloadedFilesPath = this.textBox_SettingsForm_DonwloadedFilesPath.Text = "C:\\YakSys\\downloads\\files\\";
+        ClientSettingsEnvironment.DownloadedScreenShotsPath = this.textBox_SettingsForm_DownloadedScreenShotsPath.Text = "C:\\YakSys\\downloads\\images\\";
 
         if (ClientSettingsEnvironment.ShowToolTips)
         {

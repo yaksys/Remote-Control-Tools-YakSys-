@@ -3226,10 +3226,10 @@ public class ClientStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "File JsRctClientLibCpp.dll not found, program will be close";
+                            return "File YakSysRctClientLibCpp.dll not found, program will be close";
 
                         case 1:
-                            return "Файл JsRctClientLibCpp.dll не найден, программа будет закрыта";
+                            return "Файл YakSysRctClientLibCpp.dll не найден, программа будет закрыта";
                     }
                 }
                 break;

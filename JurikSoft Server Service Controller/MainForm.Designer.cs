@@ -1,4 +1,4 @@
-namespace JurikSoft_Server_Service_Controller
+namespace YakSys_Server_Service_Controller
 {
     partial class MainForm
     {
@@ -38,7 +38,7 @@ namespace JurikSoft_Server_Service_Controller
             // serviceController_Main
             // 
             this.serviceController_Main.MachineName = "localhost";
-            this.serviceController_Main.ServiceName = "JurikSoft Server";
+            this.serviceController_Main.ServiceName = "YakSys Server";
             // 
             // button_MainForm_ServiceStart
             // 
@@ -86,7 +86,7 @@ namespace JurikSoft_Server_Service_Controller
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "JurikSoft Server Service Controller";
+            this.Text = "YakSys Server Service Controller";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);

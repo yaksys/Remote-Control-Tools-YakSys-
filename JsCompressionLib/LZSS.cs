@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Collections.Generic;
 
 
-namespace JurikSoft
+namespace YakSys
 {
 	namespace Compression
 	{
@@ -895,8 +895,8 @@ namespace JurikSoft
 			/// <code>
 			/// //Initializes a new instance of the LZSS class with a compression parameters: 
 			/// //10 hash chains, use PrefixCodes, not use RLE and maximum data block up to 131072 bytes
-			/// JurikSoft.Compression.ICompression compressionObj = 
-			/// new JurikSoft.Compression.LZSS(10, true, true, false, 131072);
+			/// YakSys.Compression.ICompression compressionObj = 
+			/// new YakSys.Compression.LZSS(10, true, true, false, 131072);
 			/// 
 			/// FileStream fileStream_DataFile = File.Open("test.dat");
 			/// 

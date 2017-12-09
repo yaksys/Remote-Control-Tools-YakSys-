@@ -7,7 +7,7 @@ using System.ServiceProcess;
 using System.Management;
 
 
-namespace JsRct_Server_WindowsService
+namespace YakSysRct_Server_WindowsService
 {
     [RunInstaller(true)]
     public partial class ProjectInstaller : Installer
@@ -17,10 +17,10 @@ namespace JsRct_Server_WindowsService
             InitializeComponent();   
         }
 
-        private void serviceInstaller_JurikSoftServer_AfterInstall(object sender, InstallEventArgs e)
+        private void serviceInstaller_YakSysServer_AfterInstall(object sender, InstallEventArgs e)
         {
 
-            ServiceController serviceController_obj = new ServiceController("JurikSoft Server");
+            ServiceController serviceController_obj = new ServiceController("YakSys RCT Server");
 
             #region Allow Desktop Interact Mode
 

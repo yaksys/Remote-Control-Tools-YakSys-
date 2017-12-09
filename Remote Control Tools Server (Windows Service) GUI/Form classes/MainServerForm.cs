@@ -14,8 +14,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting;
-using JurikSoft.RCTServiceGUI;
-using JurikSoft.Server_Core;
+using YakSys.RCTServiceGUI;
+using YakSys.Server_Core;
 using System.ServiceProcess.Design;
 
 public class MainServerForm : System.Windows.Forms.Form
@@ -1030,11 +1030,11 @@ public class MainServerForm : System.Windows.Forms.Form
 
         if (string_Key == string_CurrentNubmer.Substring(0, 10))
         {
-            if (Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true) == null)
-                Registry.CurrentUser.CreateSubKey("Software\\JurikSoft");
+            if (Registry.CurrentUser.OpenSubKey("Software\\YakSys", true) == null)
+                Registry.CurrentUser.CreateSubKey("Software\\YakSys");
 
-            Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).SetValue("SN", string_Key);
-            Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).SetValue("Name", string_FullName);
+            Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).SetValue("SN", string_Key);
+            Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).SetValue("Name", string_FullName);
 
             menuItem_Help_Register.Enabled = false;
 
@@ -1059,12 +1059,12 @@ public class MainServerForm : System.Windows.Forms.Form
 
             thread_NGSCRThread = Thread.CurrentThread;
 
-            if (Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true) != null
-                && Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("SN") != null
-                && Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("Name") != null)
+            if (Registry.CurrentUser.OpenSubKey("Software\\YakSys", true) != null
+                && Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("SN") != null
+                && Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("Name") != null)
             {
-                string string_Key = Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("SN").ToString(),
-                    string_FullName = Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("Name").ToString();
+                string string_Key = Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("SN").ToString(),
+                    string_FullName = Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("Name").ToString();
 
                 if (CheckSN(string_FullName, string_Key) == 1) return;
             }
@@ -1104,10 +1104,9 @@ public class MainServerForm : System.Windows.Forms.Form
     [STAThreadAttribute]
     static void Main()
     {
-
         if (IsInstanceExists() == true)
         {
-            MessageBox.Show("ZNIIS Remote Control Tools GUI already running");
+            MessageBox.Show("YakSys Remote Control Tools GUI already running");
 
             if (LocalObjCopy.obj_MainServerForm != null)
             {
@@ -1132,7 +1131,7 @@ public class MainServerForm : System.Windows.Forms.Form
     {
         bool bool_IsInstanceExists;
 
-        mutex_InstanceCheckMutex = new Mutex(false, "ZNIIS RCT Windows Service GUI v1.1", out bool_IsInstanceExists);
+        mutex_InstanceCheckMutex = new Mutex(false, "YakSys RCT Windows Service GUI v1.1", out bool_IsInstanceExists);
         
         return !bool_IsInstanceExists;
     } 
@@ -1167,7 +1166,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
         Thread.Sleep(2000);
 
-        JurikSoft.RCTServiceGUI.NETRemotingInteractionLayer.ConnectToNETRemotingLocalHost();
+        YakSys.RCTServiceGUI.NETRemotingInteractionLayer.ConnectToNETRemotingLocalHost();
 
         LocalObjCopy.obj_MainServerForm.ChangeControlsLanguage();
 
@@ -1184,7 +1183,7 @@ public class MainServerForm : System.Windows.Forms.Form
         LocalObjCopy.obj_MainServerForm.Activate();
     }
 
-    public void JSRCTExitServer()
+    public void YakSysRctExitServer()
     {
         if (DialogResult.Yes == MessageBox.Show(this, ServerStringFactory.GetString(39, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
@@ -1200,7 +1199,7 @@ public class MainServerForm : System.Windows.Forms.Form
     {
         e.Cancel = true;
 
-        JSRCTExitServer();
+        YakSysRctExitServer();
     }
 
     private void MainServerForm_Activated(object sender, System.EventArgs e)
@@ -1362,7 +1361,7 @@ public class MainServerForm : System.Windows.Forms.Form
         this.ServerPort = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_ServerPort;
 
         notifyIcon_Main.DoubleClick += new System.EventHandler(LocalObjCopy.obj_MainServerForm.RestoreWindowFromSystemTray);
-        notifyIcon_Main.Text = "ZNIIS RCT Server";
+        notifyIcon_Main.Text = "YakSys RCT Server";
         notifyIcon_Main.Icon = LocalObjCopy.obj_MainServerForm.Icon;
 
         MainServerForm.notifyIcon_Main.Visible = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_ShowIconInNotifyArea;
@@ -1418,7 +1417,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
         openFileDialog_obj.ShowDialog();
 
-        LocalObjCopy.obj_JSServerDBEnvironment.RemotingWrapper_LoadXMLDataFile(openFileDialog_obj.FileName, true);
+        LocalObjCopy.obj_YakSysServerDBEnvironment.RemotingWrapper_LoadXMLDataFile(openFileDialog_obj.FileName, true);
 
         SetUpServerSettingsFromDB();
     }
@@ -1429,16 +1428,16 @@ public class MainServerForm : System.Windows.Forms.Form
 
         saveFileDialog_obj.Title = ServerStringFactory.GetString(150, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage);
 
-        saveFileDialog_obj.FileName = "JurikSoftServerDB";
+        saveFileDialog_obj.FileName = "YakSysServerDB";
 
         saveFileDialog_obj.ShowDialog();
 
-        LocalObjCopy.obj_JSServerDBEnvironment.WriteServerSettingsData(saveFileDialog_obj.FileName);
+        LocalObjCopy.obj_YakSysServerDBEnvironment.WriteServerSettingsData(saveFileDialog_obj.FileName);
     }
     
     private void menuItem_File_Exit_Click(object sender, System.EventArgs e)
     {
-        JSRCTExitServer();
+        YakSysRctExitServer();
     }
 
 
@@ -1500,7 +1499,7 @@ public class MainServerForm : System.Windows.Forms.Form
             {
                 listView_MainServerForm_EventsLog.Items.Clear();
 
-                LocalObjCopy.obj_JSServerDBEnvironment.ClearEventsLogDataBase();
+                LocalObjCopy.obj_YakSysServerDBEnvironment.ClearEventsLogDataBase();
             }
         }
     }
@@ -1668,7 +1667,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
         usersAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage);
 
-        if (LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.SecurityDataBase.Rows.Count == 0) return;
+        if (LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.SecurityDataBase.Rows.Count == 0) return;
 
         usersAccountsManagerForm_obj.EditedRecordIndex = int_SelectedUserAccountRowIndex;
 
@@ -1679,7 +1678,7 @@ public class MainServerForm : System.Windows.Forms.Form
         usersAccountsManagerForm_obj.NewPasswordTextBox.ReadOnly = true;
         usersAccountsManagerForm_obj.ConfirmedPasswordTextBox.ReadOnly = true;
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.SecurityDataBase;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.SecurityDataBase;
 
         usersAccountsManagerForm_obj.LoginTextBox.Text = (string)securityDataBaseDataTable_obj[int_SelectedUserAccountRowIndex][securityDataBaseDataTable_obj.UserLoginColumn];
         usersAccountsManagerForm_obj.UserNameTextBox.Text = (string)securityDataBaseDataTable_obj[int_SelectedUserAccountRowIndex][securityDataBaseDataTable_obj.UserNameColumn];
@@ -1702,13 +1701,13 @@ public class MainServerForm : System.Windows.Forms.Form
 
     public static void ViewSelectedUserAccount(int int_SelectedUserAccountRowIndex)
     {
-        int_SelectedUserAccountRowIndex = LocalObjCopy.obj_NetworkSecurity.RemotingWrapper_GetJurikSoftAccountRealRowIndex(int_SelectedUserAccountRowIndex);
+        int_SelectedUserAccountRowIndex = LocalObjCopy.obj_NetworkSecurity.RemotingWrapper_GetYakSysAccountRealRowIndex(int_SelectedUserAccountRowIndex);
 
         UsersAccountsManagerForm usersAccountsManagerForm_obj = new UsersAccountsManagerForm();
 
         usersAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage);
 
-        if (LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.SecurityDataBase.Rows.Count == 0) return;
+        if (LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.SecurityDataBase.Rows.Count == 0) return;
 
         usersAccountsManagerForm_obj.ApplyButton.Visible = false;
         usersAccountsManagerForm_obj.AddButton.Visible = false;
@@ -1731,7 +1730,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
         usersAccountsManagerForm_obj.LoginTextBox.Focus();
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.SecurityDataBase;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.SecurityDataBase;
 
         usersAccountsManagerForm_obj.LoginTextBox.Text = (string)securityDataBaseDataTable_obj[int_SelectedUserAccountRowIndex][securityDataBaseDataTable_obj.UserLoginColumn];
         usersAccountsManagerForm_obj.UserNameTextBox.Text = (string)securityDataBaseDataTable_obj[int_SelectedUserAccountRowIndex][securityDataBaseDataTable_obj.UserNameColumn];
@@ -1780,7 +1779,7 @@ public class MainServerForm : System.Windows.Forms.Form
             return;
         }
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.SecurityDataBase;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.SecurityDataBase;
 
         for (int int_CycleCount = 0; int_CycleCount != this.listView_Security_ListOfUsersAccounts.SelectedItems.Count; int_CycleCount++)
         {
@@ -1789,7 +1788,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
             LocalObjCopy.obj_NetworkSecurity_UserAccount.RemotingWrapper_UsersAccounts[(int)this.listView_Security_ListOfUsersAccounts.SelectedItems[int_CycleCount].Tag].DisableAccount();
 
-            LocalObjCopy.obj_JurikSoftServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(48, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage) +
+            LocalObjCopy.obj_YakSysServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(48, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage) +
                                                        LocalObjCopy.obj_NetworkSecurity_UserAccount.RemotingWrapper_UsersAccounts[(int)this.listView_Security_ListOfUsersAccounts.SelectedItems[int_CycleCount].Tag].User);
         }
     }
@@ -1811,7 +1810,7 @@ public class MainServerForm : System.Windows.Forms.Form
             return;
         }
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.SecurityDataBase;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.SecurityDataBaseDataTable securityDataBaseDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.SecurityDataBase;
 
         for (int int_CycleCount = 0; int_CycleCount != this.listView_Security_ListOfUsersAccounts.SelectedItems.Count; int_CycleCount++)
         {
@@ -1820,7 +1819,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
             LocalObjCopy.obj_NetworkSecurity_UserAccount.RemotingWrapper_UsersAccounts[(int)this.listView_Security_ListOfUsersAccounts.SelectedItems[int_CycleCount].Tag].EnableAccount();
 
-            LocalObjCopy.obj_JurikSoftServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(),
+            LocalObjCopy.obj_YakSysServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(),
                 ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(51, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage) + LocalObjCopy.obj_NetworkSecurity_UserAccount.RemotingWrapper_UsersAccounts[(int)this.listView_Security_ListOfUsersAccounts.SelectedItems[int_CycleCount].Tag].User);
         }
     }
@@ -1934,7 +1933,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
         this.listView_AccessRestrictions_AccessRestrictionRulesList.Items.RemoveAt(int_AccessRestrictionRuleIndex);
 
-        LocalObjCopy.obj_JurikSoftServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
+        LocalObjCopy.obj_YakSysServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
                         DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(215, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage));
     }
 
@@ -1944,13 +1943,13 @@ public class MainServerForm : System.Windows.Forms.Form
 
         accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage);
 
-        if (LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.AccessRestrictionRules.Rows.Count == 0) return;
+        if (LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.AccessRestrictionRules.Rows.Count == 0) return;
 
         accessRestrictionRulesManagerForm_obj.AddButton.Visible = false;
 
         string string_MACAddress = String.Empty;
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.AccessRestrictionRules;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.AccessRestrictionRules;
 
         accessRestrictionRulesManagerForm_obj.IPRangeStartValueTextBox.Text = (string)accessRestrictionRulesDataTable_obj[int_AccessRestrictionRuleRowIndex][accessRestrictionRulesDataTable_obj.IPRangeStartValueColumn];
         accessRestrictionRulesManagerForm_obj.IPRangeEndValueTextBox.Text = (string)accessRestrictionRulesDataTable_obj[int_AccessRestrictionRuleRowIndex][accessRestrictionRulesDataTable_obj.IPRangeEndValueColumn];
@@ -2014,13 +2013,13 @@ public class MainServerForm : System.Windows.Forms.Form
 
         accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage);
 
-        if (LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.AccessRestrictionRules.Rows.Count == 0) return;
+        if (LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.AccessRestrictionRules.Rows.Count == 0) return;
 
         accessRestrictionRulesManagerForm_obj.AddButton.Visible = false;
 
         string string_MACAddress = String.Empty;
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.AccessRestrictionRules;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.AccessRestrictionRules;
 
         accessRestrictionRulesManagerForm_obj.IPRangeStartValueTextBox.Text = (string)accessRestrictionRulesDataTable_obj[int_AccessRestrictionRuleRowIndex][accessRestrictionRulesDataTable_obj.IPRangeStartValueColumn];
         accessRestrictionRulesManagerForm_obj.IPRangeEndValueTextBox.Text = (string)accessRestrictionRulesDataTable_obj[int_AccessRestrictionRuleRowIndex][accessRestrictionRulesDataTable_obj.IPRangeEndValueColumn];
@@ -2149,7 +2148,7 @@ public class MainServerForm : System.Windows.Forms.Form
             return;
         }
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.AccessRestrictionRules;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.AccessRestrictionRules;
 
         for (int int_CycleCount = 0; int_CycleCount != this.listView_AccessRestrictions_AccessRestrictionRulesList.SelectedItems.Count; int_CycleCount++)
         {
@@ -2157,7 +2156,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
             LocalObjCopy.obj_NetworkSecurity_AccessRestrictionRuleObject.RemotingWrapper_AccessRestrictionRules[(int)this.listView_AccessRestrictions_AccessRestrictionRulesList.SelectedItems[int_CycleCount].Tag].DisableRule();
 
-            LocalObjCopy.obj_JurikSoftServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
+            LocalObjCopy.obj_YakSysServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
                                                                                  DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(217, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage));
         }
     }
@@ -2182,7 +2181,7 @@ public class MainServerForm : System.Windows.Forms.Form
             return;
         }
 
-        DataSet_Server_Ver110.DataSet_JurikSoftServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.RemotingWrapper_JurikSoftServerDB.AccessRestrictionRules;
+        YakSysRct_Xml_Config_Importer.Server_DataSet_ver_110.DataSet_YakSysServerDB.AccessRestrictionRulesDataTable accessRestrictionRulesDataTable_obj = LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.RemotingWrapper_YakSysServerDB.AccessRestrictionRules;
 
         for (int int_CycleCount = 0; int_CycleCount != this.listView_AccessRestrictions_AccessRestrictionRulesList.SelectedItems.Count; int_CycleCount++)
         {
@@ -2190,7 +2189,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
             LocalObjCopy.obj_NetworkSecurity_AccessRestrictionRuleObject.RemotingWrapper_AccessRestrictionRules[(int)this.listView_AccessRestrictions_AccessRestrictionRulesList.SelectedItems[int_CycleCount].Tag].EnableRule();
 
-            LocalObjCopy.obj_JurikSoftServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
+            LocalObjCopy.obj_YakSysServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
                                                                                 DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(216, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage));
         }
     }
@@ -2278,7 +2277,7 @@ public class MainServerForm : System.Windows.Forms.Form
             return;
         }
 
-        JurikSoftTcpClient.SessionStatisticAndInfo sessionStatisticAndInfo_CurrentObj = LocalObjCopy.obj_SessionStatisticAndInfo.RemotingWrapper_AllSessionStatisticAndInfoOjects[(int)this.listView_ActiveConnections_CurrentConnections.SelectedItems[0].Tag];
+        YakSysTcpClient.SessionStatisticAndInfo sessionStatisticAndInfo_CurrentObj = LocalObjCopy.obj_SessionStatisticAndInfo.RemotingWrapper_AllSessionStatisticAndInfoOjects[(int)this.listView_ActiveConnections_CurrentConnections.SelectedItems[0].Tag];
 
         ActiveConnectionDetailsForm activeConnectionDetailsForm_obj = new ActiveConnectionDetailsForm();
 
@@ -2481,7 +2480,7 @@ public class MainServerForm : System.Windows.Forms.Form
         {
             this.listView_MainServerForm_EventsLog.Items.Clear();
 
-            this.listView_MainServerForm_EventsLog.Items.AddRange(LocalObjCopy.obj_JSServerDBEnvironment.GetEventsLog());
+            this.listView_MainServerForm_EventsLog.Items.AddRange(LocalObjCopy.obj_YakSysServerDBEnvironment.GetEventsLog());
         });
     }
 
@@ -2491,7 +2490,7 @@ public class MainServerForm : System.Windows.Forms.Form
         {
             this.listView_ActiveConnections_CurrentConnections.Items.Clear();
 
-            foreach (JurikSoftTcpClient.SessionStatisticAndInfo sessionStatisticAndInfo_obj in LocalObjCopy.obj_SessionStatisticAndInfo.RemotingWrapper_AllSessionStatisticAndInfoOjects)
+            foreach (YakSysTcpClient.SessionStatisticAndInfo sessionStatisticAndInfo_obj in LocalObjCopy.obj_SessionStatisticAndInfo.RemotingWrapper_AllSessionStatisticAndInfoOjects)
             {
                 try
                 {
@@ -2514,7 +2513,7 @@ public class MainServerForm : System.Windows.Forms.Form
             {
                 userAccount_obj.IsNewObject = false;
 
-                if (userAccount_obj.AccountType == NetworkSecurity.UserAccount.AccountTypesEnum.JurikSoftAccount)
+                if (userAccount_obj.AccountType == NetworkSecurity.UserAccount.AccountTypesEnum.YakSysAccount)
                 {
                     LocalObjCopy.obj_MainServerForm.AddUserAcountToListView(userAccount_obj.User, userAccount_obj.Login, userAccount_obj.TimeOfCreation, userAccount_obj.IsEnabled, LocalObjCopy.obj_NetworkSecurity_UserAccount.RemotingWrapper_UsersAccounts.IndexOf(userAccount_obj));
                 }
@@ -2589,7 +2588,7 @@ public class MainServerForm : System.Windows.Forms.Form
 
     public void RefreshListsContentThread()
     {
-        int int_JurikSoftAccountCount = 0;
+        int int_YakSysAccountCount = 0;
 
         for (; ; Thread.Sleep(1000))
         {
@@ -2611,7 +2610,7 @@ public class MainServerForm : System.Windows.Forms.Form
                     }
                 }
 
-                foreach (JurikSoftTcpClient.SessionStatisticAndInfo sessionStatisticAndInfo_obj in LocalObjCopy.obj_SessionStatisticAndInfo.RemotingWrapper_AllSessionStatisticAndInfoOjects)
+                foreach (YakSysTcpClient.SessionStatisticAndInfo sessionStatisticAndInfo_obj in LocalObjCopy.obj_SessionStatisticAndInfo.RemotingWrapper_AllSessionStatisticAndInfoOjects)
                 {
                     if (sessionStatisticAndInfo_obj.IsNewObject == true)
                     {
@@ -2623,9 +2622,9 @@ public class MainServerForm : System.Windows.Forms.Form
 
                 foreach (NetworkSecurity.UserAccount userAccount_obj in LocalObjCopy.obj_NetworkSecurity_UserAccount.RemotingWrapper_UsersAccounts)
                 {
-                    if (userAccount_obj.AccountType == NetworkSecurity.UserAccount.AccountTypesEnum.JurikSoftAccount)
+                    if (userAccount_obj.AccountType == NetworkSecurity.UserAccount.AccountTypesEnum.YakSysAccount)
                     {
-                        int_JurikSoftAccountCount++;
+                        int_YakSysAccountCount++;
                     }
 
                     if (userAccount_obj.IsNewObject == true)
@@ -2634,7 +2633,7 @@ public class MainServerForm : System.Windows.Forms.Form
                     }
                 }
 
-                if (int_JurikSoftAccountCount != this.listView_Security_ListOfUsersAccounts.Items.Count)
+                if (int_YakSysAccountCount != this.listView_Security_ListOfUsersAccounts.Items.Count)
                 {
                     this.RefreshUserAccountsList();
                 }
@@ -2649,7 +2648,7 @@ public class MainServerForm : System.Windows.Forms.Form
                     this.RefreshAccessRestrictionRulesList();
                 }
 
-                int_JurikSoftAccountCount = 0;
+                int_YakSysAccountCount = 0;
             }
             catch (RemotingException)
             {

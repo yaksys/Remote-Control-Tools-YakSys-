@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JurikSoft Server Service Installer")]
+[assembly: AssemblyTitle("YakSys Server Service Installer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Home")]
-[assembly: AssemblyProduct("JurikSoft Server Service Installer")]
+[assembly: AssemblyProduct("YakSys Server Service Installer")]
 [assembly: AssemblyCopyright("Copyright © Home 2006")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

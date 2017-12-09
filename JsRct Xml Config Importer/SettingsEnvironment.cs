@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace JurikSoft
+namespace YakSys
 {
-    namespace XMLConfigImporer
+    namespace XMLConfigImporter
     {
-        namespace JsRctClient
+        namespace YakSysRctClient
         {
             namespace Version110
             {
@@ -771,31 +771,31 @@ namespace JurikSoft
                         }
                     }
 
-                    static string string_CSP_ServerAuth_JSRCTLogin = String.Empty;
-                    public static string CSP_ServerAuth_JSRCTLogin
+                    static string string_CSP_ServerAuth_YakSysRctLogin = String.Empty;
+                    public static string CSP_ServerAuth_YakSysRctLogin
                     {
                         get
                         {
-                            return string_CSP_ServerAuth_JSRCTLogin;
+                            return string_CSP_ServerAuth_YakSysRctLogin;
                         }
 
                         set
                         {
-                            string_CSP_ServerAuth_JSRCTLogin = value;
+                            string_CSP_ServerAuth_YakSysRctLogin = value;
                         }
                     }
 
-                    static string string_CSP_ServerAuth_JSRCTPassword = String.Empty;
-                    public static string CSP_ServerAuth_JSRCTPassword
+                    static string string_CSP_ServerAuth_YakSysRctPassword = String.Empty;
+                    public static string CSP_ServerAuth_YakSysRctPassword
                     {
                         get
                         {
-                            return string_CSP_ServerAuth_JSRCTPassword;
+                            return string_CSP_ServerAuth_YakSysRctPassword;
                         }
 
                         set
                         {
-                            string_CSP_ServerAuth_JSRCTPassword = value;
+                            string_CSP_ServerAuth_YakSysRctPassword = value;
                         }
                     }
 
@@ -813,17 +813,17 @@ namespace JurikSoft
                         }
                     }
                                         
-                    static bool bool_CSP_ServerAuth_UseJurikSoftCSPServer = true;
-                    public static bool CSP_ServerAuth_UseJurikSoftCSPServer
+                    static bool bool_CSP_ServerAuth_UseYakSysCSPServer = true;
+                    public static bool CSP_ServerAuth_UseYakSysCSPServer
                     {
                         get
                         {
-                            return bool_CSP_ServerAuth_UseJurikSoftCSPServer;
+                            return bool_CSP_ServerAuth_UseYakSysCSPServer;
                         }
 
                         set
                         {
-                            bool_CSP_ServerAuth_UseJurikSoftCSPServer = value;
+                            bool_CSP_ServerAuth_UseYakSysCSPServer = value;
                         }
                     }
 
@@ -857,17 +857,17 @@ namespace JurikSoft
 
                     //--------------------------------------------------------------------------------------------------   CSP
 
-                    static bool bool_CSP_CSPServersList_UseJurikSoftCSPServer = true;
-                    public static bool CSP_CSPServersList_UseJurikSoftCSPServer
+                    static bool bool_CSP_CSPServersList_UseYakSysCSPServer = true;
+                    public static bool CSP_CSPServersList_UseYakSysCSPServer
                     {
                         get
                         {
-                            return bool_CSP_CSPServersList_UseJurikSoftCSPServer;
+                            return bool_CSP_CSPServersList_UseYakSysCSPServer;
                         }
 
                         set
                         {
-                            bool_CSP_CSPServersList_UseJurikSoftCSPServer = value;
+                            bool_CSP_CSPServersList_UseYakSysCSPServer = value;
                         }
                     }
 
@@ -1129,17 +1129,17 @@ namespace JurikSoft
                         }
                     }
 
-                    static bool bool_CSP_ChangeUINAccountState_UseJurikSoftCSPServer = true;
-                    public static bool CSP_ChangeUINAccountState_UseJurikSoftCSPServer
+                    static bool bool_CSP_ChangeUINAccountState_UseYakSysCSPServer = true;
+                    public static bool CSP_ChangeUINAccountState_UseYakSysCSPServer
                     {
                         get
                         {
-                            return bool_CSP_ChangeUINAccountState_UseJurikSoftCSPServer;
+                            return bool_CSP_ChangeUINAccountState_UseYakSysCSPServer;
                         }
 
                         set
                         {
-                            bool_CSP_ChangeUINAccountState_UseJurikSoftCSPServer = value;
+                            bool_CSP_ChangeUINAccountState_UseYakSysCSPServer = value;
                         }
                     }
 
@@ -1171,28 +1171,11 @@ namespace JurikSoft
                         }
                     }  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 }
             }
         }
 
-        namespace JsRctServer
+        namespace YakSysRctServer
         {
             namespace Version110
             {
@@ -1902,29 +1885,29 @@ namespace JurikSoft
                         }
                     }
 
-                    static bool bool_CSP_ChangeUINAccountState_UseJurikSoftCSPServer = true;
-                    public static bool CSP_ChangeUINAccountState_UseJurikSoftCSPServer
+                    static bool bool_CSP_ChangeUINAccountState_UseYakSysCSPServer = true;
+                    public static bool CSP_ChangeUINAccountState_UseYakSysCSPServer
                     {
                         get
                         {
-                            return bool_CSP_ChangeUINAccountState_UseJurikSoftCSPServer;
+                            return bool_CSP_ChangeUINAccountState_UseYakSysCSPServer;
                         }
 
                         set
                         {
-                            bool_CSP_ChangeUINAccountState_UseJurikSoftCSPServer = value;
+                            bool_CSP_ChangeUINAccountState_UseYakSysCSPServer = value;
                         }
                     }
-                    public bool RemotingWrapper_CSP_ChangeUINAccountState_UseJurikSoftCSPServer
+                    public bool RemotingWrapper_CSP_ChangeUINAccountState_UseYakSysCSPServer
                     {
                         get
                         {
-                            return ServerSettingsEnvironment.CSP_ChangeUINAccountState_UseJurikSoftCSPServer;
+                            return ServerSettingsEnvironment.CSP_ChangeUINAccountState_UseYakSysCSPServer;
                         }
 
                         set
                         {
-                            ServerSettingsEnvironment.CSP_ChangeUINAccountState_UseJurikSoftCSPServer = value;
+                            ServerSettingsEnvironment.CSP_ChangeUINAccountState_UseYakSysCSPServer = value;
                         }
                     }
 
@@ -2086,29 +2069,29 @@ namespace JurikSoft
                         }
                     }
 
-                    static bool bool_CSP_ServerAuth_UseJurikSoftCSPServer = true;
-                    public static bool CSP_ServerAuth_UseJurikSoftCSPServer
+                    static bool bool_CSP_ServerAuth_UseYakSysCSPServer = true;
+                    public static bool CSP_ServerAuth_UseYakSysCSPServer
                     {
                         get
                         {
-                            return bool_CSP_ServerAuth_UseJurikSoftCSPServer;
+                            return bool_CSP_ServerAuth_UseYakSysCSPServer;
                         }
 
                         set
                         {
-                            bool_CSP_ServerAuth_UseJurikSoftCSPServer = value;
+                            bool_CSP_ServerAuth_UseYakSysCSPServer = value;
                         }
                     }
-                    public bool RemotingWrapper_CSP_ServerAuth_UseJurikSoftCSPServer
+                    public bool RemotingWrapper_CSP_ServerAuth_UseYakSysCSPServer
                     {
                         get
                         {
-                            return ServerSettingsEnvironment.CSP_ServerAuth_UseJurikSoftCSPServer;
+                            return ServerSettingsEnvironment.CSP_ServerAuth_UseYakSysCSPServer;
                         }
 
                         set
                         {
-                            ServerSettingsEnvironment.CSP_ServerAuth_UseJurikSoftCSPServer = value;
+                            ServerSettingsEnvironment.CSP_ServerAuth_UseYakSysCSPServer = value;
                         }
                     }
 

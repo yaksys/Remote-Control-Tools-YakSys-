@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
-using JsConnectingService;
+using YakSysConnectingService;
 
 public class ServersAccountsManagerForm : System.Windows.Forms.Form
 {

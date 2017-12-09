@@ -8,7 +8,7 @@
     <ProjectGuid>{E8D84672-519A-44D8-A728-946634FF86D8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JurikSoft</RootNamespace>
+    <RootNamespace>YakSys</RootNamespace>
     <AssemblyName>Remote Control Tools Server %28Windows Service%29 GUI</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -16,7 +16,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -62,26 +62,26 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Connecting Service Provider\bin\Debug\Connecting Service Provider.dll</HintPath>
     </Reference>
-    <Reference Include="JsRct Xml Config Importer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\JsRct Xml Config Importer\bin\Debug\JsRct Xml Config Importer.dll</HintPath>
-    </Reference>
-    <Reference Include="JsRct-Server Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\JsRct-Server Core\bin\Debug\JsRct-Server Core.dll</HintPath>
-    </Reference>
-    <Reference Include="JsRctServerLangPack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\JsRctServerLangPack\bin\Debug\JsRctServerLangPack.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="YakSysRct Xml Config Importer">
+      <HintPath>..\JsRct Xml Config Importer\bin\Debug\YakSysRct Xml Config Importer.dll</HintPath>
+    </Reference>
+    <Reference Include="YakSysRct-Server Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsRct-Server Core\bin\Debug\YakSysRct-Server Core.dll</HintPath>
+    </Reference>
+    <Reference Include="YakSysRctServerLangPack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsRctServerLangPack\bin\Debug\YakSysRctServerLangPack.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form classes\AboutForm.cs">

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using JurikSoft.RCTServiceGUI;
+using YakSys.RCTServiceGUI;
 
 public class AdditionalParametersForm : System.Windows.Forms.Form
 {

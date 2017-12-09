@@ -4,7 +4,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace JurikSoft
+namespace YakSys
 {
 	namespace Compression
 	{
@@ -86,8 +86,8 @@ namespace JurikSoft
 			/// //Initializes a new instance of the RLE class with a compression parameter:
 			/// //PrefixCodesCompression enum value that indicate use PrefixCode to compress 
 			/// //single uncompressed bytes or store bytes uncompressed
-			/// JurikSoft.Compression.ICompression compressionObj = 
-			/// new JurikSoft.Compression.RLE(PrefixCodesCompression.NonAdaptive);
+			/// YakSys.Compression.ICompression compressionObj = 
+			/// new YakSys.Compression.RLE(PrefixCodesCompression.NonAdaptive);
 			/// 
 			/// FileStream fileStream_DataFile = File.Open("test.dat");
 			/// 

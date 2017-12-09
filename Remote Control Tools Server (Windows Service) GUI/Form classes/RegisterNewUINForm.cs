@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using JurikSoft.RCTServiceGUI;
+using YakSys.RCTServiceGUI;
 
 
 public partial class RegisterNewUINForm : Form

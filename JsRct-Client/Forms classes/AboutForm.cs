@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public class AboutForm : System.Windows.Forms.Form
 {
@@ -124,7 +124,7 @@ public class AboutForm : System.Windows.Forms.Form
             this.richTextBox_About.ReadOnly = true;
             this.richTextBox_About.Size = new System.Drawing.Size(240, 144);
             this.richTextBox_About.TabIndex = 1;
-            this.richTextBox_About.Text = "Интернет сайт:\n\nАвтор: yak@zniis.ru\n           \nТехническая поддержка: \n         " +
+            this.richTextBox_About.Text = "Интернет сайт:\n\nАвтор: yak@YakSys.ru\n           \nТехническая поддержка: \n         " +
     "  \nИнформация: \n\nПо вопросам продаж: \n\nICQ: ";
             this.richTextBox_About.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox_About_LinkClicked);
             // 
@@ -135,7 +135,7 @@ public class AboutForm : System.Windows.Forms.Form
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(295, 16);
             this.label_Title.TabIndex = 2;
-            this.label_Title.Text = "ZNIIS RCT Client 1.0 для Windows 2000/XP/2003/7/8/10";
+            this.label_Title.Text = "YakSys RCT Client 1.0 для Windows 2000/XP/2003/7/8/10";
             this.label_Title.Click += new System.EventHandler(this.label_Title_Click);
             // 
             // groupBox_RegistrationInformation
@@ -240,7 +240,6 @@ public class AboutForm : System.Windows.Forms.Form
             // 
             // pictureBox_AboutForm_Logo
             // 
-            this.pictureBox_AboutForm_Logo.Image = global::JsRct_Client.Properties.Resources.zniislogo;
             this.pictureBox_AboutForm_Logo.Location = new System.Drawing.Point(13, 12);
             this.pictureBox_AboutForm_Logo.Name = "pictureBox_AboutForm_Logo";
             this.pictureBox_AboutForm_Logo.Size = new System.Drawing.Size(496, 78);
@@ -283,7 +282,7 @@ public class AboutForm : System.Windows.Forms.Form
     }
 
 
-    private void pictureBox_JurikSoftTitle_Click(object sender, System.EventArgs e)
+    private void pictureBox_YakSysTitle_Click(object sender, System.EventArgs e)
     {
         System.Diagnostics.Process.Start("http://www.yaksys.net");
     }

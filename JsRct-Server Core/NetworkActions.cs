@@ -8,14 +8,16 @@ using System.IO;
 using System.Windows.Forms;
 using System.Collections;
 using System.Collections.Generic;
-using JurikSoft.Compression;
+using YakSys.Compression;
 using System.Runtime.InteropServices;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
+using YakSys;
+using YakSys.Server_Core;
 using System.Drawing;
 using System.Drawing.Imaging;
-using JurikSoft.Server_Core;
+using YakSys.Server_Core;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Server_Core
     {
@@ -28,19 +30,19 @@ namespace JurikSoft
 
 
         [Serializable]
-        public class JurikSoftTcpClient : TcpClient
+        public class YakSysTcpClient : TcpClient
         {
 
 
 
-            public JurikSoftTcpClient()
+            public YakSysTcpClient()
             {
                 rNGCryptoServiceProvider_RandomGenerator.GetBytes(byteArray_RandomAuthorizationCodeForClient);
 
                 /*  
                   SessionStatisticAndInfo_Obj = new SessionStatisticAndInfo();
 
-                  SessionStatisticAndInfo_Obj.JurikSoftTcpClient_Owner = this;
+                  SessionStatisticAndInfo_Obj.YakSysTcpClient_Owner = this;
 
                   SessionStatisticAndInfo.AllSessionStatisticAndInfoOjects.Add(SessionStatisticAndInfo_Obj);                
               */
@@ -51,7 +53,7 @@ namespace JurikSoft
                 new Thread(SendHighPriorityDataThread).Start();
 
             }
-            ~JurikSoftTcpClient()
+            ~YakSysTcpClient()
             {
                 RTDVQueries = 0;
 
@@ -60,7 +62,7 @@ namespace JurikSoft
 
             public void InitCompressionEnvironment()
             {
-                new ConmpressionEnvironment(); //Init objects in static Array of compression interface
+                new CompressionEnvironment(); //Init objects in static Array of compression interface
             }
 
             #region Session Statistic and Informtion SubSystem
@@ -110,7 +112,7 @@ namespace JurikSoft
                 {
                     get
                     {
-                        return ((IPEndPoint)this.JurikSoftTcpClient_Owner.Client.RemoteEndPoint).Address.ToString();
+                        return ((IPEndPoint)this.YakSysTcpClient_Owner.Client.RemoteEndPoint).Address.ToString();
                     }
                 }
 
@@ -159,7 +161,7 @@ namespace JurikSoft
                 {
                     get
                     {
-                        return JurikSoftTcpClient_Owner.IsAccountEnabled;
+                        return YakSysTcpClient_Owner.IsAccountEnabled;
                     }
                 }
 
@@ -175,27 +177,27 @@ namespace JurikSoft
                         bool_IsNewObject = value;
                     }
                 }
-
-                internal JurikSoftTcpClient jurikSoftTcpClient_Owner = null;
-                internal JurikSoftTcpClient JurikSoftTcpClient_Owner
+           
+                internal YakSysTcpClient YakSysTcpClient_Owner_obj = null;
+                internal YakSysTcpClient YakSysTcpClient_Owner
                 {
                     get
                     {
-                        return jurikSoftTcpClient_Owner;
+                        return YakSysTcpClient_Owner_obj;
                     }
 
                     set
                     {
-                        jurikSoftTcpClient_Owner = value;
+                        YakSysTcpClient_Owner_obj = value;
                     }
                 }
-
-                static List<JurikSoftTcpClient> list_AllJurikSoftClients = new List<JurikSoftTcpClient>();
-                internal static List<JurikSoftTcpClient> AllJurikSoftClients
+          
+                static List<YakSysTcpClient> list_AllYakSysClients = new List<YakSysTcpClient>();
+                internal static List<YakSysTcpClient> AllYakSysClients
                 {
                     get
                     {
-                        return list_AllJurikSoftClients;
+                        return list_AllYakSysClients;
                     }
                 }
 
@@ -386,7 +388,7 @@ namespace JurikSoft
 
                         this.NoDelay = sendingPacket_Current.NoDelay;
 
-                        iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
+                        iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
 
                         memoryStream_DataToSend.SetLength(0);
 
@@ -407,13 +409,13 @@ namespace JurikSoft
                         {
                             if (SentDataType_Current == SentDataType.ApplicationData)
                             {
-                                iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
+                                iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingSystemDataAlgorithm];
 
                                 byte_IsDataCompressed = (byte)this.CompressSendingSystemDataAlgorithm;
                             }
                             else
                             {
-                                iCompression_obj = ConmpressionEnvironment.iCompressionArray_obj[this.CompressSendingFileObjectsDataAlgorithm];
+                                iCompression_obj = CompressionEnvironment.iCompressionArray_obj[this.CompressSendingFileObjectsDataAlgorithm];
 
                                 byte_IsDataCompressed = (byte)this.CompressSendingFileObjectsDataAlgorithm;
                             }
@@ -534,26 +536,26 @@ namespace JurikSoft
             {
                 LocalAction localAction_obj = new LocalAction();
 
-                for (int int_CycleCount = 0; SessionStatisticAndInfo.AllJurikSoftClients.Count != int_CycleCount; int_CycleCount++)
+                for (int int_CycleCount = 0; SessionStatisticAndInfo.AllYakSysClients.Count != int_CycleCount; int_CycleCount++)
                 {
                     try
                     {
-                        localAction_obj.CurrentlyUsedTcpClient = SessionStatisticAndInfo.AllJurikSoftClients[int_CycleCount];
+                        localAction_obj.CurrentlyUsedTcpClient = SessionStatisticAndInfo.AllYakSysClients[int_CycleCount];
 
                         localAction_obj.SendConnectionCheck();
 
-                        if (SessionStatisticAndInfo.AllJurikSoftClients[int_CycleCount].MarkForDisconnect == true)
+                        if (SessionStatisticAndInfo.AllYakSysClients[int_CycleCount].MarkForDisconnect == true)
                         {
-                            ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(SessionStatisticAndInfo.AllJurikSoftClients[int_CycleCount], 4);
+                            ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(SessionStatisticAndInfo.AllYakSysClients[int_CycleCount], 4);
                         }
 
                     }
 
                     catch (Exception exception_obj)
                     {
-                        ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(SessionStatisticAndInfo.AllJurikSoftClients[int_CycleCount], 4);
+                        ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(SessionStatisticAndInfo.AllYakSysClients[int_CycleCount], 4);
 
-                        if (SessionStatisticAndInfo.AllJurikSoftClients.Count == 0) break;
+                        if (SessionStatisticAndInfo.AllYakSysClients.Count == 0) break;
 
                         int_CycleCount = -1;
                     }
@@ -566,7 +568,7 @@ namespace JurikSoft
 
                 try
                 {
-                    if (SessionStatisticAndInfo.AllJurikSoftClients.Count == 0) return;
+                    if (SessionStatisticAndInfo.AllYakSysClients.Count == 0) return;
 
                     SendCheckInfoToClients();
 
@@ -1126,7 +1128,7 @@ namespace JurikSoft
             }
 
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern string ResolveMACAddressFromIP(string string_IPAddress);
             public string RemotingWrapper_ResolveMACAddressFromIP(string string_IPAddress)
             {
@@ -1169,16 +1171,16 @@ namespace JurikSoft
             }
 
 
-            public void DisconnectNecessaryClient(JurikSoftTcpClient tcpClient_InternalClient, int int_AccountChangeIndex)
+            public void DisconnectNecessaryClient(YakSysTcpClient tcpClient_InternalClient, int int_AccountChangeIndex)
             {
-                if (JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.IndexOf(tcpClient_InternalClient) == -1 || tcpClient_InternalClient.RequestToDisconnect == true)
+                if (YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.IndexOf(tcpClient_InternalClient) == -1 || tcpClient_InternalClient.RequestToDisconnect == true)
                 {
                     return;
                 }
 
 
 
-                JurikSoftServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, ServerSettingsEnvironment.CurrentLanguage),
+                YakSysServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, ServerSettingsEnvironment.CurrentLanguage),
                                                            ServerStringFactory.GetString(68, ServerSettingsEnvironment.CurrentLanguage) + tcpClient_InternalClient.SessionStatisticAndInfo_Obj.NetworkInformation_UserName);
 
 
@@ -1205,7 +1207,7 @@ namespace JurikSoft
                     }
                 }
 
-                int int_ClientIndex = JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.IndexOf(tcpClient_InternalClient);
+                int int_ClientIndex = YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.IndexOf(tcpClient_InternalClient);
 
                 if (int_ClientIndex > -1)
                 {
@@ -1215,18 +1217,18 @@ namespace JurikSoft
                     NetworkStatusAndStatistics.Statistic_ActiveConnections--;
                 }
 
-                JurikSoftTcpClient.SessionStatisticAndInfo.AllSessionStatisticAndInfoOjects.Remove(tcpClient_InternalClient.SessionStatisticAndInfo_Obj);
+                YakSysTcpClient.SessionStatisticAndInfo.AllSessionStatisticAndInfoOjects.Remove(tcpClient_InternalClient.SessionStatisticAndInfo_Obj);
 
-                JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Remove(tcpClient_InternalClient);
+                YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Remove(tcpClient_InternalClient);
 
                 tcpClient_InternalClient.Close();
             }
 
             public void DisconnectNecessaryClient(int int_ClientNumber, int int_AccountChangeIndex)
             {
-                JurikSoftTcpClient tcpClient_InternalClient = JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients[int_ClientNumber];
+                YakSysTcpClient tcpClient_InternalClient = YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients[int_ClientNumber];
 
-                if (JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Count == 0 || JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.IndexOf(tcpClient_InternalClient) == -1)
+                if (YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Count == 0 || YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.IndexOf(tcpClient_InternalClient) == -1)
                 {
                     return;
                 }
@@ -1238,36 +1240,36 @@ namespace JurikSoft
    
             public void DisconnectAllClients()
             {
-                if (JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Count == 0) return;
+                if (YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Count == 0) return;
 
-                for (; JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Count != 0; )
+                for (; YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Count != 0; )
                 {
                     try
                     {
-                        ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients[0], 2);
+                        ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients[0], 2);
                     }
 
                     catch (Exception)
                     {
-                        JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Clear();
+                        YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Clear();
 
                         return;
                     }
                 }
 
-                JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Clear();
+                YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Clear();
             }
 
             
             public void DataReceivingCycle(object socket_AcceptedSocket)
             {
-                JurikSoftTcpClient tcpClient_InternalClient = new JurikSoftTcpClient();
+                YakSysTcpClient tcpClient_InternalClient = new YakSysTcpClient();
 
                 try
                 {
-                    JurikSoft.Compression.CommonEnvironment commonEnvironment_obj = new JurikSoft.Compression.CommonEnvironment();
+                    YakSys.Compression.CommonEnvironment commonEnvironment_obj = new YakSys.Compression.CommonEnvironment();
 
-                    ConmpressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new ConmpressionEnvironment.DeflateCompressionWrapper();
+                    CompressionEnvironment.DeflateCompressionWrapper deflateCompressionWrapper_obj = new CompressionEnvironment.DeflateCompressionWrapper();
 
                     tcpClient_InternalClient.Socket = (Socket)socket_AcceptedSocket;
 
@@ -1282,12 +1284,12 @@ namespace JurikSoft
 
                     LocalAction localAction_obj = null;
 
-                    tcpClient_InternalClient.SessionStatisticAndInfo_Obj = new JurikSoftTcpClient.SessionStatisticAndInfo();
-                    tcpClient_InternalClient.SessionStatisticAndInfo_Obj.JurikSoftTcpClient_Owner = tcpClient_InternalClient;
+                    tcpClient_InternalClient.SessionStatisticAndInfo_Obj = new YakSysTcpClient.SessionStatisticAndInfo();
+                    tcpClient_InternalClient.SessionStatisticAndInfo_Obj.YakSysTcpClient_Owner = tcpClient_InternalClient;
 
-                    JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Add(tcpClient_InternalClient);
+                    YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Add(tcpClient_InternalClient);
 
-                    new Thread(new ThreadStart(JurikSoftTcpClient.CheckClientsConnetions)).Start();
+                    new Thread(new ThreadStart(YakSysTcpClient.CheckClientsConnetions)).Start();
 
                     while (tcpClient_InternalClient.Socket.Connected && tcpClient_InternalClient.MarkForDisconnect == false)
                     {
@@ -1423,7 +1425,7 @@ namespace JurikSoft
                                     return;
                                 }
 
-                                if (ServerSettingsEnvironment.MaxConnections > 0 && ServerSettingsEnvironment.MaxConnections == JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Count)
+                                if (ServerSettingsEnvironment.MaxConnections > 0 && ServerSettingsEnvironment.MaxConnections == YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Count)
                                 {
                                     localAction_obj.SendAuthorizationStatus(2);
 
@@ -1511,7 +1513,7 @@ namespace JurikSoft
 
                                     #region Log And Statistic Calls
 
-                                    JurikSoftServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(),
+                                    YakSysServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(),
                                                                        DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, ServerSettingsEnvironment.CurrentLanguage),
                                                                        ServerStringFactory.GetString(54, ServerSettingsEnvironment.CurrentLanguage) + string_Login);
 
@@ -1523,7 +1525,7 @@ namespace JurikSoft
 
                                     #endregion
 
-                                    JurikSoftTcpClient.SessionStatisticAndInfo.AllSessionStatisticAndInfoOjects.Add(tcpClient_InternalClient.SessionStatisticAndInfo_Obj);
+                                    YakSysTcpClient.SessionStatisticAndInfo.AllSessionStatisticAndInfoOjects.Add(tcpClient_InternalClient.SessionStatisticAndInfo_Obj);
                                     /////
                                     tcpClient_InternalClient.IsAuthorized = true;
 
@@ -1728,7 +1730,7 @@ namespace JurikSoft
 
                     CSP.ConnectingServiceProvider connectingServiceProvider_obj = new CSP.ConnectingServiceProvider();
 
-                    connectedCSPServer_obj = connectingServiceProvider_obj.ConnectServerToJSConnectingService(string_ServiceIPAddress, 5545, ulong_LoginUIN, string_Password);
+                    connectedCSPServer_obj = connectingServiceProvider_obj.ConnectServerToYakSysConnectingService(string_ServiceIPAddress, 5545, ulong_LoginUIN, string_Password);
 
                     bool_IsPublishServerCallWorking = false;
 
@@ -1864,7 +1866,7 @@ namespace JurikSoft
 
                     NetworkStatusAndStatistics.ServerStatus = ServerStringFactory.GetString(56, ServerSettingsEnvironment.CurrentLanguage);
 
-                    JurikSoftServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(),
+                    YakSysServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(),
                     DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, ServerSettingsEnvironment.CurrentLanguage), ServerStringFactory.GetString(57, ServerSettingsEnvironment.CurrentLanguage));
 
                     NetworkStatusAndStatistics.Statistic_BytesSent = 0;
@@ -1919,31 +1921,31 @@ namespace JurikSoft
 
                     NetworkStatusAndStatistics.ServerStatus = ServerStringFactory.GetString(7, ServerSettingsEnvironment.CurrentLanguage);
 
-                    JurikSoftServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(),
+                    YakSysServerLog.InsertDataToLog(ServerStringFactory.GetString(44, ServerSettingsEnvironment.CurrentLanguage), DateTime.Now.ToShortDateString(),
                     DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, ServerSettingsEnvironment.CurrentLanguage), ServerStringFactory.GetString(59, ServerSettingsEnvironment.CurrentLanguage));
 
-                    JurikSoftTcpClient jurikSoftTcpClient_CurrentObj = null;
+                    YakSysTcpClient YakSysTcpClient_CurrentObj = null;
 
-                    for (int int_CycleCount = 0; JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Count != 0; )
+                    for (int int_CycleCount = 0; YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Count != 0; )
                     {
                         try
                         {
-                            int_CycleCount = JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Count - 1;
+                            int_CycleCount = YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Count - 1;
 
-                            jurikSoftTcpClient_CurrentObj = JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients[int_CycleCount];
+                            YakSysTcpClient_CurrentObj = YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients[int_CycleCount];
 
-                            ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(jurikSoftTcpClient_CurrentObj, 4);
+                            ObjCopy.obj_NetworkAction.DisconnectNecessaryClient(YakSysTcpClient_CurrentObj, 4);
                         }
 
                         catch
                         {
-                            JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Clear();
+                            YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Clear();
 
                             return;
                         }
                     }
 
-                    JurikSoftTcpClient.SessionStatisticAndInfo.AllJurikSoftClients.Clear();
+                    YakSysTcpClient.SessionStatisticAndInfo.AllYakSysClients.Clear();
 
                     NetworkStatusAndStatistics.Statistic_ActiveConnections = 0;
                 }

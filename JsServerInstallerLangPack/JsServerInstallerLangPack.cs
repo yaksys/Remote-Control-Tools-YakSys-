@@ -12,11 +12,11 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "JurikSoft Server Service Installer";
+                            return "YakSys Server Service Installer";
 
 
                         case 1:
-                            return "JurikSoft Server Service Installer";
+                            return "YakSys Server Service Installer";
 
                     }
                 }
@@ -28,11 +28,11 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Internet: http://www.juriksoft.net\n\nAuthor: jurik@juriksoft.net\n\nTechnical support: support@juriksoft.net\n\nInformation: info@juriksoft.net\n\nSales questios: sales@juriksoft.net\n\nICQ: 55-23-99-11";
+                            return "Internet: http://www.YakSys.net\n\nAuthor: chief_yaksys@yandex.ru www.YakSys.net\n\nTechnical support: support@YakSys.net";
 
 
                         case 1:
-                            return "Интернет сайт: http://www.juriksoft.net\n\nАвтор: jurik@juriksoft.net\n\nТехническая поддержка: support@juriksoft.net\n\nИнформация: info@juriksoft.net\n\nПо вопросам продаж: sales@juriksoft.net\n\nICQ: 55-23-99-11";
+                            return "Интернет сайт: http://www.YakSys.net\n\nАвтор: chief_yaksys@yandex.ru www.YakSys.net \n\nТехническая поддержка: support@YakSys.net";
 
                     }
                 }
@@ -376,10 +376,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "JurikSoft Server Service Control and Information";
+                            return "YakSys Server Service Control and Information";
 
                         case 1:
-                            return "Информация и управление JurikSoft Server Service";
+                            return "Информация и управление YakSys Server Service";
                     }
                 }
                 break;
@@ -747,10 +747,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Creating JurikSoft Server directory";
+                            return "Creating YakSys Server directory";
 
                         case 1:
-                            return "Создание директории JurikSoft Server";
+                            return "Создание директории YakSys Server";
                     }
                 }
                 break;
@@ -777,10 +777,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Getting JurikSoft Server directory path";
+                            return "Getting YakSys Server directory path";
 
                         case 1:
-                            return "Получени пути к директории JurikSoft Server";
+                            return "Получени пути к директории YakSys Server";
                     }
                 }
                 break;
@@ -793,10 +793,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Exctracting JurikSoft Server binaries";
+                            return "Exctracting YakSys Server binaries";
 
                         case 1:
-                            return "Извлечение исполняемых файлов JurikSoft Server";
+                            return "Извлечение исполняемых файлов YakSys Server";
                     }
                 }
                 break;
@@ -809,10 +809,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Creating and registering JurikSoft Server Windows Service";
+                            return "Creating and registering YakSys Server Windows Service";
 
                         case 1:
-                            return "Создание и регистрация Windows службы JurikSoft Server";
+                            return "Создание и регистрация Windows службы YakSys Server";
                     }
                 }
                 break;
@@ -825,10 +825,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Starting JurikSoft Server Windows Service";
+                            return "Starting YakSys Server Windows Service";
 
                         case 1:
-                            return "Запуск Windows службы JurikSoft Server";
+                            return "Запуск Windows службы YakSys Server";
                     }
                 }
                 break;
@@ -841,10 +841,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Starting JurikSoft Server Windows Service";
+                            return "Starting YakSys Server Windows Service";
 
                         case 1:
-                            return "Запуск Windows службы JurikSoft Server";
+                            return "Запуск Windows службы YakSys Server";
                     }
                 }
                 break;
@@ -873,10 +873,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Stop JurikSoft Server Windows Service";
+                            return "Stop YakSys Server Windows Service";
 
                         case 1:
-                            return "Остановка Windows службы JurikSoft Server";
+                            return "Остановка Windows службы YakSys Server";
                     }
                 }
                 break;
@@ -889,10 +889,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Delete JurikSoft Server Service";
+                            return "Delete YakSys Server Service";
 
                         case 1:
-                            return "Удаление JurikSoft Server Windows Service";
+                            return "Удаление YakSys Server Windows Service";
                     }
                 }
                 break;
@@ -905,10 +905,10 @@ public class StringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Delete JurikSoft Server directory";
+                            return "Delete YakSys Server directory";
 
                         case 1:
-                            return "Удаление директории JurikSoft Server";
+                            return "Удаление директории YakSys Server";
                     }
                 }
                 break;

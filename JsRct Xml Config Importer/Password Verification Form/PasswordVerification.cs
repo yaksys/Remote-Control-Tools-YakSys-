@@ -5,10 +5,10 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
-using JurikSoft;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public class PasswordVerificationForm : System.Windows.Forms.Form
 {
@@ -37,7 +37,7 @@ public class PasswordVerificationForm : System.Windows.Forms.Form
 
     public void ChangeControlsLanguage()
     {
-        if (CallerID == 0) // 0 Is A JSRCTServer
+        if (CallerID == 0) // 0 Is A YakSysRctServer
         {
             this.Text = ServerStringFactory.GetString(117, ServerSettingsEnvironment.CurrentLanguage);
 
@@ -200,7 +200,7 @@ public class PasswordVerificationForm : System.Windows.Forms.Form
         this.label_PasswordVerivicationForm_LostPasswordDecription.Name = "label_PasswordVerivicationForm_LostPasswordDecription";
         this.label_PasswordVerivicationForm_LostPasswordDecription.Size = new System.Drawing.Size(464, 40);
         this.label_PasswordVerivicationForm_LostPasswordDecription.TabIndex = 0;
-        this.label_PasswordVerivicationForm_LostPasswordDecription.Text = "Note: You can login without password but JurikSoft Server DataBase will be erased" +
+        this.label_PasswordVerivicationForm_LostPasswordDecription.Text = "Note: You can login without password but YakSys Server DataBase will be erased" +
             ". All data will be deleted, including Servers list, Proxy list, Auth data and Se" +
             "ttings.";
         // 
@@ -292,7 +292,7 @@ public class PasswordVerificationForm : System.Windows.Forms.Form
         this.label_Title.Name = "label_Title";
         this.label_Title.Size = new System.Drawing.Size(264, 16);
         this.label_Title.TabIndex = 10;
-        this.label_Title.Text = "JurikSoft Server 0.9.0 для Windows 2000/XP/2003";
+        this.label_Title.Text = "YakSys Server 0.9.0 для Windows 2000/XP/2003";
         // 
         // PasswordVerificationForm
         // 
@@ -382,8 +382,8 @@ public class PasswordVerificationForm : System.Windows.Forms.Form
             {
                 this.DialogResult = DialogResult.Ignore;
 
-                new JsRctServerV110XMLConfigImporter().InitMainServerSettingsXmlDB();
-                new JsRctServerV110XMLConfigImporter().InitCommonSecuritySettingsXmlDB();
+                new YakSysRctServerV110XMLConfigImporter().InitMainServerSettingsXmlDB();
+                new YakSysRctServerV110XMLConfigImporter().InitCommonSecuritySettingsXmlDB();
 
                 bool_NeedToClose = true;
 
@@ -409,8 +409,8 @@ public class PasswordVerificationForm : System.Windows.Forms.Form
             {
                 this.DialogResult = DialogResult.Ignore;
 
-                new JsRctClientV110XMLConfigImporter().InitProxyServersSettingsXmlDB();
-                new JsRctClientV110XMLConfigImporter().InitMainClientSettingsXmlDB();                
+                new YakSysRctClientV110XMLConfigImporter().InitProxyServersSettingsXmlDB();
+                new YakSysRctClientV110XMLConfigImporter().InitMainClientSettingsXmlDB();                
 
                 bool_NeedToClose = true;
 
@@ -426,7 +426,7 @@ public class PasswordVerificationForm : System.Windows.Forms.Form
 
     private void pictureBox_PasswordVerivicationForm_Logo_Click(object sender, System.EventArgs e)
     {
-        System.Diagnostics.Process.Start("http://www.juriksoft.net");
+        System.Diagnostics.Process.Start("http://www.YakSys.net");
     }
 
     private void comboBox_PasswordVerivicationForm_Language_SelectedIndexChanged(object sender, System.EventArgs e)

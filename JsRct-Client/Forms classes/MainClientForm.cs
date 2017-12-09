@@ -17,9 +17,9 @@ using System.Drawing.Imaging;
 using System.Management;
 using System.Management.Instrumentation;
 using System.ComponentModel;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 using System.Runtime.InteropServices;
 // comment
 
@@ -4911,7 +4911,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // 
             // label_SystemStateManager_LockWorkstationRemarks
             // 
-            this.label_SystemStateManager_LockWorkstationRemarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_LockWorkstationRemarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_LockWorkstationRemarks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_SystemStateManager_LockWorkstationRemarks.Location = new System.Drawing.Point(616, 352);
             this.label_SystemStateManager_LockWorkstationRemarks.Name = "label_SystemStateManager_LockWorkstationRemarks";
             this.label_SystemStateManager_LockWorkstationRemarks.Size = new System.Drawing.Size(304, 72);
@@ -4920,7 +4921,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // label_SystemStateManager_HibernateRemarks
             // 
             this.label_SystemStateManager_HibernateRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_SystemStateManager_HibernateRemarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_HibernateRemarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_HibernateRemarks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_SystemStateManager_HibernateRemarks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_SystemStateManager_HibernateRemarks.Location = new System.Drawing.Point(616, 256);
             this.label_SystemStateManager_HibernateRemarks.Name = "label_SystemStateManager_HibernateRemarks";
@@ -4930,7 +4932,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // label_SystemStateManager_StandByRemarks
             // 
             this.label_SystemStateManager_StandByRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_SystemStateManager_StandByRemarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_StandByRemarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_StandByRemarks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_SystemStateManager_StandByRemarks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_SystemStateManager_StandByRemarks.Location = new System.Drawing.Point(616, 216);
             this.label_SystemStateManager_StandByRemarks.Name = "label_SystemStateManager_StandByRemarks";
@@ -4940,7 +4943,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // label_SystemStateManager_Remarks
             // 
             this.label_SystemStateManager_Remarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_SystemStateManager_Remarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_Remarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_Remarks.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label_SystemStateManager_Remarks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_SystemStateManager_Remarks.Location = new System.Drawing.Point(712, 16);
             this.label_SystemStateManager_Remarks.Name = "label_SystemStateManager_Remarks";
@@ -4950,7 +4954,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // label_SystemStateManager_ShutDownRemarks
             // 
             this.label_SystemStateManager_ShutDownRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_SystemStateManager_ShutDownRemarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_ShutDownRemarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_ShutDownRemarks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_SystemStateManager_ShutDownRemarks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_SystemStateManager_ShutDownRemarks.Location = new System.Drawing.Point(616, 88);
             this.label_SystemStateManager_ShutDownRemarks.Name = "label_SystemStateManager_ShutDownRemarks";
@@ -4960,7 +4965,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // label_SystemStateManager_RestartRemarks
             // 
             this.label_SystemStateManager_RestartRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_SystemStateManager_RestartRemarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_RestartRemarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_RestartRemarks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_SystemStateManager_RestartRemarks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_SystemStateManager_RestartRemarks.Location = new System.Drawing.Point(616, 128);
             this.label_SystemStateManager_RestartRemarks.Name = "label_SystemStateManager_RestartRemarks";
@@ -4970,7 +4976,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // label_SystemStateManager_PowerOffRemarks
             // 
             this.label_SystemStateManager_PowerOffRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_SystemStateManager_PowerOffRemarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_PowerOffRemarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_PowerOffRemarks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_SystemStateManager_PowerOffRemarks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_SystemStateManager_PowerOffRemarks.Location = new System.Drawing.Point(616, 40);
             this.label_SystemStateManager_PowerOffRemarks.Name = "label_SystemStateManager_PowerOffRemarks";
@@ -4980,7 +4987,8 @@ public class MainClientForm : System.Windows.Forms.Form
             // label_SystemStateManager_UserLogOffRemarks
             // 
             this.label_SystemStateManager_UserLogOffRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_SystemStateManager_UserLogOffRemarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label_SystemStateManager_UserLogOffRemarks.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label_SystemStateManager_UserLogOffRemarks.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label_SystemStateManager_UserLogOffRemarks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_SystemStateManager_UserLogOffRemarks.Location = new System.Drawing.Point(616, 168);
             this.label_SystemStateManager_UserLogOffRemarks.Name = "label_SystemStateManager_UserLogOffRemarks";
@@ -4989,7 +4997,7 @@ public class MainClientForm : System.Windows.Forms.Form
             // 
             // splitter_SystemStateManager_Remarks
             // 
-            this.splitter_SystemStateManager_Remarks.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.splitter_SystemStateManager_Remarks.BackColor = System.Drawing.SystemColors.ControlLight;
             this.splitter_SystemStateManager_Remarks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitter_SystemStateManager_Remarks.Cursor = System.Windows.Forms.Cursors.Default;
             this.splitter_SystemStateManager_Remarks.Dock = System.Windows.Forms.DockStyle.Right;
@@ -6882,11 +6890,6 @@ public class MainClientForm : System.Windows.Forms.Form
 
         ObjCopy.obj_MainClientForm = new MainClientForm();
 
-        ObjCopy.obj_MiniRTDVForm = new MiniRTDVForm();
-
-     //   ObjCopy.obj_MiniRTDVForm.Show();
-
-      //  ObjCopy.obj_MiniRTDVForm.Hide();
 
         Application.Run(ObjCopy.obj_MainClientForm);
     }
@@ -6900,12 +6903,22 @@ public class MainClientForm : System.Windows.Forms.Form
         timer_MainFormTimer.Start();
 
 
+
+
+        ObjCopy.obj_MiniRTDVForm = new MiniRTDVForm();
+
+     //   ObjCopy.obj_MiniRTDVForm.Show();
+
+       // ObjCopy.obj_MiniRTDVForm.Hide();
+
+    
+
     }
 
 
     private void MainClientForm_Load(object sender, System.EventArgs e)
     {
-        JurikSoft.XMLConfigImporer.JSClientDBEnvironment.LoadXMLDataFile("JurikSoftClientDB", false);
+        YakSys.XMLConfigImporter.YakSysClientDBEnvironment.LoadXMLDataFile("YakSysClientDB", false);
 
         ObjCopy.obj_MainClientForm.SetUpClientSettingsFromDB();
 
@@ -6913,9 +6926,10 @@ public class MainClientForm : System.Windows.Forms.Form
 
         ObjCopy.obj_MainClientForm.ChangeControlsLanguage();
 
-            
+        //ObjCopy.obj_SoundPlayAndCapture = new SoundPlayAndCapture();
 
- //       ObjCopy.obj_SoundPlayAndCapture = new SoundPlayAndCapture();
+
+        ObjCopy.obj_MainClientForm.BringToFront();
     }
 
     private void MainClientForm_Deactivate(object sender, EventArgs e)
@@ -7728,7 +7742,7 @@ public class MainClientForm : System.Windows.Forms.Form
         ConnetionStatus = ClientStringFactory.GetString(354, ClientSettingsEnvironment.CurrentLanguage);
     }
                   
-    [DllImport("JsRctServerLib.dll")]
+    [DllImport("YakSysRctServerLib.dll")]
     private static extern string ResolveMACAddressFromIP(string string_IPAddress);
     public string RemotingWrapper_ResolveMACAddressFromIP(string string_IPAddress)
     {
@@ -7767,13 +7781,13 @@ public class MainClientForm : System.Windows.Forms.Form
 
         int int_SelectedProxyServerRowIndex = (int)this.listView_ProxyServersList_ProxyServersList.SelectedItems[0].Tag;
 
-        if (JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < 2 ||
-            JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
+        if (YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < 2 ||
+            YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
         {
             return;
         }
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         this.UseProxyServer = true;
 
@@ -7819,7 +7833,7 @@ public class MainClientForm : System.Windows.Forms.Form
             return;
         }
 
-        new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().RemoveProxyServerRecord((int)this.listView_ProxyServersList_ProxyServersList.SelectedItems[0].Tag + 1);
+        new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().RemoveProxyServerRecord((int)this.listView_ProxyServersList_ProxyServersList.SelectedItems[0].Tag + 1);
 
         int int_SelectedProxyServerRowIndex = this.listView_ProxyServersList_ProxyServersList.SelectedItems[0].Index;
 
@@ -7835,9 +7849,9 @@ public class MainClientForm : System.Windows.Forms.Form
             return;
         }
 
-        for (int int_CycleCount = 1; int_CycleCount != JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count; )
+        for (int int_CycleCount = 1; int_CycleCount != YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count; )
         {
-            new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().RemoveProxyServerRecord(int_CycleCount);
+            new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().RemoveProxyServerRecord(int_CycleCount);
         }
 
         this.listView_ProxyServersList_ProxyServersList.Items.Clear();
@@ -7862,7 +7876,7 @@ public class MainClientForm : System.Windows.Forms.Form
 
     public void FillProxyServersList()
     {
-        ListViewItem[] listViewItemArray_ProxyServer = new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().GetProxyServersList();
+        ListViewItem[] listViewItemArray_ProxyServer = new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().GetProxyServersList();
 
         if (listViewItemArray_ProxyServer != null)
         {
@@ -7983,7 +7997,6 @@ public class MainClientForm : System.Windows.Forms.Form
 
     public void WriteClientSettingsToDB()
     {
-
         ClientSettingsEnvironment.LoginForConnection = this.LoginForConnection;
         ClientSettingsEnvironment.PasswordForConnection = this.PasswordForConnection;
 
@@ -8003,13 +8016,13 @@ public class MainClientForm : System.Windows.Forms.Form
         ClientSettingsEnvironment.ProxyLogin = this.Socks5UserName;
         ClientSettingsEnvironment.ProxyPassword = this.Socks5Password;
 
-        new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().WriteClientSettingsData(Application.StartupPath + "\\JurikSoftClientDB");
+        new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().WriteClientSettingsData(Application.StartupPath + "\\YakSysClientDB");
     }
 
 
-    public void FillJurikSoftServersList()
+    public void FillYakSysServersList()
     {
-        ListViewItem[] listViewItemArray_ServersList = new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().GetJurikSoftServersList();
+        ListViewItem[] listViewItemArray_ServersList = new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().GetYakSysServersList();
 
         if (listViewItemArray_ServersList != null)
         {
@@ -8019,9 +8032,9 @@ public class MainClientForm : System.Windows.Forms.Form
         }
     }
 
-    public void FillJurikSoftServersList(int int_GroupID)
+    public void FillYakSysServersList(int int_GroupID)
     {
-        ListViewItem[] listViewItemArray_ServersList = new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().GetJurikSoftServersList(int_GroupID);
+        ListViewItem[] listViewItemArray_ServersList = new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().GetYakSysServersList(int_GroupID);
 
         if (listViewItemArray_ServersList != null)
         {
@@ -8033,11 +8046,11 @@ public class MainClientForm : System.Windows.Forms.Form
 
 
 
-    public void FillJurikSoftServersGroups()
+    public void FillYakSysServersGroups()
     {
         this.comboBox_ServersList_ServersGroups.Items.Clear();
 
-        this.comboBox_ServersList_ServersGroups.Items.AddRange(new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().GetJurikSoftServersGroups());
+        this.comboBox_ServersList_ServersGroups.Items.AddRange(new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().GetYakSysServersGroups());
     }
 
 
@@ -8045,7 +8058,7 @@ public class MainClientForm : System.Windows.Forms.Form
     {
         FillProxyServersList();
 
-        FillJurikSoftServersList();
+        FillYakSysServersList();
 
         this.Invoke((MethodInvoker)delegate
         {
@@ -8076,13 +8089,13 @@ public class MainClientForm : System.Windows.Forms.Form
 
             this.comboBox_ServersList_ServersGroups.Items.Add(ClientStringFactory.GetString(509, ClientSettingsEnvironment.CurrentLanguage));
 
-            this.comboBox_ServersList_ServersGroups.SelectedIndex = 0; // OnChangeIndex calls GetJurikSoftServersList() !!!
+            this.comboBox_ServersList_ServersGroups.SelectedIndex = 0; // OnChangeIndex calls GetYakSysServersList() !!!
 
             if (ClientSettingsEnvironment.ShowToolTips == false) this.DisableToolTips();
 
-            new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().GetJurikSoftServersGroups();
+            new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().GetYakSysServersGroups();
 
-            new JurikSoft.XMLConfigImporer.JSClientDBEnvironment().GetProxyServersList();
+            new YakSys.XMLConfigImporter.YakSysClientDBEnvironment().GetProxyServersList();
 
             InitRegistryTreeViewState();
 
@@ -8101,7 +8114,7 @@ public class MainClientForm : System.Windows.Forms.Form
 
         if (openFileDialog_obj.ShowDialog() == DialogResult.OK)
         {
-            JurikSoft.XMLConfigImporer.JSClientDBEnvironment.LoadXMLDataFile(openFileDialog_obj.FileName, true);
+            YakSys.XMLConfigImporter.YakSysClientDBEnvironment.LoadXMLDataFile(openFileDialog_obj.FileName, true);
 
             SetUpClientSettingsFromDB();
         }
@@ -8113,11 +8126,11 @@ public class MainClientForm : System.Windows.Forms.Form
 
         saveFileDialog_obj.Title = ClientStringFactory.GetString(545, ClientSettingsEnvironment.CurrentLanguage);
 
-        saveFileDialog_obj.FileName = "JurikSoftClientDB";
+        saveFileDialog_obj.FileName = "YakSysClientDB";
 
         if (saveFileDialog_obj.ShowDialog() == DialogResult.OK)
         {
-            new JSClientDBEnvironment().WriteClientSettingsData(saveFileDialog_obj.FileName);
+            new YakSysClientDBEnvironment().WriteClientSettingsData(saveFileDialog_obj.FileName);
         }
     }
 
@@ -8141,11 +8154,11 @@ public class MainClientForm : System.Windows.Forms.Form
 
         if (string_Key == string_CurrentNubmer.Substring(0, 10))
         {
-            if (Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true) == null)
-                Registry.CurrentUser.CreateSubKey("Software\\JurikSoft");
+            if (Registry.CurrentUser.OpenSubKey("Software\\YakSys", true) == null)
+                Registry.CurrentUser.CreateSubKey("Software\\YakSys");
 
-            Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).SetValue("SN", string_Key);
-            Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).SetValue("Name", string_FullName);
+            Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).SetValue("SN", string_Key);
+            Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).SetValue("Name", string_FullName);
 
             menuItem_Help_Register.Enabled = false;
 
@@ -8170,12 +8183,12 @@ public class MainClientForm : System.Windows.Forms.Form
 
             thread_NGSCRThread = Thread.CurrentThread;
 
-            if (Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true) != null
-                && Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("SN") != null
-                && Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("Name") != null)
+            if (Registry.CurrentUser.OpenSubKey("Software\\YakSys", true) != null
+                && Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("SN") != null
+                && Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("Name") != null)
             {
-                string string_Key = Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("SN").ToString(),
-                    string_FullName = Registry.CurrentUser.OpenSubKey("Software\\JurikSoft", true).GetValue("Name").ToString();
+                string string_Key = Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("SN").ToString(),
+                    string_FullName = Registry.CurrentUser.OpenSubKey("Software\\YakSys", true).GetValue("Name").ToString();
 
                 if (CheckSN(string_FullName, string_Key) == 1) return;
             }
@@ -8221,9 +8234,9 @@ public class MainClientForm : System.Windows.Forms.Form
     #endregion
 
 
-    #region JurikSoft Servers List Environment
+    #region YakSys Servers List Environment
 
-    public void RefreshJurikSoftServersGroups()
+    public void RefreshYakSysServersGroups()
     {
         this.Invoke((MethodInvoker)delegate
         {
@@ -8233,7 +8246,7 @@ public class MainClientForm : System.Windows.Forms.Form
 
             this.comboBox_ServersList_ServersGroups.Items.Add(ClientStringFactory.GetString(509, ClientSettingsEnvironment.CurrentLanguage));
 
-            ObjCopy.obj_MainClientForm.FillJurikSoftServersGroups();
+            ObjCopy.obj_MainClientForm.FillYakSysServersGroups();
 
             this.comboBox_ServersList_ServersGroups.SelectedIndex = 0;
 
@@ -8241,31 +8254,31 @@ public class MainClientForm : System.Windows.Forms.Form
         });
     }
 
-    public void AddNewJurikSoftServersListItem(string string_JurikSoftServerTitle,
-                                                string string_JurikSoftServerHost,
-                                                string string_JurikSoftServerPort,
+    public void AddNewYakSysServersListItem(string string_YakSysServerTitle,
+                                                string string_YakSysServerHost,
+                                                string string_YakSysServerPort,
                                                 string string_ServerLocation,
                                                 string string_ServerGroup)
     {
         this.Invoke((MethodInvoker)delegate
         {
-            ListViewItem listViewItem_JurikSoftServerItem = new ListViewItem(string_JurikSoftServerTitle);
+            ListViewItem listViewItem_YakSysServerItem = new ListViewItem(string_YakSysServerTitle);
 
-            listViewItem_JurikSoftServerItem.ImageIndex = 0;
+            listViewItem_YakSysServerItem.ImageIndex = 0;
 
-            listViewItem_JurikSoftServerItem.SubItems.Add(string_JurikSoftServerHost);
-            listViewItem_JurikSoftServerItem.SubItems.Add(string_JurikSoftServerPort);
-            listViewItem_JurikSoftServerItem.SubItems.Add(string_ServerLocation);
-            listViewItem_JurikSoftServerItem.SubItems.Add(string_ServerGroup);
+            listViewItem_YakSysServerItem.SubItems.Add(string_YakSysServerHost);
+            listViewItem_YakSysServerItem.SubItems.Add(string_YakSysServerPort);
+            listViewItem_YakSysServerItem.SubItems.Add(string_ServerLocation);
+            listViewItem_YakSysServerItem.SubItems.Add(string_ServerGroup);
 
-            listViewItem_JurikSoftServerItem.Tag = this.listView_ServersList_ServersList.Items.Count;
+            listViewItem_YakSysServerItem.Tag = this.listView_ServersList_ServersList.Items.Count;
 
-            this.listView_ServersList_ServersList.Items.Add(listViewItem_JurikSoftServerItem);
+            this.listView_ServersList_ServersList.Items.Add(listViewItem_YakSysServerItem);
         });
     }
 
-    public void EditSelectedJurikSoftServersListItem(string string_JurikSoftServerTitle,
-        string string_JurikSoftServerHost, string string_JurikSoftServerPort,
+    public void EditSelectedYakSysServersListItem(string string_YakSysServerTitle,
+        string string_YakSysServerHost, string string_YakSysServerPort,
         string string_ServerLocation, string string_ServerGroup)
     {
         this.Invoke((MethodInvoker)delegate
@@ -8274,16 +8287,16 @@ public class MainClientForm : System.Windows.Forms.Form
 
             int int_ItemIndex = this.listView_ServersList_ServersList.SelectedItems[0].Index;
 
-            this.listView_ServersList_ServersList.Items[int_ItemIndex].Text = string_JurikSoftServerTitle;
+            this.listView_ServersList_ServersList.Items[int_ItemIndex].Text = string_YakSysServerTitle;
 
-            this.listView_ServersList_ServersList.Items[int_ItemIndex].SubItems[1].Text = string_JurikSoftServerHost;
-            this.listView_ServersList_ServersList.Items[int_ItemIndex].SubItems[2].Text = string_JurikSoftServerPort;
+            this.listView_ServersList_ServersList.Items[int_ItemIndex].SubItems[1].Text = string_YakSysServerHost;
+            this.listView_ServersList_ServersList.Items[int_ItemIndex].SubItems[2].Text = string_YakSysServerPort;
             this.listView_ServersList_ServersList.Items[int_ItemIndex].SubItems[3].Text = string_ServerLocation;
             this.listView_ServersList_ServersList.Items[int_ItemIndex].SubItems[4].Text = string_ServerGroup;
         });
     }
 
-    public void AddNewJurikSoftServerGroup(string string_GroupName)
+    public void AddNewYakSysServerGroup(string string_GroupName)
     {
         this.Invoke((MethodInvoker)delegate
         {
@@ -8291,24 +8304,24 @@ public class MainClientForm : System.Windows.Forms.Form
         });
     }
 
-    public int GetJurikSoftServerRowIndexFromListIndex()
+    public int GetYakSysServerRowIndexFromListIndex()
     {
         if (this.comboBox_ServersList_ServersGroups.SelectedIndex == 0)
         {
             return (int)this.listView_ServersList_ServersList.SelectedItems[0].Tag;
         }
 
-        int int_JurikSoftServerIndex = (int)this.listView_ServersList_ServersList.SelectedItems[0].Tag,
+        int int_YakSysServerIndex = (int)this.listView_ServersList_ServersList.SelectedItems[0].Tag,
             int_GroupIndex = this.comboBox_ServersList_ServersGroups.SelectedIndex - 1,
             int_CycleCount = 0;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersRow[] dataRowArray_JurikSoftServersRows = null;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersRow[] dataRowArray_YakSysServersRows = null;
 
-        dataRowArray_JurikSoftServersRows = (DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersRow[])JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ServerGroupTypes.Rows[int_GroupIndex].GetChildRows("ServerGroupTypes_JurikSoftServerInfo");
+        dataRowArray_YakSysServersRows = (YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersRow[])YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ServerGroupTypes.Rows[int_GroupIndex].GetChildRows("ServerGroupTypes_YakSysServerInfo");
 
-        foreach (DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersRow currentRow in JsRctClientV110XMLConfigImporter.JurikSoftClientDB.JurikSoftServers)
+        foreach (YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersRow currentRow in YakSysRctClientV110XMLConfigImporter.YakSysClientDB.YakSysServers)
         {
-            if (currentRow == dataRowArray_JurikSoftServersRows[int_JurikSoftServerIndex])
+            if (currentRow == dataRowArray_YakSysServersRows[int_YakSysServerIndex])
             {
                 return int_CycleCount;
             }
@@ -12070,7 +12083,7 @@ public class MainClientForm : System.Windows.Forms.Form
                 }
 
 
-            //!!    ObjCopy.obj_MiniRTDVForm.Show();
+                ObjCopy.obj_MiniRTDVForm.Show();
 
                 	//!!	new RemoteCallAction().StartRTRDV();
             }
@@ -12741,13 +12754,13 @@ public class MainClientForm : System.Windows.Forms.Form
         });
     }
 
-    #region Refresh JurikSoft Servers List Environment
+    #region Refresh YakSys Servers List Environment
 
     private void button_ServersList_Refresh_Click(object sender, System.EventArgs e)
     {
-        Thread thread_RefreshJurikSoftServersList = new Thread(new ThreadStart(RefreshJurikSoftServersList));
+        Thread thread_RefreshYakSysServersList = new Thread(new ThreadStart(RefreshYakSysServersList));
 
-        thread_RefreshJurikSoftServersList.Start();
+        thread_RefreshYakSysServersList.Start();
     }
 
 
@@ -12826,7 +12839,7 @@ public class MainClientForm : System.Windows.Forms.Form
     }
 
 
-    public void RefreshJurikSoftServersList()
+    public void RefreshYakSysServersList()
     {
         lock (this)
         {
@@ -12834,9 +12847,9 @@ public class MainClientForm : System.Windows.Forms.Form
 
             TcpClient tcpClient_MainClient = new TcpClient();
 
-            DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersDataTable jurikSoftServersDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.JurikSoftServers;
+            YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersDataTable YakSysServersDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.YakSysServers;
 
-            DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+            YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
             int int_ProxyServerRowIndex = 0;
 
@@ -12862,22 +12875,22 @@ public class MainClientForm : System.Windows.Forms.Form
             string string_Socks5Password = string.Empty;
 
 
-            for (int int_CycleCount = 0; int_CycleCount != jurikSoftServersDataTable_obj.Rows.Count; int_CycleCount++)
+            for (int int_CycleCount = 0; int_CycleCount != YakSysServersDataTable_obj.Rows.Count; int_CycleCount++)
             {
                 try
                 {
                     tcpClient_MainClient = new TcpClient();
 
-                    bool_UseProxyServer = (bool)jurikSoftServersDataTable_obj.Rows[int_CycleCount][jurikSoftServersDataTable_obj.UseProxyServerColumn];
+                    bool_UseProxyServer = (bool)YakSysServersDataTable_obj.Rows[int_CycleCount][YakSysServersDataTable_obj.UseProxyServerColumn];
 
-                    string_ServerHost = (string)jurikSoftServersDataTable_obj.Rows[int_CycleCount][jurikSoftServersDataTable_obj.ServerHostColumn];
-                    int_ServerPort = (int)jurikSoftServersDataTable_obj.Rows[int_CycleCount][jurikSoftServersDataTable_obj.ServerPortColumn];
-                    string_LoginForConnection = (string)jurikSoftServersDataTable_obj.Rows[int_CycleCount][jurikSoftServersDataTable_obj.LoginColumn];
-                    string_PasswordForConnection = (string)jurikSoftServersDataTable_obj.Rows[int_CycleCount][jurikSoftServersDataTable_obj.PasswordColumn];
+                    string_ServerHost = (string)YakSysServersDataTable_obj.Rows[int_CycleCount][YakSysServersDataTable_obj.ServerHostColumn];
+                    int_ServerPort = (int)YakSysServersDataTable_obj.Rows[int_CycleCount][YakSysServersDataTable_obj.ServerPortColumn];
+                    string_LoginForConnection = (string)YakSysServersDataTable_obj.Rows[int_CycleCount][YakSysServersDataTable_obj.LoginColumn];
+                    string_PasswordForConnection = (string)YakSysServersDataTable_obj.Rows[int_CycleCount][YakSysServersDataTable_obj.PasswordColumn];
 
                     if (bool_UseProxyServer == true)
                     {
-                        int_ProxyServerRowIndex = (int)jurikSoftServersDataTable_obj.Rows[int_CycleCount][jurikSoftServersDataTable_obj.ProxyServerIDColumn];
+                        int_ProxyServerRowIndex = (int)YakSysServersDataTable_obj.Rows[int_CycleCount][YakSysServersDataTable_obj.ProxyServerIDColumn];
 
                         string_ProxyHost = (string)ProxyServersSettingsDataTable_obj.Rows[int_ProxyServerRowIndex][ProxyServersSettingsDataTable_obj.ProxyHostColumn];
                         int_ProxyPort = (int)ProxyServersSettingsDataTable_obj.Rows[int_ProxyServerRowIndex][ProxyServersSettingsDataTable_obj.ProxyPortColumn];
@@ -12909,25 +12922,25 @@ public class MainClientForm : System.Windows.Forms.Form
                     }
                     else
                     {
-                        JurikSoft.Proxy.ProxyProvider proxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+                        YakSys.Proxy.ProxyProvider proxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 
-                        proxyProvider_obj.SendingSocks4ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks4ConnectionRequest);
-                        proxyProvider_obj.SendingSocks5AuthenticationRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5AuthenticationRequest);
-                        proxyProvider_obj.SendingSocks5ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5ConnectionRequest);
-                        proxyProvider_obj.SendingSocks5RequestDetails += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5RequestDetails);
+                        proxyProvider_obj.SendingSocks4ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks4ConnectionRequest);
+                        proxyProvider_obj.SendingSocks5AuthenticationRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5AuthenticationRequest);
+                        proxyProvider_obj.SendingSocks5ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5ConnectionRequest);
+                        proxyProvider_obj.SendingSocks5RequestDetails += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_SendingSocks5RequestDetails);
 
-                        proxyProvider_obj.WaitingForReplyToSocks4ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks4ConnectionRequest);
-                        proxyProvider_obj.WaitingForReplyToSocks5AuthenticationRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5AuthenticationRequest);
-                        proxyProvider_obj.WaitingForReplyToSocks5ConnectionRequest += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5ConnectionRequest);
-                        proxyProvider_obj.WaitingForReplyToSocks5RequestDetails += new JurikSoft.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5RequestDetails);
+                        proxyProvider_obj.WaitingForReplyToSocks4ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks4ConnectionRequest);
+                        proxyProvider_obj.WaitingForReplyToSocks5AuthenticationRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5AuthenticationRequest);
+                        proxyProvider_obj.WaitingForReplyToSocks5ConnectionRequest += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5ConnectionRequest);
+                        proxyProvider_obj.WaitingForReplyToSocks5RequestDetails += new YakSys.Proxy.ProxyProvider.BaseProxyEventHandler(ProxyProvider_WaitingForReplyToSocks5RequestDetails);
 
                         if (int_ProxyTypeIndex < 0)
                         {
                             return;
                         }
 
-                        JurikSoft.Proxy.ProxyProvider.SerialNumber = "4688445487";
-                        JurikSoft.Proxy.ProxyProvider.RegistrationName = "JurikSoft";
+                        YakSys.Proxy.ProxyProvider.SerialNumber = "4688445487";
+                        YakSys.Proxy.ProxyProvider.RegistrationName = "YakSys";
 
                         if (int_ProxyTypeIndex == 0)
                             proxyProvider_obj.ConnectThroughSocks4Proxy(ref tcpClient_MainClient, string_ServerHost, int_ServerPort, string_ProxyHost, int_ProxyPort, bool_UseProxyResolveHostNames, int_ProxyTimeOut);
@@ -12974,30 +12987,30 @@ public class MainClientForm : System.Windows.Forms.Form
 
 
 
-    private void ApplySelectedJurikSoftServerFromList()
+    private void ApplySelectedYakSysServerFromList()
     {
         if (this.listView_ServersList_ServersList.SelectedItems.Count != 1) return;
 
-        int int_ProxyServerRowIndex = 0, int_JurikSoftServerRowIndex = this.listView_ServersList_ServersList.SelectedItems[0].Index;
+        int int_ProxyServerRowIndex = 0, int_YakSysServerRowIndex = this.listView_ServersList_ServersList.SelectedItems[0].Index;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersDataTable jurikSoftServersDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.JurikSoftServers;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersDataTable YakSysServersDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.YakSysServers;
 
-        bool bool_UseProxyServer = (bool)jurikSoftServersDataTable_obj.Rows[int_JurikSoftServerRowIndex][jurikSoftServersDataTable_obj.UseProxyServerColumn];
+        bool bool_UseProxyServer = (bool)YakSysServersDataTable_obj.Rows[int_YakSysServerRowIndex][YakSysServersDataTable_obj.UseProxyServerColumn];
 
         if (bool_UseProxyServer == true)
         {
-            int_ProxyServerRowIndex = (int)jurikSoftServersDataTable_obj.Rows[int_JurikSoftServerRowIndex][jurikSoftServersDataTable_obj.ProxyServerIDColumn];
+            int_ProxyServerRowIndex = (int)YakSysServersDataTable_obj.Rows[int_YakSysServerRowIndex][YakSysServersDataTable_obj.ProxyServerIDColumn];
         }
 
-        this.ServerHost = (string)jurikSoftServersDataTable_obj.Rows[int_JurikSoftServerRowIndex][jurikSoftServersDataTable_obj.ServerHostColumn];
-        this.ServerPort = (int)jurikSoftServersDataTable_obj.Rows[int_JurikSoftServerRowIndex][jurikSoftServersDataTable_obj.ServerPortColumn];
-        this.LoginForConnection = (string)jurikSoftServersDataTable_obj.Rows[int_JurikSoftServerRowIndex][jurikSoftServersDataTable_obj.LoginColumn];
-        this.PasswordForConnection = (string)jurikSoftServersDataTable_obj.Rows[int_JurikSoftServerRowIndex][jurikSoftServersDataTable_obj.PasswordColumn];
+        this.ServerHost = (string)YakSysServersDataTable_obj.Rows[int_YakSysServerRowIndex][YakSysServersDataTable_obj.ServerHostColumn];
+        this.ServerPort = (int)YakSysServersDataTable_obj.Rows[int_YakSysServerRowIndex][YakSysServersDataTable_obj.ServerPortColumn];
+        this.LoginForConnection = (string)YakSysServersDataTable_obj.Rows[int_YakSysServerRowIndex][YakSysServersDataTable_obj.LoginColumn];
+        this.PasswordForConnection = (string)YakSysServersDataTable_obj.Rows[int_YakSysServerRowIndex][YakSysServersDataTable_obj.PasswordColumn];
 
 
         if (bool_UseProxyServer == false) return;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         this.UseProxyServer = true;
 
@@ -13014,34 +13027,34 @@ public class MainClientForm : System.Windows.Forms.Form
         this.Socks5Password = (string)ProxyServersSettingsDataTable_obj.Rows[int_ProxyServerRowIndex][ProxyServersSettingsDataTable_obj.PasswordColumn];
     }
 
-    private void ApplySelectedJurikSoftServerFromList(int int_GroupIndex)
+    private void ApplySelectedYakSysServerFromList(int int_GroupIndex)
     {
         if (listView_ServersList_ServersList.SelectedItems.Count != 1) return;
 
-        int int_ProxyServerRowIndex = 0, int_JurikSoftServerIndex = listView_ServersList_ServersList.SelectedItems[0].Index;
+        int int_ProxyServerRowIndex = 0, int_YakSysServerIndex = listView_ServersList_ServersList.SelectedItems[0].Index;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersRow[] dataRowArray_JurikSoftServersRows = null;
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersRow dataRowArray_SelectedJurikSoftServersRow = null;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersRow[] dataRowArray_YakSysServersRows = null;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersRow dataRowArray_SelectedYakSysServersRow = null;
 
-        dataRowArray_JurikSoftServersRows = (DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersRow[])JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ServerGroupTypes.Rows[int_GroupIndex].GetChildRows("ServerGroupTypes_JurikSoftServerInfo");
+        dataRowArray_YakSysServersRows = (YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersRow[])YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ServerGroupTypes.Rows[int_GroupIndex].GetChildRows("ServerGroupTypes_YakSysServerInfo");
 
-        dataRowArray_SelectedJurikSoftServersRow = dataRowArray_JurikSoftServersRows[int_JurikSoftServerIndex];
+        dataRowArray_SelectedYakSysServersRow = dataRowArray_YakSysServersRows[int_YakSysServerIndex];
 
-        bool bool_UseProxyServer = (bool)dataRowArray_SelectedJurikSoftServersRow.UseProxyServer;
+        bool bool_UseProxyServer = (bool)dataRowArray_SelectedYakSysServersRow.UseProxyServer;
 
         if (bool_UseProxyServer == true)
         {
-            int_ProxyServerRowIndex = (int)dataRowArray_SelectedJurikSoftServersRow.ProxyServerID;
+            int_ProxyServerRowIndex = (int)dataRowArray_SelectedYakSysServersRow.ProxyServerID;
         }
 
-        this.ServerHost = (string)dataRowArray_SelectedJurikSoftServersRow.ServerHost;
-        this.ServerPort = (int)dataRowArray_SelectedJurikSoftServersRow.ServerPort;
-        this.LoginForConnection = (string)dataRowArray_SelectedJurikSoftServersRow.Login;
-        this.PasswordForConnection = (string)dataRowArray_SelectedJurikSoftServersRow.Password;
+        this.ServerHost = (string)dataRowArray_SelectedYakSysServersRow.ServerHost;
+        this.ServerPort = (int)dataRowArray_SelectedYakSysServersRow.ServerPort;
+        this.LoginForConnection = (string)dataRowArray_SelectedYakSysServersRow.Login;
+        this.PasswordForConnection = (string)dataRowArray_SelectedYakSysServersRow.Password;
 
         if (bool_UseProxyServer == false) return;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         this.UseProxyServer = true;
 
@@ -13058,9 +13071,9 @@ public class MainClientForm : System.Windows.Forms.Form
         this.Socks5Password = (string)ProxyServersSettingsDataTable_obj.Rows[int_ProxyServerRowIndex][ProxyServersSettingsDataTable_obj.PasswordColumn];
     }
 
-    public void RemoveJurikSoftServerFromListView(int int_JurikSoftServerIndex)
+    public void RemoveYakSysServerFromListView(int int_YakSysServerIndex)
     {
-        int int_DeletedTagIndex = (int)this.listView_ServersList_ServersList.Items[int_JurikSoftServerIndex].Tag;
+        int int_DeletedTagIndex = (int)this.listView_ServersList_ServersList.Items[int_YakSysServerIndex].Tag;
 
         foreach (ListViewItem listViewItem_obj in this.listView_ServersList_ServersList.Items)
         {
@@ -13070,32 +13083,32 @@ public class MainClientForm : System.Windows.Forms.Form
             }
         }
 
-        this.listView_ServersList_ServersList.Items.RemoveAt(int_JurikSoftServerIndex);
+        this.listView_ServersList_ServersList.Items.RemoveAt(int_YakSysServerIndex);
     }
 
     private void listView_ServersList_ServersList_DoubleClick(object sender, System.EventArgs e)
     {
         if (this.comboBox_ServersList_ServersGroups.SelectedIndex == -1) return;
 
-        if (this.comboBox_ServersList_ServersGroups.SelectedIndex == 0) ApplySelectedJurikSoftServerFromList();
-        else ApplySelectedJurikSoftServerFromList(this.comboBox_ServersList_ServersGroups.SelectedIndex - 1);
+        if (this.comboBox_ServersList_ServersGroups.SelectedIndex == 0) ApplySelectedYakSysServerFromList();
+        else ApplySelectedYakSysServerFromList(this.comboBox_ServersList_ServersGroups.SelectedIndex - 1);
     }
 
     private void button_ServersList_AddRecord_Click(object sender, System.EventArgs e)
     {
-        JurikSoftServersDBManagerForm jurikSoftServersDBManagerForm_obj = new JurikSoftServersDBManagerForm();
+        YakSysServersDBManagerForm YakSysServersDBManagerForm_obj = new YakSysServersDBManagerForm();
 
-        jurikSoftServersDBManagerForm_obj.ApplyButton.Visible = false;
+        YakSysServersDBManagerForm_obj.ApplyButton.Visible = false;
 
-        jurikSoftServersDBManagerForm_obj.ShowDialog();
+        YakSysServersDBManagerForm_obj.ShowDialog();
     }
 
     private void button_ServersList_Use_Click(object sender, System.EventArgs e)
     {
         if (this.comboBox_ServersList_ServersGroups.SelectedIndex == -1) return;
 
-        if (this.comboBox_ServersList_ServersGroups.SelectedIndex == 0) ApplySelectedJurikSoftServerFromList();
-        else ApplySelectedJurikSoftServerFromList(this.comboBox_ServersList_ServersGroups.SelectedIndex - 1);
+        if (this.comboBox_ServersList_ServersGroups.SelectedIndex == 0) ApplySelectedYakSysServerFromList();
+        else ApplySelectedYakSysServerFromList(this.comboBox_ServersList_ServersGroups.SelectedIndex - 1);
     }
 
     private void button_ServersList_RemoveServer_Click(object sender, System.EventArgs e)
@@ -13104,9 +13117,9 @@ public class MainClientForm : System.Windows.Forms.Form
 
         if (DialogResult.Yes == MessageBox.Show(ClientStringFactory.GetString(322, ClientSettingsEnvironment.CurrentLanguage), ClientStringFactory.GetString(1, ClientSettingsEnvironment.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
-            new JSClientDBEnvironment().RemoveJurikSoftServersDataBaseRow(GetJurikSoftServerRowIndexFromListIndex());
+            new YakSysClientDBEnvironment().RemoveYakSysServersDataBaseRow(GetYakSysServerRowIndexFromListIndex());
 
-            RemoveJurikSoftServerFromListView(this.listView_ServersList_ServersList.SelectedItems[0].Index);
+            RemoveYakSysServerFromListView(this.listView_ServersList_ServersList.SelectedItems[0].Index);
         }
     }
 
@@ -13118,7 +13131,7 @@ public class MainClientForm : System.Windows.Forms.Form
         {
             this.listView_ServersList_ServersList.Items.Clear();
 
-            new JSClientDBEnvironment().ClearJurikSoftServersDataBase();
+            new YakSysClientDBEnvironment().ClearYakSysServersDataBase();
 
             return;
         }
@@ -13128,14 +13141,14 @@ public class MainClientForm : System.Windows.Forms.Form
     {
         if (this.listView_ServersList_ServersList.SelectedItems.Count == 0) return;
 
-        UserAccountsAndAccessRestrictionRulesEnvironment.EditSelectedJurikSoftServerInfo(GetJurikSoftServerRowIndexFromListIndex());
+        UserAccountsAndAccessRestrictionRulesEnvironment.EditSelectedYakSysServerInfo(GetYakSysServerRowIndexFromListIndex());
     }
 
     private void button_ServersList_ViewRecord_Click(object sender, System.EventArgs e)
     {
         if (this.listView_ServersList_ServersList.SelectedItems.Count == 0) return;
 
-        UserAccountsAndAccessRestrictionRulesEnvironment.ViewSelectedJurikSoftServerInfo(GetJurikSoftServerRowIndexFromListIndex());
+        UserAccountsAndAccessRestrictionRulesEnvironment.ViewSelectedYakSysServerInfo(GetYakSysServerRowIndexFromListIndex());
     }
 
     private void comboBox_ServersList_ServersGroups_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -13144,7 +13157,7 @@ public class MainClientForm : System.Windows.Forms.Form
 
         if (this.comboBox_ServersList_ServersGroups.SelectedIndex == 0)
         {
-            ObjCopy.obj_MainClientForm.FillJurikSoftServersList();
+            ObjCopy.obj_MainClientForm.FillYakSysServersList();
 
             return;
         }
@@ -13153,7 +13166,7 @@ public class MainClientForm : System.Windows.Forms.Form
         {
             int int_SelectedGroupIndex = this.comboBox_ServersList_ServersGroups.SelectedIndex - 1;
 
-            ObjCopy.obj_MainClientForm.FillJurikSoftServersList(int_SelectedGroupIndex);
+            ObjCopy.obj_MainClientForm.FillYakSysServersList(int_SelectedGroupIndex);
 
             return;
         }

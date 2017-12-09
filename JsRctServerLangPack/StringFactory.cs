@@ -75,7 +75,7 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "Server configuration";
+                            return "Network configurations";
 
 
                         case 1:
@@ -551,10 +551,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "File JsRctServerLib.dll not found, program will be close";
+                            return "File YakSysRctServerLib.dll not found, program will be close";
 
                         case 1:
-                            return "Файл JsRctServerLib.dll не найден, программа будет закрыта";
+                            return "Файл YakSysRctServerLib.dll не найден, программа будет закрыта";
                     }
                 }
                 break;
@@ -579,10 +579,10 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "File JsRctServerLibCs.dll not found, program will be close";
+                            return "File YakSysRctServerLibCs.dll not found, program will be close";
 
                         case 1:
-                            return "Файл JsRctServerLibCs.dll не найден, программа будет закрыта";
+                            return "Файл YakSysRctServerLibCs.dll не найден, программа будет закрыта";
                     }
                 }
                 break;
@@ -11990,7 +11990,7 @@ public class ServerStringFactory
                     switch (int_Language)
                     {
                         case 0:
-                            return "YakSys Server Service is not responidng.\nPlease Start YakSys Server Service and try again.";
+                            return "YakSys Server Service is not responding.\nPlease Start YakSys Server Service and try again.";
 
                         case 1:
                             return "YakSys Server Service не отвечает.\nПожалуйста запустите YakSys Server Service и попробуйте снова.";
@@ -12088,7 +12088,7 @@ public class ServerStringFactory
                             return "YakSys Service";
 
                         case 1:
-                            return "Сервис JurikSoft";
+                            return "Сервис YakSys";
                     }
                 }
                 break;

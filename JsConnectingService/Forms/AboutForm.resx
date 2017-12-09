@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox_JurikSoftTitle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox_YakSysTitle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJsAAAAuCAIAAACwBPwdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA+JJREFUeF7tmmGx
@@ -142,15 +142,15 @@
 </value>
   </data>
   <data name="richTextBox_About.Text" xml:space="preserve">
-    <value>Интернет сайт: http://www.juriksoft.net
+    <value>Интернет сайт: http://www.YakSys.net
 
-Автор: jurik@juriksoft.net
+Автор: jurik@YakSys.net
            
-Техническая поддержка: support@juriksoft.net
+Техническая поддержка: support@YakSys.net
            
-Информация: info@juriksoft.net
+Информация: info@YakSys.net
 
-По вопросам продаж: sales@juriksoft.net
+По вопросам продаж: sales@YakSys.net
 
 ICQ: 55239911</value>
   </data>

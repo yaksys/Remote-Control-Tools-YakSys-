@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
 using System.Net;
-using JsConnectingService;
+using YakSysConnectingService;
 
 
 public class ConnectingServiceDBSupplier
@@ -45,7 +45,7 @@ public class ConnectingServiceDBSupplier
 
             fileStream_ConnectingServiceXMLDB.Read(byteArray_CompressedXMLData, 0, byteArray_CompressedXMLData.Length);
 
-            byteArray_DecompressedXMLData = new JurikSoft.Compression.CommonEnvironment().Decompress(byteArray_CompressedXMLData, false);
+            byteArray_DecompressedXMLData = new YakSys.Compression.CommonEnvironment().Decompress(byteArray_CompressedXMLData, false);
 
             memoryStream_XMLData = new MemoryStream(byteArray_DecompressedXMLData);
 
@@ -92,7 +92,7 @@ public class ConnectingServiceDBSupplier
 
         if (CommonEnvironment.CompressSettingsDataBase == true)
         {
-            JurikSoft.Compression.LZSS lZSS_obj = new JurikSoft.Compression.LZSS(16, true, true, false, 65536);
+            YakSys.Compression.LZSS lZSS_obj = new YakSys.Compression.LZSS(16, true, true, false, 65536);
 
             byteArray_CompressedXMLData = lZSS_obj.Compress(memoryStream_XMLData.ToArray(), false);
 

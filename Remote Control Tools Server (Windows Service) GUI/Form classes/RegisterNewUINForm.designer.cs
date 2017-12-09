@@ -284,7 +284,7 @@ partial class RegisterNewUINForm
         this.checkBox_UINRegistrationForm_UseCommonJSCSPService.Name = "checkBox_UINRegistrationForm_UseCommonJSCSPService";
         this.checkBox_UINRegistrationForm_UseCommonJSCSPService.Size = new System.Drawing.Size(130, 19);
         this.checkBox_UINRegistrationForm_UseCommonJSCSPService.TabIndex = 105;
-        this.checkBox_UINRegistrationForm_UseCommonJSCSPService.Text = "Сервис JurikSoft";
+        this.checkBox_UINRegistrationForm_UseCommonJSCSPService.Text = "Сервис YakSys";
         this.checkBox_UINRegistrationForm_UseCommonJSCSPService.CheckedChanged += new System.EventHandler(this.checkBox_UINRegistrationForm_UseCommonJSCSPService_CheckedChanged);
         // 
         // textBox_UINRegistrationForm_CustomCSPServiceIPAddress

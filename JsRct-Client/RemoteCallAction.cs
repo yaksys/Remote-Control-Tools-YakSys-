@@ -10,9 +10,9 @@ using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public class RemoteCallAction
 {

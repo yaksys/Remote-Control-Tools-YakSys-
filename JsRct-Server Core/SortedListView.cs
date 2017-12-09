@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Windows.Forms;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Server_Core
     {

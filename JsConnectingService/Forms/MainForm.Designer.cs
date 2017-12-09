@@ -2859,7 +2859,7 @@ partial class MainForm
         this.Menu = this.mainMenu;
         this.Name = "MainForm";
         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        this.Text = "JurikSoft Connecting Service";
+        this.Text = "YakSys Connecting Service";
         this.Load += new System.EventHandler(this.MainForm_Load);
         this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
         this.groupBox_Main_MainNetworkControl.ResumeLayout(false);

@@ -5,7 +5,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Collections.Generic;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Compression
     {
@@ -69,8 +69,8 @@ namespace JurikSoft
             /// <code>
             /// //Initializes a new instance of the PrefixCodes class with a compression parameter
             /// //indicate the selected compression model is half adaptive
-            /// JurikSoft.Compression.ICompression compressionObj = 
-            /// new JurikSoft.Compression.PrefixCodes(false);
+            /// YakSys.Compression.ICompression compressionObj = 
+            /// new YakSys.Compression.PrefixCodes(false);
             /// 
             /// FileStream fileStream_DataFile = File.Open("test.dat");
             /// 

@@ -335,7 +335,7 @@
             this.groupBox_ServerServiceControl.Size = new System.Drawing.Size(298, 458);
             this.groupBox_ServerServiceControl.TabIndex = 26;
             this.groupBox_ServerServiceControl.TabStop = false;
-            this.groupBox_ServerServiceControl.Text = "JurikSoft Server Service Control and Information";
+            this.groupBox_ServerServiceControl.Text = "YakSys Server Service Control and Information";
             // 
             // label_ServerServiceControl_ProcessID
             // 
@@ -504,7 +504,7 @@
             this.Name = "Form_Main";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "JurikSoft Server Installer";
+            this.Text = "YakSys Server Installer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.groupBox_NetworkComputers.ResumeLayout(false);

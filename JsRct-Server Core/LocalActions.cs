@@ -16,15 +16,15 @@ using System.Drawing.Imaging;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
-using JurikSoft.Compression;
-using JurikSoft.WMIClassesInfoRetriever.Win32_InstalledApplications;
-using JurikSoft.WMIClassesInfoRetriever.Win32_Hardware;
-using JurikSoft.WMIClassesInfoRetriever.Win32_OS;
-using JurikSoft.WMIClassesInfoRetriever.CIM_Common;
-using JurikSoft.WMIClassesInfoRetriever;
-using JurikSoft.Server_Core;
+using YakSys.Compression;
+using YakSys.WMIClassesInfoRetriever.Win32_InstalledApplications;
+using YakSys.WMIClassesInfoRetriever.Win32_Hardware;
+using YakSys.WMIClassesInfoRetriever.Win32_OS;
+using YakSys.WMIClassesInfoRetriever.CIM_Common;
+using YakSys.WMIClassesInfoRetriever;
+using YakSys.Server_Core;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Server_Core
     {
@@ -772,17 +772,17 @@ namespace JurikSoft
                                          
                     CommonMethods.WriteBytesToStream(memoryStream_DataToSend, byteArray_RecordedSoundBytes);
                     
-                    if(AllSubscribedJurikSoftClients.Count > 0)
+                    if(AllSubscribedYakSysClients.Count > 0)
                     {
-                        for (int int_CycleCount = 0; int_CycleCount != AllSubscribedJurikSoftClients.Count; int_CycleCount++)
+                        for (int int_CycleCount = 0; int_CycleCount != AllSubscribedYakSysClients.Count; int_CycleCount++)
                         {
                             try
                             {
-                                AllSubscribedJurikSoftClients[int_CycleCount].SendData(memoryStream_DataToSend.ToArray(), SentDataType.AudioPacket);                              
+                                AllSubscribedYakSysClients[int_CycleCount].SendData(memoryStream_DataToSend.ToArray(), SentDataType.AudioPacket);                              
                             }
                             catch
                             {
-                                AllSubscribedJurikSoftClients.Remove(AllSubscribedJurikSoftClients[int_CycleCount]);
+                                AllSubscribedYakSysClients.Remove(AllSubscribedYakSysClients[int_CycleCount]);
                             }
                         }
 
@@ -791,7 +791,7 @@ namespace JurikSoft
                     memoryStream_DataToSend.Close();                   
                 }
 
-                public static List<JurikSoftTcpClient> AllSubscribedJurikSoftClients = new List<JurikSoftTcpClient>();
+                public static List<YakSysTcpClient> AllSubscribedYakSysClients = new List<YakSysTcpClient>();
 
                 static int int_BitsPerSample = 8, int_Channels = 1, int_BlockAlign = 1,
                             int_FormatIndex = 0, int_SamplesPerSecond = 8000;
@@ -938,17 +938,17 @@ namespace JurikSoft
 
                     CommonMethods.WriteBytesToStream(memoryStream_DataToSend, byteArray_RecordedSoundBytes);
 
-                    if (AllSubscribedJurikSoftClients.Count > 0)
+                    if (AllSubscribedYakSysClients.Count > 0)
                     {
-                        for (int int_CycleCount = 0; int_CycleCount != AllSubscribedJurikSoftClients.Count; int_CycleCount++)
+                        for (int int_CycleCount = 0; int_CycleCount != AllSubscribedYakSysClients.Count; int_CycleCount++)
                         {
                             try
                             {
-                                AllSubscribedJurikSoftClients[int_CycleCount].SendData(memoryStream_DataToSend.ToArray(), SentDataType.AudioPacket);
+                                AllSubscribedYakSysClients[int_CycleCount].SendData(memoryStream_DataToSend.ToArray(), SentDataType.AudioPacket);
                             }
                             catch
                             {
-                                AllSubscribedJurikSoftClients.Remove(AllSubscribedJurikSoftClients[int_CycleCount]);
+                                AllSubscribedYakSysClients.Remove(AllSubscribedYakSysClients[int_CycleCount]);
                             }
                         }
 
@@ -957,7 +957,7 @@ namespace JurikSoft
                     memoryStream_DataToSend.Close();
                 }
 
-                public static List<JurikSoftTcpClient> AllSubscribedJurikSoftClients = new List<JurikSoftTcpClient>();
+                public static List<YakSysTcpClient> AllSubscribedYakSysClients = new List<YakSysTcpClient>();
                 
 
                 static Int16 int16_ScreenWidthSize = 0;
@@ -1125,9 +1125,9 @@ namespace JurikSoft
                 }
             }
 
-            JurikSoftTcpClient tcpClient_NecessaryClient;
+            YakSysTcpClient tcpClient_NecessaryClient;
 
-            public JurikSoftTcpClient CurrentlyUsedTcpClient
+            public YakSysTcpClient CurrentlyUsedTcpClient
             {
                 set
                 {
@@ -1184,61 +1184,61 @@ namespace JurikSoft
                 public int dmPanningHeight;
             };
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void LockWorkstation();
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void PowerOff(bool bool_UseForcingTerminate, bool bool_UseForcingTerminateIfHung);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void RestartPC(bool bool_UseForcingTerminate, bool bool_UseForcingTerminateIfHung);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void ShutdownPC(bool bool_UseForcingTerminate, bool bool_UseForcingTerminateIfHung);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void LogOffCurrentUser(bool bool_UseForcingTerminate, bool bool_UseForcingTerminateIfHung);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void Hibernate(bool bool_UseForcingSuspend);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void StandBy(bool bool_UseForcingSuspend);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void EjectCD();
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void CloseCD();
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void ChangeDisplayMode(int int_ScreenWidth, int int_ScreenHeight, int int_ScreenBPP, int int_DisplayFreq);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern int GetMouseCursorPositionX();
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern int GetMouseCursorPositionY();
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void SetMouseMoveEvent(int int_X, int int_Y);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void SetMouseMoveEventFromMiniRTDV(int int_X, int int_Y);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void SetMouseButtonClickEvent(int int_MouseEventType, int int_MouseButtonNum, int int_MouseClicksCount, int int_X, int int_Y);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void SetSequenceOfTwoKeysEvent(int int_TypeOfSequence);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void SetSequenceOfThreeKeysEvent(int int_TypeOfSequence);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void SetKeyboardEvent(int int_EventType, int int_Key, int int_ModifierKey);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void SetKeyboardEventWModifiers(int int_EventType, int int_Key, int int_Modifiers);
 
             [DllImport("user32.dll", CharSet = CharSet.Ansi)]
@@ -1661,7 +1661,7 @@ namespace JurikSoft
                 }
             }
 
-            #region JsRctServerLib Native DLL Calls
+            #region YakSysRctServerLib Native DLL Calls
 
 
 
@@ -3186,7 +3186,7 @@ namespace JurikSoft
             {
                 try
                 {
-                    ProcWindowService.MicrophoneRecordWrapper.AllSubscribedJurikSoftClients.Add(this.tcpClient_NecessaryClient);
+                    ProcWindowService.MicrophoneRecordWrapper.AllSubscribedYakSysClients.Add(this.tcpClient_NecessaryClient);
 
                     ProcWindowService.MicrophoneRecordWrapper.NeedToRefreshFlag = true;
                 }
@@ -5973,7 +5973,7 @@ namespace JurikSoft
                 }
 
 
-                JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever obj_WMIClassesInfoRetriever = new JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever(JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever.NullReferencesHandlerMechanism.SetToDefaults);
+                YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever obj_WMIClassesInfoRetriever = new YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever(YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever.NullReferencesHandlerMechanism.SetToDefaults);
 
                 if (intArray_SystemInformationNodePath.Length == 2 && intArray_SystemInformationNodePath[0] == 0 && intArray_SystemInformationNodePath[1] == 4)
                 {
@@ -6478,7 +6478,7 @@ namespace JurikSoft
                 }
 
 
-                JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever obj_WMIClassesInfoRetriever = new JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever(JurikSoft.WMIClassesInfoRetriever.WMIClassesInfoRetriever.NullReferencesHandlerMechanism.SetToDefaults);
+                YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever obj_WMIClassesInfoRetriever = new YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever(YakSys.WMIClassesInfoRetriever.WMIClassesInfoRetriever.NullReferencesHandlerMechanism.SetToDefaults);
 
                 try
                 {

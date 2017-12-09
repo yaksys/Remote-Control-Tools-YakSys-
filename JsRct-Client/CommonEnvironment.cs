@@ -4,27 +4,28 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 using System.Windows.Forms;
-using JurikSoft.Compression;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.Compression;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
+using YakSysRct_Xml_Config_Importer;
 
-public class ConmpressionEnvironment
+public class CompressionEnvironment
 {
-    public ConmpressionEnvironment()
+    public CompressionEnvironment()
     {
         if (iCompressionArray_obj[1] != null) return;
 
-        iCompressionArray_obj[1] = new JurikSoft.Compression.PrefixCodes(true);
-        iCompressionArray_obj[2] = new JurikSoft.Compression.PrefixCodes(false);
-        iCompressionArray_obj[3] = new JurikSoft.Compression.LZSS(8, true, true, false, 131072);
+        iCompressionArray_obj[1] = new YakSys.Compression.PrefixCodes(true);
+        iCompressionArray_obj[2] = new YakSys.Compression.PrefixCodes(false);
+        iCompressionArray_obj[3] = new YakSys.Compression.LZSS(8, true, true, false, 131072);
         iCompressionArray_obj[4] = new DeflateCompressionWrapper();
-        iCompressionArray_obj[5] = new JurikSoft.Compression.RLE(JurikSoft.Compression.PrefixCodesCompression.NonAdaptive);
+        iCompressionArray_obj[5] = new YakSys.Compression.RLE(YakSys.Compression.PrefixCodesCompression.NonAdaptive);
     }
 
     public static ICompression[] iCompressionArray_obj = new ICompression[6];
 
-    public class DeflateCompressionWrapper : JurikSoft.Compression.ICompression
+    public class DeflateCompressionWrapper : YakSys.Compression.ICompression
     {
         MemoryStream memoryStream_DecompressedData = new MemoryStream();
         MemoryStream memoryStream_DataToCompress = new MemoryStream();
@@ -209,13 +210,13 @@ public class UserAccountsAndAccessRestrictionRulesEnvironment
 
         proxyDBManagerForm_obj.EditedRecordIndex = int_SelectedProxyServerRowIndex;
 
-        if (JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < 2 ||
-            JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
+        if (YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < 2 ||
+            YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
         {
             return;
         }
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         proxyDBManagerForm_obj.ProxyTypeList.SelectedIndex = (int)ProxyServersSettingsDataTable_obj[int_SelectedProxyServerRowIndex + 1][ProxyServersSettingsDataTable_obj.ProxyTypeColumn] ;
         proxyDBManagerForm_obj.HostTextBox.Text = (string)ProxyServersSettingsDataTable_obj[int_SelectedProxyServerRowIndex + 1][ProxyServersSettingsDataTable_obj.ProxyHostColumn];
@@ -241,13 +242,13 @@ public class UserAccountsAndAccessRestrictionRulesEnvironment
 
         proxyDBManagerForm_obj.CancelButton.Text = ClientStringFactory.GetString(5, ClientSettingsEnvironment.CurrentLanguage);
 
-        if (JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < 2 ||
-           JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
+        if (YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < 2 ||
+           YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings.Rows.Count < int_SelectedProxyServerRowIndex + 2)
         {
             return;
         }
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.ProxyServersSettings;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.ProxyServersSettingsDataTable ProxyServersSettingsDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.ProxyServersSettings;
 
         proxyDBManagerForm_obj.ProxyTypeList.SelectedIndex = (int)ProxyServersSettingsDataTable_obj[int_SelectedProxyServerRowIndex + 1][ProxyServersSettingsDataTable_obj.ProxyTypeColumn] ;
         proxyDBManagerForm_obj.HostTextBox.Text = (string)ProxyServersSettingsDataTable_obj[int_SelectedProxyServerRowIndex + 1][ProxyServersSettingsDataTable_obj.ProxyHostColumn];
@@ -276,120 +277,120 @@ public class UserAccountsAndAccessRestrictionRulesEnvironment
         proxyDBManagerForm_obj.ShowDialog();
     }
     
-    public static void EditSelectedJurikSoftServerInfo(int int_SelectedJurikSoftServerRowIndex)
+    public static void EditSelectedYakSysServerInfo(int int_SelectedYakSysServerRowIndex)
     {
-        JurikSoftServersDBManagerForm jurikSoftServersDBManagerForm_obj = new JurikSoftServersDBManagerForm();
+        YakSysServersDBManagerForm YakSysServersDBManagerForm_obj = new YakSysServersDBManagerForm();
 
-        jurikSoftServersDBManagerForm_obj.CancelButton.Text = ClientStringFactory.GetString(5, ClientSettingsEnvironment.CurrentLanguage);
+        YakSysServersDBManagerForm_obj.CancelButton.Text = ClientStringFactory.GetString(5, ClientSettingsEnvironment.CurrentLanguage);
 
-        if (JsRctClientV110XMLConfigImporter.JurikSoftClientDB.JurikSoftServers.Rows.Count == 0)
+        if (YakSysRctClientV110XMLConfigImporter.YakSysClientDB.YakSysServers.Rows.Count == 0)
         {
             return;
         }
 
-        jurikSoftServersDBManagerForm_obj.AddButton.Visible = false;
+        YakSysServersDBManagerForm_obj.AddButton.Visible = false;
 
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersDataTable jurikSoftServersDataTableDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.JurikSoftServers;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersDataTable YakSysServersDataTableDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.YakSysServers;
 
-        jurikSoftServersDBManagerForm_obj.ServerDescriptionTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerDescriptionColumn];
-        jurikSoftServersDBManagerForm_obj.ServerHostTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerHostColumn];
-        jurikSoftServersDBManagerForm_obj.ServerLocationTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerLocationColumn];
-        jurikSoftServersDBManagerForm_obj.ServerNameTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerNameColumn];
-        jurikSoftServersDBManagerForm_obj.ServerPortTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerPortColumn].ToString();
-        jurikSoftServersDBManagerForm_obj.ServerNetworkWorkgroupTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.WorkGroupColumn];
-        jurikSoftServersDBManagerForm_obj.ServerNetworkDomainTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.DomainColumn];
-        jurikSoftServersDBManagerForm_obj.LoginForConnectionTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.LoginColumn];
-        jurikSoftServersDBManagerForm_obj.PasswordForConnectionTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.PasswordColumn];
+        YakSysServersDBManagerForm_obj.ServerDescriptionTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerDescriptionColumn];
+        YakSysServersDBManagerForm_obj.ServerHostTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerHostColumn];
+        YakSysServersDBManagerForm_obj.ServerLocationTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerLocationColumn];
+        YakSysServersDBManagerForm_obj.ServerNameTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerNameColumn];
+        YakSysServersDBManagerForm_obj.ServerPortTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerPortColumn].ToString();
+        YakSysServersDBManagerForm_obj.ServerNetworkWorkgroupTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.WorkGroupColumn];
+        YakSysServersDBManagerForm_obj.ServerNetworkDomainTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.DomainColumn];
+        YakSysServersDBManagerForm_obj.LoginForConnectionTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.LoginColumn];
+        YakSysServersDBManagerForm_obj.PasswordForConnectionTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.PasswordColumn];
 
-        jurikSoftServersDBManagerForm_obj.ServerGroupsListBox.SelectedIndex = (int)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerGroupTypeIDColumn];
-        jurikSoftServersDBManagerForm_obj.ProxyServersListView.Enabled = true;
+        YakSysServersDBManagerForm_obj.ServerGroupsListBox.SelectedIndex = (int)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerGroupTypeIDColumn];
+        YakSysServersDBManagerForm_obj.ProxyServersListView.Enabled = true;
 
-        jurikSoftServersDBManagerForm_obj.UseProxyCheckBox.Checked = (bool)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.UseProxyServerColumn];
+        YakSysServersDBManagerForm_obj.UseProxyCheckBox.Checked = (bool)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.UseProxyServerColumn];
 
-        if (jurikSoftServersDBManagerForm_obj.UseProxyCheckBox.Checked)
+        if (YakSysServersDBManagerForm_obj.UseProxyCheckBox.Checked)
         {
-            int int_SelectedProxyIndex = (int)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ProxyServerIDColumn];
+            int int_SelectedProxyIndex = (int)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ProxyServerIDColumn];
 
-            jurikSoftServersDBManagerForm_obj.ProxyServersListView.Items[int_SelectedProxyIndex - 1].Selected = true;
+            YakSysServersDBManagerForm_obj.ProxyServersListView.Items[int_SelectedProxyIndex - 1].Selected = true;
         }
 
-        jurikSoftServersDBManagerForm_obj.EditedRecordIndex = int_SelectedJurikSoftServerRowIndex;
+        YakSysServersDBManagerForm_obj.EditedRecordIndex = int_SelectedYakSysServerRowIndex;
 
-        jurikSoftServersDBManagerForm_obj.ShowDialog();
+        YakSysServersDBManagerForm_obj.ShowDialog();
     }
     
-    public static void ViewSelectedJurikSoftServerInfo(int int_SelectedJurikSoftServerRowIndex)
+    public static void ViewSelectedYakSysServerInfo(int int_SelectedYakSysServerRowIndex)
     {
-        JurikSoftServersDBManagerForm jurikSoftServersDBManagerForm_obj = new JurikSoftServersDBManagerForm();
+        YakSysServersDBManagerForm YakSysServersDBManagerForm_obj = new YakSysServersDBManagerForm();
 
-        jurikSoftServersDBManagerForm_obj.AddButton.Visible = false;
-        jurikSoftServersDBManagerForm_obj.ApplyButton.Visible = false;
+        YakSysServersDBManagerForm_obj.AddButton.Visible = false;
+        YakSysServersDBManagerForm_obj.ApplyButton.Visible = false;
 
-        jurikSoftServersDBManagerForm_obj.GroupMember.Visible = false;
-        jurikSoftServersDBManagerForm_obj.UsedsProxy.Visible = false;
+        YakSysServersDBManagerForm_obj.GroupMember.Visible = false;
+        YakSysServersDBManagerForm_obj.UsedsProxy.Visible = false;
 
-        jurikSoftServersDBManagerForm_obj.CancelButton.Text = ClientStringFactory.GetString(5, ClientSettingsEnvironment.CurrentLanguage);
+        YakSysServersDBManagerForm_obj.CancelButton.Text = ClientStringFactory.GetString(5, ClientSettingsEnvironment.CurrentLanguage);
 
-        if (JsRctClientV110XMLConfigImporter.JurikSoftClientDB.JurikSoftServers.Rows.Count == 0)
+        if (YakSysRctClientV110XMLConfigImporter.YakSysClientDB.YakSysServers.Rows.Count == 0)
         {
             return;
         }
 
 
-        jurikSoftServersDBManagerForm_obj.ViewProxyRecordButton.Visible = false;
-        jurikSoftServersDBManagerForm_obj.AddProxyRecordButton.Visible = false;
-        jurikSoftServersDBManagerForm_obj.EditProxyRecordButton.Visible = false;
+        YakSysServersDBManagerForm_obj.ViewProxyRecordButton.Visible = false;
+        YakSysServersDBManagerForm_obj.AddProxyRecordButton.Visible = false;
+        YakSysServersDBManagerForm_obj.EditProxyRecordButton.Visible = false;
 
-        jurikSoftServersDBManagerForm_obj.ApplyButton.Visible = false;
-        jurikSoftServersDBManagerForm_obj.AddButton.Visible = false;
+        YakSysServersDBManagerForm_obj.ApplyButton.Visible = false;
+        YakSysServersDBManagerForm_obj.AddButton.Visible = false;
 
-        jurikSoftServersDBManagerForm_obj.RenameGroupButton.Visible = false;
-        jurikSoftServersDBManagerForm_obj.RemoveGroupButton.Visible = false;
-        jurikSoftServersDBManagerForm_obj.AddNewGroupButton.Visible = false;
+        YakSysServersDBManagerForm_obj.RenameGroupButton.Visible = false;
+        YakSysServersDBManagerForm_obj.RemoveGroupButton.Visible = false;
+        YakSysServersDBManagerForm_obj.AddNewGroupButton.Visible = false;
 
-        jurikSoftServersDBManagerForm_obj.UseProxyCheckBox.Enabled = false;
+        YakSysServersDBManagerForm_obj.UseProxyCheckBox.Enabled = false;
 
-        jurikSoftServersDBManagerForm_obj.ServerDescriptionTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.ServerHostTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.ServerLocationTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.ServerNameTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.ServerPortTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.ServerNetworkWorkgroupTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.ServerNetworkDomainTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.LoginForConnectionTextBox.ReadOnly = true;
-        jurikSoftServersDBManagerForm_obj.PasswordForConnectionTextBox.ReadOnly = true;
-
-
-        jurikSoftServersDBManagerForm_obj.ServerGroupsListBox.Enabled = false;
-        jurikSoftServersDBManagerForm_obj.ProxyServersListView.Enabled = false;
+        YakSysServersDBManagerForm_obj.ServerDescriptionTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.ServerHostTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.ServerLocationTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.ServerNameTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.ServerPortTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.ServerNetworkWorkgroupTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.ServerNetworkDomainTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.LoginForConnectionTextBox.ReadOnly = true;
+        YakSysServersDBManagerForm_obj.PasswordForConnectionTextBox.ReadOnly = true;
 
 
+        YakSysServersDBManagerForm_obj.ServerGroupsListBox.Enabled = false;
+        YakSysServersDBManagerForm_obj.ProxyServersListView.Enabled = false;
 
-        DataSet_Client_Ver110.DataSet_JurikSoftClientDB.JurikSoftServersDataTable jurikSoftServersDataTableDataTable_obj = JsRctClientV110XMLConfigImporter.JurikSoftClientDB.JurikSoftServers;
 
-        jurikSoftServersDBManagerForm_obj.ServerDescriptionTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerDescriptionColumn];
-        jurikSoftServersDBManagerForm_obj.ServerHostTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerHostColumn];
-        jurikSoftServersDBManagerForm_obj.ServerLocationTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerLocationColumn];
-        jurikSoftServersDBManagerForm_obj.ServerNameTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerNameColumn];
-        jurikSoftServersDBManagerForm_obj.ServerPortTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerPortColumn].ToString();
-        jurikSoftServersDBManagerForm_obj.ServerNetworkWorkgroupTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.WorkGroupColumn];
-        jurikSoftServersDBManagerForm_obj.ServerNetworkDomainTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.DomainColumn];
-        jurikSoftServersDBManagerForm_obj.LoginForConnectionTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.LoginColumn];
-        jurikSoftServersDBManagerForm_obj.PasswordForConnectionTextBox.Text = (string)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.PasswordColumn];
 
-        jurikSoftServersDBManagerForm_obj.ServerGroupsListBox.SelectedIndex = (int)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ServerGroupTypeIDColumn];
-        jurikSoftServersDBManagerForm_obj.ProxyServersListView.Enabled = true;
+        YakSysRct_Xml_Config_Importer.Client_DataSet_ver_110.DataSet_YakSysClientDB.YakSysServersDataTable YakSysServersDataTableDataTable_obj = YakSysRctClientV110XMLConfigImporter.YakSysClientDB.YakSysServers;
 
-        jurikSoftServersDBManagerForm_obj.UseProxyCheckBox.Checked = (bool)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.UseProxyServerColumn];
+        YakSysServersDBManagerForm_obj.ServerDescriptionTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerDescriptionColumn];
+        YakSysServersDBManagerForm_obj.ServerHostTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerHostColumn];
+        YakSysServersDBManagerForm_obj.ServerLocationTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerLocationColumn];
+        YakSysServersDBManagerForm_obj.ServerNameTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerNameColumn];
+        YakSysServersDBManagerForm_obj.ServerPortTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerPortColumn].ToString();
+        YakSysServersDBManagerForm_obj.ServerNetworkWorkgroupTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.WorkGroupColumn];
+        YakSysServersDBManagerForm_obj.ServerNetworkDomainTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.DomainColumn];
+        YakSysServersDBManagerForm_obj.LoginForConnectionTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.LoginColumn];
+        YakSysServersDBManagerForm_obj.PasswordForConnectionTextBox.Text = (string)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.PasswordColumn];
 
-        if (jurikSoftServersDBManagerForm_obj.UseProxyCheckBox.Checked)
+        YakSysServersDBManagerForm_obj.ServerGroupsListBox.SelectedIndex = (int)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ServerGroupTypeIDColumn];
+        YakSysServersDBManagerForm_obj.ProxyServersListView.Enabled = true;
+
+        YakSysServersDBManagerForm_obj.UseProxyCheckBox.Checked = (bool)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.UseProxyServerColumn];
+
+        if (YakSysServersDBManagerForm_obj.UseProxyCheckBox.Checked)
         {
-            int int_SelectedProxyIndex = (int)jurikSoftServersDataTableDataTable_obj[int_SelectedJurikSoftServerRowIndex][jurikSoftServersDataTableDataTable_obj.ProxyServerIDColumn];
+            int int_SelectedProxyIndex = (int)YakSysServersDataTableDataTable_obj[int_SelectedYakSysServerRowIndex][YakSysServersDataTableDataTable_obj.ProxyServerIDColumn];
 
-            jurikSoftServersDBManagerForm_obj.ProxyServersListView.Items[int_SelectedProxyIndex - 1].Selected = true;
+            YakSysServersDBManagerForm_obj.ProxyServersListView.Items[int_SelectedProxyIndex - 1].Selected = true;
         }
 
-        jurikSoftServersDBManagerForm_obj.ShowDialog();
+        YakSysServersDBManagerForm_obj.ShowDialog();
     }
 }

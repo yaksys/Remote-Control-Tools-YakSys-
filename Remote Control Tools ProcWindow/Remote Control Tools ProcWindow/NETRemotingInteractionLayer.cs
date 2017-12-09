@@ -9,7 +9,7 @@ using System.Runtime.Remoting.Channels.Ipc;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using JurikSoft.Server_Core;
+using YakSys.Server_Core;
 using System.Diagnostics;
 using System.Collections;
 using System.Drawing;
@@ -24,17 +24,17 @@ namespace Remote_Control_Tools_ProcWindow
         {
             try
             {
-                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_URI");
+                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_URI");
 
-                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.ApplicationStartPendingPool), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_ApplicationStartPendingPool_URI");
+                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.ApplicationStartPendingPool), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_ApplicationStartPendingPool_URI");
 
-                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.MessageBoxPendingPool), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_MessageBoxPendingPool_URI");
+                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.MessageBoxPendingPool), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_MessageBoxPendingPool_URI");
 
-                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.RTDVContainer), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_RTDVContainer_URI");
+                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.RTDVContainer), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_RTDVContainer_URI");
 
-                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.ClipboardWrapper), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_ClipboardWrapper_URI");
+                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.ClipboardWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_ClipboardWrapper_URI");
 
-           //     RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
+            //!!!    RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
                 
             }
             catch (Exception ex)
@@ -47,21 +47,21 @@ namespace Remote_Control_Tools_ProcWindow
 
     class LocalObjCopy
     {
-        public static ProcWindowService obj_ProcWindowService = (ProcWindowService)Activator.GetObject(typeof(ProcWindowService), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_URI");
+        public static ProcWindowService obj_ProcWindowService = (ProcWindowService)Activator.GetObject(typeof(ProcWindowService), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_URI");
 
-        public static ProcWindowService.ApplicationStartPendingPool obj_ApplicationStartPendingPool = (ProcWindowService.ApplicationStartPendingPool)Activator.GetObject(typeof(ProcWindowService.ApplicationStartPendingPool), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_ApplicationStartPendingPool_URI");
+        public static ProcWindowService.ApplicationStartPendingPool obj_ApplicationStartPendingPool = (ProcWindowService.ApplicationStartPendingPool)Activator.GetObject(typeof(ProcWindowService.ApplicationStartPendingPool), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_ApplicationStartPendingPool_URI");
 
-        public static ProcWindowService.MessageBoxPendingPool obj_MessageBoxPendingPool = (ProcWindowService.MessageBoxPendingPool)Activator.GetObject(typeof(ProcWindowService.MessageBoxPendingPool), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_MessageBoxPendingPool_URI");
+        public static ProcWindowService.MessageBoxPendingPool obj_MessageBoxPendingPool = (ProcWindowService.MessageBoxPendingPool)Activator.GetObject(typeof(ProcWindowService.MessageBoxPendingPool), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_MessageBoxPendingPool_URI");
 
-        public static ProcWindowService.RTDVContainer obj_RTDVContainer = (ProcWindowService.RTDVContainer)Activator.GetObject(typeof(ProcWindowService.RTDVContainer), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_RTDVContainer_URI");
+        public static ProcWindowService.RTDVContainer obj_RTDVContainer = (ProcWindowService.RTDVContainer)Activator.GetObject(typeof(ProcWindowService.RTDVContainer), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_RTDVContainer_URI");
 
-        public static ProcWindowService.ClipboardWrapper obj_ClipboardWrapper = (ProcWindowService.ClipboardWrapper)Activator.GetObject(typeof(ProcWindowService.ClipboardWrapper), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_ClipboardWrapper_URI");
+        public static ProcWindowService.ClipboardWrapper obj_ClipboardWrapper = (ProcWindowService.ClipboardWrapper)Activator.GetObject(typeof(ProcWindowService.ClipboardWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_ClipboardWrapper_URI");
         
-        public static ProcWindowService.WebCamContainer obj_WebCamContainer = (ProcWindowService.WebCamContainer)Activator.GetObject(typeof(ProcWindowService.WebCamContainer), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_WebCamContainer_URI");
+        public static ProcWindowService.WebCamContainer obj_WebCamContainer = (ProcWindowService.WebCamContainer)Activator.GetObject(typeof(ProcWindowService.WebCamContainer), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_WebCamContainer_URI");
 
-        public static ProcWindowService.MicrophoneRecordWrapper obj_MicrophoneRecordWrapper = (ProcWindowService.MicrophoneRecordWrapper)Activator.GetObject(typeof(ProcWindowService.MicrophoneRecordWrapper), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_MicrophoneRecordWrapper_URI");
+        public static ProcWindowService.MicrophoneRecordWrapper obj_MicrophoneRecordWrapper = (ProcWindowService.MicrophoneRecordWrapper)Activator.GetObject(typeof(ProcWindowService.MicrophoneRecordWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_MicrophoneRecordWrapper_URI");
 
-      //  public static ProcWindowService.KeyboardMouseInputWrapper obj_KeyboardMouseInputWrapper = (ProcWindowService.KeyboardMouseInputWrapper)Activator.GetObject(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://ZNIIS Server Service IPC Port/ZNIIS Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
+  //!!!      public static ProcWindowService.KeyboardMouseInputWrapper obj_KeyboardMouseInputWrapper = (ProcWindowService.KeyboardMouseInputWrapper)Activator.GetObject(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
 
 
         public static Form_Main formMain_obj = null;
@@ -72,9 +72,9 @@ namespace Remote_Control_Tools_ProcWindow
     }
 
 
+   
+
     /*
-
-
     class KeyboardMouseInputService
     {
         bool bool_NewMouseInputEventrise = false;
@@ -111,9 +111,9 @@ namespace Remote_Control_Tools_ProcWindow
         }
 
     }
-
-
     */
+
+    
 
     public class LocalAction
     {
@@ -527,16 +527,16 @@ namespace Remote_Control_Tools_ProcWindow
 
         #region DllImport methods declaration
 
-        [DllImport("JsRctServerLib.dll")]
+        [DllImport("YakSysRctServerLib.dll")]
         private static extern void ChangeDisplayMode(int int_ScreenWidth, int int_ScreenHeight, int int_ScreenBPP, int int_DisplayFreq);
 
-        [DllImport("JsRctServerLib.dll")]
+        [DllImport("YakSysRctServerLib.dll")]
         private static extern void DisableMonitorPowerSaveActivity();
 
-        [DllImport("JsRctServerLib.dll")]
+        [DllImport("YakSysRctServerLib.dll")]
         private static extern void EnableMonitorPowerSaveActivity();
 
-        [DllImport("JsRctServerLib.dll")]
+        [DllImport("YakSysRctServerLib.dll")]
         private static extern bool ConnectToDesktop();
         
         [DllImport("user32.dll", EntryPoint = "GetDesktopWindow")]

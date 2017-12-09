@@ -312,7 +312,7 @@ public partial class Form_Main : Form
 
     #region WMI methods
 
-    public void RunAndDeleteJsRctServerSfxExe(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority, string string_ProcessDirectory, string string_SfxExeName)
+    public void RunAndDeleteYakSysRctServerSfxExe(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority, string string_ProcessDirectory, string string_SfxExeName)
     {
         ManagementOperationObserver managementOperationObserver_obj = new ManagementOperationObserver();
 
@@ -385,7 +385,7 @@ public partial class Form_Main : Form
         return string.Empty;
     }
 
-    public void CreateJsRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority, string string_ServiceDirectory, string string_ServiceExeName)
+    public void CreateYakSysRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority, string string_ServiceDirectory, string string_ServiceExeName)
     {
         ConnectionOptions connectionOptions_obj = new ConnectionOptions();
 
@@ -412,9 +412,9 @@ public partial class Form_Main : Form
 
         ManagementBaseObject managementBaseObject_ServiceParameters = managementClass_obj.GetMethodParameters("Create");
 
-        managementBaseObject_ServiceParameters["Name"] = "JurikSoft Server";
-        managementBaseObject_ServiceParameters["DisplayName"] = "JurikSoft Server";
-        managementBaseObject_ServiceParameters["PathName"] = string_ServiceDirectory + "\\JsRct-Server WindowsService.exe";
+        managementBaseObject_ServiceParameters["Name"] = "YakSys Server";
+        managementBaseObject_ServiceParameters["DisplayName"] = "YakSys Server";
+        managementBaseObject_ServiceParameters["PathName"] = string_ServiceDirectory + "\\YakSysRct-Server WindowsService.exe";
         managementBaseObject_ServiceParameters["ServiceType"] = (byte)32;
         managementBaseObject_ServiceParameters["ErrorControl"] = (byte)0;
         managementBaseObject_ServiceParameters["StartMode"] = "Automatic";
@@ -430,7 +430,7 @@ public partial class Form_Main : Form
         InitializeStepSuccessfullyCompleteEvent(string.Empty);
     }
 
-    public void StartJsRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority)
+    public void StartYakSysRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority)
     {
         ConnectionOptions connectionOptions_obj = new ConnectionOptions();
 
@@ -443,7 +443,7 @@ public partial class Form_Main : Form
 
         ManagementScope managementScope_obj = new ManagementScope("\\\\" + string_Host + "\\root\\cimv2", connectionOptions_obj);
 
-        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"JurikSoft Server\"");
+        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"YakSys Server\"");
 
         ManagementObjectSearcher managementObjectSearcher_obj = new ManagementObjectSearcher(managementScope_obj, objectQuery_obj);
 
@@ -457,7 +457,7 @@ public partial class Form_Main : Form
         InitializeStepSuccessfullyCompleteEvent(string.Empty);
     }
 
-    public void StopJsRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority)
+    public void StopYakSysRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority)
     {
         ConnectionOptions connectionOptions_obj = new ConnectionOptions();
 
@@ -470,7 +470,7 @@ public partial class Form_Main : Form
 
         ManagementScope managementScope_obj = new ManagementScope("\\\\" + string_Host + "\\root\\cimv2", connectionOptions_obj);
 
-        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"JurikSoft Server\"");
+        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"YakSys Server\"");
 
         EnumerationOptions enumerationOptions_obj = new EnumerationOptions();
         enumerationOptions_obj.Timeout = new TimeSpan(0, 0, 1);
@@ -487,7 +487,7 @@ public partial class Form_Main : Form
         InitializeStepSuccessfullyCompleteEvent(string.Empty);
     }
 
-    public void DeleteJsRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority)
+    public void DeleteYakSysRctServerService(string string_Host, string string_AccountLogin, string string_AccountPassword, string string_Authority)
     {
         ConnectionOptions connectionOptions_obj = new ConnectionOptions();
 
@@ -500,7 +500,7 @@ public partial class Form_Main : Form
 
         ManagementScope managementScope_obj = new ManagementScope("\\\\" + string_Host + "\\root\\cimv2", connectionOptions_obj);
 
-        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"JurikSoft Server\"");
+        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"YakSys Server\"");
 
         ManagementObjectSearcher managementObjectSearcher_obj = new ManagementObjectSearcher(managementScope_obj, objectQuery_obj);
 
@@ -543,7 +543,7 @@ public partial class Form_Main : Form
 
         ManagementScope managementScope_obj = new ManagementScope("\\\\" + string_Host + "\\root\\cimv2", connectionOptions_obj);
 
-        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"JurikSoft Server\"");
+        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"YakSys Server\"");
 
         ManagementObjectSearcher managementObjectSearcher_obj = new ManagementObjectSearcher(managementScope_obj, objectQuery_obj);
 
@@ -626,7 +626,7 @@ public partial class Form_Main : Form
 
         ManagementScope managementScope_obj = new ManagementScope("\\\\" + string_Host + "\\root\\cimv2", connectionOptions_obj);
 
-        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"JurikSoft Server\"");
+        ObjectQuery objectQuery_obj = new ObjectQuery("select * from Win32_Service where Name=\"YakSys Server\"");
 
         ManagementObjectSearcher managementObjectSearcher_obj = new ManagementObjectSearcher(managementScope_obj, objectQuery_obj);
 
@@ -673,12 +673,12 @@ public partial class Form_Main : Form
     #endregion
 
 
-    static Thread thread_JurikSoftServiceInstallationProcess;
+    static Thread thread_YakSysServiceInstallationProcess;
     private void button_ServerServiceControl_Install_Click(object sender, EventArgs e)
     {
         Form_WorkingProgress.InstallationProcessAborted += new Form_WorkingProgress.InstallationEventHandler(Form_WorkingProgress_InstallationProcessAborted);
 
-        thread_JurikSoftServiceInstallationProcess = new Thread(new ThreadStart(InstallJurikSoftService));
+        thread_YakSysServiceInstallationProcess = new Thread(new ThreadStart(InstallYakSysService));
 
         string[] stringArray_JobsDescription = new string[7];
 
@@ -692,11 +692,11 @@ public partial class Form_Main : Form
 
         Form_WorkingProgress form_WorkingProgress_obj = new Form_WorkingProgress(stringArray_JobsDescription);
 
-        thread_JurikSoftServiceInstallationProcess.Start();
+        thread_YakSysServiceInstallationProcess.Start();
 
         form_WorkingProgress_obj.ShowDialog();
     }
-    public void InstallJurikSoftService()
+    public void InstallYakSysService()
     {
         try
         {
@@ -704,7 +704,7 @@ public partial class Form_Main : Form
             string string_Authority = string.Empty;
             string string_AccountLogin = this.Login;
             string string_AccountPassword = this.Password;
-            string string_SfxExeName = "jsrctserverarh.exe";
+            string string_SfxExeName = "YakSysRctserverarh.exe";
 
             if (this.Domain != string.Empty)
             {
@@ -721,13 +721,13 @@ public partial class Form_Main : Form
             InitializeStepSuccessfullyCompleteEvent(string.Empty);
             InitializeNextStepSuccessfullyCompleteEvent(1, 7);
 
-            #region Create JurikSoft Server Directory
+            #region Create YakSys Server Directory
 
-            if (Directory.Exists(@"\\" + string_Host + @"\admin$\system32\JurikSoft Server") == false)
+            if (Directory.Exists(@"\\" + string_Host + @"\admin$\system32\YakSys Server") == false)
             {
                 try
                 {
-                    Directory.CreateDirectory(@"\\" + string_Host + @"\admin$\system32\JurikSoft Server");
+                    Directory.CreateDirectory(@"\\" + string_Host + @"\admin$\system32\YakSys Server");
 
                     InitializeStepSuccessfullyCompleteEvent(string.Empty);
 
@@ -748,13 +748,13 @@ public partial class Form_Main : Form
 
             #endregion
 
-            #region Copy JurikSoft Server Files
+            #region Copy YakSys Server Files
 
-            if (File.Exists(@"\\" + string_Host + @"\admin$\system32\JurikSoft Server\" + string_SfxExeName) == false)
+            if (File.Exists(@"\\" + string_Host + @"\admin$\system32\YakSys Server\" + string_SfxExeName) == false)
             {
                 try
                 {
-                    File.Copy(Application.StartupPath + @"\sfxarh\" + string_SfxExeName, @"\\" + string_Host + @"\admin$\system32\JurikSoft Server\" + string_SfxExeName);
+                    File.Copy(Application.StartupPath + @"\sfxarh\" + string_SfxExeName, @"\\" + string_Host + @"\admin$\system32\YakSys Server\" + string_SfxExeName);
 
                     InitializeStepSuccessfullyCompleteEvent(string.Empty);
 
@@ -778,15 +778,15 @@ public partial class Form_Main : Form
             string string_RemotePCSystemDirectory = GetRemotePCSystemDirectory(string_Host, string_AccountLogin, string_AccountPassword, string_Authority);
             InitializeNextStepSuccessfullyCompleteEvent(4, 7);
 
-            string_RemotePCSystemDirectory += "\\JurikSoft Server";
+            string_RemotePCSystemDirectory += "\\YakSys Server";
 
-            RunAndDeleteJsRctServerSfxExe(string_Host, string_AccountLogin, string_AccountPassword, string_Authority, string_RemotePCSystemDirectory, string_SfxExeName);
+            RunAndDeleteYakSysRctServerSfxExe(string_Host, string_AccountLogin, string_AccountPassword, string_Authority, string_RemotePCSystemDirectory, string_SfxExeName);
             InitializeNextStepSuccessfullyCompleteEvent(5, 7);
 
-            CreateJsRctServerService(string_Host, string_AccountLogin, string_AccountPassword, string_Authority, string_RemotePCSystemDirectory, string_SfxExeName);
+            CreateYakSysRctServerService(string_Host, string_AccountLogin, string_AccountPassword, string_Authority, string_RemotePCSystemDirectory, string_SfxExeName);
             InitializeNextStepSuccessfullyCompleteEvent(6, 7);
 
-            StartJsRctServerService(string_Host, string_AccountLogin, string_AccountPassword, string_Authority);
+            StartYakSysRctServerService(string_Host, string_AccountLogin, string_AccountPassword, string_Authority);
             InitializeNextStepSuccessfullyCompleteEvent(7, 7);
 
             InitializeJobSuccessfullyCompletedEvent(StringFactory.GetString(58, CommonEnvironment.CurrentLanguage));
@@ -802,22 +802,22 @@ public partial class Form_Main : Form
     }
     void Form_WorkingProgress_InstallationProcessAborted(string string_Message)
     {
-        if (thread_JurikSoftServiceInstallationProcess != null)
+        if (thread_YakSysServiceInstallationProcess != null)
         {
-            thread_JurikSoftServiceInstallationProcess.Abort();
+            thread_YakSysServiceInstallationProcess.Abort();
 
             Form_WorkingProgress.InstallationProcessAborted -= new Form_WorkingProgress.InstallationEventHandler(Form_WorkingProgress_InstallationProcessAborted);
         }
     }
 
-    static Thread thread_JurikSoftServiceUninstallProcess;
+    static Thread thread_YakSysServiceUninstallProcess;
     private void button_ServerServiceControl_UninstallServer_Click(object sender, EventArgs e)
     {
         Form_WorkingProgress.UninstallProcessAborted += new Form_WorkingProgress.InstallationEventHandler(Form_WorkingProgress_UninstallProcessAborted);
 
-        thread_JurikSoftServiceUninstallProcess = new Thread(new ThreadStart(UninstallJurikSoftService));
+        thread_YakSysServiceUninstallProcess = new Thread(new ThreadStart(UninstallYakSysService));
 
-        thread_JurikSoftServiceUninstallProcess.Start();
+        thread_YakSysServiceUninstallProcess.Start();
 
         string[] stringArray_JobsDescription = new string[4];
 
@@ -830,7 +830,7 @@ public partial class Form_Main : Form
 
         form_WorkingProgress_obj.ShowDialog();
     }
-    public void UninstallJurikSoftService()
+    public void UninstallYakSysService()
     {
         try
         {
@@ -856,24 +856,24 @@ public partial class Form_Main : Form
             InitializeStepSuccessfullyCompleteEvent(string.Empty);
             InitializeNextStepSuccessfullyCompleteEvent(1, 4);
 
-            StopJsRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
+            StopYakSysRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
             InitializeNextStepSuccessfullyCompleteEvent(2, 4);
 
-            DeleteJsRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
+            DeleteYakSysRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
             InitializeNextStepSuccessfullyCompleteEvent(3, 4);
 
-            #region Delete JurikSoft Server Files and Directory
+            #region Delete YakSys Server Files and Directory
 
-            if (Directory.Exists(@"\\" + string_Host + @"\admin$\system32\JurikSoft Server") == true)
+            if (Directory.Exists(@"\\" + string_Host + @"\admin$\system32\YakSys Server") == true)
             {
                 try
                 {
-                    foreach (string string_CurrentFile in Directory.GetFiles(@"\\" + string_Host + @"\admin$\system32\JurikSoft Server"))
+                    foreach (string string_CurrentFile in Directory.GetFiles(@"\\" + string_Host + @"\admin$\system32\YakSys Server"))
                     {
                         File.Delete(string_CurrentFile);
                     }
 
-                    Directory.Delete(@"\\" + string_Host + @"\admin$\system32\JurikSoft Server");
+                    Directory.Delete(@"\\" + string_Host + @"\admin$\system32\YakSys Server");
 
                     InitializeStepSuccessfullyCompleteEvent(string.Empty);
                 }
@@ -905,9 +905,9 @@ public partial class Form_Main : Form
     }
     void Form_WorkingProgress_UninstallProcessAborted(string string_Message)
     {
-        if (thread_JurikSoftServiceInstallationProcess != null)
+        if (thread_YakSysServiceInstallationProcess != null)
         {
-            thread_JurikSoftServiceInstallationProcess.Abort();
+            thread_YakSysServiceInstallationProcess.Abort();
 
             Form_WorkingProgress.UninstallProcessAborted -= new Form_WorkingProgress.InstallationEventHandler(Form_WorkingProgress_UninstallProcessAborted);
         }
@@ -1029,7 +1029,7 @@ public partial class Form_Main : Form
                 string_Authority = "ntdlmdomain:" + this.Domain;
             }
 
-            StopJsRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
+            StopYakSysRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
 
             InitializeCallerSuccessfullyCompleteJobEvent(string.Empty);
         }
@@ -1069,7 +1069,7 @@ public partial class Form_Main : Form
                 string_Authority = "ntdlmdomain:" + this.Domain;
             }
 
-            StartJsRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
+            StartYakSysRctServerService(this.NetworkAddress, this.Login, this.Password, string_Authority);
 
             InitializeCallerSuccessfullyCompleteJobEvent(string.Empty);
         }

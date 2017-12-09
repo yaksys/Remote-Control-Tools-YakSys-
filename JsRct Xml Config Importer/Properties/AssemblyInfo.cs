@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JsRct Xml Config Importer")]
+[assembly: AssemblyTitle("YakSysRct Xml Config Importer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JsRct Xml Config Importer")]
+[assembly: AssemblyProduct("YakSysRct Xml Config Importer")]
 [assembly: AssemblyCopyright("Copyright ©  2006")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

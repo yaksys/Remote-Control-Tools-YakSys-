@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace JurikSoft
+namespace YakSys
 {
     public class ExceptionInformer
     {

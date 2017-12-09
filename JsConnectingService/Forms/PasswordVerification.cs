@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
 
-using JurikSoft;
+using YakSys;
 
 	public class PasswordVerificationForm : System.Windows.Forms.Form
 	{
@@ -170,7 +170,7 @@ using JurikSoft;
             this.label_PasswordVerivicationForm_LostPasswordDecription.Name = "label_PasswordVerivicationForm_LostPasswordDecription";
             this.label_PasswordVerivicationForm_LostPasswordDecription.Size = new System.Drawing.Size(464, 40);
             this.label_PasswordVerivicationForm_LostPasswordDecription.TabIndex = 0;
-            this.label_PasswordVerivicationForm_LostPasswordDecription.Text = "Note: You can login without password but JurikSoft Server DataBase will be erased" +
+            this.label_PasswordVerivicationForm_LostPasswordDecription.Text = "Note: You can login without password but YakSys Server DataBase will be erased" +
                 ". All data will be deleted, including Servers list, Proxy list, Auth data and Se" +
                 "ttings.";
             // 
@@ -262,7 +262,7 @@ using JurikSoft;
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(264, 16);
             this.label_Title.TabIndex = 10;
-            this.label_Title.Text = "JurikSoft Connecting Service 0.9.0 для Windows 2000/XP/2003";
+            this.label_Title.Text = "YakSys Connecting Service 0.9.0 для Windows 2000/XP/2003";
             // 
             // PasswordVerificationForm
             // 
@@ -401,7 +401,7 @@ using JurikSoft;
 
 				if(byte_ToCompressSettingsDataBase == 1)
 				{					
-					byteArray_DecompressedXMLData = new JurikSoft.Compression.CommonEnvironment().Decompress(memoryStream_XMLData.ToArray(), false);
+					byteArray_DecompressedXMLData = new YakSys.Compression.CommonEnvironment().Decompress(memoryStream_XMLData.ToArray(), false);
 
 					memoryStream_XMLData = new MemoryStream(byteArray_DecompressedXMLData);
 
@@ -467,7 +467,7 @@ using JurikSoft;
 		
 		private void pictureBox_PasswordVerivicationForm_Logo_Click(object sender, System.EventArgs e)
 		{
-			System.Diagnostics.Process.Start("http://www.juriksoft.net");
+			System.Diagnostics.Process.Start("http://www.YakSys.net");
 		}
 
 		

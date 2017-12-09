@@ -1,6 +1,6 @@
 using Microsoft.Win32;
 
-namespace JsRct_Server_WindowsService
+namespace YakSysRct_Server_WindowsService
 {
     partial class ProjectInstaller
     {
@@ -30,31 +30,31 @@ namespace JsRct_Server_WindowsService
         /// </summary>
         private void InitializeComponent()
         {
-            this.serviceProcessInstaller_JurikSoftServer = new System.ServiceProcess.ServiceProcessInstaller();
-            this.serviceInstaller_JurikSoftServer = new System.ServiceProcess.ServiceInstaller();
+            this.serviceProcessInstaller_YakSysServer = new System.ServiceProcess.ServiceProcessInstaller();
+            this.serviceInstaller_YakSysServer = new System.ServiceProcess.ServiceInstaller();
             // 
-            // serviceProcessInstaller_JurikSoftServer
+            // serviceProcessInstaller_YakSysServer
             // 
-            this.serviceProcessInstaller_JurikSoftServer.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
-            this.serviceProcessInstaller_JurikSoftServer.Password = null;
-            this.serviceProcessInstaller_JurikSoftServer.Username = null;
+            this.serviceProcessInstaller_YakSysServer.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
+            this.serviceProcessInstaller_YakSysServer.Password = null;
+            this.serviceProcessInstaller_YakSysServer.Username = null;
             // 
-            // serviceInstaller_JurikSoftServer
+            // serviceInstaller_YakSysServer
             // 
-            this.serviceInstaller_JurikSoftServer.ServiceName = "JurikSoft Server";
-            this.serviceInstaller_JurikSoftServer.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller_JurikSoftServer_AfterInstall);
+            this.serviceInstaller_YakSysServer.ServiceName = "YakSys RCT Server";
+            this.serviceInstaller_YakSysServer.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller_YakSysServer_AfterInstall);
             // 
             // ProjectInstaller
             // 
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceProcessInstaller_JurikSoftServer,
-            this.serviceInstaller_JurikSoftServer});
+            this.serviceProcessInstaller_YakSysServer,
+            this.serviceInstaller_YakSysServer});
 
         }
 
         #endregion
 
-        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller_JurikSoftServer;
-        private System.ServiceProcess.ServiceInstaller serviceInstaller_JurikSoftServer;
+        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller_YakSysServer;
+        private System.ServiceProcess.ServiceInstaller serviceInstaller_YakSysServer;
     }
 }

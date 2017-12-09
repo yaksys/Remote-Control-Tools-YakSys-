@@ -1,8 +1,8 @@
 using System;
 
-namespace JurikSoft
+namespace YakSys
 {
-    namespace XMLConfigImporer
+    namespace XMLConfigImporter
     {
         class CommonMethods
         {

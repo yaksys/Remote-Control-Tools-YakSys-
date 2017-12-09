@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JsRctServerLangPack")]
+[assembly: AssemblyTitle("YakSysRctServerLangPack")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JsRctServerLangPack")]
+[assembly: AssemblyProduct("YakSysRctServerLangPack")]
 [assembly: AssemblyCopyright("Copyright ©  2005")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,6 +1,0 @@
-; JsRctServerLib.def : Declares the module parameters for the DLL.
-
-LIBRARY      "JsRctServerLib"
-
-EXPORTS
-    ; Explicit exports can go here

@@ -6,10 +6,10 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
-using JurikSoft.Proxy.Exceptions;
+using YakSys.Proxy.Exceptions;
 
 	
-namespace JurikSoft
+namespace YakSys
 {	
 	namespace Proxy
 	{	
@@ -19,7 +19,7 @@ namespace JurikSoft
 		namespace Exceptions
 		{
 			/// <summary> 
-			/// Base JurikSoft Proxy Provider exception.
+			/// Base YakSys Proxy Provider exception.
 			/// </summary>
 			public class ProxyProviderException : System.Exception
 			{				
@@ -30,7 +30,7 @@ namespace JurikSoft
 				{
 					get
 					{
-						return "Base JurikSoft Proxy Provider exception.";
+						return "Base YakSys Proxy Provider exception.";
 					}
 				}
 			}
@@ -397,7 +397,7 @@ namespace JurikSoft
 			
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider send a connection request to Socks Server version 5.
+			/// Occurs when the YakSys Proxy Provider send a connection request to Socks Server version 5.
 			/// 
 			/// </summary>		
 			public event BaseProxyEventHandler
@@ -405,7 +405,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider send a Authentication request to Socks Server version 5.
+			/// Occurs when the YakSys Proxy Provider send a Authentication request to Socks Server version 5.
 			/// 
 			/// </summary>			
 			public event BaseProxyEventHandler			
@@ -413,7 +413,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider send a request details to Socks Server version 5.
+			/// Occurs when the YakSys Proxy Provider send a request details to Socks Server version 5.
 			/// 
 			/// </summary>	
 			public event BaseProxyEventHandler	
@@ -421,7 +421,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider send a connection request to Socks Server version 4.
+			/// Occurs when the YakSys Proxy Provider send a connection request to Socks Server version 4.
 			/// 
 			/// </summary>		
 			public event BaseProxyEventHandler	
@@ -429,7 +429,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider send a connection request to HTTPS Proxy Server.
+			/// Occurs when the YakSys Proxy Provider send a connection request to HTTPS Proxy Server.
 			/// 
 			/// </summary>		
 			public event BaseProxyEventHandler	
@@ -437,7 +437,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider send a Authentication request to HTTPS Proxy Server.
+			/// Occurs when the YakSys Proxy Provider send a Authentication request to HTTPS Proxy Server.
 			/// 
 			/// </summary>		
 			public event BaseProxyEventHandler	
@@ -445,7 +445,7 @@ namespace JurikSoft
 			
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider wait reply to connection request from Socks Server verion 5.
+			/// Occurs when the YakSys Proxy Provider wait reply to connection request from Socks Server verion 5.
 			/// 
 			/// </summary>								
 			public event BaseProxyEventHandler	
@@ -453,7 +453,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider wait reply to Authentication request from Socks Server verion 5.
+			/// Occurs when the YakSys Proxy Provider wait reply to Authentication request from Socks Server verion 5.
 			/// 
 			/// </summary>	
 			public event BaseProxyEventHandler	
@@ -461,7 +461,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider wait reply from Socks Server verion 5 to sent request details .
+			/// Occurs when the YakSys Proxy Provider wait reply from Socks Server verion 5 to sent request details .
 			/// 
 			/// </summary>	
 			public event BaseProxyEventHandler	
@@ -469,7 +469,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider wait reply from Socks Server verion 5 to sent connection request.
+			/// Occurs when the YakSys Proxy Provider wait reply from Socks Server verion 5 to sent connection request.
 			/// 
 			/// </summary>	
 			public event BaseProxyEventHandler	
@@ -477,7 +477,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider wait reply from HTTPS Proxy Server to sent connection request.
+			/// Occurs when the YakSys Proxy Provider wait reply from HTTPS Proxy Server to sent connection request.
 			/// 
 			/// </summary>	
 			public event BaseProxyEventHandler	
@@ -485,7 +485,7 @@ namespace JurikSoft
 
 			/// <summary>
 			/// 
-			/// Occurs when the JurikSoft Proxy Provider wait reply from HTTPS Proxy Server to sent Authentication request.
+			/// Occurs when the YakSys Proxy Provider wait reply from HTTPS Proxy Server to sent Authentication request.
 			/// 
 			/// </summary>	
 			public event BaseProxyEventHandler	
@@ -529,15 +529,15 @@ namespace JurikSoft
 			///  <remarks>
 			/// 
 			///  If you are not registered you will see the following message every time when you  
-			///  Connect to necessary Host through Proxy Server using JurikSoft Proxy Provider: 
+			///  Connect to necessary Host through Proxy Server using YakSys Proxy Provider: 
 			///  
 			///  <para>			
-			///  "You are using the FREE COPY of JurikSoft Proxy Provider.			
-			///  Please register a copy of JurikSoft Proxy Provider at 
-			///  http://www.juriksoft.net to disable this appear message."
+			///  "You are using the FREE COPY of YakSys Proxy Provider.			
+			///  Please register a copy of YakSys Proxy Provider at 
+			///  http://www.YakSys.net to disable this appear message."
 			///  </para>
 			/// 
-			///  You can purchase a copy of this software product at http://www.juriksoft.net.
+			///  You can purchase a copy of this software product at http://www.YakSys.net.
 			///   
 			///  <para>	
 			///  One copy (serial number) entitles to use this 
@@ -548,8 +548,8 @@ namespace JurikSoft
 			///  <example> This sample shows how to use Registration Information.
 			///  <code>
 			/// 
-			///  JurikSoft.Proxy.ProxyProvider.SerialNumber = "1000000000";
-			///  JurikSoft.Proxy.ProxyProvider.RegistrationName = "Test";
+			///  YakSys.Proxy.ProxyProvider.SerialNumber = "1000000000";
+			///  YakSys.Proxy.ProxyProvider.RegistrationName = "Test";
 			/// 
 			///  </code>
 			///  </example>
@@ -569,22 +569,22 @@ namespace JurikSoft
 		
 			///  <summary>
 			/// 
-			///  Registration Name that you use when you buy JurikSoft Proxy Provider 
+			///  Registration Name that you use when you buy YakSys Proxy Provider 
 			/// 
 			///  </summary>
 			/// 		
 			///  <remarks>
 			/// 
 			///  If you are not registered you will see the following message every time when you  
-			///  Connect to necessary Host through Proxy Server using JurikSoft Proxy Provider: 
+			///  Connect to necessary Host through Proxy Server using YakSys Proxy Provider: 
 			///  
 			///  <para>			
-			///  "You are using the FREE COPY of JurikSoft Proxy Provider.			
-			///  Please register a copy of JurikSoft Proxy Provider at 
-			///  http://www.juriksoft.net to disable this appear message."
+			///  "You are using the FREE COPY of YakSys Proxy Provider.			
+			///  Please register a copy of YakSys Proxy Provider at 
+			///  http://www.YakSys.net to disable this appear message."
 			///  </para>
 			/// 
-			///  You can purchase a copy of this software product at http://www.juriksoft.net.
+			///  You can purchase a copy of this software product at http://www.YakSys.net.
 			///   
 			///  <para>	
 			///  One copy (serial number) entitles to use this 
@@ -595,8 +595,8 @@ namespace JurikSoft
 			///  <example> This sample shows how to use Registration Information.
 			///  <code>
 			///  
-			///  JurikSoft.Proxy.ProxyProvider.SerialNumber = "1000000000";
-			///  JurikSoft.Proxy.ProxyProvider.RegistrationName = "Test";
+			///  YakSys.Proxy.ProxyProvider.SerialNumber = "1000000000";
+			///  YakSys.Proxy.ProxyProvider.RegistrationName = "Test";
 			/// 
 			///  </code>
 			///  </example>		
@@ -623,7 +623,7 @@ namespace JurikSoft
 			{
 				if(SerialNumber == null || SerialNumber.Length < 9) 
 				{
-					MessageBox.Show("You are using the FREE COPY of JurikSoft Proxy Provider.\nPlease register a copy of JurikSoft Proxy Provider at\nhttp://www.juriksoft.net to disable this appear message.", "JurikSoft");
+					MessageBox.Show("You are using the FREE COPY of YakSys Proxy Provider.\nPlease register a copy of YakSys Proxy Provider at\nhttp://www.YakSys.net to disable this appear message.", "YakSys");
 					return;
 				}
 
@@ -639,7 +639,7 @@ namespace JurikSoft
 				}
 
 				if(SerialNumber == string_CurrentNubmer.Substring(0, 10)) return;
-				else MessageBox.Show("You are using the FREE COPY of JurikSoft Proxy Provider.\nPlease register a copy of JurikSoft Proxy Provider at\nhttp://www.juriksoft.net to disable this appear message.", "JurikSoft");
+				else MessageBox.Show("You are using the FREE COPY of YakSys Proxy Provider.\nPlease register a copy of YakSys Proxy Provider at\nhttp://www.YakSys.net to disable this appear message.", "YakSys");
 			}
 
 			
@@ -708,13 +708,13 @@ namespace JurikSoft
 			/// 
 			/// Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughSocks4Proxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -921,13 +921,13 @@ namespace JurikSoft
 			/// 
 			/// TcpClient tcpClient_Link = new TcpClient();
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughSocks4Proxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -1129,13 +1129,13 @@ namespace JurikSoft
 			/// 
 			/// Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughSocks5Proxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -1402,13 +1402,13 @@ namespace JurikSoft
 			/// 
 			/// TcpClient tcpClient_Link = new TcpClient();
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughSocks5Proxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -1678,13 +1678,13 @@ namespace JurikSoft
 			/// 
 			/// Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughSocks5Proxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -2023,13 +2023,13 @@ namespace JurikSoft
 			/// 
 			/// TcpClient tcpClient_Link = new TcpClient();
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughSocks5Proxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -2358,13 +2358,13 @@ namespace JurikSoft
 			/// 
 			/// Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughHTTPSProxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080,  false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -2547,13 +2547,13 @@ namespace JurikSoft
 			/// 
 			/// TcpClient tcpClient_Link = new TcpClient();
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughHTTPSProxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -2749,13 +2749,13 @@ namespace JurikSoft
 			/// 
 			/// Socket socket_Client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughHTTPSProxy(ref socket_Client, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;
@@ -2956,13 +2956,13 @@ namespace JurikSoft
 			/// 
 			/// TcpClient tcpClient_Link = new TcpClient();
 			/// 
-			/// JurikSoft.Proxy.ProxyProvider ProxyProvider_obj = new JurikSoft.Proxy.ProxyProvider();
+			/// YakSys.Proxy.ProxyProvider ProxyProvider_obj = new YakSys.Proxy.ProxyProvider();
 			/// 
 			/// try
 			/// {
 			///		ProxyProvider_obj.ConnectThroughHTTPSProxy(ref tcpClient_Link, “10.0.0.1”, 80,  “10.0.0.5”, 1080, "testLogin", "testPass", false, 10000);
 			///	}
-			///	catch(JurikSoft.Proxy.Exceptions.ProxyProviderException exception)
+			///	catch(YakSys.Proxy.Exceptions.ProxyProviderException exception)
 			///	{
 			///		MessageBox.Show(exception.Message);
 			///		return;

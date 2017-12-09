@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
-using ZNIISRCT.Compression;
+using YakSys.Compression;
 using System.Security.Permissions;
 namespace CSP
 {
@@ -175,7 +175,7 @@ namespace CSP
 
             //-------------------------------------------------------------------------------------------------------------------
 
-            new ConnectingServiceProvider().ConnectObjectToJSConnectingService(NecessaryBaseChannelObject.ServerOwner.SystemChannel.IPAddress, NecessaryBaseChannelObject.ServerOwner.SystemChannel.CSPort, this.NecessaryBaseChannelObject.UIN, ulong_ClientUIN, this.NecessaryBaseChannelObject.Password,
+            new ConnectingServiceProvider().ConnectObjectToYakSysConnectingService(NecessaryBaseChannelObject.ServerOwner.SystemChannel.IPAddress, NecessaryBaseChannelObject.ServerOwner.SystemChannel.CSPort, this.NecessaryBaseChannelObject.UIN, ulong_ClientUIN, this.NecessaryBaseChannelObject.Password,
                 CSPRemoteCallAction.ConnectingObjectType.Server, CSPRemoteCallAction.ConnectingChannelObjectType.AppliedChannel, appliedServerChannel_obj);
 
             if (appliedServerChannel_obj.IsAuthorized == true)

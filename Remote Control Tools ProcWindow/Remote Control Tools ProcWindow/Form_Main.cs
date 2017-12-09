@@ -6,7 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using JurikSoft.Server_Core;
+using YakSys.Server_Core;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels.Ipc;
 using System.Runtime.Remoting.Channels;

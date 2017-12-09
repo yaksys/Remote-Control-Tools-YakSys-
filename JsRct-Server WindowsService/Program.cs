@@ -5,7 +5,7 @@ using Microsoft.Win32;
 using System;
 using System.Windows.Forms;
 
-namespace JsRct_Server_WindowsService
+namespace YakSysRct_Server_WindowsService
 {
 
     static class Program
@@ -21,10 +21,10 @@ namespace JsRct_Server_WindowsService
             // another service to this process, change the following line to
             // create a second service object. For example,
             //
-            //   ServicesToRun = new ServiceBase[] {new JurikSoftServerWindowsService(), new MySecondUserService()};
+            //   ServicesToRun = new ServiceBase[] {new YakSysServerWindowsService(), new MySecondUserService()};
             //            
 
-            ServiceBase ServicesToRun = new JurikSoftServerWindowsService();
+            ServiceBase ServicesToRun = new YakSysServerWindowsService();
             
             ServiceBase.Run(ServicesToRun);
         }

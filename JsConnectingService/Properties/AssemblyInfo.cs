@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JsConnectingService")]
+[assembly: AssemblyTitle("YakSysConnectingService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Home")]
-[assembly: AssemblyProduct("JsConnectingService")]
+[assembly: AssemblyProduct("YakSysConnectingService")]
 [assembly: AssemblyCopyright("Copyright © Home 2006")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

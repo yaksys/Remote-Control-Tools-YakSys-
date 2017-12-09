@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 public class AboutForm : System.Windows.Forms.Form
 {
-	private System.Windows.Forms.PictureBox pictureBox_JurikSoftTitle;
+	private System.Windows.Forms.PictureBox pictureBox_YakSysTitle;
 	private System.Windows.Forms.RichTextBox richTextBox_About;
     private System.Windows.Forms.Label label_Title;
 	private System.Windows.Forms.Button button_OK;
@@ -91,7 +91,7 @@ public class AboutForm : System.Windows.Forms.Form
 	private void InitializeComponent()
 	{
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
-        this.pictureBox_JurikSoftTitle = new System.Windows.Forms.PictureBox();
+        this.pictureBox_YakSysTitle = new System.Windows.Forms.PictureBox();
         this.richTextBox_About = new System.Windows.Forms.RichTextBox();
         this.label_Title = new System.Windows.Forms.Label();
         this.button_OK = new System.Windows.Forms.Button();
@@ -104,22 +104,22 @@ public class AboutForm : System.Windows.Forms.Form
         this.textBox_ProductSerialNumber = new System.Windows.Forms.TextBox();
         this.label_ProductNotRegistered = new System.Windows.Forms.Label();
         this.groupBox_RegistrationInformation = new System.Windows.Forms.GroupBox();
-        ((System.ComponentModel.ISupportInitialize)(this.pictureBox_JurikSoftTitle)).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)(this.pictureBox_YakSysTitle)).BeginInit();
         this.groupBox_Contacts.SuspendLayout();
         this.groupBox_RegistrationInformation.SuspendLayout();
         this.SuspendLayout();
         // 
-        // pictureBox_JurikSoftTitle
+        // pictureBox_YakSysTitle
         // 
-        this.pictureBox_JurikSoftTitle.Cursor = System.Windows.Forms.Cursors.Hand;
-        this.pictureBox_JurikSoftTitle.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_JurikSoftTitle.Image")));
-        this.pictureBox_JurikSoftTitle.Location = new System.Drawing.Point(8, 8);
-        this.pictureBox_JurikSoftTitle.Name = "pictureBox_JurikSoftTitle";
-        this.pictureBox_JurikSoftTitle.Size = new System.Drawing.Size(155, 46);
-        this.pictureBox_JurikSoftTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-        this.pictureBox_JurikSoftTitle.TabIndex = 0;
-        this.pictureBox_JurikSoftTitle.TabStop = false;
-        this.pictureBox_JurikSoftTitle.Click += new System.EventHandler(this.pictureBox_JurikSoftTitle_Click);
+        this.pictureBox_YakSysTitle.Cursor = System.Windows.Forms.Cursors.Hand;
+        this.pictureBox_YakSysTitle.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_YakSysTitle.Image")));
+        this.pictureBox_YakSysTitle.Location = new System.Drawing.Point(8, 8);
+        this.pictureBox_YakSysTitle.Name = "pictureBox_YakSysTitle";
+        this.pictureBox_YakSysTitle.Size = new System.Drawing.Size(155, 46);
+        this.pictureBox_YakSysTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+        this.pictureBox_YakSysTitle.TabIndex = 0;
+        this.pictureBox_YakSysTitle.TabStop = false;
+        this.pictureBox_YakSysTitle.Click += new System.EventHandler(this.pictureBox_YakSysTitle_Click);
         // 
         // richTextBox_About
         // 
@@ -141,7 +141,7 @@ public class AboutForm : System.Windows.Forms.Form
         this.label_Title.Name = "label_Title";
         this.label_Title.Size = new System.Drawing.Size(251, 29);
         this.label_Title.TabIndex = 2;
-        this.label_Title.Text = "JurikSoft Connecting Service 0.1.0 для Windows 2000/XP/2003";
+        this.label_Title.Text = "YakSys Connecting Service 0.1.0 для Windows 2000/XP/2003";
         // 
         // button_OK
         // 
@@ -251,7 +251,7 @@ public class AboutForm : System.Windows.Forms.Form
         this.Controls.Add(this.button_OK);
         this.Controls.Add(this.groupBox_RegistrationInformation);
         this.Controls.Add(this.label_Title);
-        this.Controls.Add(this.pictureBox_JurikSoftTitle);
+        this.Controls.Add(this.pictureBox_YakSysTitle);
         this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         this.MaximizeBox = false;
@@ -260,7 +260,7 @@ public class AboutForm : System.Windows.Forms.Form
         this.Name = "AboutForm";
         this.ShowInTaskbar = false;
         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-        ((System.ComponentModel.ISupportInitialize)(this.pictureBox_JurikSoftTitle)).EndInit();
+        ((System.ComponentModel.ISupportInitialize)(this.pictureBox_YakSysTitle)).EndInit();
         this.groupBox_Contacts.ResumeLayout(false);
         this.groupBox_RegistrationInformation.ResumeLayout(false);
         this.groupBox_RegistrationInformation.PerformLayout();
@@ -276,9 +276,9 @@ public class AboutForm : System.Windows.Forms.Form
 	}
 
 	
-	private void pictureBox_JurikSoftTitle_Click(object sender, System.EventArgs e)
+	private void pictureBox_YakSysTitle_Click(object sender, System.EventArgs e)
 	{
-		System.Diagnostics.Process.Start("http://www.juriksoft.net");
+		System.Diagnostics.Process.Start("http://www.YakSys.net");
 	}
 
 	

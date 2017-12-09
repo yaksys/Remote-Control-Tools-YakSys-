@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Remote_Control_Tools_ProcWindow</RootNamespace>
     <AssemblyName>Remote Control Tools ProcWindow</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <FileUpgradeFlags>
@@ -102,10 +102,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JsRct-Server Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\JsRct-Server Core\bin\Debug\JsRct-Server Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Data" />
@@ -113,6 +109,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="YakSysRct-Server Core">
+      <HintPath>..\..\JsRct-Server Core\bin\Release\YakSysRct-Server Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SlimDXSoundCapture.cs" />

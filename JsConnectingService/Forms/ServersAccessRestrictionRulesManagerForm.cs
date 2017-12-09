@@ -5,8 +5,8 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Net;
 using System.Data;
-using JurikSoft;
-using JsConnectingService;
+using YakSys;
+using YakSysConnectingService;
 
 public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.Form
 {

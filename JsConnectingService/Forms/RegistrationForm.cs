@@ -9,7 +9,7 @@ using System.Text;
 
 public class RegistrationForm : System.Windows.Forms.Form
 {
-	private System.Windows.Forms.LinkLabel linkLabel_JurikSoft;
+	private System.Windows.Forms.LinkLabel linkLabel_YakSys;
 	private System.Windows.Forms.GroupBox groupBox_KeyApply;
 	private System.Windows.Forms.RichTextBox richTextBox_RegInfo;
 	private System.Windows.Forms.Button button_Apply;
@@ -68,7 +68,7 @@ public class RegistrationForm : System.Windows.Forms.Form
 		this.textBox_Name = new System.Windows.Forms.TextBox();
 		this.button_BuyOnline = new System.Windows.Forms.Button();
 		this.button_ContinueUnregistered = new System.Windows.Forms.Button();
-		this.linkLabel_JurikSoft = new System.Windows.Forms.LinkLabel();
+		this.linkLabel_YakSys = new System.Windows.Forms.LinkLabel();
 		this.groupBox_KeyApply.SuspendLayout();
 		this.SuspendLayout();
 		// 
@@ -163,23 +163,23 @@ public class RegistrationForm : System.Windows.Forms.Form
 		this.button_ContinueUnregistered.Text = "Continue Unregistered";
 		this.button_ContinueUnregistered.Click += new System.EventHandler(this.button_ContinueUnregistered_Click);
 		// 
-		// linkLabel_JurikSoft
+		// linkLabel_YakSys
 		// 
-		this.linkLabel_JurikSoft.FlatStyle = System.Windows.Forms.FlatStyle.System;
-		this.linkLabel_JurikSoft.Location = new System.Drawing.Point(304, 256);
-		this.linkLabel_JurikSoft.Name = "linkLabel_JurikSoft";
-		this.linkLabel_JurikSoft.Size = new System.Drawing.Size(120, 16);
-		this.linkLabel_JurikSoft.TabIndex = 3;
-		this.linkLabel_JurikSoft.TabStop = true;
-		this.linkLabel_JurikSoft.Text = "http://www.juriksoft.net";
-		this.linkLabel_JurikSoft.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_JurikSoft_LinkClicked);
+		this.linkLabel_YakSys.FlatStyle = System.Windows.Forms.FlatStyle.System;
+		this.linkLabel_YakSys.Location = new System.Drawing.Point(304, 256);
+		this.linkLabel_YakSys.Name = "linkLabel_YakSys";
+		this.linkLabel_YakSys.Size = new System.Drawing.Size(120, 16);
+		this.linkLabel_YakSys.TabIndex = 3;
+		this.linkLabel_YakSys.TabStop = true;
+		this.linkLabel_YakSys.Text = "http://www.YakSys.net";
+		this.linkLabel_YakSys.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_YakSys_LinkClicked);
 		// 
 		// RegistrationForm
 		// 
 		this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 		this.ClientSize = new System.Drawing.Size(442, 282);
 		this.ControlBox = false;
-		this.Controls.Add(this.linkLabel_JurikSoft);
+		this.Controls.Add(this.linkLabel_YakSys);
 		this.Controls.Add(this.button_ContinueUnregistered);
 		this.Controls.Add(this.button_BuyOnline);
 		this.Controls.Add(this.groupBox_KeyApply);
@@ -228,9 +228,9 @@ public class RegistrationForm : System.Windows.Forms.Form
 		Close();
 	}
 
-	private void linkLabel_JurikSoft_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+	private void linkLabel_YakSys_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 	{
-		System.Diagnostics.Process.Start("http://www.juriksoft.net");
+		System.Diagnostics.Process.Start("http://www.YakSys.net");
 	}	
 }
 

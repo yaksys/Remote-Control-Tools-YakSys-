@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Threading;
-using JurikSoft.RCTServiceGUI;
-using JurikSoft.Server_Core;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
+using YakSys.RCTServiceGUI;
+using YakSys.Server_Core;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
 
 public partial class ConnectingServiceProviderForm : Form
 {
@@ -35,14 +35,14 @@ public partial class ConnectingServiceProviderForm : Form
         this.textBox_CSPForm_ServerAuth_CustomCSPServicePort.Text = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_CustomCSPServicePort.ToString();
         this.textBox_CSPForm_ServerAuth_CSPLoginPassword.Text = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_CSPLoginPassword;
         this.textBox_CSPForm_ServerAuth_CSPLoginUIN.Text = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_CSPLoginUIN;
-        this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_UseJurikSoftCSPServer;
+        this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_UseYakSysCSPServer;
         this.checkBox_ServerAuthSettings_KeepConnectionAlive.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_KeepConnectionAlive;
         this.checkBox_ServerAuthSettings_IsServerPublic.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_IsPublicServer;
         this.checkBox_ServerAuthSettings_HideServerIP.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_HideIP;
         this.checkBox_ServerAuthSettings_ConnectAtStartUp.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_ConnectAtStartUp;
 
         this.checkBox_ChangeUINAccountState_GetActivationCode.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_GetActivationCode;
-        this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_UseJurikSoftCSPServer;
+        this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Checked = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_UseYakSysCSPServer;
         this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress.Text = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_CustomCSPServiceIPAddress;
         this.textBox_ChangeUINAccountState_CustomCSPServicePort.Text = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_CustomCSPServicePort.ToString();
         this.textBox_ChangeUINAccountState_UIN.Text = LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_UIN;
@@ -56,14 +56,14 @@ public partial class ConnectingServiceProviderForm : Form
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_CustomCSPServicePort = CSP_ServerAuth_CSPPort;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_CSPLoginPassword = this.textBox_CSPForm_ServerAuth_CSPLoginPassword.Text;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_CSPLoginUIN = this.textBox_CSPForm_ServerAuth_CSPLoginUIN.Text;
-        LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_UseJurikSoftCSPServer = this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Checked;
+        LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_UseYakSysCSPServer = this.checkBox_ServerAuthSettings_UseCommonJSCSPService.Checked;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_KeepConnectionAlive = this.checkBox_ServerAuthSettings_KeepConnectionAlive.Checked;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_IsPublicServer = this.checkBox_ServerAuthSettings_IsServerPublic.Checked;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_HideIP = this.checkBox_ServerAuthSettings_HideServerIP.Checked;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ServerAuth_ConnectAtStartUp = this.checkBox_ServerAuthSettings_ConnectAtStartUp.Checked;
 
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_GetActivationCode = this.checkBox_ChangeUINAccountState_GetActivationCode.Checked;
-        LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_UseJurikSoftCSPServer = this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Checked;
+        LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_UseYakSysCSPServer = this.checkBox_ChangeUINAccountState_UseCommonJSCSPService.Checked;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_CustomCSPServiceIPAddress = this.textBox_ChangeUINAccountState_CustomCSPServiceIPAddress.Text;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_CustomCSPServicePort = CSP_ChangeUINAccountState_CSPPort;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_UIN = this.textBox_ChangeUINAccountState_UIN.Text;
@@ -71,7 +71,7 @@ public partial class ConnectingServiceProviderForm : Form
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_UINActivationCode = this.textBox_ChangeUINAccountState_UINActivationCode.Text;
         LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CSP_ChangeUINAccountState_NewAccountStateIndex = this.comboBox_ChangeUINAccountState_NewAccountState.SelectedIndex;
 
-        LocalObjCopy.obj_JsRctServerV110XMLConfigImporter.SaveCSPSettingsXmlDB();
+        LocalObjCopy.obj_YakSysRctServerV110XMLConfigImporter.SaveCSPSettingsXmlDB();
     }
 
     void SetLanguageSettings()

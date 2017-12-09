@@ -5,8 +5,8 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctServer.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctServer.Version110;
 
 public class PasswordPromptForm : System.Windows.Forms.Form
 {

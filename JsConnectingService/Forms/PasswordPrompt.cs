@@ -274,7 +274,7 @@ using System.Security.Cryptography;
 
 				if(byte_ToCompressSettingsDataBase == 1)
 				{					
-					byteArray_DecompressedXMLData = new JurikSoft.Compression.CommonEnvironment().Decompress(memoryStream_XMLData.ToArray(), false);
+					byteArray_DecompressedXMLData = new YakSys.Compression.CommonEnvironment().Decompress(memoryStream_XMLData.ToArray(), false);
 
 					memoryStream_XMLData = new MemoryStream(byteArray_DecompressedXMLData);
 

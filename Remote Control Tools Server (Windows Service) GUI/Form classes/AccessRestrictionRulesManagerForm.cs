@@ -5,8 +5,8 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Net;
 using System.Data;
-using JurikSoft.RCTServiceGUI;
-using JurikSoft.Server_Core;
+using YakSys.RCTServiceGUI;
+using YakSys.Server_Core;
 
 public class AccessRestrictionRulesManagerForm : System.Windows.Forms.Form
 {
@@ -824,7 +824,7 @@ public class AccessRestrictionRulesManagerForm : System.Windows.Forms.Form
 
 			AddNewRule();			
 
-			LocalObjCopy.obj_JurikSoftServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
+			LocalObjCopy.obj_YakSysServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), DateTime.Now.ToShortDateString(),
 														DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(214, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage));		
 
 			this.Close();

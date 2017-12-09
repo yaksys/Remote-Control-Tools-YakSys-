@@ -15,12 +15,12 @@ using System.Drawing.Imaging;
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
-using JurikSoft.Compression;
-using JurikSoft.WMIClassesInfoRetriever.Win32_InstalledApplications;
-using JurikSoft.WMIClassesInfoRetriever.Win32_Hardware;
-using JurikSoft.WMIClassesInfoRetriever.Win32_OS;
-using JurikSoft.WMIClassesInfoRetriever.CIM_Common;
-using JurikSoft.WMIClassesInfoRetriever;
+using YakSys.Compression;
+using YakSys.WMIClassesInfoRetriever.Win32_InstalledApplications;
+using YakSys.WMIClassesInfoRetriever.Win32_Hardware;
+using YakSys.WMIClassesInfoRetriever.Win32_OS;
+using YakSys.WMIClassesInfoRetriever.CIM_Common;
+using YakSys.WMIClassesInfoRetriever;
 using System.Security.Permissions;
 using System.Net.Mail;
 
@@ -534,9 +534,9 @@ public class LocalAction
 
             //---------------------------------------------------------------------------------------------------------------
 
-            string string_Message = "Your JurikSoft Connecting Service Activation Code for UIN " + ulong_GeneratedUIN.ToString() + " is: " + userAccount_NewAccount.ActivationCode.ToString();
+            string string_Message = "Your YakSys Connecting Service Activation Code for UIN " + ulong_GeneratedUIN.ToString() + " is: " + userAccount_NewAccount.ActivationCode.ToString();
 
-            SendMail(userAccount_NewAccount.EMail, "jurik_ja@mail.ru", "JurikSoft Connecting Service Activation Code", string_Message);
+            SendMail(userAccount_NewAccount.EMail, "jurik_ja@mail.ru", "YakSys Connecting Service Activation Code", string_Message);
 
             //---------------------------------------------------------------------------------------------------------------
 
@@ -648,9 +648,9 @@ public class LocalAction
 
             //---------------------------------------------------------------------------------------------------------------
 
-            string string_Message = "Your JurikSoft Connecting Service Activation Code for UIN " + ulong_GeneratedUIN.ToString() + " is: " + userAccount_NewAccount.ActivationCode.ToString();
+            string string_Message = "Your YakSys Connecting Service Activation Code for UIN " + ulong_GeneratedUIN.ToString() + " is: " + userAccount_NewAccount.ActivationCode.ToString();
 
-            SendMail(userAccount_NewAccount.EMail, "jurik_ja@mail.ru", "JurikSoft Connecting Service Activation Code", string_Message);
+            SendMail(userAccount_NewAccount.EMail, "jurik_ja@mail.ru", "YakSys Connecting Service Activation Code", string_Message);
 
             //---------------------------------------------------------------------------------------------------------------
 

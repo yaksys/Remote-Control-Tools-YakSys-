@@ -7,11 +7,11 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 //
 [assembly: AssemblyTitle("")]
-[assembly: AssemblyDescription("JurikSoft Proxy Provider component verison 1.1")]
+[assembly: AssemblyDescription("YakSys Proxy Provider component verison 1.1")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("JurikSoft")]
+[assembly: AssemblyCompany("YakSys")]
 [assembly: AssemblyProduct("Proxy Provider")]
-[assembly: AssemblyCopyright("JurikSoft")]
+[assembly: AssemblyCopyright("YakSys")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 

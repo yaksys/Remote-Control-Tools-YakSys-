@@ -16,10 +16,10 @@ using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
-using JurikSoft.Compression;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.Compression;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 //using Microsoft.DirectX.DirectSound;
 
 public class EventsData

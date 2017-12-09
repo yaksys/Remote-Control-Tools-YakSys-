@@ -7,20 +7,20 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Runtime.InteropServices;
 
-namespace JurikSoft
+namespace YakSys
 {
     namespace Server_Core
     {
 
         class ScreenCaptureEnvironment
         {
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void ChangeDisplayMode(int int_ScreenWidth, int int_ScreenHeight, int int_ScreenBPP, int int_DisplayFreq);
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void DisableMonitorPowerSaveActivity();
 
-            [DllImport("JsRctServerLib.dll")]
+            [DllImport("YakSysRctServerLib.dll")]
             private static extern void EnableMonitorPowerSaveActivity();
 
             public static Bitmap bitmap_ScreenCopy = null;

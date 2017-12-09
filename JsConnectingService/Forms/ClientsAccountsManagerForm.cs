@@ -4,8 +4,8 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
-using JurikSoft;
-using JsConnectingService;
+using YakSys;
+using YakSysConnectingService;
 
 public class ClientsAccountsManagerForm : System.Windows.Forms.Form
 {

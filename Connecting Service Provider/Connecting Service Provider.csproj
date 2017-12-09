@@ -15,7 +15,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -54,24 +54,25 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JsCompressionLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\JsCompressionLib\bin\Release\JsCompressionLib.dll</HintPath>
-    </Reference>
-    <Reference Include="JsProxyProvider, Version=1.1.2375.6995, Culture=neutral, PublicKeyToken=933f0330019bf75f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\JsProxyProvider\bin\Release\JsProxyProvider.dll</HintPath>
-    </Reference>
-    <Reference Include="JsRct Xml Config Importer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\JsRct Xml Config Importer\bin\Release\JsRct Xml Config Importer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="YakSysCompressionLib">
+      <HintPath>..\JsCompressionLib\bin\Debug\YakSysCompressionLib.dll</HintPath>
+    </Reference>
+    <Reference Include="YakSysProxyProvider, Version=1.1.6550.7552, Culture=neutral, PublicKeyToken=933f0330019bf75f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsProxyProvider\bin\Release\YakSysProxyProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="YakSysRct Xml Config Importer">
+      <HintPath>..\JsRct Xml Config Importer\bin\Debug\YakSysRct Xml Config Importer.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonEnvironments.cs" />

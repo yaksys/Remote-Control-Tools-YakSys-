@@ -4,9 +4,9 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Threading;
-using JurikSoft.XMLConfigImporer;
-using JurikSoft.XMLConfigImporer.JsRctClient;
-using JurikSoft.XMLConfigImporer.JsRctClient.Version110;
+using YakSys.XMLConfigImporter;
+using YakSys.XMLConfigImporter.YakSysRctClient;
+using YakSys.XMLConfigImporter.YakSysRctClient.Version110;
 
 public class CreateNewFolderForm : System.Windows.Forms.Form
 {

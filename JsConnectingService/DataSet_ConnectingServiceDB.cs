@@ -1,6 +1,8 @@
-﻿namespace JsConnectingService {
-    
-    
-    public partial class DataSet_ConnectingServiceDB {
+﻿namespace YakSysConnectingService
+{
+
+
+    public partial class DataSet_ConnectingServiceDB
+    {
     }
 }

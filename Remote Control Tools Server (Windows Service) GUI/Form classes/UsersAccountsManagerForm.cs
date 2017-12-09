@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
-using JurikSoft.RCTServiceGUI;
+using YakSys.RCTServiceGUI;
 
 public class UsersAccountsManagerForm : System.Windows.Forms.Form
 {
@@ -494,7 +494,7 @@ public class UsersAccountsManagerForm : System.Windows.Forms.Form
 		{
             LocalObjCopy.obj_NetworkSecurity.RemotingWrapper_StoreUserAccountToDB(this.textBox_UsersAccountsManagerForm_UserName.Text, this.textBox_UsersAccountsManagerForm_Login.Text, this.textBox_UsersAccountsManagerForm_NewPassword.Text, this.textBox_UsersAccountsManagerForm_FirstName.Text, this.textBox_UsersAccountsManagerForm_LastName.Text, this.textBox_UsersAccountsManagerForm_MiddleName.Text, this.textBox_UsersAccountsManagerForm_EMailAddress.Text, this.textBox_UsersAccountsManagerForm_ICQ.Text, this.textBox_UsersAccountsManagerForm_Company.Text, this.textBox_UsersAccountsManagerForm_WorkPhone.Text, this.textBox_UsersAccountsManagerForm_HomePhome.Text, this.textBox_UsersAccountsManagerForm_PrivateCellular.Text, dateTime_CreationTime, true);	
 		
-            LocalObjCopy.obj_JurikSoftServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), dateTime_CreationTime.ToShortDateString(), dateTime_CreationTime.ToLongTimeString(), 
+            LocalObjCopy.obj_YakSysServerLog.RemotingWrapper_InsertDataToLog(ServerStringFactory.GetString(44, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), dateTime_CreationTime.ToShortDateString(), dateTime_CreationTime.ToLongTimeString(), 
                                                                                 ServerStringFactory.GetString(1, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage), ServerStringFactory.GetString(45, LocalObjCopy.obj_ServerSettingsEnvironment.RemotingWrapper_CurrentLanguage) + this.textBox_UsersAccountsManagerForm_UserName.Text);
         }
 
