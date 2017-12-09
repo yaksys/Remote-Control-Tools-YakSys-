@@ -81,7 +81,7 @@
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="YakSysRct Xml Config Importer">
-      <HintPath>..\JsRct Xml Config Importer\bin\Release\YakSysRct Xml Config Importer.dll</HintPath>
+      <HintPath>..\JsRct Xml Config Importer\bin\Debug\YakSysRct Xml Config Importer.dll</HintPath>
     </Reference>
     <Reference Include="YakSysRct-Server Core">
       <HintPath>..\JsRct-Server Core\bin\Release\YakSysRct-Server Core.dll</HintPath>

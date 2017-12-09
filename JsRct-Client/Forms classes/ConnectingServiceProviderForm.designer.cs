@@ -50,15 +50,15 @@
             this.button_CSPForm_ProxyServersList_ClearList = new System.Windows.Forms.Button();
             this.button_CSPForm_ProxyServersList_AddRecord = new System.Windows.Forms.Button();
             this.listView_CSPForm_ProxyServersList_ProxyServersList = new System.Windows.Forms.ListView();
-            this.columnHeader_ProxyServersList_Title = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader_ProxyServersList_Host = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader_ProxyServersList_Port = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader_ProxyServersList_Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_ProxyServersList_Host = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_ProxyServersList_Port = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button_CSPForm_ProxyServersList_RemoveRecord = new System.Windows.Forms.Button();
             this.button_CSPForm_ProxyServersList_ViewRecord = new System.Windows.Forms.Button();
             this.listView_CSPForm_CSPServersList_PublicServersList = new System.Windows.Forms.ListView();
-            this.columnHeader_PublicServersList_ServerUIN = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader_PublicServersList_ServerIP = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader_PublicServersList_ConnectionTime = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader_PublicServersList_ServerUIN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_PublicServersList_ServerIP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_PublicServersList_ConnectionTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button_CSPForm_CSPServersList_RefreshPublicServersList = new System.Windows.Forms.Button();
             this.groupBox_CSPForm_CSPServersList = new System.Windows.Forms.GroupBox();
             this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer = new System.Windows.Forms.CheckBox();
@@ -476,7 +476,7 @@
             this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Location = new System.Drawing.Point(14, 16);
             this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Name = "checkBox_CSPForm_CSPServersList_UseYakSysCSPServer";
-            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Size = new System.Drawing.Size(142, 19);
+            this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Size = new System.Drawing.Size(193, 19);
             this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.TabIndex = 74;
             this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.Text = "Сервис YakSys";
             this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_CSPForm_CSPServersList_UseYakSysCSPServer_CheckedChanged);
@@ -675,7 +675,7 @@
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Location = new System.Drawing.Point(14, 24);
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Name = "checkBox_CSPForm_ServerAuth_UseYakSysCSPServer";
-            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Size = new System.Drawing.Size(114, 19);
+            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Size = new System.Drawing.Size(126, 19);
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.TabIndex = 103;
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Text = "Сервис YakSys";
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer_CheckedChanged);
@@ -724,7 +724,7 @@
             this.checkBox_CSPForm_ServerAuth_WaitForServer.Checked = true;
             this.checkBox_CSPForm_ServerAuth_WaitForServer.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_CSPForm_ServerAuth_WaitForServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBox_CSPForm_ServerAuth_WaitForServer.Location = new System.Drawing.Point(123, 22);
+            this.checkBox_CSPForm_ServerAuth_WaitForServer.Location = new System.Drawing.Point(123, 21);
             this.checkBox_CSPForm_ServerAuth_WaitForServer.Name = "checkBox_CSPForm_ServerAuth_WaitForServer";
             this.checkBox_CSPForm_ServerAuth_WaitForServer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBox_CSPForm_ServerAuth_WaitForServer.Size = new System.Drawing.Size(195, 22);
@@ -738,7 +738,7 @@
             this.label_CSPForm_ServerAuth_YakSysRctPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_CSPForm_ServerAuth_YakSysRctPassword.Location = new System.Drawing.Point(167, 200);
             this.label_CSPForm_ServerAuth_YakSysRctPassword.Name = "label_CSPForm_ServerAuth_YakSysRctPassword";
-            this.label_CSPForm_ServerAuth_YakSysRctPassword.Size = new System.Drawing.Size(159, 13);
+            this.label_CSPForm_ServerAuth_YakSysRctPassword.Size = new System.Drawing.Size(154, 13);
             this.label_CSPForm_ServerAuth_YakSysRctPassword.TabIndex = 91;
             this.label_CSPForm_ServerAuth_YakSysRctPassword.Text = "YakSys Server Auth Password:";
             // 
@@ -748,7 +748,7 @@
             this.label_CSPForm_ServerAuth_YakSysRctLogin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label_CSPForm_ServerAuth_YakSysRctLogin.Location = new System.Drawing.Point(11, 199);
             this.label_CSPForm_ServerAuth_YakSysRctLogin.Name = "label_CSPForm_ServerAuth_YakSysRctLogin";
-            this.label_CSPForm_ServerAuth_YakSysRctLogin.Size = new System.Drawing.Size(139, 13);
+            this.label_CSPForm_ServerAuth_YakSysRctLogin.Size = new System.Drawing.Size(134, 13);
             this.label_CSPForm_ServerAuth_YakSysRctLogin.TabIndex = 89;
             this.label_CSPForm_ServerAuth_YakSysRctLogin.Text = "YakSys Server Auth Login:";
             // 
@@ -847,9 +847,9 @@
             this.checkBox_ChangeUINAccountState_GetActivationCode.Checked = true;
             this.checkBox_ChangeUINAccountState_GetActivationCode.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_ChangeUINAccountState_GetActivationCode.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBox_ChangeUINAccountState_GetActivationCode.Location = new System.Drawing.Point(135, 19);
+            this.checkBox_ChangeUINAccountState_GetActivationCode.Location = new System.Drawing.Point(147, 20);
             this.checkBox_ChangeUINAccountState_GetActivationCode.Name = "checkBox_ChangeUINAccountState_GetActivationCode";
-            this.checkBox_ChangeUINAccountState_GetActivationCode.Size = new System.Drawing.Size(183, 19);
+            this.checkBox_ChangeUINAccountState_GetActivationCode.Size = new System.Drawing.Size(171, 19);
             this.checkBox_ChangeUINAccountState_GetActivationCode.TabIndex = 105;
             this.checkBox_ChangeUINAccountState_GetActivationCode.Text = "Get Activation Code";
             // 
@@ -860,7 +860,7 @@
             this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Location = new System.Drawing.Point(14, 19);
             this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Name = "checkBox_ChangeUINAccountState_UseYakSysCSPServer";
-            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Size = new System.Drawing.Size(114, 19);
+            this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Size = new System.Drawing.Size(126, 19);
             this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.TabIndex = 104;
             this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.Text = "Сервис YakSys";
             this.checkBox_ChangeUINAccountState_UseYakSysCSPServer.CheckedChanged += new System.EventHandler(this.checkBox_ChangeUINAccountState_UseYakSysCSPServer_CheckedChanged);
@@ -1028,7 +1028,7 @@
             this.Name = "ConnectingServiceProviderForm";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connecting Service Provider";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConnectingServiceProviderForm_FormClosed);
             this.groupBox_CSPForm_ProxySettings.ResumeLayout(false);

@@ -934,7 +934,7 @@ public class NetworkAction
 
             while (connectedClient_ObjToDisconnect == null)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(300);
 
                 int_SleepCount++;
 
