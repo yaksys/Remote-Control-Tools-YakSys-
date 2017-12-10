@@ -1,18 +1,16 @@
-using Microsoft.Win32;
-
-namespace YakSysRct_Server_WindowsService
+﻿namespace RCT_Server_Windows_Service
 {
     partial class ProjectInstaller
     {
         /// <summary>
-        /// Required designer variable.
+        /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary> 
-        /// Clean up any resources being used.
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,27 +20,36 @@ namespace YakSysRct_Server_WindowsService
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Код, автоматически созданный конструктором компонентов
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
             this.serviceProcessInstaller_YakSysServer = new System.ServiceProcess.ServiceProcessInstaller();
             this.serviceInstaller_YakSysServer = new System.ServiceProcess.ServiceInstaller();
+            this.serviceController_YakSysServer = new System.ServiceProcess.ServiceController();
             // 
             // serviceProcessInstaller_YakSysServer
             // 
             this.serviceProcessInstaller_YakSysServer.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
             this.serviceProcessInstaller_YakSysServer.Password = null;
             this.serviceProcessInstaller_YakSysServer.Username = null;
+            this.serviceProcessInstaller_YakSysServer.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceProcessInstaller_YakSysServer_AfterInstall);
+            this.serviceProcessInstaller_YakSysServer.AfterUninstall += new System.Configuration.Install.InstallEventHandler(this.serviceProcessInstaller_YakSysServer_AfterUninstall);
             // 
             // serviceInstaller_YakSysServer
             // 
+            this.serviceInstaller_YakSysServer.DisplayName = "YakSys RCT Server";
             this.serviceInstaller_YakSysServer.ServiceName = "YakSys RCT Server";
+            this.serviceInstaller_YakSysServer.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             this.serviceInstaller_YakSysServer.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller_YakSysServer_AfterInstall);
+            // 
+            // serviceController_YakSysServer
+            // 
+            this.serviceController_YakSysServer.ServiceName = "YakSys RCT Server";
             // 
             // ProjectInstaller
             // 
@@ -56,5 +63,6 @@ namespace YakSysRct_Server_WindowsService
 
         private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller_YakSysServer;
         private System.ServiceProcess.ServiceInstaller serviceInstaller_YakSysServer;
+        private System.ServiceProcess.ServiceController serviceController_YakSysServer;
     }
 }

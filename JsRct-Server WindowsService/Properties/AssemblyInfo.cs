@@ -2,32 +2,35 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("YakSysRct-Server WindowsService")]
+// Общие сведения об этой сборке предоставляются следующим набором
+// набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
+// связанные со сборкой.
+[assembly: AssemblyTitle("RCT Server Windows Service")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Home")]
-[assembly: AssemblyProduct("YakSysRct-Server WindowsService")]
-[assembly: AssemblyCopyright("Copyright © Home 2006")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("RCT Server Windows Service")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
-// COM, set the ComVisible attribute to true on that type.
+// Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
+// для компонентов COM. Если необходимо обратиться к типу в этой сборке через
+// COM, задайте атрибуту ComVisible значение TRUE для этого типа.
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5989eb2e-94fd-454d-b3f3-a8cb9aeb54d4")]
+// Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
+[assembly: Guid("18e2d5f5-965a-47f0-920b-cf6d68b1db4c")]
 
-// Version information for an assembly consists of the following four values:
+// Сведения о версии сборки состоят из следующих четырех значений:
 //
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
+//      Основной номер версии
+//      Дополнительный номер версии
+//   Номер сборки
+//      Редакция
 //
+// Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
+// используя "*", как показано ниже:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

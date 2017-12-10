@@ -948,7 +948,7 @@ public class MainServerForm : System.Windows.Forms.Form
             // 
             // statusBar_Main
             // 
-            this.statusBar_Main.Location = new System.Drawing.Point(0, 279);
+            this.statusBar_Main.Location = new System.Drawing.Point(0, 278);
             this.statusBar_Main.Name = "statusBar_Main";
             this.statusBar_Main.Panels.AddRange(new System.Windows.Forms.StatusBarPanel[] {
             this.statusBarPanel_BytesSent,
@@ -983,7 +983,7 @@ public class MainServerForm : System.Windows.Forms.Form
             // MainServerForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(776, 301);
+            this.ClientSize = new System.Drawing.Size(776, 300);
             this.Controls.Add(this.statusBar_Main);
             this.Controls.Add(this.tabControl_Main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

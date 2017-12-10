@@ -39,7 +39,7 @@ namespace YakSys
 
                     ChannelServices.RegisterChannel(ipcServerChannel_ServerChannel, false);
 
-                    RemotingConfiguration.ApplicationName = "YakSys Server";
+                    RemotingConfiguration.ApplicationName = "YakSys RCT Server";
 
 
                     // Windows Vista/Windows 7 Service Desktop interact Layer-------------------------------------------------------------
