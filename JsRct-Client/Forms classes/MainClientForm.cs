@@ -7005,7 +7005,7 @@ public class MainClientForm : System.Windows.Forms.Form
         else
         {
             ObjCopy.obj_MiniRTDVForm.Show();
-            //!!!!!!!
+
             ObjCopy.obj_MiniRTDVForm.TopLevel = true;
 
             this.Focus();
@@ -12064,26 +12064,24 @@ public class MainClientForm : System.Windows.Forms.Form
 
             if (this.checkBox_RTDV_RealSize.Checked == true && RTRDVEnabled == true)
             {
-                //	new RemoteCallAction().StopRTDV();
+                new RemoteCallAction().StopRTDV();
 
                 if (ObjCopy.obj_RTDVForm == null)
                 {
                     ObjCopy.obj_RTDVForm = new RTDVForm();
                 }
                 ObjCopy.obj_RTDVForm.Location = new System.Drawing.Point(0, 0);
-
-                ObjCopy.obj_RTDVForm.Show();
-
+                
                 ObjCopy.obj_RTDVForm.BringToFront();
 
-                ObjCopy.obj_MiniRTDVForm.Hide();
+                new RemoteCallAction().StartRTRDV();	
 
-                //	new RemoteCallAction().StartRTRDV();			
+                ObjCopy.obj_MiniRTDVForm.Hide();
             }
 
             else if (RTRDVEnabled == true)
             {
-                //		new RemoteCallAction().StopRTDV();
+                new RemoteCallAction().StopRTDV();
 
                 if (ObjCopy.obj_RTDVForm != null)
                 {
@@ -12092,10 +12090,9 @@ public class MainClientForm : System.Windows.Forms.Form
                     ObjCopy.obj_RTDVForm = null;
                 }
 
-
                 ObjCopy.obj_MiniRTDVForm.Show();
 
-                	//!!	new RemoteCallAction().StartRTRDV();
+                new RemoteCallAction().StartRTRDV();
             }
         }
         catch { }
