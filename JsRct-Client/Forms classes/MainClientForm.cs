@@ -6893,9 +6893,7 @@ public class MainClientForm : System.Windows.Forms.Form
 
         ObjCopy.obj_MiniRTDVForm = new MiniRTDVForm();
 
-
-
-      //  ObjCopy.obj_MiniRTDVForm.Show();
+        ObjCopy.obj_MiniRTDVForm.Show();
 
         ObjCopy.obj_MiniRTDVForm.Hide();
 
@@ -6908,10 +6906,7 @@ public class MainClientForm : System.Windows.Forms.Form
 
         this.comboBox_NetworkControl_ConnectionTimeOut.SelectedIndex = 2;
 
-        timer_MainFormTimer.Start();
-
-
-    
+        timer_MainFormTimer.Start();   
 
     }
 
@@ -6937,8 +6932,6 @@ public class MainClientForm : System.Windows.Forms.Form
         this.Deactivate -= new System.EventHandler(this.MainClientForm_Deactivate);
         this.Activated -= new System.EventHandler(this.MainClientForm_Activated);
 
-        ObjCopy.obj_MiniRTDVForm.TopMost = false;
-
         this.Deactivate += new System.EventHandler(this.MainClientForm_Deactivate);
         this.Activated += new System.EventHandler(this.MainClientForm_Activated);
     }
@@ -6947,9 +6940,11 @@ public class MainClientForm : System.Windows.Forms.Form
     {
         this.Deactivate -= new System.EventHandler(this.MainClientForm_Deactivate);
         this.Activated -= new System.EventHandler(this.MainClientForm_Activated);
-
-        this.Activate();
-        this.Focus();
+        
+        if (this.tabControl_Main.SelectedIndex == 7)
+        {
+            ObjCopy.obj_MiniRTDVForm.Show(); 
+        }
 
         this.Deactivate += new System.EventHandler(this.MainClientForm_Deactivate);
         this.Activated += new System.EventHandler(this.MainClientForm_Activated);
@@ -6966,10 +6961,11 @@ public class MainClientForm : System.Windows.Forms.Form
             WriteClientSettingsToDB();
 
             ObjCopy.obj_NetworkAction.DisconnectFromServer();
-            /*
+           
             if (thread_CaptureUsingInterval != null) thread_CaptureUsingInterval.Abort();
-            if (thread_NGSCRThread != null) thread_NGSCRThread.Abort();
-            */
+            /*
+           if (thread_NGSCRThread != null) thread_NGSCRThread.Abort();
+           */
             Thread.Sleep(200);
 
             Process.GetCurrentProcess().Kill();
@@ -6986,8 +6982,7 @@ public class MainClientForm : System.Windows.Forms.Form
     {
         try
         {
-
-            ObjCopy.obj_MiniRTDVForm.TopLevel = ObjCopy.obj_MiniRTDVForm.TopMost = true;
+            ObjCopy.obj_MiniRTDVForm.TopLevel = true;
 
             ObjCopy.obj_MiniRTDVForm.Location = new Point(this.Location.X + 270, this.Location.Y + 145);
             ObjCopy.obj_MiniRTDVForm.Location = new Point(this.Location.X + 230, this.Location.Y + 145);
@@ -7011,7 +7006,7 @@ public class MainClientForm : System.Windows.Forms.Form
         {
             ObjCopy.obj_MiniRTDVForm.Show();
             //!!!!!!!
-            ObjCopy.obj_MiniRTDVForm.TopLevel = ObjCopy.obj_MiniRTDVForm.TopMost = true;
+            ObjCopy.obj_MiniRTDVForm.TopLevel = true;
 
             this.Focus();
         }
@@ -7932,6 +7927,8 @@ public class MainClientForm : System.Windows.Forms.Form
 
     private void menuItem_Options_Settings_Click(object sender, System.EventArgs e)
     {
+        ObjCopy.obj_MiniRTDVForm.Hide();
+
         SettingsForm obj_SettingsForm = new SettingsForm();
 
         obj_SettingsForm.ShowDialog();
@@ -7941,6 +7938,8 @@ public class MainClientForm : System.Windows.Forms.Form
 
     private void menuItem_Help_Register_Click(object sender, System.EventArgs e)
     {
+        ObjCopy.obj_MiniRTDVForm.Hide();
+
         RegistrationForm obj_RegistrationForm = new RegistrationForm();
 
         obj_RegistrationForm.ShowDialog();
@@ -7950,6 +7949,8 @@ public class MainClientForm : System.Windows.Forms.Form
 
     private void menuItem_File_Exit_Click(object sender, System.EventArgs e)
     {
+        ObjCopy.obj_MiniRTDVForm.Hide();
+
         ObjCopy.obj_MainClientForm.BringToFront();
 
         this.Close();
@@ -7957,6 +7958,8 @@ public class MainClientForm : System.Windows.Forms.Form
 
     private void menuItem_Help_About_Click(object sender, System.EventArgs e)
     {
+        ObjCopy.obj_MiniRTDVForm.Hide();
+
         new AboutForm().ShowDialog();
     }
 
@@ -8109,6 +8112,8 @@ public class MainClientForm : System.Windows.Forms.Form
 
     private void menuItem_File_Import_SettingsDatabase_Click(object sender, System.EventArgs e)
     {
+        ObjCopy.obj_MiniRTDVForm.Hide();
+
         OpenFileDialog openFileDialog_obj = new OpenFileDialog();
 
         openFileDialog_obj.Multiselect = false;
@@ -8125,6 +8130,8 @@ public class MainClientForm : System.Windows.Forms.Form
 
     private void menuItem_File_Export_SettingsDatabase_Click(object sender, System.EventArgs e)
     {
+        ObjCopy.obj_MiniRTDVForm.Hide();
+
         SaveFileDialog saveFileDialog_obj = new SaveFileDialog();
 
         saveFileDialog_obj.Title = ClientStringFactory.GetString(545, ClientSettingsEnvironment.CurrentLanguage);
