@@ -6891,6 +6891,14 @@ public class MainClientForm : System.Windows.Forms.Form
         ObjCopy.obj_MainClientForm = new MainClientForm();
 
 
+        ObjCopy.obj_MiniRTDVForm = new MiniRTDVForm();
+
+
+
+      //  ObjCopy.obj_MiniRTDVForm.Show();
+
+        ObjCopy.obj_MiniRTDVForm.Hide();
+
         Application.Run(ObjCopy.obj_MainClientForm);
     }
 
@@ -6902,14 +6910,6 @@ public class MainClientForm : System.Windows.Forms.Form
 
         timer_MainFormTimer.Start();
 
-
-
-
-        ObjCopy.obj_MiniRTDVForm = new MiniRTDVForm();
-
-     //   ObjCopy.obj_MiniRTDVForm.Show();
-
-       // ObjCopy.obj_MiniRTDVForm.Hide();
 
     
 
@@ -6947,8 +6947,6 @@ public class MainClientForm : System.Windows.Forms.Form
     {
         this.Deactivate -= new System.EventHandler(this.MainClientForm_Deactivate);
         this.Activated -= new System.EventHandler(this.MainClientForm_Activated);
-
-        ObjCopy.obj_MiniRTDVForm.TopMost = true;
 
         this.Activate();
         this.Focus();
@@ -6988,7 +6986,10 @@ public class MainClientForm : System.Windows.Forms.Form
     {
         try
         {
-            //   ObjCopy.obj_MiniRTDVForm.Location = new Point(this.Location.X + 270, this.Location.Y + 145);
+
+            ObjCopy.obj_MiniRTDVForm.TopLevel = ObjCopy.obj_MiniRTDVForm.TopMost = true;
+
+            ObjCopy.obj_MiniRTDVForm.Location = new Point(this.Location.X + 270, this.Location.Y + 145);
             ObjCopy.obj_MiniRTDVForm.Location = new Point(this.Location.X + 230, this.Location.Y + 145);
         }
         catch (Exception ex)
@@ -7004,11 +7005,13 @@ public class MainClientForm : System.Windows.Forms.Form
 
         if (this.tabControl_Main.SelectedIndex != 7)
         {
-       //     ObjCopy.obj_MiniRTDVForm.Hide();
+            ObjCopy.obj_MiniRTDVForm.Hide();
         }
         else
         {
-         //   ObjCopy.obj_MiniRTDVForm.Show();
+            ObjCopy.obj_MiniRTDVForm.Show();
+            //!!!!!!!
+            ObjCopy.obj_MiniRTDVForm.TopLevel = ObjCopy.obj_MiniRTDVForm.TopMost = true;
 
             this.Focus();
         }
@@ -11924,11 +11927,11 @@ public class MainClientForm : System.Windows.Forms.Form
 
         if (this.checkBox_RTDV_EnableRealTimeRemoteDisplayViewer.Checked)
         {
-          //  ObjCopy.obj_MiniRTDVForm.Show();
+            ObjCopy.obj_MiniRTDVForm.Show();
 
-         //   ObjCopy.obj_MiniRTDVForm.BringToFront();
+            ObjCopy.obj_MiniRTDVForm.BringToFront();
 
-         //   new RemoteCallAction().StartRTRDV();
+            new RemoteCallAction().StartRTRDV();
         }
         else new RemoteCallAction().StopRTDV();
     }
