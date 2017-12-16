@@ -151,6 +151,11 @@ public partial class MiniRTDVForm : System.Windows.Forms.Form
             pictureBox_MiniRTDV = value;
         }
     }
+
+    private void MiniRTDVForm_MouseMove(object sender, MouseEventArgs e)
+    {
+
+    }
 }
 
 

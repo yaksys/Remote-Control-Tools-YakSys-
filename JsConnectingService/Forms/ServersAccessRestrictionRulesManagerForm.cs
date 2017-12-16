@@ -45,34 +45,34 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
     void ChangeControlsLanguage()
     {
-        this.Text = StringFactory.GetString(195, MainForm.CurrentLanguage);
+        this.Text = ServerStringFactory.GetString(195, MainForm.CurrentLanguage);
 
-        this.button_ServersAccessRestrictionRulesManager_Add.Text = StringFactory.GetString(23, MainForm.CurrentLanguage);
-        this.button_ServersAccessRestrictionRulesManager_Apply.Text = StringFactory.GetString(79, MainForm.CurrentLanguage);
-        this.button_ServersAccessRestrictionRulesManager_Cancel.Text = StringFactory.GetString(86, MainForm.CurrentLanguage);
+        this.button_ServersAccessRestrictionRulesManager_Add.Text = ServerStringFactory.GetString(23, MainForm.CurrentLanguage);
+        this.button_ServersAccessRestrictionRulesManager_Apply.Text = ServerStringFactory.GetString(79, MainForm.CurrentLanguage);
+        this.button_ServersAccessRestrictionRulesManager_Cancel.Text = ServerStringFactory.GetString(86, MainForm.CurrentLanguage);
 
-        this.radioButton_ServersAccessRestrictionRulesManager_RestrictByIPRange.Text = StringFactory.GetString(189, MainForm.CurrentLanguage);
-        this.radioButton_ServersAccessRestrictionRulesManager_RestrictByIPAddress.Text = StringFactory.GetString(190, MainForm.CurrentLanguage);
-        this.radioButton_ServersAccessRestrictionRulesManager_RestrictByMACAddress.Text = StringFactory.GetString(191, MainForm.CurrentLanguage);
+        this.radioButton_ServersAccessRestrictionRulesManager_RestrictByIPRange.Text = ServerStringFactory.GetString(189, MainForm.CurrentLanguage);
+        this.radioButton_ServersAccessRestrictionRulesManager_RestrictByIPAddress.Text = ServerStringFactory.GetString(190, MainForm.CurrentLanguage);
+        this.radioButton_ServersAccessRestrictionRulesManager_RestrictByMACAddress.Text = ServerStringFactory.GetString(191, MainForm.CurrentLanguage);
 
-        this.label_ServersAccessRestrictionRulesManager_IPRangeStartValue.Text = StringFactory.GetString(192, MainForm.CurrentLanguage);
-        this.label_ServersAccessRestrictionRulesManager_IPRangeEndValue.Text = StringFactory.GetString(193, MainForm.CurrentLanguage);
+        this.label_ServersAccessRestrictionRulesManager_IPRangeStartValue.Text = ServerStringFactory.GetString(192, MainForm.CurrentLanguage);
+        this.label_ServersAccessRestrictionRulesManager_IPRangeEndValue.Text = ServerStringFactory.GetString(193, MainForm.CurrentLanguage);
 
-        this.label_ServersAccessRestrictionRulesManager_IPAddress.Text = StringFactory.GetString(185, MainForm.CurrentLanguage);
+        this.label_ServersAccessRestrictionRulesManager_IPAddress.Text = ServerStringFactory.GetString(185, MainForm.CurrentLanguage);
 
-        this.label_ServersAccessRestrictionRulesManager_MACAddress.Text = StringFactory.GetString(186, MainForm.CurrentLanguage);
+        this.label_ServersAccessRestrictionRulesManager_MACAddress.Text = ServerStringFactory.GetString(186, MainForm.CurrentLanguage);
 
-        this.label_ServersAccessRestrictionRulesManager_RuleType.Text = StringFactory.GetString(196, MainForm.CurrentLanguage);
+        this.label_ServersAccessRestrictionRulesManager_RuleType.Text = ServerStringFactory.GetString(196, MainForm.CurrentLanguage);
 
-        this.checkBox_ServersAccessRestrictionRulesManager_AddMACAdressToRule.Text = StringFactory.GetString(194, MainForm.CurrentLanguage);
+        this.checkBox_ServersAccessRestrictionRulesManager_AddMACAdressToRule.Text = ServerStringFactory.GetString(194, MainForm.CurrentLanguage);
 
         this.comboBox_ServersAccessRestrictionRulesManager_RuleType.Items.Clear();
 
         this.comboBox_ServersAccessRestrictionRulesManager_RuleType.Items.AddRange(new object[] {
-																							 StringFactory.GetString(197, MainForm.CurrentLanguage),
-																							 StringFactory.GetString(198, MainForm.CurrentLanguage)});
+																							 ServerStringFactory.GetString(197, MainForm.CurrentLanguage),
+																							 ServerStringFactory.GetString(198, MainForm.CurrentLanguage)});
 
-        this.groupBox_ServersAccessRestrictionRulesManager_IPRange.Text = StringFactory.GetString(227, MainForm.CurrentLanguage);
+        this.groupBox_ServersAccessRestrictionRulesManager_IPRange.Text = ServerStringFactory.GetString(227, MainForm.CurrentLanguage);
     }
 
 
@@ -513,7 +513,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
         catch
         {
-            MessageBox.Show(StringFactory.GetString(199, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(199, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return false;
         }
@@ -538,7 +538,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
         catch
         {
-            MessageBox.Show(StringFactory.GetString(200, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(200, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return false;
         }
@@ -562,7 +562,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
             if (CommonMethods.IsSecondIPAddressBiggerOrEquals(iPAddress_StartValue, iPAddress_EndValue) == false)
             {
-                MessageBox.Show(StringFactory.GetString(202, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                MessageBox.Show(ServerStringFactory.GetString(202, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                 return false;
             };
@@ -572,7 +572,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
         catch
         {
-            MessageBox.Show(StringFactory.GetString(201, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(201, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return false;
         }
@@ -590,7 +590,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
             if (accessRestrictionRuleObject_obj.RuleType != this.comboBox_ServersAccessRestrictionRulesManager_RuleType.SelectedIndex)
             {
-                MessageBox.Show(StringFactory.GetString(203, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                MessageBox.Show(ServerStringFactory.GetString(203, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                 return false;
             }
@@ -609,7 +609,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
                 if (this.MACAddress == accessRestrictionRuleObject_obj.MACAddress)
                 {
-                    MessageBox.Show(StringFactory.GetString(204, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                    MessageBox.Show(ServerStringFactory.GetString(204, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                     return false;
                 }
@@ -628,7 +628,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
                 if (accessRestrictionRuleObject_obj.IPAddress != null && iPAddress_IPAddress.Address == accessRestrictionRuleObject_obj.IPAddress.Address)
                 {
-                    MessageBox.Show(StringFactory.GetString(205, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                    MessageBox.Show(ServerStringFactory.GetString(205, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                     return false;
                 }
@@ -640,7 +640,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
                    CommonMethods.IsSecondIPAddressBiggerOrEquals(iPAddress_IPAddress, accessRestrictionRuleObject_obj.IPAddressesRangeEndValue) == true
                   )
                 {
-                    MessageBox.Show(StringFactory.GetString(206, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                    MessageBox.Show(ServerStringFactory.GetString(206, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                     return false;
                 }
@@ -665,7 +665,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
                     CommonMethods.IsSecondIPAddressBiggerOrEquals(accessRestrictionRuleObject_obj.IPAddress, iPAddress_IPAddressesRangeEndValue) == true
                   )
                 {
-                    MessageBox.Show(StringFactory.GetString(207, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                    MessageBox.Show(ServerStringFactory.GetString(207, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                     return false;
                 }
@@ -685,7 +685,7 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
                    )
                   )
                 {
-                    MessageBox.Show(StringFactory.GetString(208, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                    MessageBox.Show(ServerStringFactory.GetString(208, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                     return false;
                 }
@@ -864,8 +864,8 @@ public class ServersAccessRestrictionRulesManagerForm : System.Windows.Forms.For
 
             AddNewRule();
 
-            //	 ObjCopy.obj_MainForm.InsertDataToLog(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(),
-            // 											DateTime.Now.ToLongTimeString(), StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(214, MainForm.CurrentLanguage));		
+            //	 ObjCopy.obj_MainForm.InsertDataToLog(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(),
+            // 											DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(214, MainForm.CurrentLanguage));		
 
             this.Close();
         }

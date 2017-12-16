@@ -187,7 +187,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(127, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(127, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -227,7 +227,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(127, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(127, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -306,7 +306,7 @@ public class ConnectingServiceDBSupplier
         {
             InitMainServerXmlDB();
 
-            MessageBox.Show(StringFactory.GetString(127, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(127, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -318,7 +318,7 @@ public class ConnectingServiceDBSupplier
         catch (Exception e)
         {
             MessageBox.Show(e.Message);
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
         }
     }
 
@@ -384,7 +384,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(481, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(481, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -424,7 +424,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -463,7 +463,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -502,7 +502,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -566,7 +566,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -629,7 +629,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -693,8 +693,8 @@ public class ConnectingServiceDBSupplier
                 }
                 if (string_IPAddress != string.Empty) iPAddress_IPAddress = IPAddress.Parse(string_IPAddress);
 
-                if (int_RuleType == 0) string_RuleType = StringFactory.GetString(197, MainForm.CurrentLanguage);
-                else string_RuleType = StringFactory.GetString(198, MainForm.CurrentLanguage);
+                if (int_RuleType == 0) string_RuleType = ServerStringFactory.GetString(197, MainForm.CurrentLanguage);
+                else string_RuleType = ServerStringFactory.GetString(198, MainForm.CurrentLanguage);
 
                 bool bool_IsRuleEnabled = (bool)dataRow_NewRecord[accessRestrictionRulesDataTable_obj.IsRestrictionEnabledColumn];
 
@@ -710,7 +710,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }
@@ -773,8 +773,8 @@ public class ConnectingServiceDBSupplier
                 }
                 if (string_IPAddress != string.Empty) iPAddress_IPAddress = IPAddress.Parse(string_IPAddress);
 
-                if (int_RuleType == 0) string_RuleType = StringFactory.GetString(197, MainForm.CurrentLanguage);
-                else string_RuleType = StringFactory.GetString(198, MainForm.CurrentLanguage);
+                if (int_RuleType == 0) string_RuleType = ServerStringFactory.GetString(197, MainForm.CurrentLanguage);
+                else string_RuleType = ServerStringFactory.GetString(198, MainForm.CurrentLanguage);
 
                 bool bool_IsRuleEnabled = (bool)dataRow_NewRecord[accessRestrictionRulesDataTable_obj.IsRestrictionEnabledColumn];
 
@@ -790,7 +790,7 @@ public class ConnectingServiceDBSupplier
         {
             if (File.Exists("ConnectingServiceDB")) File.Delete("ConnectingServiceDB");
 
-            MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+            MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
             return;
         }

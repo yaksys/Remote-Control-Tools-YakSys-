@@ -40,7 +40,7 @@ public partial class MainForm : Form
 
             catch (Exception)
             {
-                MessageBox.Show(StringFactory.GetString(128, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                MessageBox.Show(ServerStringFactory.GetString(128, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                 new ConnectingServiceDBSupplier().InitMainServerXmlDB();
 
@@ -63,7 +63,7 @@ public partial class MainForm : Form
 
                 ObjCopy.obj_MainForm.SetUpServerSettingsFromDB();
 
-                MessageBox.Show(StringFactory.GetString(96, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                MessageBox.Show(ServerStringFactory.GetString(96, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                 return;
             }
@@ -135,7 +135,7 @@ public partial class MainForm : Form
             {
                 fileStream_ConnectingServiceXMLDB.Close();
 
-                MessageBox.Show(StringFactory.GetString(124, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+                MessageBox.Show(ServerStringFactory.GetString(124, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 
                 return;
             }
@@ -334,7 +334,7 @@ public partial class MainForm : Form
 
     public void YakSysConnectingServiceServer()
     {
-        if (DialogResult.Yes == MessageBox.Show(this, StringFactory.GetString(39, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        if (DialogResult.Yes == MessageBox.Show(this, ServerStringFactory.GetString(39, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
             notifyIcon_Main.Visible = false;
 
@@ -366,7 +366,7 @@ public partial class MainForm : Form
 
     public void YakSysConnectingServiceExit()
     {
-        if (DialogResult.Yes == MessageBox.Show(this, StringFactory.GetString(39, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        if (DialogResult.Yes == MessageBox.Show(this, ServerStringFactory.GetString(39, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
             notifyIcon_Main.Visible = false;
 
@@ -631,17 +631,17 @@ public partial class MainForm : Form
 
         if (this.listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(46, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(46, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count; int_CycleCount++)
         {
             this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].ImageIndex = 0;
-            this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+            this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
 
             if (ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].IsActivated == true)
             {
@@ -657,7 +657,7 @@ public partial class MainForm : Form
             string string_UserName = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].UserName,
                     string_UIN = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(48, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(48, MainForm.CurrentLanguage), false);
 
             #endregion
         }
@@ -669,17 +669,17 @@ public partial class MainForm : Form
 
         if (this.listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(49, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(49, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count; int_CycleCount++)
         {
             this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].ImageIndex = 1;
-            this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+            this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
 
             if (ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].IsActivated == true)
             {
@@ -696,7 +696,7 @@ public partial class MainForm : Form
             string string_UserName = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].UserName,
                     string_UIN = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(48, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(48, MainForm.CurrentLanguage), false);
 
             #endregion
         }
@@ -721,7 +721,7 @@ public partial class MainForm : Form
         string string_UserName = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_AccountIndex].Tag].UserName,
                 string_UIN = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_AccountIndex].Tag].UIN;
 
-        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(215, MainForm.CurrentLanguage), false);
+        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(215, MainForm.CurrentLanguage), false);
 
         #endregion
 
@@ -735,11 +735,11 @@ public partial class MainForm : Form
 
         if (this.listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(52, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(52, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; this.listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count != 0; int_CycleCount++)
@@ -753,7 +753,7 @@ public partial class MainForm : Form
             string string_UserName = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[0].Tag].UserName,
                     string_UIN = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[0].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(53, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(53, MainForm.CurrentLanguage), false);
 
             #endregion
 
@@ -769,7 +769,7 @@ public partial class MainForm : Form
     {
         if (this.listView_ClientsAccounts_ClientsAccounts.Items.Count < 1) return;
 
-        if (DialogResult.Yes == MessageBox.Show(StringFactory.GetString(145, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        if (DialogResult.Yes == MessageBox.Show(ServerStringFactory.GetString(145, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
             /*
             for (int int_CycleCount = 0; int_CycleCount != this.listView_ClientsAccounts_ClientsAccounts.Items.Count; int_CycleCount++)
@@ -780,7 +780,7 @@ public partial class MainForm : Form
                 {
                     ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].Tag].DisconnectAllClients();
 
-                    ObjCopy.obj_MainForm.InsertDataToLog(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(53, MainForm.CurrentLanguage) +
+                    ObjCopy.obj_MainForm.InsertDataToLog(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(53, MainForm.CurrentLanguage) +
                         ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].Tag].User);
 
                     ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].Tag].RemoveAccount();
@@ -796,7 +796,7 @@ public partial class MainForm : Form
 
             #region Call Log Event
 
-            ConnectingServiceLogsEvents.NewCommonLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), StringFactory.GetString(1, MainForm.CurrentLanguage), "Users assounts cleared", false);
+            ConnectingServiceLogsEvents.NewCommonLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), "Users assounts cleared", false);
 
             #endregion
 
@@ -829,7 +829,7 @@ public partial class MainForm : Form
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), "Access restriction rule sucessfully added", false);
+        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), "Access restriction rule sucessfully added", false);
 
         #endregion
     }
@@ -854,11 +854,11 @@ public partial class MainForm : Form
 
         if (this.listView_ClientsRestrictionRules_RulestList.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(210, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(210, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(213, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(213, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != this.listView_ClientsRestrictionRules_RulestList.SelectedItems.Count; int_CycleCount++)
@@ -868,12 +868,12 @@ public partial class MainForm : Form
             ClientsNetworkSecurity.AccessRestrictionRuleObject.AccessRestrictionRules[(int)this.listView_ClientsRestrictionRules_RulestList.SelectedItems[0].Tag].IsEnabled = false;
 
             this.listView_ClientsRestrictionRules_RulestList.SelectedItems[int_CycleCount].ImageIndex = 1;
-            this.listView_ClientsRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+            this.listView_ClientsRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
         }
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(217, MainForm.CurrentLanguage), false);
+        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(217, MainForm.CurrentLanguage), false);
 
         #endregion
     }
@@ -884,11 +884,11 @@ public partial class MainForm : Form
 
         if (this.listView_ClientsRestrictionRules_RulestList.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(210, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(210, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(212, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(212, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes)
         {
             return;
@@ -901,12 +901,12 @@ public partial class MainForm : Form
             ClientsNetworkSecurity.AccessRestrictionRuleObject.AccessRestrictionRules[(int)this.listView_ClientsRestrictionRules_RulestList.SelectedItems[0].Tag].IsEnabled = true;
 
             this.listView_ClientsRestrictionRules_RulestList.SelectedItems[int_CycleCount].ImageIndex = 1;
-            this.listView_ClientsRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+            this.listView_ClientsRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
         }
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(217, MainForm.CurrentLanguage), false);
+        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(217, MainForm.CurrentLanguage), false);
 
         #endregion
     }
@@ -927,7 +927,7 @@ public partial class MainForm : Form
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(215, MainForm.CurrentLanguage), false);
+        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(215, MainForm.CurrentLanguage), false);
 
         #endregion
     }
@@ -938,12 +938,12 @@ public partial class MainForm : Form
 
         if (this.listView_ClientsRestrictionRules_RulestList.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(210, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(210, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(211, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(211, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes)
         {
             return;
@@ -961,7 +961,7 @@ public partial class MainForm : Form
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), "Clients Access restrinction rule removed.", false);
+        ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), "Clients Access restrinction rule removed.", false);
 
         #endregion
     }
@@ -970,7 +970,7 @@ public partial class MainForm : Form
     {
         if (this.listView_ClientsRestrictionRules_RulestList.Items.Count < 1) return;
 
-        if (DialogResult.Yes == MessageBox.Show(StringFactory.GetString(209, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        if (DialogResult.Yes == MessageBox.Show(ServerStringFactory.GetString(209, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
             this.listView_ClientsRestrictionRules_RulestList.Items.Clear();
 
@@ -981,7 +981,7 @@ public partial class MainForm : Form
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewCommonLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), StringFactory.GetString(1, MainForm.CurrentLanguage), "Clients Access restrinction rule list clears.", false);
+        ConnectingServiceLogsEvents.NewCommonLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), "Clients Access restrinction rule list clears.", false);
 
         #endregion
     }
@@ -1018,17 +1018,17 @@ public partial class MainForm : Form
 
         if (this.listView_ServersAccounts_ServersAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(46, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(46, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != listView_ServersAccounts_ServersAccounts.SelectedItems.Count; int_CycleCount++)
         {
             this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].ImageIndex = 0;
-            this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+            this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
 
             if (ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].IsActivated == true)
             {
@@ -1044,7 +1044,7 @@ public partial class MainForm : Form
             string string_UserName = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].UserName,
                     string_UIN = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(48, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(48, MainForm.CurrentLanguage), false);
 
             #endregion
         }
@@ -1056,17 +1056,17 @@ public partial class MainForm : Form
 
         if (this.listView_ServersAccounts_ServersAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(49, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(49, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != listView_ServersAccounts_ServersAccounts.SelectedItems.Count; int_CycleCount++)
         {
             this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].ImageIndex = 1;
-            this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+            this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
 
             if (ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].IsActivated == true)
             {
@@ -1082,7 +1082,7 @@ public partial class MainForm : Form
             string string_UserName = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].UserName,
                     string_UIN = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(48, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(48, MainForm.CurrentLanguage), false);
 
             #endregion
         }
@@ -1107,7 +1107,7 @@ public partial class MainForm : Form
         string string_UserName = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_AccountIndex].Tag].UserName,
                 string_UIN = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_AccountIndex].Tag].UIN;
 
-        ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(215, MainForm.CurrentLanguage), false);
+        ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(215, MainForm.CurrentLanguage), false);
 
         #endregion
 
@@ -1119,11 +1119,11 @@ public partial class MainForm : Form
 
         if (this.listView_ServersAccounts_ServersAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(52, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(52, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; this.listView_ServersAccounts_ServersAccounts.SelectedItems.Count != 0; int_CycleCount++)
@@ -1137,7 +1137,7 @@ public partial class MainForm : Form
             string string_UserName = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[0].Tag].UserName,
                     string_UIN = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[0].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(215, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(215, MainForm.CurrentLanguage), false);
 
             #endregion
 
@@ -1153,7 +1153,7 @@ public partial class MainForm : Form
     {
         if (this.listView_ServersAccounts_ServersAccounts.Items.Count < 1) return;
 
-        if (DialogResult.Yes == MessageBox.Show(StringFactory.GetString(145, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        if (DialogResult.Yes == MessageBox.Show(ServerStringFactory.GetString(145, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
             /*
             for (int int_CycleCount = 0; int_CycleCount != this.listView_ServersAccounts_ServersAccounts.Items.Count; int_CycleCount++)
@@ -1164,7 +1164,7 @@ public partial class MainForm : Form
                 {
                     ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].Tag].DisconnectAllClients();
 
-                    ObjCopy.obj_MainForm.InsertDataToLog(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(53, MainForm.CurrentLanguage) +
+                    ObjCopy.obj_MainForm.InsertDataToLog(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(53, MainForm.CurrentLanguage) +
                         ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].Tag].User);
 
                     ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].Tag].RemoveAccount();
@@ -1211,11 +1211,11 @@ public partial class MainForm : Form
 
         if (this.listView_ServersRestrictionRules_RulestList.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(210, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(210, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(213, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(213, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != this.listView_ServersRestrictionRules_RulestList.SelectedItems.Count; int_CycleCount++)
@@ -1226,12 +1226,12 @@ public partial class MainForm : Form
 
             #region Call Log Event
 
-            ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(217, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(217, MainForm.CurrentLanguage), false);
 
             #endregion
 
             this.listView_ServersRestrictionRules_RulestList.SelectedItems[int_CycleCount].ImageIndex = 1;
-            this.listView_ServersRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+            this.listView_ServersRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
         }
     }
 
@@ -1241,11 +1241,11 @@ public partial class MainForm : Form
 
         if (this.listView_ServersRestrictionRules_RulestList.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(210, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(210, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(212, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(212, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != this.listView_ServersRestrictionRules_RulestList.SelectedItems.Count; int_CycleCount++)
@@ -1256,12 +1256,12 @@ public partial class MainForm : Form
 
             #region Call Log Event
 
-            ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(215, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(215, MainForm.CurrentLanguage), false);
 
             #endregion
 
             this.listView_ServersRestrictionRules_RulestList.SelectedItems[int_CycleCount].ImageIndex = 1;
-            this.listView_ServersRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+            this.listView_ServersRestrictionRules_RulestList.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
         }
     }
 
@@ -1281,7 +1281,7 @@ public partial class MainForm : Form
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(215, MainForm.CurrentLanguage), false);
+        ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), "", "", ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(215, MainForm.CurrentLanguage), false);
 
         #endregion
 
@@ -1293,12 +1293,12 @@ public partial class MainForm : Form
 
         if (this.listView_ServersRestrictionRules_RulestList.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(210, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(210, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(211, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(211, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes)
         {
             return;
@@ -1318,7 +1318,7 @@ public partial class MainForm : Form
     {
         if (this.listView_ServersRestrictionRules_RulestList.Items.Count < 1) return;
 
-        if (DialogResult.Yes == MessageBox.Show(StringFactory.GetString(209, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        if (DialogResult.Yes == MessageBox.Show(ServerStringFactory.GetString(209, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question))
         {
             this.listView_ServersRestrictionRules_RulestList.Items.Clear();
 
@@ -1363,11 +1363,11 @@ public partial class MainForm : Form
 
         if (userAccount_obj.IsEnabled == true)
         {
-            listViewItem_SecurityInfo.SubItems.Add(StringFactory.GetString(50, MainForm.CurrentLanguage));
+            listViewItem_SecurityInfo.SubItems.Add(ServerStringFactory.GetString(50, MainForm.CurrentLanguage));
         }
         else
         {
-            listViewItem_SecurityInfo.SubItems.Add(StringFactory.GetString(47, MainForm.CurrentLanguage));
+            listViewItem_SecurityInfo.SubItems.Add(ServerStringFactory.GetString(47, MainForm.CurrentLanguage));
             listViewItem_SecurityInfo.ImageIndex = 1;
         }
 
@@ -1407,12 +1407,12 @@ public partial class MainForm : Form
 
         if (bool_IsRuleEnabled == true)
         {
-            listViewItem_ClientAccessRestrictionRule.SubItems.Add(StringFactory.GetString(47, MainForm.CurrentLanguage));
+            listViewItem_ClientAccessRestrictionRule.SubItems.Add(ServerStringFactory.GetString(47, MainForm.CurrentLanguage));
             listViewItem_ClientAccessRestrictionRule.ImageIndex = 0;
         }
         else
         {
-            listViewItem_ClientAccessRestrictionRule.SubItems.Add(StringFactory.GetString(50, MainForm.CurrentLanguage));
+            listViewItem_ClientAccessRestrictionRule.SubItems.Add(ServerStringFactory.GetString(50, MainForm.CurrentLanguage));
             listViewItem_ClientAccessRestrictionRule.ImageIndex = 1;
         }
 
@@ -1467,11 +1467,11 @@ public partial class MainForm : Form
 
                 if (userAccount_obj.IsEnabled == true)
                 {
-                    listViewItem_SecurityInfo.SubItems.Add(StringFactory.GetString(50, MainForm.CurrentLanguage));
+                    listViewItem_SecurityInfo.SubItems.Add(ServerStringFactory.GetString(50, MainForm.CurrentLanguage));
                 }
                 else
                 {
-                    listViewItem_SecurityInfo.SubItems.Add(StringFactory.GetString(47, MainForm.CurrentLanguage));
+                    listViewItem_SecurityInfo.SubItems.Add(ServerStringFactory.GetString(47, MainForm.CurrentLanguage));
                     listViewItem_SecurityInfo.ImageIndex = 1;
                 }
 
@@ -1528,12 +1528,12 @@ public partial class MainForm : Form
 
         if (bool_IsRuleEnabled == true)
         {
-            listViewItem_ServerAccessRestrictionRule.SubItems.Add(StringFactory.GetString(47, MainForm.CurrentLanguage));
+            listViewItem_ServerAccessRestrictionRule.SubItems.Add(ServerStringFactory.GetString(47, MainForm.CurrentLanguage));
             listViewItem_ServerAccessRestrictionRule.ImageIndex = 0;
         }
         else
         {
-            listViewItem_ServerAccessRestrictionRule.SubItems.Add(StringFactory.GetString(50, MainForm.CurrentLanguage));
+            listViewItem_ServerAccessRestrictionRule.SubItems.Add(ServerStringFactory.GetString(50, MainForm.CurrentLanguage));
             listViewItem_ServerAccessRestrictionRule.ImageIndex = 1;
         }
 
@@ -1801,7 +1801,7 @@ public partial class MainForm : Form
                 {
                     if (Convert.ToInt32(this.textBox_Main_ListeningPort.Text) > 65535 || Convert.ToInt32(this.textBox_Main_ListeningPort.Text) < 1)
                     {
-                        MessageBox.Show(StringFactory.GetString(87, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK);
+                        MessageBox.Show(ServerStringFactory.GetString(87, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK);
                         return -1;
                     }
 
@@ -1810,7 +1810,7 @@ public partial class MainForm : Form
 
                 catch (FormatException)
                 {
-                    MessageBox.Show(StringFactory.GetString(87, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK);
+                    MessageBox.Show(ServerStringFactory.GetString(87, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK);
                     return -1;
                 }
             });
@@ -2251,7 +2251,7 @@ public partial class MainForm : Form
 
         openFileDialog_obj.Multiselect = false;
 
-        openFileDialog_obj.Title = StringFactory.GetString(149, MainForm.CurrentLanguage);
+        openFileDialog_obj.Title = ServerStringFactory.GetString(149, MainForm.CurrentLanguage);
 
         openFileDialog_obj.ShowDialog();
 
@@ -2262,7 +2262,7 @@ public partial class MainForm : Form
     {
         SaveFileDialog saveFileDialog_obj = new SaveFileDialog();
 
-        saveFileDialog_obj.Title = StringFactory.GetString(150, MainForm.CurrentLanguage);
+        saveFileDialog_obj.Title = ServerStringFactory.GetString(150, MainForm.CurrentLanguage);
 
         saveFileDialog_obj.FileName = "ConnectingServiceDB";
 
@@ -2277,11 +2277,11 @@ public partial class MainForm : Form
 
         if (this.listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(49, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(49, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != listView_ClientsAccounts_ClientsAccounts.SelectedItems.Count; int_CycleCount++)
@@ -2294,12 +2294,12 @@ public partial class MainForm : Form
             if (ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].IsEnabled == true)
             {
                 this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].ImageIndex = 1;
-                this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+                this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
             }
             else
             {
                 this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].ImageIndex = 0;
-                this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+                this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
             }
 
             this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].SubItems[4].Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
@@ -2312,7 +2312,7 @@ public partial class MainForm : Form
             string string_UserName = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].UserName,
                     string_UIN = ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.SelectedItems[int_CycleCount].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(48, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(48, MainForm.CurrentLanguage), false);
 
             #endregion
         }
@@ -2324,11 +2324,11 @@ public partial class MainForm : Form
 
         if (this.listView_ServersAccounts_ServersAccounts.SelectedItems.Count == 0)
         {
-            MessageBox.Show(StringFactory.GetString(70, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(ServerStringFactory.GetString(70, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
-        if (MessageBox.Show(StringFactory.GetString(49, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(49, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) return;
 
         for (int int_CycleCount = 0; int_CycleCount != listView_ServersAccounts_ServersAccounts.SelectedItems.Count; int_CycleCount++)
@@ -2341,12 +2341,12 @@ public partial class MainForm : Form
             if (ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].IsEnabled == true)
             {
                 this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].ImageIndex = 1;
-                this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+                this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
             }
             else
             {
                 this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].ImageIndex = 0;
-                this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+                this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
             }
 
             this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].SubItems[4].Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
@@ -2359,7 +2359,7 @@ public partial class MainForm : Form
             string string_UserName = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].UserName,
                     string_UIN = ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.SelectedItems[int_CycleCount].Tag].UIN;
 
-            ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(48, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), string_UserName, string_UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(48, MainForm.CurrentLanguage), false);
 
             #endregion
         }
@@ -2382,12 +2382,12 @@ public partial class MainForm : Form
                     if (ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].Tag].IsEnabled == true)
                     {
                         this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].ImageIndex = 1;
-                        this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+                        this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
                     }
                     else
                     {
                         this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].ImageIndex = 0;
-                        this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+                        this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
                     }
 
                     if (ServersNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ServersAccounts_ServersAccounts.Items[int_CycleCount].Tag].IsActivated == true)
@@ -2424,12 +2424,12 @@ public partial class MainForm : Form
                     if (ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].Tag].IsEnabled == true)
                     {
                         this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].ImageIndex = 1;
-                        this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].SubItems[5].Text = StringFactory.GetString(50, MainForm.CurrentLanguage);
+                        this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(50, MainForm.CurrentLanguage);
                     }
                     else
                     {
                         this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].ImageIndex = 0;
-                        this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].SubItems[5].Text = StringFactory.GetString(47, MainForm.CurrentLanguage);
+                        this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].SubItems[5].Text = ServerStringFactory.GetString(47, MainForm.CurrentLanguage);
                     }
 
                     if (ClientsNetworkSecurity.UserAccount.UsersAccounts[(int)this.listView_ClientsAccounts_ClientsAccounts.Items[int_CycleCount].Tag].IsActivated == true)
@@ -2453,7 +2453,7 @@ public partial class MainForm : Form
     {
         if (this.listView_CommonEventsLog_LogList.Items.Count == 0) return;
 
-        if (MessageBox.Show(StringFactory.GetString(213, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(213, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) //!! исправить ID GetString! 213 для теста
         {
             return;
@@ -2468,7 +2468,7 @@ public partial class MainForm : Form
     {
         if (this.listView_ClientsEventsLog_LogList.Items.Count == 0) return;
 
-        if (MessageBox.Show(StringFactory.GetString(213, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(213, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) //!! исправить ID GetString! 213 для теста
         {
             return;
@@ -2483,7 +2483,7 @@ public partial class MainForm : Form
     {
         if (this.listView_CommonEventsLog_LogList.Items.Count == 0) return;
 
-        if (MessageBox.Show(StringFactory.GetString(213, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        if (MessageBox.Show(ServerStringFactory.GetString(213, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             != DialogResult.Yes) //!! исправить ID GetString! 213 для теста
         {
             return;
@@ -2552,7 +2552,7 @@ public partial class MainForm : Form
 
         else
         {
-            MessageBox.Show(StringFactory.GetString(41, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            MessageBox.Show(ServerStringFactory.GetString(41, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
     }
 
@@ -2616,7 +2616,7 @@ public partial class MainForm : Form
 
         else
         {
-            MessageBox.Show(StringFactory.GetString(41, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            MessageBox.Show(ServerStringFactory.GetString(41, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
     }
 
@@ -2680,7 +2680,7 @@ public partial class MainForm : Form
 
         else
         {
-            MessageBox.Show(StringFactory.GetString(41, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            MessageBox.Show(ServerStringFactory.GetString(41, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
     }
 

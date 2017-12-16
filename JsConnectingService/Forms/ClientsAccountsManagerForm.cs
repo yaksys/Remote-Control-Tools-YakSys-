@@ -45,29 +45,29 @@ public class ClientsAccountsManagerForm : System.Windows.Forms.Form
 
     void ChangeControlsLanguage()
     {
-        this.Text = StringFactory.GetString(129, MainForm.CurrentLanguage);
+        this.Text = ServerStringFactory.GetString(129, MainForm.CurrentLanguage);
 
-        this.groupBox_UsersAccountsManagerForm_AccountInformation.Text = StringFactory.GetString(140, MainForm.CurrentLanguage);
-        this.groupBox_UsersAccountsManagerForm_AdditionalInformation.Text = StringFactory.GetString(141, MainForm.CurrentLanguage);
+        this.groupBox_UsersAccountsManagerForm_AccountInformation.Text = ServerStringFactory.GetString(140, MainForm.CurrentLanguage);
+        this.groupBox_UsersAccountsManagerForm_AdditionalInformation.Text = ServerStringFactory.GetString(141, MainForm.CurrentLanguage);
 
-        this.label_UsersAccountsManagerForm_UIN.Text = StringFactory.GetString(17, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_UserName.Text = StringFactory.GetString(142, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_NewPassword.Text = StringFactory.GetString(16, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_ConfirmedPassword.Text = StringFactory.GetString(130, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_UIN.Text = ServerStringFactory.GetString(17, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_UserName.Text = ServerStringFactory.GetString(142, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_NewPassword.Text = ServerStringFactory.GetString(16, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_ConfirmedPassword.Text = ServerStringFactory.GetString(130, MainForm.CurrentLanguage);
 
-        this.label_UsersAccountsManagerForm_FirstName.Text = StringFactory.GetString(131, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_LastName.Text = StringFactory.GetString(132, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_MiddleName.Text = StringFactory.GetString(133, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_EMailAddress.Text = StringFactory.GetString(134, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_ICQ.Text = StringFactory.GetString(135, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_Company.Text = StringFactory.GetString(136, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_HomePhone.Text = StringFactory.GetString(137, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_WorkPhone.Text = StringFactory.GetString(138, MainForm.CurrentLanguage);
-        this.label_UsersAccountsManagerForm_PrivateCellular.Text = StringFactory.GetString(139, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_FirstName.Text = ServerStringFactory.GetString(131, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_LastName.Text = ServerStringFactory.GetString(132, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_MiddleName.Text = ServerStringFactory.GetString(133, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_EMailAddress.Text = ServerStringFactory.GetString(134, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_ICQ.Text = ServerStringFactory.GetString(135, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_Company.Text = ServerStringFactory.GetString(136, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_HomePhone.Text = ServerStringFactory.GetString(137, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_WorkPhone.Text = ServerStringFactory.GetString(138, MainForm.CurrentLanguage);
+        this.label_UsersAccountsManagerForm_PrivateCellular.Text = ServerStringFactory.GetString(139, MainForm.CurrentLanguage);
 
-        this.button_UsersAccountsManagerForm_Add.Text = StringFactory.GetString(23, MainForm.CurrentLanguage);
-        this.button_UsersAccountsManagerForm_Apply.Text = StringFactory.GetString(79, MainForm.CurrentLanguage);
-        this.button_UsersAccountsManagerForm_Cancel.Text = StringFactory.GetString(86, MainForm.CurrentLanguage);
+        this.button_UsersAccountsManagerForm_Add.Text = ServerStringFactory.GetString(23, MainForm.CurrentLanguage);
+        this.button_UsersAccountsManagerForm_Apply.Text = ServerStringFactory.GetString(79, MainForm.CurrentLanguage);
+        this.button_UsersAccountsManagerForm_Cancel.Text = ServerStringFactory.GetString(86, MainForm.CurrentLanguage);
     }
 
 
@@ -455,8 +455,8 @@ public class ClientsAccountsManagerForm : System.Windows.Forms.Form
         || this.textBox_UsersAccountsManagerForm_ConfirmedPassword.Text.Length == 0
         || this.textBox_UsersAccountsManagerForm_UserName.Text.Length == 0)
         {
-            MessageBox.Show(StringFactory.GetString(60, MainForm.CurrentLanguage),
-            StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(ServerStringFactory.GetString(60, MainForm.CurrentLanguage),
+            ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             return;
         }
@@ -472,8 +472,8 @@ public class ClientsAccountsManagerForm : System.Windows.Forms.Form
         {
             if (ClientsNetworkSecurity.UserAccount.UsersAccounts[int_intCycleCount].UIN == this.textBox_UsersAccountsManagerForm_Login.Text)
             {
-                MessageBox.Show(StringFactory.GetString(61, MainForm.CurrentLanguage),
-                StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ServerStringFactory.GetString(61, MainForm.CurrentLanguage),
+                ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 return;
             }
@@ -481,7 +481,7 @@ public class ClientsAccountsManagerForm : System.Windows.Forms.Form
 
         if (this.textBox_UsersAccountsManagerForm_NewPassword.Text != this.textBox_UsersAccountsManagerForm_ConfirmedPassword.Text)
         {
-            MessageBox.Show(StringFactory.GetString(115, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(ServerStringFactory.GetString(115, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             return;
         }
@@ -521,7 +521,7 @@ public class ClientsAccountsManagerForm : System.Windows.Forms.Form
 
         #region Call Log Event
 
-        ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), userAccount_NewAccount.UserName, userAccount_NewAccount.UIN, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(45, MainForm.CurrentLanguage), false);
+        ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), userAccount_NewAccount.UserName, userAccount_NewAccount.UIN, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(45, MainForm.CurrentLanguage), false);
 
         #endregion
 

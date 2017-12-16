@@ -8,7 +8,7 @@ using YakSys.Compression;
 using System.Net;
 using YakSysConnectingService;
 using System.Threading;
-
+using YakSys;
 
 
 public class CommonNetworkEvents
@@ -354,7 +354,7 @@ public class ClientAccountsAndAccessRestrictionRulesEnvironment
     {
         ClientsAccessRestrictionRulesManagerForm accessRestrictionRulesManagerForm_obj = new ClientsAccessRestrictionRulesManagerForm();
 
-        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ClientsAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -424,7 +424,7 @@ public class ClientAccountsAndAccessRestrictionRulesEnvironment
     {
         ClientsAccessRestrictionRulesManagerForm accessRestrictionRulesManagerForm_obj = new ClientsAccessRestrictionRulesManagerForm();
 
-        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ClientsAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -472,7 +472,7 @@ public class ClientAccountsAndAccessRestrictionRulesEnvironment
     {
         UsersAccountsManagerForm usersAccountsManagerForm_obj = new UsersAccountsManagerForm();
 
-        usersAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        usersAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.SecurityDataBase.Rows.Count == 0) return;
 
@@ -510,7 +510,7 @@ public class ClientAccountsAndAccessRestrictionRulesEnvironment
     {
         UsersAccountsManagerForm usersAccountsManagerForm_obj = new UsersAccountsManagerForm();
 
-        usersAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        usersAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.SecurityDataBase.Rows.Count == 0) return;
 
@@ -566,7 +566,7 @@ public class ServerAccountsAndAccessRestrictionRulesEnvironment
     {
         ServersAccessRestrictionRulesManagerForm accessRestrictionRulesManagerForm_obj = new ServersAccessRestrictionRulesManagerForm();
 
-        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ServersAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -636,7 +636,7 @@ public class ServerAccountsAndAccessRestrictionRulesEnvironment
     {
         ServersAccessRestrictionRulesManagerForm accessRestrictionRulesManagerForm_obj = new ServersAccessRestrictionRulesManagerForm();
 
-        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        accessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ServersAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -684,7 +684,7 @@ public class ServerAccountsAndAccessRestrictionRulesEnvironment
     {
         UsersAccountsManagerForm usersAccountsManagerForm_obj = new UsersAccountsManagerForm();
 
-        usersAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        usersAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.SecurityDataBase.Rows.Count == 0) return;
 
@@ -722,7 +722,7 @@ public class ServerAccountsAndAccessRestrictionRulesEnvironment
     {
         UsersAccountsManagerForm usersAccountsManagerForm_obj = new UsersAccountsManagerForm();
 
-        usersAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        usersAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.SecurityDataBase.Rows.Count == 0) return;
 
@@ -1162,7 +1162,7 @@ public class CommonEnvironment
     {
         ClientsAccessRestrictionRulesManagerForm clientsAccessRestrictionRulesManagerForm_obj = new ClientsAccessRestrictionRulesManagerForm();
 
-        clientsAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        clientsAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ClientsAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -1232,7 +1232,7 @@ public class CommonEnvironment
     {
         ClientsAccessRestrictionRulesManagerForm clientsAccessRestrictionRulesManagerForm_obj = new ClientsAccessRestrictionRulesManagerForm();
 
-        clientsAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        clientsAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ClientsAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -1278,7 +1278,7 @@ public class CommonEnvironment
     {
         ClientsAccountsManagerForm clientsAccountsManagerForm_obj = new ClientsAccountsManagerForm();
 
-        clientsAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        clientsAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ClientsSecurityDataBase.Rows.Count == 0) return;
 
@@ -1329,7 +1329,7 @@ public class CommonEnvironment
     {
         ClientsAccountsManagerForm clientsAccountsManagerForm_obj = new ClientsAccountsManagerForm();
 
-        clientsAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        clientsAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ClientsSecurityDataBase.Rows.Count == 0) return;
 
@@ -1371,7 +1371,7 @@ public class CommonEnvironment
     {
         ServersAccessRestrictionRulesManagerForm serversAccessRestrictionRulesManagerForm_obj = new ServersAccessRestrictionRulesManagerForm();
 
-        serversAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        serversAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ServersAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -1441,7 +1441,7 @@ public class CommonEnvironment
     {
         ServersAccessRestrictionRulesManagerForm serversAccessRestrictionRulesManagerForm_obj = new ServersAccessRestrictionRulesManagerForm();
 
-        serversAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        serversAccessRestrictionRulesManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ServersAccessRestrictionRules.Rows.Count == 0) return;
 
@@ -1487,7 +1487,7 @@ public class CommonEnvironment
     {
         ServersAccountsManagerForm serversAccountsManagerForm_obj = new ServersAccountsManagerForm();
 
-        serversAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        serversAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ServersSecurityDataBase.Rows.Count == 0) return;
 
@@ -1538,7 +1538,7 @@ public class CommonEnvironment
     {
         ServersAccountsManagerForm serversAccountsManagerForm_obj = new ServersAccountsManagerForm();
 
-        serversAccountsManagerForm_obj.OverrideCancelButton.Text = StringFactory.GetString(143, MainForm.CurrentLanguage);
+        serversAccountsManagerForm_obj.OverrideCancelButton.Text = ServerStringFactory.GetString(143, MainForm.CurrentLanguage);
 
         if (ConnectingServiceDBSupplier.ConnectingServiceDB.ServersSecurityDataBase.Rows.Count == 0) return;
 

@@ -515,7 +515,7 @@ public class ClientsNetworkSecurity : MarshalByRefObject
                 {       
                     bool_IsAuthUser = true;
 
-                    baseConnectedObject_obj.NetworkInformation_AccountType = StringFactory.GetString(756, MainForm.CurrentLanguage);
+                    baseConnectedObject_obj.NetworkInformation_AccountType = ServerStringFactory.GetString(756, MainForm.CurrentLanguage);
                     baseConnectedObject_obj.NetworkInformation_UserName = userAccount_CurrentUser.UserName;
                 }
 
@@ -1628,7 +1628,7 @@ public class ServersNetworkSecurity : MarshalByRefObject
                 {
                     bool_IsAuthUser = true;
 
-                    baseConnectedObject_obj.NetworkInformation_AccountType = StringFactory.GetString(756, MainForm.CurrentLanguage);
+                    baseConnectedObject_obj.NetworkInformation_AccountType = ServerStringFactory.GetString(756, MainForm.CurrentLanguage);
                     baseConnectedObject_obj.NetworkInformation_UserName = userAccount_CurrentUser.UserName;
                 }
 

@@ -15,6 +15,7 @@ using System.Collections;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading;
+using System.Windows.Media.Imaging;
 
 namespace Remote_Control_Tools_ProcWindow
 {
@@ -34,7 +35,7 @@ namespace Remote_Control_Tools_ProcWindow
 
                 RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.ClipboardWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_ClipboardWrapper_URI");
 
-            //!!!    RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
+                RemotingConfiguration.RegisterWellKnownClientType(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
                 
             }
             catch (Exception ex)
@@ -61,20 +62,20 @@ namespace Remote_Control_Tools_ProcWindow
 
         public static ProcWindowService.MicrophoneRecordWrapper obj_MicrophoneRecordWrapper = (ProcWindowService.MicrophoneRecordWrapper)Activator.GetObject(typeof(ProcWindowService.MicrophoneRecordWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_MicrophoneRecordWrapper_URI");
 
-  //!!!      public static ProcWindowService.KeyboardMouseInputWrapper obj_KeyboardMouseInputWrapper = (ProcWindowService.KeyboardMouseInputWrapper)Activator.GetObject(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
+  //!!! public static ProcWindowService.KeyboardMouseInputWrapper obj_KeyboardMouseInputWrapper = (ProcWindowService.KeyboardMouseInputWrapper)Activator.GetObject(typeof(ProcWindowService.KeyboardMouseInputWrapper), "ipc://YakSys RCT Server Service IPC Port/YakSys RCT Server/ClassObj_ProcWindowService_KeyboardMouseInputWrapper_URI");
 
 
         public static Form_Main formMain_obj = null;
 
         public static LocalAction localAction_obj = new LocalAction();
 
-      //  public static SoundCapture soundCapture_obj;// = new SoundCapture();
+      //public static SoundCapture soundCapture_obj;// = new SoundCapture();
     }
 
 
    
 
-    /*
+   
     class KeyboardMouseInputService
     {
         bool bool_NewMouseInputEventrise = false;
@@ -98,12 +99,9 @@ namespace Remote_Control_Tools_ProcWindow
             ProcWindowService.KeyboardMouseInputWrapper.KeyboardEvent += new ProcWindowService.KeyboardMouseInputWrapper.KeyboardEventDelegate(KeyboardEventProcess);
         }
 
-
         int int_KeyboardEventType, int_KeyboardKey, int_KeyboardModifierKey, int_Keyboard_TypeOfSequence;
 
         int MouseEventType, MouseButton, MouseClickCount, Mouse_X_Coord, Mouse_Y_Coord;
-
-
 
         public void MouseJobsWatcher()
         {
@@ -111,24 +109,14 @@ namespace Remote_Control_Tools_ProcWindow
         }
 
     }
-    */
+ 
 
     
 
     public class LocalAction
     {
-
-     
-
-
-
-
-
-
         #region ExecuteProcess Method
-
-
-
+        
         void ExecuteProcess()
         {
             ProcessStartInfo ExecutingProcessStartInfo = new ProcessStartInfo();
@@ -543,7 +531,7 @@ namespace Remote_Control_Tools_ProcWindow
         public static extern IntPtr GetDesktopWindow();
 
         #endregion
-
+        
         public void ScreenForRTRDVWatcher()
         {
             try
@@ -628,7 +616,7 @@ namespace Remote_Control_Tools_ProcWindow
                     {                                     
                         Thread.Sleep(10);
                     }
-                                        
+
                     /////////////// DX capture for test
                     /*
                     bitmap_DxScreenCapture = (Bitmap)ScreenCapture.Direct3DCapture.CaptureWindow(GetDesktopWindow());
@@ -648,16 +636,20 @@ namespace Remote_Control_Tools_ProcWindow
                     */
                     ///////////////
 
+
+
                     graphics_Screen.CopyFromScreen(0, 0, 0, 0, new Size(int16_ScreenWidthSize, int16_ScreenHeightSize));
+
+
 
                     bitmapData_obj = bitmap_ScreenCopy.LockBits(new Rectangle(0, 0, bitmap_ScreenCopy.Width, bitmap_ScreenCopy.Height), ImageLockMode.ReadWrite, pixelFormat_CurrentFormat);
                     
-                    intPtr_BitmapPixelPtr = bitmapData_obj.Scan0;
-
-                    Marshal.Copy(intPtr_BitmapPixelPtr, byteArray_ScreenCopy, 0, byteArray_ScreenCopy.Length);
+                    Marshal.Copy(bitmapData_obj.Scan0, byteArray_ScreenCopy, 0, byteArray_ScreenCopy.Length);
 
                     bitmap_ScreenCopy.UnlockBits(bitmapData_obj);
-                    
+                 
+
+
                     LocalObjCopy.obj_RTDVContainer.RemotingWrapper_ScreenHeightSize = (Int16)bitmap_ScreenCopy.Height;
                     LocalObjCopy.obj_RTDVContainer.RemotingWrapper_ScreenWidthSize = (Int16)bitmap_ScreenCopy.Width;
                     LocalObjCopy.obj_RTDVContainer.RemotingWrapper_ScreenBitsPerPixel = (Int16)int16_ScreenBitsPerPixel;

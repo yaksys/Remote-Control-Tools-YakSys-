@@ -670,8 +670,6 @@
             // 
             // checkBox_CSPForm_ServerAuth_UseYakSysCSPServer
             // 
-            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Checked = true;
-            this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Location = new System.Drawing.Point(14, 24);
             this.checkBox_CSPForm_ServerAuth_UseYakSysCSPServer.Name = "checkBox_CSPForm_ServerAuth_UseYakSysCSPServer";

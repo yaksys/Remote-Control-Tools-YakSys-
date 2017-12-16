@@ -511,9 +511,7 @@ namespace YakSys
                 public static string string_TextData = string.Empty;
                 public static Image image_ImageData = null;
                 public static System.Collections.Specialized.StringCollection stringCollection_FileDropListData = null;
-
-
-               
+                             
 
                 public static void ClearPreviousDataValues()
                 {                  
@@ -598,7 +596,6 @@ namespace YakSys
                     return false;
                 }
 
-
                 public void SetClipBoardImageBytes(byte[] byteArray_ScreenCopy)
                 {
                     if (byteArray_ScreenCopy == null) return;
@@ -625,7 +622,6 @@ namespace YakSys
                     return memoryStream_Image.ToArray();
                 }
 
-
                 public static void ClearData()
                 {
                     string_TextData = string.Empty;
@@ -635,7 +631,6 @@ namespace YakSys
                     stringCollection_FileDropListData = null;
                 }
 
-
                 public static void NewClipBoardJob(bool bool_IsSetNewDataJobType)
                 {
                     IsSetDataJob = bool_IsSetNewDataJobType;
@@ -644,7 +639,6 @@ namespace YakSys
 
                     NeedToRefreshFlag = true;
                 }
-
 
                 static bool bool_NeedToRefreshFlag = false;
                 public static bool NeedToRefreshFlag
@@ -720,17 +714,14 @@ namespace YakSys
 
             }
 
-            /*
+      
             [Serializable]
             public class KeyboardMouseInputWrapper : MarshalByRefObject
             {
                 public override object InitializeLifetimeService()
                 {
                     return null;
-                    //Returning null holds the object alive
-                    //until it is explicitly destroyed
                 }
-
                 
                 public static void OnMouseEvent(int int_MouseEventType, int int_MouseButtonNum, int int_MouseClicksCount, int int_X, int int_Y)
                 {
@@ -740,8 +731,7 @@ namespace YakSys
                 public static void OnKeybardEvent(int int_KeyboardEventType, int int_Key, int int_ModifierKey, int int_TypeOfSequence)
                 {
                     KeyboardMouseInputWrapper.KeyboardEvent(int_KeyboardEventType, int_Key, int_ModifierKey, int_TypeOfSequence);
-                }
-                
+                }                
 
                 public delegate void KeyboardEventDelegate(int int_KeyboardEventType, int int_Key, int int_ModifierKey, int int_TypeOfSequence);
                 public static event KeyboardEventDelegate KeyboardEvent;
@@ -751,7 +741,7 @@ namespace YakSys
 
             }
 
-            */
+           
 
 
 
@@ -1739,7 +1729,7 @@ namespace YakSys
                 memoryStream_ReceivedData.Close();
 
                 SetMouseMoveEvent(int_XCoord, int_YCoord);
-                //NET REMOTING RPC EVENT PROMLEM ProcWindowService.KeyboardMouseInputWrapper.OnMouseEvent(0, 0, 0, int_XCoord, int_YCoord);
+                //!!NET REMOTING RPC EVENT PROMLEM ProcWindowService.KeyboardMouseInputWrapper.OnMouseEvent(0, 0, 0, int_XCoord, int_YCoord);
             }
             void SetMouseButtonClickEvent()
             {

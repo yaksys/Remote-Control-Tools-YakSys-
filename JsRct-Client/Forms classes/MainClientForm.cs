@@ -573,11 +573,11 @@ public class MainClientForm : System.Windows.Forms.Form
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("HKEY_CLASSES_ROOT");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("HKEY_CURRENT_USER");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("HKEY_LOCAL_MACHINE");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("HKEY_USERS");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("HKEY_CURRENT_CONFIG");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("HKEY_CLASSES_ROOT");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("HKEY_CURRENT_USER");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("HKEY_LOCAL_MACHINE");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("HKEY_USERS");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("HKEY_CURRENT_CONFIG");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainClientForm));
             this.splitContainer_RemoteRegistry_MainSplit = new System.Windows.Forms.SplitContainer();
             this.treeView_RemoteRegistry_NodesTree = new System.Windows.Forms.TreeView();
@@ -1224,22 +1224,22 @@ public class MainClientForm : System.Windows.Forms.Form
             this.treeView_RemoteRegistry_NodesTree.ImageList = this.imageList_RemoteRegistry;
             this.treeView_RemoteRegistry_NodesTree.Location = new System.Drawing.Point(0, 0);
             this.treeView_RemoteRegistry_NodesTree.Name = "treeView_RemoteRegistry_NodesTree";
-            treeNode1.Name = "";
-            treeNode1.Text = "HKEY_CLASSES_ROOT";
-            treeNode2.Name = "";
-            treeNode2.Text = "HKEY_CURRENT_USER";
-            treeNode3.Name = "";
-            treeNode3.Text = "HKEY_LOCAL_MACHINE";
-            treeNode4.Name = "";
-            treeNode4.Text = "HKEY_USERS";
-            treeNode5.Name = "";
-            treeNode5.Text = "HKEY_CURRENT_CONFIG";
+            treeNode6.Name = "";
+            treeNode6.Text = "HKEY_CLASSES_ROOT";
+            treeNode7.Name = "";
+            treeNode7.Text = "HKEY_CURRENT_USER";
+            treeNode8.Name = "";
+            treeNode8.Text = "HKEY_LOCAL_MACHINE";
+            treeNode9.Name = "";
+            treeNode9.Text = "HKEY_USERS";
+            treeNode10.Name = "";
+            treeNode10.Text = "HKEY_CURRENT_CONFIG";
             this.treeView_RemoteRegistry_NodesTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10});
             this.treeView_RemoteRegistry_NodesTree.SelectedImageIndex = 0;
             this.treeView_RemoteRegistry_NodesTree.Size = new System.Drawing.Size(290, 513);
             this.treeView_RemoteRegistry_NodesTree.TabIndex = 0;
@@ -6898,6 +6898,8 @@ public class MainClientForm : System.Windows.Forms.Form
         ObjCopy.obj_MiniRTDVForm.Hide();
 
         Application.Run(ObjCopy.obj_MainClientForm);
+        
+        
     }
 
     public MainClientForm()
@@ -6907,6 +6909,9 @@ public class MainClientForm : System.Windows.Forms.Form
         this.comboBox_NetworkControl_ConnectionTimeOut.SelectedIndex = 2;
 
         timer_MainFormTimer.Start();   
+
+       
+
 
     }
 
@@ -6923,6 +6928,7 @@ public class MainClientForm : System.Windows.Forms.Form
 
         //ObjCopy.obj_SoundPlayAndCapture = new SoundPlayAndCapture();
 
+     
 
         ObjCopy.obj_MainClientForm.BringToFront();
     }
@@ -6945,7 +6951,7 @@ public class MainClientForm : System.Windows.Forms.Form
         {
             ObjCopy.obj_MiniRTDVForm.Show(); 
         }
-
+        
         this.Deactivate += new System.EventHandler(this.MainClientForm_Deactivate);
         this.Activated += new System.EventHandler(this.MainClientForm_Activated);
     }

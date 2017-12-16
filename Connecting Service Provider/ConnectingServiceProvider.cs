@@ -1689,14 +1689,13 @@ namespace CSP
 
                     if (int_LastConnectionCheck > 10000)
                     {
-                        //    ConnectionLostProcess();
+                        baseChannelObject_obj.Close();
                     }
                 }
             }
 
             catch (Exception exception_obj)
-            {
-                //  DisconnectFromServer();           
+            {         
 
                 return;
             }
@@ -3390,6 +3389,7 @@ namespace CSP
                 connectedClient_obj.SystemChannel.ConnectingObjectTypeInfo = ConnectingObjectType.Client;
 
                 //--------------------------------------------------------------------------------------------------------------------------------------------
+                   
 
                 connectedClient_obj.AppliedChannel = new ConnectedClient.AppliedClientChannel();
 
@@ -3401,7 +3401,10 @@ namespace CSP
 
                 //--------------------------------------------------------------------------------------------------------------------------------------------
 
+
                 new ConnectingServiceProvider().ConnectObjectToYakSysConnectingService(string_Host, int_Port, ulong_UIN, ulong_InterConnectedUIN, string_Password, CSPRemoteCallAction.ConnectingObjectType.Client, CSPRemoteCallAction.ConnectingChannelObjectType.SystemChannel, connectedClient_obj.SystemChannel);
+
+
 
                 new CommonMethods().WaitForOperationCompleting(ref connectedClient_obj.AppliedChannel.ulong_ChannelUID, 0, 10000);//увеличено до 10 сек
 
@@ -3422,8 +3425,9 @@ namespace CSP
 
                 return;
             }
-            catch
+            catch(Exception ex)
             {
+               
             }
         }
 

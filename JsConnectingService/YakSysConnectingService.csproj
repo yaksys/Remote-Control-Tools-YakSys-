@@ -58,7 +58,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ConnectingService Xml Config Importer">
-      <HintPath>..\ConnectingService Xml Config Importer\ConnectingService Xml Config Importer\bin\Release\ConnectingService Xml Config Importer.dll</HintPath>
+      <HintPath>..\ConnectingService Xml Config Importer\ConnectingService Xml Config Importer\bin\Debug\ConnectingService Xml Config Importer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -73,17 +73,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\WMIClassesInfoRetriver\bin\Release\WMIClassesInfoRetriver.dll</HintPath>
     </Reference>
-    <Reference Include="YakSysCompressionLib">
-      <HintPath>..\JsCompressionLib\bin\Release\YakSysCompressionLib.dll</HintPath>
-    </Reference>
-    <Reference Include="YakSysRctClientLngPack">
-      <HintPath>..\JsRctClientLngPack\bin\Release\YakSysRctClientLngPack.dll</HintPath>
+    <Reference Include="YakSysCompressionLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JsCompressionLib\bin\Debug\YakSysCompressionLib.dll</HintPath>
     </Reference>
     <Reference Include="YakSysRctServerLangPack">
-      <HintPath>..\JsRctServerLangPack\bin\Release\YakSysRctServerLangPack.dll</HintPath>
-    </Reference>
-    <Reference Include="YakSysServerInstallerLangPack">
-      <HintPath>..\JsServerInstallerLangPack\bin\Release\YakSysServerInstallerLangPack.dll</HintPath>
+      <HintPath>..\JsRctServerLangPack\bin\Debug\YakSysRctServerLangPack.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

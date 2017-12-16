@@ -67,6 +67,7 @@
             this.Closing += new System.ComponentModel.CancelEventHandler(this.MiniRTDVForm_Closing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MiniRTDVForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MiniRTDVForm_KeyUp);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MiniRTDVForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MiniRTDV)).EndInit();
             this.ResumeLayout(false);
 

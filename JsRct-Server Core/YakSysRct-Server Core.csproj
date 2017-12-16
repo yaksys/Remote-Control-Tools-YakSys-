@@ -58,7 +58,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Connecting Service Provider">
+    <Reference Include="Connecting Service Provider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Connecting Service Provider\bin\Debug\Connecting Service Provider.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -74,6 +75,10 @@
     </Reference>
     <Reference Include="YakSysCompressionLib">
       <HintPath>..\JsCompressionLib\bin\Debug\YakSysCompressionLib.dll</HintPath>
+    </Reference>
+    <Reference Include="YakSysProxyProvider, Version=1.1.6550.10179, Culture=neutral, PublicKeyToken=933f0330019bf75f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Connecting Service Provider\bin\Debug\YakSysProxyProvider.dll</HintPath>
     </Reference>
     <Reference Include="YakSysRct Xml Config Importer">
       <HintPath>..\JsRct Xml Config Importer\bin\Debug\YakSysRct Xml Config Importer.dll</HintPath>

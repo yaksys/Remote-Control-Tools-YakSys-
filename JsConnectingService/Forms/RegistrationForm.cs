@@ -26,19 +26,19 @@ public class RegistrationForm : System.Windows.Forms.Form
 	{
 		InitializeComponent();
 	
-		this.label_Name.Text = StringFactory.GetString(75, MainForm.CurrentLanguage);
+		this.label_Name.Text = ServerStringFactory.GetString(75, MainForm.CurrentLanguage);
 		
-		this.Text = this.groupBox_KeyApply.Text = StringFactory.GetString(76, MainForm.CurrentLanguage);
+		this.Text = this.groupBox_KeyApply.Text = ServerStringFactory.GetString(76, MainForm.CurrentLanguage);
 		
-		this.label_RegistrationNumber.Text = StringFactory.GetString(77, MainForm.CurrentLanguage);
+		this.label_RegistrationNumber.Text = ServerStringFactory.GetString(77, MainForm.CurrentLanguage);
 			
-		this.richTextBox_RegInfo.Text = StringFactory.GetString(78, MainForm.CurrentLanguage);
+		this.richTextBox_RegInfo.Text = ServerStringFactory.GetString(78, MainForm.CurrentLanguage);
 		
-		this.button_Apply.Text = StringFactory.GetString(79, MainForm.CurrentLanguage);
+		this.button_Apply.Text = ServerStringFactory.GetString(79, MainForm.CurrentLanguage);
 		
-		this.button_BuyOnline.Text = StringFactory.GetString(80, MainForm.CurrentLanguage);
+		this.button_BuyOnline.Text = ServerStringFactory.GetString(80, MainForm.CurrentLanguage);
 		
-		this.button_ContinueUnregistered.Text = StringFactory.GetString(81, MainForm.CurrentLanguage);		
+		this.button_ContinueUnregistered.Text = ServerStringFactory.GetString(81, MainForm.CurrentLanguage);		
 	}
 
 
@@ -205,7 +205,7 @@ public class RegistrationForm : System.Windows.Forms.Form
 	{
 		if(textBox_Name.Text.Length < 1 || textBox_RegistrationNumber.Text.Length < 1) 
 		{
-			MessageBox.Show(StringFactory.GetString(82, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+			MessageBox.Show(ServerStringFactory.GetString(82, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 			
 			return;
 		}
@@ -213,14 +213,14 @@ public class RegistrationForm : System.Windows.Forms.Form
         /*
         if (ObjCopy.obj_MainForm.CheckSN(textBox_Name.Text, textBox_RegistrationNumber.Text) == 1) 
 		{
-			MessageBox.Show(StringFactory.GetString(83, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+			MessageBox.Show(ServerStringFactory.GetString(83, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 			
 			Close();
 
 			return;
 		}	
 			
-		else MessageBox.Show(StringFactory.GetString(84, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));*/
+		else MessageBox.Show(ServerStringFactory.GetString(84, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));*/
 	}
 
 	private void button_ContinueUnregistered_Click(object sender, System.EventArgs e)

@@ -144,15 +144,15 @@ using System.Security.Cryptography;
 		
 		public void ChangeControlsLanguage()
 		{
-			this.Text = StringFactory.GetString(117, MainForm.CurrentLanguage);
+			this.Text = ServerStringFactory.GetString(117, MainForm.CurrentLanguage);
 
-			this.label_PasswordPromptForm_Password.Text = StringFactory.GetString(16, MainForm.CurrentLanguage);
+			this.label_PasswordPromptForm_Password.Text = ServerStringFactory.GetString(16, MainForm.CurrentLanguage);
 			
-			this.label_PasswordPromptForm_Descpription.Text = StringFactory.GetString(151, MainForm.CurrentLanguage);
+			this.label_PasswordPromptForm_Descpription.Text = ServerStringFactory.GetString(151, MainForm.CurrentLanguage);
 			
-			this.button_PasswordPromptForm_Cancel.Text = StringFactory.GetString(86, MainForm.CurrentLanguage);
+			this.button_PasswordPromptForm_Cancel.Text = ServerStringFactory.GetString(86, MainForm.CurrentLanguage);
 		
-			this.button_PasswordPromptForm_Accept.Text = StringFactory.GetString(119, MainForm.CurrentLanguage);
+			this.button_PasswordPromptForm_Accept.Text = ServerStringFactory.GetString(119, MainForm.CurrentLanguage);
 		}
 
 	
@@ -210,7 +210,7 @@ using System.Security.Cryptography;
 				{
 					fileStream_ConnectingServiceXMLDB.Close();
 
-					MessageBox.Show(StringFactory.GetString(124, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+					MessageBox.Show(ServerStringFactory.GetString(124, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 			
 					this.Close();
 
@@ -230,7 +230,7 @@ using System.Security.Cryptography;
 
                     if (CommonMethods.AreBytesArraysEquals(byteArray_ComputedHashOfPasswordHash, byteArray_StoredHashOfPasswordHash) == false)
 					{
-						MessageBox.Show(StringFactory.GetString(126, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						MessageBox.Show(ServerStringFactory.GetString(126, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			
 						return;
 					}           
@@ -298,7 +298,7 @@ using System.Security.Cryptography;
 
 			catch(Exception)
 			{
-				MessageBox.Show(StringFactory.GetString(125, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage));
+				MessageBox.Show(ServerStringFactory.GetString(125, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage));
 			}
 			finally
 			{

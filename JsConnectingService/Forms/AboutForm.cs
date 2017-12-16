@@ -27,25 +27,25 @@ public class AboutForm : System.Windows.Forms.Form
 	{
 		InitializeComponent();
 
-		this.richTextBox_About.Text = StringFactory.GetString(2, MainForm.CurrentLanguage);
+		this.richTextBox_About.Text = ServerStringFactory.GetString(2, MainForm.CurrentLanguage);
 
-		this.Text = StringFactory.GetString(3, MainForm.CurrentLanguage);
+		this.Text = ServerStringFactory.GetString(3, MainForm.CurrentLanguage);
 		
-		this.button_BuyNow.Text = StringFactory.GetString(80, MainForm.CurrentLanguage);
+		this.button_BuyNow.Text = ServerStringFactory.GetString(80, MainForm.CurrentLanguage);
 		
-		this.groupBox_Contacts.Text = StringFactory.GetString(89, MainForm.CurrentLanguage);
+		this.groupBox_Contacts.Text = ServerStringFactory.GetString(89, MainForm.CurrentLanguage);
 
-		this.label_Title.Text = StringFactory.GetString(90, MainForm.CurrentLanguage);
+		this.label_Title.Text = ServerStringFactory.GetString(90, MainForm.CurrentLanguage);
 			
-		this.groupBox_RegistrationInformation.Text = StringFactory.GetString(91, MainForm.CurrentLanguage);
+		this.groupBox_RegistrationInformation.Text = ServerStringFactory.GetString(91, MainForm.CurrentLanguage);
 	
-		this.label_ProductCopyOwner.Text = StringFactory.GetString(92, MainForm.CurrentLanguage);
+		this.label_ProductCopyOwner.Text = ServerStringFactory.GetString(92, MainForm.CurrentLanguage);
 		
-		this.label_ProductSerialNumber.Text = StringFactory.GetString(93, MainForm.CurrentLanguage);
+		this.label_ProductSerialNumber.Text = ServerStringFactory.GetString(93, MainForm.CurrentLanguage);
 	
-		this.button_ActivateSerialNumber.Text = StringFactory.GetString(94, MainForm.CurrentLanguage);
+		this.button_ActivateSerialNumber.Text = ServerStringFactory.GetString(94, MainForm.CurrentLanguage);
 		
-		this.label_ProductNotRegistered.Text = StringFactory.GetString(95, MainForm.CurrentLanguage);
+		this.label_ProductNotRegistered.Text = ServerStringFactory.GetString(95, MainForm.CurrentLanguage);
 
 		
 		if(CommonEnvironment.IsProductRegistered == true)

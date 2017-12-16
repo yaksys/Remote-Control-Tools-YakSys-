@@ -46,41 +46,41 @@ public class SettingsForm : System.Windows.Forms.Form
 	
 	void ChangeControlsLanguage()
 	{	
-		this.Text = StringFactory.GetString(65, MainForm.CurrentLanguage);
+		this.Text = ServerStringFactory.GetString(65, MainForm.CurrentLanguage);
 		
-		this.groupBox_SettingsForm_Language.Text = StringFactory.GetString(66, MainForm.CurrentLanguage);
+		this.groupBox_SettingsForm_Language.Text = ServerStringFactory.GetString(66, MainForm.CurrentLanguage);
 	
-		this.label_SettingsForm_SelectLanguage.Text = StringFactory.GetString(118, MainForm.CurrentLanguage);
+		this.label_SettingsForm_SelectLanguage.Text = ServerStringFactory.GetString(118, MainForm.CurrentLanguage);
 	
 		this.comboBox_SettingsForm_Language.SelectedIndex = MainForm.CurrentLanguage;
 
-		this.checkBox_SettingsForm_AutoRun.Text = StringFactory.GetString(73, MainForm.CurrentLanguage);
+		this.checkBox_SettingsForm_AutoRun.Text = ServerStringFactory.GetString(73, MainForm.CurrentLanguage);
 		
-		this.checkBox_SettingsForm_StartServerAtRun.Text = StringFactory.GetString(71, MainForm.CurrentLanguage);
+		this.checkBox_SettingsForm_StartServerAtRun.Text = ServerStringFactory.GetString(71, MainForm.CurrentLanguage);
 		
-		this.checkBox_SettingsForm_MinimizeToNotifyAreaAfterStart.Text = StringFactory.GetString(72, MainForm.CurrentLanguage);
+		this.checkBox_SettingsForm_MinimizeToNotifyAreaAfterStart.Text = ServerStringFactory.GetString(72, MainForm.CurrentLanguage);
 	
 
-		this.groupBox_SettingsForm_StartUpParameters.Text = StringFactory.GetString(218, MainForm.CurrentLanguage);
+		this.groupBox_SettingsForm_StartUpParameters.Text = ServerStringFactory.GetString(218, MainForm.CurrentLanguage);
 	 
 	
-		this.groupBox_LocalSecurity_SecurityParameters.Text = StringFactory.GetString(107, MainForm.CurrentLanguage);
-		this.groupBox_LocalSecurity_UsedPassword.Text = StringFactory.GetString(106, MainForm.CurrentLanguage);	
+		this.groupBox_LocalSecurity_SecurityParameters.Text = ServerStringFactory.GetString(107, MainForm.CurrentLanguage);
+		this.groupBox_LocalSecurity_UsedPassword.Text = ServerStringFactory.GetString(106, MainForm.CurrentLanguage);	
 			
-		this.label_LocalSecurity_NewPassword.Text = StringFactory.GetString(104, MainForm.CurrentLanguage);		
-		this.label_LocalSecurity_ConfirmedPassword.Text = StringFactory.GetString(105, MainForm.CurrentLanguage);
+		this.label_LocalSecurity_NewPassword.Text = ServerStringFactory.GetString(104, MainForm.CurrentLanguage);		
+		this.label_LocalSecurity_ConfirmedPassword.Text = ServerStringFactory.GetString(105, MainForm.CurrentLanguage);
 
-		this.button_LocalSecurity_NewPassword.Text = StringFactory.GetString(102, MainForm.CurrentLanguage);
-		this.button_LocalSecurity_SetPassword.Text = StringFactory.GetString(103, MainForm.CurrentLanguage);
+		this.button_LocalSecurity_NewPassword.Text = ServerStringFactory.GetString(102, MainForm.CurrentLanguage);
+		this.button_LocalSecurity_SetPassword.Text = ServerStringFactory.GetString(103, MainForm.CurrentLanguage);
 
-		this.checkBox_LocalSecurity_CompressSettingsDatabase.Text = StringFactory.GetString(101, MainForm.CurrentLanguage);		
-		this.checkBox_LocalSecurity_EncryptSettingsDatabase.Text = StringFactory.GetString(100, MainForm.CurrentLanguage);
+		this.checkBox_LocalSecurity_CompressSettingsDatabase.Text = ServerStringFactory.GetString(101, MainForm.CurrentLanguage);		
+		this.checkBox_LocalSecurity_EncryptSettingsDatabase.Text = ServerStringFactory.GetString(100, MainForm.CurrentLanguage);
 
-		this.button_RestoreToDefaults.Text = StringFactory.GetString(108, MainForm.CurrentLanguage);
+		this.button_RestoreToDefaults.Text = ServerStringFactory.GetString(108, MainForm.CurrentLanguage);
 
-		this.button_SettingsForm_Cancel.Text = StringFactory.GetString(86, MainForm.CurrentLanguage);
+		this.button_SettingsForm_Cancel.Text = ServerStringFactory.GetString(86, MainForm.CurrentLanguage);
 
-		this.checkBox_SettingsForm_ActivateHiddenMode.Text = StringFactory.GetString(114, MainForm.CurrentLanguage);
+		this.checkBox_SettingsForm_ActivateHiddenMode.Text = ServerStringFactory.GetString(114, MainForm.CurrentLanguage);
 	}
 
 		
@@ -629,8 +629,8 @@ public class SettingsForm : System.Windows.Forms.Form
 	
 	private void button_RestoreToDefaults_Click(object sender, System.EventArgs e)
 	{
-		if(MessageBox.Show(StringFactory.GetString(110, MainForm.CurrentLanguage), 
-			StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo) != DialogResult.Yes)
+		if(MessageBox.Show(ServerStringFactory.GetString(110, MainForm.CurrentLanguage), 
+			ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.YesNo) != DialogResult.Yes)
 			return;
 
 		CommonEnvironment.AutoRun = this.checkBox_SettingsForm_AutoRun.Checked = false;
@@ -695,14 +695,14 @@ public class SettingsForm : System.Windows.Forms.Form
 
 		if(this.textBox_LocalSecurity_NewPassword.Text.Length < 6)
 		{
-			MessageBox.Show(StringFactory.GetString(116, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			MessageBox.Show(ServerStringFactory.GetString(116, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 
 			return;
 		}
 
 		if(this.textBox_LocalSecurity_NewPassword.Text != this.textBox_LocalSecurity_ConfirmedPassword.Text)
 		{
-			MessageBox.Show(StringFactory.GetString(115, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			MessageBox.Show(ServerStringFactory.GetString(115, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 
 			return;
 		}			

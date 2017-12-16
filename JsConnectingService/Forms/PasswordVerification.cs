@@ -38,29 +38,29 @@ using YakSys;
 
 		public void ChangeControlsLanguage()
 		{
-			this.Text = StringFactory.GetString(117, CurrentLanguage);
+			this.Text = ServerStringFactory.GetString(117, CurrentLanguage);
 
-			this.label_Title.Text = StringFactory.GetString(90, CurrentLanguage);
+			this.label_Title.Text = ServerStringFactory.GetString(90, CurrentLanguage);
 			
-			this.groupBox_Contacts.Text = StringFactory.GetString(89, CurrentLanguage);
+			this.groupBox_Contacts.Text = ServerStringFactory.GetString(89, CurrentLanguage);
 
-			this.richTextBox_About.Text = StringFactory.GetString(2, CurrentLanguage);
+			this.richTextBox_About.Text = ServerStringFactory.GetString(2, CurrentLanguage);
 
-			this.label_PasswordVerivicationForm_Password.Text = StringFactory.GetString(16, CurrentLanguage);
+			this.label_PasswordVerivicationForm_Password.Text = ServerStringFactory.GetString(16, CurrentLanguage);
 
-			this.groupBox_PasswordVerivicationForm_Language.Text = StringFactory.GetString(118, CurrentLanguage);
+			this.groupBox_PasswordVerivicationForm_Language.Text = ServerStringFactory.GetString(118, CurrentLanguage);
 			
-			this.label_PasswordVerivicationForm_CurrentLanguage.Text = StringFactory.GetString(66, CurrentLanguage);
+			this.label_PasswordVerivicationForm_CurrentLanguage.Text = ServerStringFactory.GetString(66, CurrentLanguage);
 		
-			this.button_PasswordVerivicationForm_Quit.Text = StringFactory.GetString(31, CurrentLanguage);
+			this.button_PasswordVerivicationForm_Quit.Text = ServerStringFactory.GetString(31, CurrentLanguage);
 			
-			this.button_PasswordVerivicationForm_Login.Text = StringFactory.GetString(119, CurrentLanguage);
+			this.button_PasswordVerivicationForm_Login.Text = ServerStringFactory.GetString(119, CurrentLanguage);
 			
-			this.button_PasswordVerivicationForm_LoginWithOutPassword.Text = StringFactory.GetString(122, CurrentLanguage);
+			this.button_PasswordVerivicationForm_LoginWithOutPassword.Text = ServerStringFactory.GetString(122, CurrentLanguage);
 		
-			this.groupBox_PasswordVerivicationForm_WhenPasswordLost.Text = StringFactory.GetString(121, CurrentLanguage);
+			this.groupBox_PasswordVerivicationForm_WhenPasswordLost.Text = ServerStringFactory.GetString(121, CurrentLanguage);
 		
-			this.label_PasswordVerivicationForm_LostPasswordDecription.Text = StringFactory.GetString(120, CurrentLanguage);
+			this.label_PasswordVerivicationForm_LostPasswordDecription.Text = ServerStringFactory.GetString(120, CurrentLanguage);
 		}
 
 
@@ -335,7 +335,7 @@ using YakSys;
 				{
 					fileStream_ConnectingServiceXMLDB.Close();
 
-					MessageBox.Show(StringFactory.GetString(124, CurrentLanguage), StringFactory.GetString(1, CurrentLanguage));
+					MessageBox.Show(ServerStringFactory.GetString(124, CurrentLanguage), ServerStringFactory.GetString(1, CurrentLanguage));
 			
 					this.bool_NeedToClose = true;
 
@@ -357,7 +357,7 @@ using YakSys;
 
                     if (CommonMethods.AreBytesArraysEquals(byteArray_ComputedHashOfPasswordHash, byteArray_StoredHashOfPasswordHash) == false)
 					{
-						MessageBox.Show(StringFactory.GetString(126, CurrentLanguage), StringFactory.GetString(1, CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						MessageBox.Show(ServerStringFactory.GetString(126, CurrentLanguage), ServerStringFactory.GetString(1, CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			
 						return;
 					}           
@@ -424,7 +424,7 @@ using YakSys;
 
 			catch(Exception)
 			{
-				MessageBox.Show(StringFactory.GetString(125, CurrentLanguage), StringFactory.GetString(1, CurrentLanguage));
+				MessageBox.Show(ServerStringFactory.GetString(125, CurrentLanguage), ServerStringFactory.GetString(1, CurrentLanguage));
 			}
 
 			finally
@@ -442,7 +442,7 @@ using YakSys;
 		
 		private void button_PasswordVerivicationForm_LoginWithOutPassword_Click(object sender, System.EventArgs e)
 		{					
-			if(DialogResult.No == MessageBox.Show( StringFactory.GetString(123, CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage),MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+			if(DialogResult.No == MessageBox.Show( ServerStringFactory.GetString(123, CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage),MessageBoxButtons.YesNo, MessageBoxIcon.Question))
 			return;
 		
 			try

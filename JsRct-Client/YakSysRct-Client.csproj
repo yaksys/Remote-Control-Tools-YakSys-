@@ -102,8 +102,9 @@
     <Reference Include="YakSysCompressionLib">
       <HintPath>..\JsRct Xml Config Importer\bin\Debug\YakSysCompressionLib.dll</HintPath>
     </Reference>
-    <Reference Include="YakSysProxyProvider">
-      <HintPath>..\JsProxyProvider\bin\Debug\YakSysProxyProvider.dll</HintPath>
+    <Reference Include="YakSysProxyProvider, Version=1.1.6550.10179, Culture=neutral, PublicKeyToken=933f0330019bf75f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Connecting Service Provider\bin\Debug\YakSysProxyProvider.dll</HintPath>
     </Reference>
     <Reference Include="YakSysRct Xml Config Importer">
       <HintPath>..\JsRct Xml Config Importer\bin\Debug\YakSysRct Xml Config Importer.dll</HintPath>

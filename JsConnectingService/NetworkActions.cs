@@ -709,7 +709,7 @@ public class BaseChannelObject : BaseConnectedObject
         clientsUserAccount_AssignedValue = new ClientsNetworkSecurity.UserAccount();
         serversUserAccount_AssignedValue = new ServersNetworkSecurity.UserAccount();
     }
-    
+
     public void Disconnect()
     {
         if (DisconnectionProcessed == true)
@@ -1150,7 +1150,7 @@ public class ConnectedClient
 
                 return;
             }
-        }       
+        }
     }
 
     #region properties
@@ -1800,7 +1800,7 @@ public class ConnectedServer
 
         AllSystemServerChannels.Remove(this.SystemChannel);
 
-        this.AppliedServerChannels.Clear();      
+        this.AppliedServerChannels.Clear();
     }
     public void Disconnect(int int_DisconnectReason)
     {
@@ -2413,7 +2413,7 @@ public class ConnectedServer
 
 public class NetworkAction
 {
-    [DllImport("YakSysRctServerLib.dll")]
+    [DllImport("JsRctServerLib.dll")]
     private static extern string ResolveMACAddressFromIP(string string_IPAddress);
 
     private static TcpListener tcpListener_MainListener;
@@ -2976,7 +2976,7 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
 
                         IPAddress iPAddress_ClientIP = IPAddress.Parse(baseChannelObject_obj.IPAddress);
 
-                        string string_MACAddress = ResolveMACAddressFromIP(baseChannelObject_obj.IPAddress);
+                        string string_MACAddress = "unknown";//!!!ResolveMACAddressFromIP(baseChannelObject_obj.IPAddress);
                         baseChannelObject_obj.MACAddress = string_MACAddress;
 
                         #endregion
@@ -3168,7 +3168,7 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
                                 {
                                     #region Call Log Event
 
-                                    ConnectingServiceLogsEvents.NewServersLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), baseChannelObject_obj.NetworkInformation_UserName, string_Login, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(54, MainForm.CurrentLanguage), false);
+                                    ConnectingServiceLogsEvents.NewServersLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), baseChannelObject_obj.NetworkInformation_UserName, string_Login, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(54, MainForm.CurrentLanguage), false);
 
                                     #endregion
                                 }
@@ -3176,7 +3176,7 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
                                 {
                                     #region Call Log Event
 
-                                    ConnectingServiceLogsEvents.NewClientsLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), baseChannelObject_obj.NetworkInformation_UserName, string_Login, StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(54, MainForm.CurrentLanguage), false);
+                                    ConnectingServiceLogsEvents.NewClientsLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), baseChannelObject_obj.NetworkInformation_UserName, string_Login, ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(54, MainForm.CurrentLanguage), false);
 
                                     #endregion
                                 }
@@ -3318,14 +3318,14 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
             }
             else
             {
-                MessageBox.Show(StringFactory.GetString(55, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ServerStringFactory.GetString(55, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return;
             }
 
             if (ClientsNetworkSecurity.UserAccount.UsersAccounts.Count == 0 && ServersNetworkSecurity.UserAccount.UsersAccounts.Count == 0)
             {
-                MessageBox.Show(StringFactory.GetString(69, MainForm.CurrentLanguage), StringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ServerStringFactory.GetString(69, MainForm.CurrentLanguage), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
@@ -3336,11 +3336,11 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
 
             ObjCopy.obj_MainForm.Invoke((MethodInvoker)delegate
             {
-                ObjCopy.obj_MainForm.ServerStatus = StringFactory.GetString(56, MainForm.CurrentLanguage);
+                ObjCopy.obj_MainForm.ServerStatus = ServerStringFactory.GetString(56, MainForm.CurrentLanguage);
 
                 #region Call Log Event
 
-                ConnectingServiceLogsEvents.NewCommonLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(57, MainForm.CurrentLanguage), false);
+                ConnectingServiceLogsEvents.NewCommonLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(57, MainForm.CurrentLanguage), false);
 
                 #endregion
 
@@ -3402,11 +3402,11 @@ MessageBox.Show(exception.Message + " -- " + exception.StackTrace);
             BaseChannelObject.AllBaseChannelObjects.Clear();
 
 
-            ObjCopy.obj_MainForm.ServerStatus = StringFactory.GetString(7, MainForm.CurrentLanguage);
+            ObjCopy.obj_MainForm.ServerStatus = ServerStringFactory.GetString(7, MainForm.CurrentLanguage);
 
             #region Call Log Event
 
-            ConnectingServiceLogsEvents.NewCommonLogRecordEvent(StringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), StringFactory.GetString(1, MainForm.CurrentLanguage), StringFactory.GetString(59, MainForm.CurrentLanguage), false);
+            ConnectingServiceLogsEvents.NewCommonLogRecordEvent(ServerStringFactory.GetString(44, MainForm.CurrentLanguage), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), ServerStringFactory.GetString(1, MainForm.CurrentLanguage), ServerStringFactory.GetString(59, MainForm.CurrentLanguage), false);
 
             #endregion
 

@@ -603,9 +603,13 @@ public class NetworkAction
         }
 
         catch (Exception exception_obj)
-        {              
+        {
+
+
+#if DEBUG
             MessageBox.Show(exception_obj.Message + " : " + exception_obj.StackTrace + "\n" + exception_obj.Source);
-           
+#endif
+
             DisconnectFromServer();
             
             return;
